@@ -1,4 +1,4 @@
-# Apunte Análisi Matemático III
+# Apunte Análisis Matemático III
 
 ![alt text](https://github.com/vito-pp/apunteM3/blob/v2/figs/logoitba2.png?raw=true)
 
