@@ -15,17 +15,17 @@
  
  \draw [dashed] (n3) -- (n4);
  
- \filldraw [black] (n0) circle [radius = 1pt] node[left] {$x_o$}
-		   (n1) circle [radius = 1pt] node[left] {$L_1$};
- \filldraw [red]   (n0) +(115:\Ro/3.0) circle [radius = 1pt] node[right] {$x$}
-		   (n1) +(-45:\Ra/2)circle [radius = 1pt] node[right] {$f(x)$};
+ \filldraw [black] (n0) circle [radius = 1pt] node[left] {$\mathbf{x}_o$}
+		   (n1) circle [radius = 1pt] node[left] {$\mathbf{L}_1$};
+ \filldraw [red]   (n0) +(115:\Ro/3.0) circle [radius = 1pt] node[right] {$\mathbf{x}$}
+		   (n1) +(-45:\Ra/2)circle [radius = 1pt] node[right] {$\mathbf{F}(\mathbf{x})$};
  
   \draw [->] (n0) -- node[sloped,below] {$\delta_1$} +(15:\Ro);
   \draw [->] (n1) -- node[sloped,above] {$\varepsilon$} +( 45:\Ra);
-  
+
   \coordinate (co) at (0.1,1.1*\Ro);
   \coordinate (c1) at (\Ro + 0.5*\sep/2,\Ra);
   \coordinate (c2) at (\Ro + 1.5*\sep/2,\Ra);
   \coordinate (cn) at (0.8*\Pa,1.1*\Ra - \Ro/2);
-  \draw [->] (co) .. controls (c1) and (c2) .. node[near start,sloped,above] {$f$} (cn);
+  \draw [->] (co) .. controls (c1) and (c2) .. node[near start,sloped,above] {$\mathbf{F}$} (cn);
 \end{tikzpicture}

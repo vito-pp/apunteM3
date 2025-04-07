@@ -1,48 +1,47 @@
 \label{sec:limites}
 \begin{definition} [L\'imite] \label{def:limite}
-Sean $f:A \subset \Rn{n} \to \Rn{m}$ una funci\'on, $L \in \Rn{m}$ y $x_0$ un punto de acumulaci\'on de $A$. Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_o$ es $L$} o que \emph{$f$ tiende a $L$ cuando $x$ tiende a $x_o$}
+Sean $f:A \subset \Rn{n} \to \Rn{m}$ una funci\'on, $L \in \Rn{m}$ y $x_0$ un punto de acumulaci\'on de $A$. Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_0$ es $L$} o que \emph{$f$ tiende a $L$ cuando $x$ tiende a $x_0$}
 si
 \[
  \forall \varepsilon > 0 \, \exists \delta > 0 / f(x) \in B_{\varepsilon}(L) \, \forall 
- x \in B_{\delta}^*(x_o) \cap A.
+ x \in B_{\delta}^*(x_0) \cap A.
 \]
 
 En este caso, utilizamos la notaci\'on
 \[
- f(x) \xrightarrow[x \to x_o]{} L \quad \text{o} \quad \lim_{x \to x_o} f(x) = L.
+ f(x) \xrightarrow[x \to x_0]{} L \quad \text{o} \quad \lim_{x \to x_0} f(x) = L.
 \]
 \begin{obs} Si $f$ es un \emph{campo escalar} (es decir, si en la definici\'on \eqref{def:limite} es $m = 1$), la condici\'on 
  \[
  \forall \varepsilon > 0 \, \exists \delta > 0 / f(x) \in B_{\varepsilon}(L) \, \forall 
- x \in B_{\delta}^*(x_o) \cap A
+ x \in B_{\delta}^*(x_0) \cap A
 \]
 es equivalente a 
 \[
  \forall \varepsilon > 0 \, \exists \delta > 0 / \abs{ f(x) - L } < \varepsilon \, \forall 
- x \in B_{\delta}^*(x_o) \cap A.
+ x \in B_{\delta}^*(x_0) \cap A.
 \]
 \end{obs}
 
 \begin{obs} La definici\'on de l\'imite puede expresarse equivalentemente en t\'erminos de distancias o de normas:
 \begin{itemize} 
- \item Sean $f:A \subset \Rn{n} \to \Rn{m}$ una funci\'on, $L \in \Rn{m}$ y $x_0$ un punto de acumulaci\'on de $A$. Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_o$ es $L$} o que \emph{$f$ tiende a $L$ cuando $x$ tiende a $x_o$} si
+ \item Sean $f:A \subset \Rn{n} \to \Rn{m}$ una funci\'on, $L \in \Rn{m}$ y $x_0$ un punto de acumulaci\'on de $A$. Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_0$ es $L$} o que \emph{$f$ tiende a $L$ cuando $x$ tiende a $x_0$} si
 \[
  \forall \varepsilon > 0 \, \exists \delta > 0 / \dis_m {(f(x),L)} < \varepsilon \, \forall 
- x\in A : 0 < \dis_n {(x,x_o)} < \delta,
+ x\in A : 0 < \dis_n {(x,x_0)} < \delta,
 \] 
 donde $\dis_n$ y $\dis_m$ son las distancias en $\Rn{n}$ y $\Rn{m}$, respectivamente.
 
- \item Sean $f:A \subset \Rn{n} \to \Rn{m}$ una funci\'on, $L \in \Rn{m}$ y $x_0$ un punto de acumulaci\'on de $A$. Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_o$ es $L$} o que \emph{$f$ tiende a $L$ cuando $x$ tiende a $x_o$} si
+ \item Sean $f:A \subset \Rn{n} \to \Rn{m}$ una funci\'on, $L \in \Rn{m}$ y $x_0$ un punto de acumulaci\'on de $A$. Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_0$ es $L$} o que \emph{$f$ tiende a $L$ cuando $x$ tiende a $x_0$} si
 \[
  \forall \varepsilon > 0 \, \exists \delta > 0 / \norm{f(x) - L}_m < \varepsilon \, \forall 
- x\in A : 0 < \norm{x - x_o}_n < \delta,
+ x\in A : 0 < \norm{x - x_0}_n < \delta,
 \] 
 donde $\norm{\cdot}_n$ y $\norm{\cdot}_m$ son las normas en $\Rn{n}$ y $\Rn{m}$, respectivamente.
 \end{itemize}
 \end{obs}
 
 \end{definition}
-
 
 \begin{example} Probar, usando la definici\'on, los siguientes l\'imites
  
@@ -54,7 +53,6 @@ donde $\norm{\cdot}_n$ y $\norm{\cdot}_m$ son las normas en $\Rn{n}$ y $\Rn{m}$,
   \lim_{(x,y) \to (0,0)} \frac{x^2 \sin( y)}{x^2 + y^2} = 0.
  \]
 
-
 \textcolor{red}{mejorar los espacios. Resolver los ejemplos. Hacer menci\'on de los cotas utiles}
 
 
@@ -64,20 +62,20 @@ donde $\norm{\cdot}_n$ y $\norm{\cdot}_m$ son las normas en $\Rn{n}$ y $\Rn{m}$,
 \begin{theorem}\textbf{Unicidad del l\'imite.} \label{teo:unicidad_limite}
 \mbox{}
 
-Sean $f:A \subset \Rn{n} \to \Rn{m}$ una funci\'on, $x_0$ un punto de acumulaci\'on de $A$ y $L_1, L_2 \in \Rn{m}$ tales que 
+Sean $\mathbf{F}:A \subset \Rn{n} \to \Rn{m}$ una funci\'on, $\mathbf{x}_0$ un punto de acumulaci\'on de $A$ y $\mathbf{L}_1, \mathbf{L}_2 \in \Rn{m}$ tales que 
 \[
- f(x) \xrightarrow[x \to x_o]{} L_1 \quad \wedge \quad f(x) \xrightarrow[x \to x_o]{} L_2.
+ \mathbf{F}(\mathbf{x}) \xrightarrow[\mathbf{x} \to \mathbf{x}_0]{} \mathbf{L}_1 \quad \wedge \quad \mathbf{F}(\mathbf{x}) \xrightarrow[\mathbf{x} \to \mathbf{x}_0]{} \mathbf{L}_2.
 \]
-Entonces $L_1 = L_2$.
+Entonces $\mathbf{L}_1 = \mathbf{L}_2$.
 \begin{proof}
 \mbox{}
 
 Las ideas utilizadas en la demostraci\'on de este teorema son las que siguen.\\
 Como 
 \[
- f(x) \xrightarrow[x \to x_o]{} L_1,
+ \mathbf{F}(\mathbf{x}) \xrightarrow[\mathbf{x} \to \mathbf{x}_0]{} \mathbf{L}_1,
 \]
-dado $\varepsilon > 0$ existe alg\'on $\delta_1 > 0$ tal que cada punto $x \in B_{\delta_1}^*(x_o) \cap A$ se aplica a trav\'es de $f$ en alg\'on punto de la bola de centro $L_1$ y radio $\varepsilon$.
+dado $\varepsilon > 0$ existe alg\'un $\delta_1 > 0$ tal que cada punto $\mathbf{x} \in B_{\delta_1}^*(\mathbf{x}_0) \cap A$ se aplica a trav\'es de $\mathbf{F}$ en alg\'un punto de la bola de centro $\mathbf{L}_1$ y radio $\varepsilon$.
 
 \def\Ro{2.0}
 \def\Rb{1.0}
@@ -86,78 +84,77 @@ dado $\varepsilon > 0$ existe alg\'on $\delta_1 > 0$ tal que cada punto $x \in B
 
 \input{figs/fig1}
 
-
 De la misma manera, como 
 \[
- f(x) \xrightarrow[x \to x_o]{} L_2,
+ \mathbf{F}(\mathbf{\mathbf{x}}) \xrightarrow[\mathbf{\mathbf{x}} \to \mathbf{\mathbf{x}}_0]{} \mathbf{L}_2,
 \]
-dado $\varepsilon > 0$ existe alg\'on $\delta_2 > 0$ tal que cada punto $x \in B_{\delta_2}^*(x_o) \cap A$ se aplica a trav\'es de $f$ en alg\'on punto de la bola de centro $L_2$ y radio $\varepsilon$.
+dado $\varepsilon > 0$ existe alg\'un $\delta_2 > 0$ tal que cada punto $\mathbf{\mathbf{x}} \in B_{\delta_2}^*(\mathbf{\mathbf{x}}_0) \cap A$ se aplica a trav\'es de $\mathbf{F}$ en alg\'un punto de la bola de centro $\mathbf{L}_2$ y radio $\varepsilon$.
 
 \input{figs/fig2}
 
-Si suponemos que $L_1 \ne L_2$, por propiedad de la distancia es $\dis(L_1,L_2) > 0$ y podemos elegir 
+Si suponemos que $\mathbf{L}_1 \ne \mathbf{L}_2$, por propiedad de la distancia es $\dis(\mathbf{L}_1,\mathbf{L}_2) > 0$ y podemos elegir 
 \[
- \varepsilon = \frac{\dis{(L_1,L_2)}}{2}.
+ \varepsilon = \frac{\dis{(\mathbf{L}_1,\mathbf{L}_2)}}{2}.
 \]
-Para este valor de $\varepsilon$ podemos encontrar un punto $x$ que se aplica por $f$ en alg\'on punto de la bola de centro $L_1$ y radio $\varepsilon$ \textbf{y tambi\'en} se aplica por $f$ en alg\'on punto de la bola de centro $L_2$ y radio $\varepsilon$, lo cual es absurdo, pues estas dos bolas son disjuntas.
+Para este valor de $\varepsilon$ podemos encontrar un punto $\mathbf{\mathbf{x}}$ que se aplica por $\mathbf{F}$ en alg\'un punto de la bola de centro $\mathbf{L}_1$ y radio $\varepsilon$ \textbf{y tambi\'en} se aplica por $\mathbf{F}$ en alg\'un punto de la bola de centro $\mathbf{L}_2$ y radio $\varepsilon$, lo cual es absurdo, pues estas dos bolas son disjuntas.
 
 \input{figs/fig3}
 
 Ahora s\'i, veamos la demostraci\'on formal del teorema.\\
- Supongamos, por el absurdo, que $L_1 \ne L_2$, y sea $\varepsilon = \dis(L_1,L_2)/2 > 0.$ \\ 
+ Supongamos, por el absurdo, que $\mathbf{L}_1 \ne \mathbf{L}_2$, y sea $\varepsilon = \dis(\mathbf{L}_1,\mathbf{L}_2)/2 > 0.$ \\ 
  Como 
  \[
-  f(x) \xrightarrow[x \to x_o]{} L_1,
+  \mathbf{F}(\mathbf{x}) \xrightarrow[\mathbf{x} \to \mathbf{x}_0]{} \mathbf{L}_1,
  \]
-podemos elegir $\delta_1 > 0$ tal que $x \in B_{\delta_1}^*(x_o) \cap A \then f(x) \in B_{\varepsilon}(L_1)$.\\
+podemos elegir $\delta_1 > 0$ tal que $\mathbf{x} \in B_{\delta_1}^*(\mathbf{x}_0) \cap A \then \mathbf{F}(\mathbf{x}) \in B_{\varepsilon}(\mathbf{L}_1)$.\\
 Como 
 \[
- f(x) \xrightarrow[x \to x_o]{} L_2,
+ \mathbf{F}(\mathbf{x}) \xrightarrow[\mathbf{x} \to \mathbf{x}_0]{} \mathbf{L}_2,
 \]
- podemos elegir $\delta_2 > 0$ tal que $x \in B_{\delta_2}^*(x_o) \cap A \then f(x) \in B_{\varepsilon}(L_2)$.\\
+ podemos elegir $\delta_2 > 0$ tal que $\mathbf{x} \in B_{\delta_2}^*(\mathbf{x}_0) \cap A \then \mathbf{F}(\mathbf{x}) \in B_{\varepsilon}(\mathbf{L}_2)$.\\
  Notemos que, como sugiere la figura, 
  \[
-  B_{\varepsilon}(L_1) \cap B_{\varepsilon}(L_2) = \emptyset.
+  B_{\varepsilon}(\mathbf{L}_1) \cap B_{\varepsilon}(\mathbf{L}_2) = \varnothing.
  \]
- En efecto, de no ser as\'i, sea $z \in B_{\varepsilon}(L_1) \cap B_{\varepsilon}(L_2)$. Tenemos que:
+ En efecto, de no ser as\'i, sea $z \in B_{\varepsilon}(\mathbf{L}_1) \cap B_{\varepsilon}(\mathbf{L}_2)$. Tenemos que:
  \[
-  2 \varepsilon = \dis(L_1,L_2) \le \dis(L_1,z) + \dis(z,L_2)
+  2 \varepsilon = \dis(\mathbf{L}_1,\mathbf{L}_2) \le \dis(\mathbf{L}_1,z) + \dis(z,\mathbf{L}_2)
   < \varepsilon + \varepsilon = 2 \varepsilon \then \varepsilon < \varepsilon. \text{ Absurdo.}
  \]
 
  Sea $\delta = \min\{ \delta_1, \delta_2 \}$. \\
- Como $B_{\delta}^*(x_o) \subset B_{\delta_1}^*(x_o)$ y $B_{\delta}^*(x_o) \subset B_{\delta_2}^*(x_o)$, si tomamos alg\'on $x \in B_{\delta}^*(x_o) \cap A$\footnote{Notemos que $B_{\delta}^*(x_o) \cap A \ne \emptyset$ porque $x_o$ es un punto de acumulaci\'on de $A$.}, vale que $f(x) \in B_{\varepsilon}(L_1)$ y tambi\'en $f(x) \in B_{\varepsilon}(L_2)$, por lo que $f(x) \in B_{\varepsilon}(L_1) \cap B_{\varepsilon}(L_2)$. Absurdo, pues $B_{\varepsilon}(L_1) \cap B_{\varepsilon}(L_2) = \emptyset$. El absurdo provino de suponer que $L_1 \ne L_2$, por lo cual debe ser $L_1 = L_2$.
+ Como $B_{\delta}^*(\mathbf{x}_0) \subset B_{\delta_1}^*(\mathbf{x}_0)$ y $B_{\delta}^*(\mathbf{x}_0) \subset B_{\delta_2}^*(\mathbf{x}_0)$, si tomamos alg\'un $\mathbf{x} \in B_{\delta}^*(\mathbf{x}_0) \cap A$\footnote{Notemos que $B_{\delta}^*(\mathbf{x}_0) \cap A \ne \varnothing$ porque $\mathbf{x}_0$ es un punto de acumulaci\'on de $A$.}, vale que $f(\mathbf{x}) \in B_{\varepsilon}(\mathbf{L}_1)$ y tambi\'en $f(\mathbf{x}) \in B_{\varepsilon}(\mathbf{L}_2)$, por lo que $f(\mathbf{x}) \in B_{\varepsilon}(\mathbf{L}_1) \cap B_{\varepsilon}(\mathbf{L}_2)$. Absurdo, pues $B_{\varepsilon}(\mathbf{L}_1) \cap B_{\varepsilon}(\mathbf{L}_2) = \varnothing$. El absurdo provino de suponer que $\mathbf{L}_1 \ne \mathbf{L}_2$, por lo cual debe ser $\mathbf{L}_1 = \mathbf{L}_2$.
 
 \end{proof}
 
 \end{theorem}
-\begin{propertie}\textbf{\'algebra de l\'imites.} \label{prop:alg_lim} Sean $f,g:A \subset \Rn{n} \to \Rn{m}$ funciones y $x_0$ un punto de acumulaci\'on de $A$. Supongamos que 
+\begin{propertie}\textbf{\'Algebra de l\'imites.} \label{prop:alg_lim} Sean $\mathbf{F},\mathbf{G}:A \subset \Rn{n} \to \Rn{m}$ funciones y $\mathbf{x}_0$ un punto de acumulaci\'on de $A$. Supongamos que 
   \begin{align*}
-   &\lim_{x \to x_o} f(x) = L_1 \in \Rn{m} \\
-   &\lim_{x \to x_o} g(x) = L_2 \in \Rn{m}.
+   &\lim_{\mathbf{x} \to \mathbf{x}_0} \mathbf{F}(\mathbf{x}) = \mathbf{L}_1 \in \Rn{m} \\
+   &\lim_{\mathbf{x} \to \mathbf{x}_0} \mathbf{G}(\mathbf{x}) = \mathbf{L}_2 \in \Rn{m}.
   \end{align*}
   Entonces:
   \begin{enumerate} %[i.]
    \item Linealidad
       \begin{enumerate} %[(a)]
-       \item $\lim_{x \to x_o} (f + g)(x) = L_1 + L_2$
-       \item $\lim_{x \to x_o} (\alpha f)(x) = \alpha L_1 \, \forall \alpha \in \R$
+       \item $\lim_{\mathbf{x} \to \mathbf{x}_0} (\mathbf{F} + \mathbf{G})(\mathbf{x}) = \mathbf{L}_1 + \mathbf{L}_2$
+       \item $\lim_{\mathbf{x} \to \mathbf{x}_0} (\alpha \mathbf{F})(\mathbf{x}) = \alpha \mathbf{L}_1 \, \forall \alpha \in \R$
       \end{enumerate}
-  \item $\lim_{x \to x_o} (f \cdot g) (x) = L_1 \cdot L_2$\footnote{Si $m \ge 2$, ``$\cdot$'' representa el producto escalar en $\Rn{m}$.}
-  \item Si $m = 1$ (i.e., si $f \text{ y } g$ son campos escalares), $g$ es no nula en alg\'on entorno de $x_o$ y $L_2 \ne 0$, 
+  \item $\lim_{\mathbf{x} \to \mathbf{x}_0} (\mathbf{F} \cdot \mathbf{G}) (\mathbf{x}) = \mathbf{L}_1 \cdot \mathbf{L}_2$\footnote{Si $m \ge 2$, ``$\cdot$'' representa el producto escalar en $\Rn{m}$.}
+  \item Si $m = 1$ (\textit{i.e.}, si $\mathbf{F} \text{ y } \mathbf{G}$ son campos escalares), $\mathbf{G}$ es no nula en alg\'un entorno de $\mathbf{x}_0$ y $\mathbf{L}_2 \ne 0$, 
   \[
-   \lim_{x \to x_o} \frac{f(x)}{g(x)} = \frac{L_1}{L_2}.
+   \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{\mathbf{F}(\mathbf{x})}{\mathbf{G}(\mathbf{x})} = \frac{\mathbf{L}_1}{\mathbf{L}_2}.
   \]
   \end{enumerate}
 \end{propertie}
 
 
-\begin{example} Calcular los siguientes l\'imites usando Algebra de L\'imites
+\begin{example} Calcular los siguientes l\'imites usando \'algebra de l\'imites.
  \[
   \lim_{(x,y) \to (0,0)} \frac{x^2 +1 +  y}{(x-1)^2 +  y^2} 
  \]
  \[
-  \lim_{(x,y) \to (0,0)} \frac{\exp{x} \log(\cos( y))}{x^2 + (y+1)^2}
+  \lim_{(x,y) \to (0,0)} \frac{e^x \log(\cos y)}{x^2 + (y+1)^2}
  \]
  
  \textcolor{red}{mejorar los espacios. Resolver los ejemplos. Hacer menci\'on sobre los limites notables de mate 1 una variable}
@@ -166,24 +163,24 @@ Como
 \end{example}
 
 \begin{propertie} \label{prop:lim_x_comp}
- Sea $F: A \subset \Rn{n} \to \Rn{m}$ un campo vectorial y $x_0$ un punto de acumulaci\'on de $A$. Sean $f_j: A \subset \Rn{n} \to \R \, (j = 1,2, \dots, m)$ campos escalares tales que $F(x) = \left( f_1(x), f_2(x), \dots, f_m(x) \right) \, \forall x \in A$\footnote{Los campos escalares $f_j$ quedan determinados un\'ivocamente por $F$ de la siguiente manera: 
- \begin{align*}
-     f_j &: A \subset \Rn{n} \to \R \\
-     &f_j(x) = F(x) \cdot e_j,
- \end{align*} donde $e_j$ es el $j$-\'esimo vector can\'onico de $\Rn{m}$.}.\\
- Sea $L = \left( L_1, L_2, \dots, L_m \right) \in \Rn{m}$, $L_j \in \R \, \forall j = 1,2, \dots, m$. Entonces:
+ Sea $\mathbf{F}: A \subset \Rn{n} \to \Rn{m}$ un campo vectorial y $\mathbf{x}_0$ un punto de acumulaci\'on de $A$. Sean $f_j: A \subset \Rn{n} \to \R \,\;(j = 1,2, \dots, m)$ campos escalares tales que $\mathbf{F}(\mathbf{x}) = \left( f_1(\mathbf{x}), f_2(\mathbf{x}), \dots, f_m(\mathbf{x}) \right),\; \forall \mathbf{x} \in A$\footnote{Los campos escalares $f_j$ quedan determinados un\'ivocamente por $\mathbf{F}$ de la siguiente manera: 
+ \begin{gather*}
+     f_j : A \subset \Rn{n} \to \R; \\
+     f_j(\mathbf{x}) = \mathbf{F}(\mathbf{x}) \cdot \mathbf{e}_j,
+ \end{gather*} donde $\mathbf{e}_j$ es el $j$-\'esimo vector can\'onico de $\Rn{m}$.}.\\
+ Sea $\mathbf{L} = \left( L_1, L_2, \dots, L_m \right) \in \Rn{m}$, $L_j \in \R \; \forall j = 1,2, \dots, m$. Entonces
  \[
-  \lim_{x \to x_o} F(x) = L \iff \lim_{x \to x_o} f_j(x) = L_j \, \forall j = 1,2, \dots, m.
+  \lim_{\mathbf{x} \to \mathbf{x}_0} \mathbf{F}(\mathbf{x}) = L \iff \lim_{\mathbf{x} \to \mathbf{x}_0} f_j(\mathbf{x}) = L_j \, \forall j = 1,2, \dots, m.
  \]
 
 \end{propertie}
 
 
   \begin{propertie} \label{prop:lim_1}
-    Sean $f:A \subset \Rn{n} \to \R$ una funci\'on y $x_0$ un punto de acumulaci\'on de $A$. Las siguientes proposiciones son equivalentes:
+    Sean $f:A \subset \Rn{n} \to \R$ una funci\'on y $\mathbf{x}_0$ un punto de acumulaci\'on de $A$. Las siguientes proposiciones son equivalentes:
  \begin{enumerate} %[i.]
-  \item $\lim_{x \to x_o} f(x) = 0$.
-  \item $\lim_{x \to x_o} | f(x) | = 0$.
+  \item $\lim_{\mathbf{x} \to \mathbf{x}_0} f(\mathbf{x}) = 0$.
+  \item $\lim_{\mathbf{x} \to \mathbf{x}_0} | f(\mathbf{x}) | = 0$.
  \end{enumerate}
  \begin{proof}
  \mbox{}
@@ -191,37 +188,37 @@ Como
  \begin{enumerate} %[(a)]
   \item Veamos que (I) implica (II). Como 
   \[
-   \lim_{x \to x_o} f(x) = 0,
+   \lim_{\mathbf{x} \to \mathbf{x}_0} f(\mathbf{x}) = 0,
   \]
   por definici\'on de l\'imite, dado $\varepsilon > 0$ podemos tomar $\delta > 0$ tal que 
   \[
-   \abs{f(x) - 0} < \varepsilon \, \forall x \in B^*_{\delta}(x_o) \cap A.
+   \abs{f(\mathbf{x}) - 0} < \varepsilon \; \forall \mathbf{x} \in B^*_{\delta}(\mathbf{x}_0) \cap A.
   \]
   Para este valor de $\delta$ se cumple que
   \[
-   \Big| \abs{f(x)} - 0 \Big| = \Big| \abs{f(x)} \Big| = \abs{f(x)} = \abs{f(x) - 0} < \varepsilon \, 
-   \forall x \in B^*_{\delta}(x_o) \cap A,
+   \Big| \abs{f(\mathbf{x})} - 0 \Big| = \Big| \abs{f(\mathbf{x})} \Big| = \abs{f(\mathbf{x})} = \abs{f(\mathbf{x}) - 0} < \varepsilon \; 
+   \forall \mathbf{x} \in B^*_{\delta}(\mathbf{x}_0) \cap A,
   \]
   de modo que, por definici\'on, 
   \[
-   \lim_{x \to x_o} \abs{ f(x) } = 0.
+   \lim_{\mathbf{x} \to \mathbf{x}_0} \abs{ f(\mathbf{x}) } = 0.
   \]
   \item Veamos que (II) implica (I). Como
   \[
-   \lim_{x \to x_o} \abs{ f(x) } = 0,
+   \lim_{\mathbf{x} \to \mathbf{x}_0} \abs{ f(\mathbf{x}) } = 0,
   \]
   por definici\'on de l\'imite, dado $\varepsilon > 0$ podemos tomar $\delta > 0$ tal que 
   \[
-   \Big| \abs{f(x)} - 0 \Big| < \varepsilon \, \forall x \in B^*_{\delta}(x_o) \cap A.
+   \Big| \abs{f(\mathbf{x})} - 0 \Big| < \varepsilon \; \forall \mathbf{x} \in B^*_{\delta}(\mathbf{x}_0) \cap A.
   \]
   Para este valor de $\delta$ se cumple que
   \[
-   \abs{f(x) - 0} = \abs{f(x)} = \Big| \abs{f(x)} \Big| = \Big| \abs{f(x)} - 0 \Big| < \varepsilon \, 
-   \forall x \in B^*_{\delta}(x_o) \cap A,
+   \abs{f(\mathbf{x}) - 0} = \abs{f(\mathbf{x})} = \Big| \abs{f(\mathbf{x})} \Big| = \Big| \abs{f(x)} - 0 \Big| < \varepsilon \, 
+   \forall \mathbf{x} \in B^*_{\delta}(\mathbf{x}_0) \cap A,
   \]
   de modo que, por definici\'on, 
   \[
-   \lim_{x \to x_o} f(x) = 0.
+   \lim_{\mathbf{x} \to \mathbf{x}_0} f(\mathbf{x}) = 0.
   \]
  \end{enumerate}
 
@@ -231,64 +228,64 @@ Como
 \end{propertie} 
 
 \begin{propertie} \label{prop:sandwich} %[Principio de intercalaci\'on]
-Sean $f, g, h : A \subset \Rn{n} \to \R$ funciones y $x_0$ un punto de acumulaci\'on de $A$. Supongamos que $\exists \delta_o > 0$ tal que 
+Sean $f, g, h : A \subset \Rn{n} \to \R$ funciones y $\mathbf{x}_0$ un punto de acumulaci\'on de $A$. Supongamos que $\exists \delta_0 > 0$ tal que 
 \[
- f(x) \le g(x) \le h(x) \, \forall x \in B_{\delta_o}(x_o) \cap A.
+ f(\mathbf{x}) \le g(\mathbf{x}) \le h(\mathbf{x}) \; \forall \mathbf{x} \in B_{\delta_0}(\mathbf{x}_0) \cap A.
 \]
-Si $\lim_{x \to x_o}f(x) = \lim_{x \to x_o}h(x) = L$, entonces
+Si $\lim_{\mathbf{x} \to \mathbf{x}_0}f(\mathbf{x}) = \lim_{\mathbf{x} \to \mathbf{x}_0}h(\mathbf{x}) = L$, entonces
 \[
- \lim_{x \to x_o}g(x) = L.
+ \lim_{\mathbf{x} \to \mathbf{x}_0}g(\mathbf{x}) = L.
 \]
  
 \end{propertie}
 
 \begin{propertie} \label{prop:cero_x_acotada}
- Sean $f, g : A \subset \Rn{n} \to \R$ funciones y $x_0$ un punto de acumulaci\'on de $A$. Si $\exists \delta_o > 0$ tal que $f$ es acotada en $B_{\delta_o}(x_o) \cap A$ (i.e.: $\exists M > 0 \text{ tal que } \abs{f(x)} \le M \forall x \in  B_{\delta_o}(x_o) \cap A$) y $\lim_{x \to x_o}g(x) = 0$, entonces
+ Sean $f, g : A \subset \Rn{n} \to \R$ funciones y $\mathbf{x}_0$ un punto de acumulaci\'on de $A$. Si $\exists \delta_0 > 0$ tal que $f$ es acotada en $B_{\delta_0}(\mathbf{x}_0) \cap A$ (\textit{i.e.} $\exists M > 0 \text{ tal que } \abs{f(\mathbf{x})} \le M,\;\forall \mathbf{x} \in  B_{\delta_0}(\mathbf{x}_0) \cap A$) y $\lim_{\mathbf{x} \to \mathbf{x}_0}g(\mathbf{x}) = 0$, entonces
 \[
- \lim_{x \to x_o}(f \cdot g)_{(x)} = 0.
+ \lim_{\mathbf{x} \to \mathbf{x}_0}(f \cdot g)(\mathbf{x}) = 0.
 \]
 \begin{proof}
 \mbox{}
 
-Supongamos que, para cierto $\delta_o > 0$, $f$ es acotada en $B_{\delta_o}(x_o) \cap A$, y sea $M > 0 \text{ tal que } \abs{f(x)} \le M \quad \forall x \in  B_{\delta_o}(x_o) \cap A$.
+Supongamos que, para cierto $\delta_0 > 0$, $f$ es acotada en $B_{\delta_0}(\mathbf{x}_0) \cap A$, y sea $M > 0 \text{ tal que } \abs{f(\mathbf{x})} \le M, \; \forall \mathbf{x} \in  B_{\delta_0}(\mathbf{x}_0) \cap A$.
 Como 
 \[
-\lim_{x \to x_o}g(x) = 0, 
+\lim_{\mathbf{x} \to \mathbf{x}_0}g(\mathbf{x}) = 0, 
 \]
 dado $\varepsilon > 0 $, por definici\'on de l\'imite, podemos elegir $\delta_1 > 0$ tal que 
 \[
- \abs{g(x)} < \frac{\varepsilon}{M} \quad \forall x \in  B^*_{\delta_1}(x_o) \cap A.                                                                                               
+ \abs{g(\mathbf{x})} < \frac{\varepsilon}{M},\;\forall \mathbf{x} \in  B^*_{\delta_1}(\mathbf{x}_0) \cap A.                                                                                               
 \]
-Sea $\delta = \min{ \left\{ \delta_o, \delta_1 \right\} }$. \\
+Sea $\delta = \min{ \left\{ \delta_0, \delta_1 \right\} }$. \\
 Se cumple que
 \[
- \abs{ (f \cdot g)_{(x)} - 0 } = \abs{ f(x) \cdot g(x) } = \abs{f(x)}\abs{g(x)} \le 
- M \abs{g(x)} < M \frac{\varepsilon}{M} = \varepsilon \quad \forall x \in  B^*_{\delta}(x_o) \cap A,
+ \abs{ (f \cdot g)(\mathbf{x}) - 0 } = \abs{ f(\mathbf{x}) \cdot g(\mathbf{x}) } = \abs{f(\mathbf{x})}\abs{g(\mathbf{x})} \le 
+ M \abs{g(\mathbf{x})} < M \frac{\varepsilon}{M} = \varepsilon \quad \forall \mathbf{x} \in  B^*_{\delta}(\mathbf{x}_0) \cap A,
 \]
 Por lo tanto, por definici\'on de l\'imite,
 \[
- \lim_{x \to x_o}(f \cdot g)_{(x)} = 0.
+ \lim_{\mathbf{x} \to \mathbf{x}_0}(f \cdot g)(\mathbf{x}) = 0.
 \]
 
 \end{proof}
 \end{propertie}
 
 
-\begin{propertie} [L\'imite de la composici\'on] \label{prop:lim_comp}
+\begin{propertie} \textbf{L\'imite de la composici\'on.} \label{prop:lim_comp}
 \mbox{}
 
-Sean $f, g$ funciones 
+Sean $\mathbf{F}$ y $\mathbf{G}$ funciones 
 \begin{align*}
- g &:A \subset \Rn{n} \to B \subset \Rn{m} \\
- f &:B \subset \Rn{m} \to \Rn{p},
+ \mathbf{G} &:A \subset \Rn{n} \to B \subset \Rn{m} \\
+ \mathbf{F} &:B \subset \Rn{m} \to \Rn{p},
 \end{align*}
-y puntos $a \in A', b \in B'$ tales que 
+y puntos $\mathbf{a} \in A', \mathbf{b} \in B'$ tales que 
 \[
- \lim_{x \to a} g(x) = b \quad \wedge \quad \lim_{u \to b} f(u) = L.
+ \lim_{\mathbf{x} \to \mathbf{a}} \mathbf{G}(\mathbf{x}) = \mathbf{b} \quad \wedge \quad \lim_{\mathbf{u} \to \mathbf{b}} \mathbf{F}(\mathbf{u}) = \mathbf{L}.
 \]
 Entonces
 \[
- \lim_{x \to a} \left( f \circ g \right)_{(x)} = L.
+ \lim_{\mathbf{x} \to \mathbf{a}} \left( \mathbf{F} \circ \mathbf{G} \right)(\mathbf{x}) = \mathbf{L}.
 \]
 \end{propertie}
 \begin{example}
@@ -313,26 +310,26 @@ Entonces
   \end{align*}
   por la propiedad \eqref{prop:lim_comp} es
   \[
-   \lim_{(x,y) \to (0,0)} \left( f \circ g \right)_{(x,y)} = 
+   \lim_{(x,y) \to (0,0)} \left( f \circ g \right)(x,y) = 
    \lim_{(x,y) \to (0,0)} \frac{\sin(x^2 + y^2)}{x^2 + y^2} = 1.
   \]
 \end{example}
 
 Una consecuencia directa de la propiedad \eqref{prop:lim_comp} es el siguiente corolario: 
-\begin{corollary} [L\'imites por curvas] \label{cor:lim_curva}
-  Sean $f: A \subset \Rn{2} \to \R, \, (x_o,y_o)$ un punto de acumulaci\'on de $A$ y $L \in \R$ tales que 
+\begin{corollary} \textbf{L\'imites por curvas.} \label{cor:lim_curva}
+  Sean $f: A \subset \Rn{2} \to \R, \, (x_0,y_0)$ un punto de acumulaci\'on de $A$ y $L \in \R$ tales que 
   \[
-   \lim_{(x,y) \to (x_o,y_o)} f(x,y) = L.
+   \lim_{(x,y) \to (x_0,y_0)} f(x,y) = L.
   \]
 
-  Entonces, para cualesquiera funciones continuas $g_1, \, g_2 : I \subset \R \to \R$ tales que, para alg\'un $t_o \in I'$
+  Entonces, para cualesquiera funciones continuas $g_1, \, g_2 : I \subset \R \to \R$ tales que, para alg\'un $t_0 \in I'$
   \[
-    \lim_{t \to t_o} \left( g_1(t),g_2(t) \right) = \left( x_o , y_o \right)
+    \lim_{t \to t_0} \left( g_1(t),g_2(t) \right) = \left( x_0 , y_0 \right)
   \]
-  y, adem\'as, $\left( g_1(t), g_2(t) \right) \in A \, \forall t \in \left( I - \{t_o\} \right),$ se cumple que
+  y, adem\'as, $\left( g_1(t), g_2(t) \right) \in A \, \forall t \in \left( I - \{t_0\} \right),$ se cumple que
   
   \[
-   \lim_{t \to t_o} f\left( g_1(t),g_2(t) \right) = L.
+   \lim_{t \to t_0} f\left( g_1(t),g_2(t) \right) = L.
   \]
 \end{corollary}
 
@@ -349,31 +346,31 @@ Una consecuencia directa de la propiedad \eqref{prop:lim_comp} es el siguiente c
   \]
   de modo que, \emph{si $f$ tiene l\'imite}, el l\'imite es 1, por \eqref{cor:lim_curva} y la unicidad del l\'imite.
   \end{enumerate}
-  Por lo tanto, por la unicidad del l\'imite (teorema \eqref{teo:unicidad_limite}), \emph{si $f$ tiene l\'imite $L$}, $L = 1$ y $ L= -1$, lo que es un absurdo.  Por lo cual $f$ no puede tener l\'imite cuando  $(x,y) \to (0,0)$  .
+  Por lo tanto, por la unicidad del l\'imite \eqref{teo:unicidad_limite}, \emph{si $f$ tiene l\'imite $L$}, $L = 1$ y $ L= -1$, lo que es un absurdo.  Por lo cual $f$ no puede tener l\'imite cuando  $(x,y) \to (0,0)$  .
 \end{example}
 
 \begin{propertie}\textbf{L\'imites iterados.} \label{prop:lim_ite}
-  Sean $f: A \subset \Rn{2} \to \R$, $(x_o,y_o)$ un punto de acumulaci\'on de $A$ y $L \in \R$ tales que
+  Sean $f: A \subset \Rn{2} \to \R$, $(x_0,y_0)$ un punto de acumulaci\'on de $A$ y $L \in \R$ tales que
   \[
-   \lim_{(x,y) \to (x_o,y_o)} f(x,y) = L.
+   \lim_{(x,y) \to (x_0,y_0)} f(x,y) = L.
   \]
   \begin{enumerate} %[I.]
-   \item Si para cada $x \ne x_o$ existe el l\'imite
+   \item Si para cada $x \ne x_0$ existe el l\'imite
   \[
-   \lim_{y \to y_o} f(x,y) = g(x)
+   \lim_{y \to y_0} f(x,y) = g(x)
   \]
   y adem\'as existe el l\'imite
   \[
-   \lim_{x \to x_o} g(x) = \lim_{x \to x_o} \left( \lim_{y \to y_o} f(x,y) \right) = L_1,
+   \lim_{x \to x_0} g(x) = \lim_{x \to x_0} \left( \lim_{y \to y_0} f(x,y) \right) = L_1,
   \]  
   entonces $L = L1$.
-  \item Si para cada $y \ne y_o$ existe el l\'imite
+  \item Si para cada $y \ne y_0$ existe el l\'imite
   \[
-   \lim_{x \to x_o} f(x,y) = h(y)
+   \lim_{x \to x_0} f(x,y) = h(y)
   \]
   y adem\'as existe el l\'imite
   \[
-   \lim_{y \to y_o} h(y) = \lim_{y \to y_o} \left( \lim_{x \to x_o} f(x,y) \right) = L_2, 
+   \lim_{y \to y_0} h(y) = \lim_{y \to y_0} \left( \lim_{x \to x_0} f(x,y) \right) = L_2, 
   \]
   entonces $L = L_2$.
   \end{enumerate}
@@ -388,21 +385,21 @@ Una consecuencia directa de la propiedad \eqref{prop:lim_comp} es el siguiente c
 % }
 
 \begin{propertie}\textbf{L\'imites por conjuntos.} \label{prop:lim_x_conj}
-   Sea $f : A \subset \Rn{n} \to \Rn{m}$ una funci\'on, con $A = A_1 \cup A_2$.\\
-   Sea $f_1$ la \emph{restricci\'on de $f$ a $A_1$}:
+   Sea $\mathbf{F} : A \subset \Rn{n} \to \Rn{m}$ una funci\'on, con $A = A_1 \cup A_2$.\\
+   Sea $\mathbf{F}_1$ la \emph{restricci\'on de $\mathbf{F}$ a $A_1$}:
  \begin{align*}
-  f_1 &: A_1 \subset \Rn{n} \to \Rn{m} \\
-  &f_1(x) = f(x).
+  \mathbf{F}_1 &: A_1 \subset \Rn{n} \to \Rn{m} \\
+  &\mathbf{F}_1(\mathbf{x}) = \mathbf{F}(\mathbf{x}).
  \end{align*}
-Sea $f_2$ la \emph{restricci\'on de $f$ a $A_2$}:
+Sea $\mathbf{F}_2$ la \emph{restricci\'on de $\mathbf{F}$ a $A_2$}:
  \begin{align*}
-  f_2 &: A_2 \subset \Rn{n} \to \Rn{m} \\
-  &f_2(x) = f(x).
+  \mathbf{F}_2 &: A_2 \subset \Rn{n} \to \Rn{m} \\
+  &\mathbf{F}_2(\mathbf{x}) = \mathbf{F}(\mathbf{x}).
  \end{align*}
- Sean $x_o \in A_1' \cap A_2'$ y $L \in \Rn{m}$. Entonces
+ Sean $\mathbf{F}_0 \in A_1' \cap A_2'$ y $\mathbf{L} \in \Rn{m}$. Entonces
  \[
-  \lim_{x \to x_o} f(x) = L \quad \iff 
-  \lim_{x \to x_o} f_1(x) = L \wedge \lim_{x \to x_o} f_2(x) = L.
+  \lim_{\mathbf{x} \to \mathbf{x}_0} \mathbf{F}(\mathbf{x}) = \mathbf{L} \iff 
+  \lim_{\mathbf{x} \to \mathbf{x}_0} \mathbf{F}_1(\mathbf{x}) = \mathbf{L} \wedge \lim_{\mathbf{x} \to \mathbf{x}_0} \mathbf{F}_2(\mathbf{x}) = \mathbf{L}.
  \]
 \end{propertie}
 \begin{example}
@@ -412,17 +409,15 @@ Sea $f_2$ la \emph{restricci\'on de $f$ a $A_2$}:
   \[
    f(x,y) = 
      \begin{cases}
-        \frac{e^x - 1}{x}  & \text{ si } x \ne 0  \\
+        \dfrac{e^x - 1}{x}  & \text{ si } x \ne 0  \\
          1                 & \text{ si } x = 0
      \end{cases}
   \]
  Veamos que $\lim_{(x,y) \to (0,0)} f(x,y) = 1$.\\
  Sean $A_1 = \{ (x,y) \in \Rn{2} : x \ne 0\}, \, A_2 = \{ (x,y) \in \Rn{2} : x = 0\}$ y 
  \begin{align*}
-  f_1 &: A_1 \to \R \\
-  &f_1(x,y) = \frac{e^x - 1}{x}, \\
-  f_2 &: A_2 \to \R \\
-  &f_2(x,y) = 1.
+  f_1 &: A_1 \to \R,\quad f_1(x,y) = \frac{e^x - 1}{x}; \\
+  f_2 &: A_2 \to \R,\quad f_2(x,y) = 1.
   \end{align*}
  Como 
  \[
@@ -443,34 +438,33 @@ Como adem\'as $\lim_{(x,y) \to (0,0)} f_2(x,y) = 1$ y $A_1 \cup A_2 = \Rn{2}$, p
 \end{example}
 
 \begin{definition}\textbf{L\'imite infinito.} \label{def:lim_inf}
-  Sean $f : A \subset \Rn{n} \to \R$ una funci\'on y $x_0$ un punto de acumulaci\'on de $A$. 
+  Sean $f : A \subset \Rn{n} \to \R$ una funci\'on y $\mathbf{x}_0$ un punto de acumulaci\'on de $A$. 
   \begin{enumerate} %[I.]
-   \item Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_o$ es $+\infty$} o que \emph{$f$ tiende a $+\infty$ cuando $x$ tiende a $x_o$} si
+   \item Decimos que \emph{el l\'imite de $f$ para $\mathbf{x}$ tendiendo a $\mathbf{x}_0$ es $+\infty$} o que \emph{$f$ tiende a $+\infty$ cuando $\mathbf{x}$ tiende a $\mathbf{x}_0$} si
     \[
-      \forall M > 0 \, \exists \delta > 0 / f(x) > M \, \forall 
-	  x \in B_{\delta}^*(x_o) \cap A.
+      \forall M > 0\;\;\exists \delta > 0\;|\;f(\mathbf{x}) > M, \; \forall 
+	  \mathbf{x} \in B_{\delta}^*(\mathbf{x}_0) \cap A.
     \]
     En este caso, utilizamos la notaci\'on
     \[
-      f(x) \xrightarrow[x \to x_o]{} +\infty \quad \text{o} \quad \lim_{x \to x_o} f(x) = +\infty.
+      f(\mathbf{x}) \xrightarrow[\mathbf{x} \to \mathbf{x}_0]{} +\infty \quad \text{o} \quad \lim_{\mathbf{x} \to \mathbf{x}_0} f(\mathbf{x}) = +\infty.
     \]
-   \item Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_o$ es $-\infty$} o que \emph{$f$ tiende a $-\infty$ cuando $x$ tiende a $x_o$} si
+   \item Decimos que \emph{el l\'imite de $f$ para $\mathbf{x}$ tendiendo a $\mathbf{x}_0$ es $-\infty$} o que \emph{$f$ tiende a $-\infty$ cuando $\mathbf{x}$ tiende a $\mathbf{x}_0$} si
     \[
-      \forall M > 0 \, \exists \delta > 0 / f(x) < -M \, \forall 
-	  x \in B_{\delta}^*(x_o) \cap A.
-    \]
-    En este caso, utilizamos la notaci\'on
-    \[
-      f(x) \xrightarrow[x \to x_o]{} -\infty \quad \text{o} \quad \lim_{x \to x_o} f(x) = -\infty.
-    \]
-   \item Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_o$ es $\infty$} o que \emph{$f$ tiende a $\infty$ cuando $x$ tiende a $x_o$} si
-    \[
-      \forall M > 0 \, \exists \delta > 0 / \abs{f(x)} > M \, \forall 
-	  x \in B_{\delta}^*(x_o) \cap A.
+      \forall M > 0\;\;\exists \delta > 0 \;|\; f(\mathbf{x}) < -M, \; \forall 
+	  \mathbf{x} \in B_{\delta}^*(\mathbf{x}_0) \cap A.
     \]
     En este caso, utilizamos la notaci\'on
     \[
-      f(x) \xrightarrow[x \to x_o]{} \infty \quad \text{o} \quad \lim_{x \to x_o} f(x) = \infty.
+      f(\mathbf{x}) \xrightarrow[\mathbf{x} \to \mathbf{x}_0]{} -\infty \quad \text{o} \quad \lim_{\mathbf{x} \to \mathbf{x}_0} f(\mathbf{x}) = -\infty.
+    \]
+   \item Decimos que \emph{el l\'imite de $f$ para $\mathbf{x}$ tendiendo a $\mathbf{x}_0$ es $\infty$} o que \emph{$f$ tiende a $\infty$ cuando $\mathbf{x}$ tiende a $\mathbf{x}_0$} si
+    \[
+      \forall M > 0 \;\; \exists \delta > 0 \;|\; \abs{f(\mathbf{x})} > M.\; \forall \mathbf{x} \in B_{\delta}^*(\mathbf{x}_0) \cap A.
+    \]
+    En este caso, utilizamos la notaci\'on
+    \[
+      f(\mathbf{x}) \xrightarrow[\mathbf{x} \to \mathbf{x}_0]{} \infty \quad \text{o} \quad \lim_{\mathbf{x} \to \mathbf{x}_0} f(\mathbf{x}) = \infty.
     \]
   \end{enumerate}
 \end{definition}
@@ -479,12 +473,12 @@ Como adem\'as $\lim_{(x,y) \to (0,0)} f_2(x,y) = 1$ y $A_1 \cup A_2 = \Rn{2}$, p
 Sean $f : \Rn{n} \to \R$ una funci\'on y $L \in \R$. Decimos que
 %la manera de presentar esta definici\'on no es consistente con las anteriores
 \[
- f(x) \xrightarrow[\norm{x} \to +\infty]{} L \quad \text{o} \quad \lim_{\norm{x} \to +\infty} f(x) = L
+ f(\mathbf{x}) \xrightarrow[\norm{\mathbf{x}} \to +\infty]{} L \quad \text{o} \quad \lim_{\norm{\mathbf{x}} \to +\infty} f(\mathbf{x}) = L
 \]
 si 
 \[ 
- \forall \varepsilon > 0 \, \exists \delta > 0 / f(x) \in B_{\varepsilon}(L) \, \forall 
- x / \norm{x} > \delta.
+ \forall \varepsilon > 0 \;\;\exists \delta > 0 \;|\; f(\mathbf{x}) \in B_{\varepsilon}(L),\; \forall 
+ \mathbf{x} \;|\; \norm{\mathbf{x}} > \delta.
 \]
 \end{definition}
 
@@ -493,8 +487,8 @@ si
 \begin{propertie} \label{prop:lim_2}
  Sean $f:A \subset \Rn{m} \to \Rn{m}$, $g:A \to \R$ y $x_0$ un punto de acumulaci\'on de $A$, tales que 
  \[
-  \lim_{x \to x_o} g(x) = L_g \quad \wedge \quad \lim_{x \to x_o} \left( (f + g)_{(x)} \right) = L.
+  \lim_{x \to x_0} g(x) = L_g \quad \wedge \quad \lim_{x \to x_0} \left( (f + g)_{(x)} \right) = L.
  \]
- Entonces, existe el l\'imite $\lim_{x \to x_o} f(x)$ y, adem\'as, $\lim_{x \to x_o} f(x) = L - L_g$.
+ Entonces, existe el l\'imite $\lim_{x \to x_0} f(x)$ y, adem\'as, $\lim_{x \to x_0} f(x) = L - L_g$.
 \end{propertie}
 \fi
