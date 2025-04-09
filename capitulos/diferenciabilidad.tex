@@ -2,73 +2,73 @@
 
 \begin{definition}\textbf{Diferenciabilidad de campos escalares.} \label{def:dif_escalar}
 \mbox{}
-Sean $f: A \subset \Rn{n} \to \R$ y $x_o \in \interior{(A)}$. Decimos que $f$ es \emph{diferenciable en $x_o$} si $\exists m \in \Rn{n}$ tal que
+Sean $f: A \subset \Rn{n} \to \R$ y $\mathbf{x}_0 \in \interior{A}$. Decimos que $f$ es \emph{diferenciable en $\mathbf{x}_0$} si $\exists\:\mathbf{m} \in \Rn{n}$ tal que
 \[
-  \lim_{x \to x_o} \frac{f(x) - f(x_o) - m \cdot (x - x_o)}{\norm{x - x_o}} = 0.
+  \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{f(\mathbf{x}) - f(\mathbf{x}_0) - \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0)}{\norm{\mathbf{x} - \mathbf{x}_0}} = 0.
 \]
-Si $A$ es un conjunto abierto, decimos que $f$ es \emph{diferenciable} si es diferenciable en cada punto $x_o \in A$.
+Si $A$ es un conjunto abierto, decimos que $f$ es \emph{diferenciable} si es diferenciable en cada punto $\mathbf{x}_0 \in A$.
 \end{definition}
 
 \begin{definition}\textbf{Diferenciabilidad, caso general.} \label{def:dif_general}
 \mbox{}
 
-Sean $f: A \subset \Rn{n} \to \Rn{m}$ y $x_o \in \interior{(A)}$. Decimos que $f$ es \emph{diferenciable en $x_o$} si $\exists M \in \Rnp{m}{n}$ tal que
+Sean $f: A \subset \Rn{n} \to \Rn{m}$ y $\mathbf{x}_0 \in \interior{(A)}$. Decimos que $f$ es \emph{diferenciable en $\mathbf{x}_0$} si $\exists M \in \Rnp{m}{n}$ tal que
 \[
-  \lim_{x \to x_o} \frac{\norm{f(x) - f(x_o) - M \cdot (x - x_o)}}{\norm{x - x_o}} = 0.
+  \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{\norm{f(\mathbf{x}) - f(\mathbf{x}_0) - M \cdot (\mathbf{x} - \mathbf{x}_0)}}{\norm{\mathbf{x} - \mathbf{x}_0}} = 0.
 \]
-Si $A$ es un conjunto abierto, decimos que $f$ es \emph{diferenciable} si es diferenciable en cada punto $x_o \in A$.
+Si $A$ es un conjunto abierto, decimos que $f$ es \emph{diferenciable} si es diferenciable en cada punto $\mathbf{x}_0 \in A$.
 \end{definition}
 
 \begin{theorem}\textbf{Diferenciabilidad y continuidad.} \label{teo:difCont}
 \mbox{}
 
-Sean $f: A \subset \Rn{n} \to \R$ y $x_o \in  A^{\circ}$. Si $f$ es diferenciable en $x_o$, entonces $f$ es continua en $x_o$.
+Sean $f: A \subset \Rn{n} \to \R$ y $\mathbf{x}_0 \in  A^{\circ}$. Si $f$ es diferenciable en $\mathbf{x}_0$, entonces $f$ es continua en $\mathbf{x}_0$.
  \begin{proof}
  \mbox{}
  
- Como $f$ es diferenciable en $x_o, \exists m \in \Rn{n}$ tal que
+ Como $f$ es diferenciable en $\mathbf{x}_0, \exists\:\mathbf{m} \in \Rn{n}$ tal que
  \[
-  \lim_{x \to x_o} \frac{f(x) - f(x_o) - m \cdot (x - x_o)}{\norm{x - x_o}} = 0.
+  \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{f(\mathbf{x}) - f(\mathbf{x}_0) - \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0)}{\norm{\mathbf{x} - \mathbf{x}_0}} = 0.
  \]
-Por lo tanto, $\exists \delta_o > 0$ tal que 
+Por lo tanto, $\exists\:\delta_0 > 0$ tal que 
 \[
- x \in B_{\delta_o}^* \cap A \then 
- \abs{ \frac{f(x) - f(x_o) - m \cdot (x - x_o)}{\norm{x - x_o}} } < 1.
+ \mathbf{x} \in B_{\delta_0}^* \cap A \then 
+ \abs{ \frac{f(\mathbf{x}) - f(\mathbf{x}_0) - \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0)}{\norm{\mathbf{x} - \mathbf{x}_0}} } < 1.
 \]
-Entonces, para este $\delta_o$, se cumple que
+Entonces, para este $\delta_0$, se cumple que
 \[
- \abs{ f(x) - f(x_o) - m \cdot (x - x_o) } < \norm{x - x_o}, \, \forall x \in B_{\delta_o}^* \cap A.
+ \abs{ f(\mathbf{x}) - f(\mathbf{x}_0) - \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0) } < \norm{\mathbf{x} - \mathbf{x}_0}, \, \forall \mathbf{x} \in B_{\delta_0}^* \cap A.
 \]
-% Como ambos miembros de esta desigualdad (estricta) son iguales cuando $x = x_o$, vale que
+% Como ambos miembros de esta desigualdad (estricta) son iguales cuando $\mathbf{x} = \mathbf{x}_0$, vale que
 % \[
-%  \abs{ f(x) - f(x_o) - m \cdot (x - x_o) } \le \norm{x - x_o}, \, \forall x \in B_{\delta_o} \cap A.
+%  \abs{ f(\mathbf{x}) - f(\mathbf{x}_0) - \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0) } \le \norm{\mathbf{x} - \mathbf{x}_0}, \, \forall \mathbf{x} \in B_{\delta_0} \cap A.
 % \]
 Por lo tanto,
 \begin{align*}
-\abs{ f(x) - f(x_o) } &=   \abs{ f(x) - f(x_o) - m \cdot (x - x_o) + m \cdot (x - x_o) } \le \\
-                      &\le \abs{ f(x) - f(x_o) - m \cdot (x - x_o) } + \abs{ m \cdot (x - x_o) } < \\
-                      &< \norm{x - x_o} + \abs{ m \cdot (x - x_o) }, \, 
-                      \forall x \in B^*_{\delta_o} \cap A.
+\abs{ f(\mathbf{x}) - f(\mathbf{x}_0) } &=   \abs{ f(\mathbf{x}) - f(\mathbf{x}_0) - \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0) + \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0) } \le \\
+                      &\le \abs{ f(\mathbf{x}) - f(\mathbf{x}_0) - \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0) } + \abs{ \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0) } < \\
+                      &< \norm{\mathbf{x} - \mathbf{x}_0} + \abs{ \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0) }, \, 
+                      \forall \mathbf{x} \in B^*_{\delta_0} \cap A.
 \end{align*}
-Por la desigualdad de Cauchy-Schwarz, $\abs{ m \cdot (x - x_o) } \le \norm{m} \norm{x - x_o}$, y entonces:
+Por la desigualdad de Cauchy-Schwarz, $\abs{ \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0) } \le \norm{\mathbf{m}} \norm{\mathbf{x} - \mathbf{x}_0}$, y entonces:
 \begin{align*}
-\abs{ f(x) - f(x_o) } &< \norm{x - x_o} + \abs{ m \cdot (x - x_o) } \le \\
-                      &\le \norm{x - x_o} + \norm{m} \norm{x - x_o} = \\
-                      &=  \left( 1 + \norm{m} \right) \norm{x - x_o}, \, 
-                      \forall x \in B^*_{\delta_o} \cap A.
+\abs{ f(\mathbf{x}) - f(\mathbf{x}_0) } &< \norm{\mathbf{x} - \mathbf{x}_0} + \abs{ \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0) } \le \\
+                      &\le \norm{\mathbf{x} - \mathbf{x}_0} + \norm{\mathbf{m}} \norm{\mathbf{x} - \mathbf{x}_0} = \\
+                      &=  \left( 1 + \norm{\mathbf{m}} \right) \norm{\mathbf{x} - \mathbf{x}_0}, \, 
+                      \forall \mathbf{x} \in B^*_{\delta_0} \cap A.
 \end{align*}
-Esta condici\'on garantiza la continuidad de $f$ en $x_o$. En efecto, dado $\epsilon > 0$, sea $\delta = \min \{\delta_o, \frac{\epsilon}{1 + \norm{m}} \}$. Para este $\delta$ se cumple que:
+Esta condici\'on garantiza la continuidad de $f$ en $\mathbf{x}_0$. En efecto, dado $\epsilon > 0$, sea $\delta = \min \{\delta_0, \frac{\epsilon}{1 + \norm{\mathbf{m}}} \}$. Para este $\delta$ se cumple que:
 \begin{align*}
- \abs{ f(x) - f(x_o) } &< \left( 1 + \norm{m} \right) \norm{x - x_o} < \\
-                       &<   \left( 1 + \norm{m} \right) \delta \le \\
-                       &\le \left( 1 + \norm{m} \right) \frac{\epsilon}{1 + \norm{m}} = \epsilon, 
-                       \, \forall x \in B^*_{\delta} \cap A,
+ \abs{ f(\mathbf{x}) - f(\mathbf{x}_0) } &< \left( 1 + \norm{\mathbf{m}} \right) \norm{\mathbf{x} - \mathbf{x}_0} < \\
+                       &<   \left( 1 + \norm{\mathbf{m}} \right) \delta \le \\
+                       &\le \left( 1 + \norm{\mathbf{m}} \right) \frac{\epsilon}{1 + \norm{\mathbf{m}}} = \epsilon, 
+                       \, \forall \mathbf{x} \in B^*_{\delta} \cap A,
 \end{align*}
-lo que, por definici\'on de l\'imite \footnote{Como $x_o \in \interior{(A)}$, $x_o$ es un punto de acumulaci\'on de $A$. }, significa que 
+lo que, por definici\'on de l\'imite \footnote{Como $\mathbf{x}_0 \in \interior{(A)}$, $\mathbf{x}_0$ es un punto de acumulaci\'on de $A$. }, significa que 
 \[
- \lim_{x \to x_o}f(x) = f(x_o).
+ \lim_{\mathbf{x} \to \mathbf{x}_0}f(\mathbf{x}) = f(\mathbf{x}_0).
 \]
-Es decir, $f$ es continua en $x_o$.
+Es decir, $f$ es continua en $\mathbf{x}_0$.
 \end{proof}
 \begin{obs} La implicaci\'on rec\'iproca de la proposici\'on \eqref{teo:difCont} es falsa. 
  \begin{proof} La funci\'on
@@ -76,7 +76,7 @@ Es decir, $f$ es continua en $x_o$.
       g & :\R \to \R \\
         & g(t) = \abs{t}
  \end{align*}
-es continua en $t_o = 0$, pero no es diferenciable en $t_o = 0$. Se deja como ejercicio para el lector verificar esta afirmaci\'on.
+es continua en $t_0 = 0$, pero no es diferenciable en $t_0 = 0$. Se deja como ejercicio para el lector verificar esta afirmaci\'on.
  \end{proof}
 \end{obs}
 \end{theorem}
@@ -85,121 +85,121 @@ es continua en $t_o = 0$, pero no es diferenciable en $t_o = 0$. Se deja como ej
 \mbox{}
 
 \iffalse
-Sean $f: A \subset \Rn{2} \to \R$ y $(x_o, y_o) \in \interior{(A)}$, tales que $\exists \alpha, \beta \in \R \, /$
+Sean $f: A \subset \Rn{2} \to \R$ y $(\mathbf{x}_0, y_0) \in \interior{(A)}$, tales que $\exists \alpha, \beta \in \R \, /$
 \[
- \lim_{(x,y) \to (x_o,y_o)} \frac{f(x,y) - f(x_o,y_o) - \alpha(x - x_o) - \beta(y - y_o)}
-                                 {\norm{(x - x_o, y - y_o)}} = 0
+ \lim_{(\mathbf{x},y) \to (\mathbf{x}_0,y_0)} \frac{f(\mathbf{x},y) - f(\mathbf{x}_0,y_0) - \alpha(\mathbf{x} - \mathbf{x}_0) - \beta(y - y_0)}
+                                 {\norm{(\mathbf{x} - \mathbf{x}_0, y - y_0)}} = 0
 \]
-(es decir, $f$ es diferenciable en $(x_o,y_o)$). Entonces existen las derivadas parciales de $f$ en $(x_o,y_o)$ y, adem\'as,
+(es decir, $f$ es diferenciable en $(\mathbf{x}_0,y_0)$). Entonces existen las derivadas parciales de $f$ en $(\mathbf{x}_0,y_0)$ y, adem\'as,
 \[
- \dif{f}{x} (x_o,y_o) = \alpha, \quad \dif{f}{y}(x_o,y_o) = \beta.
+ \dif{f}{\mathbf{x}} (\mathbf{x}_0,y_0) = \alpha, \quad \dif{f}{y}(\mathbf{x}_0,y_0) = \beta.
 \]
 
  \begin{proof}
  \mbox{}
  
-Sea $(x,y) = (x_o,y_o) + h e_1$, siendo $h \in \R$ y $e_1$ el primer vector can\'onico ($e_1 = (1,0)$). Es decir, definimos una funci\'on $g:(-\delta,\delta) \to \Rn{2} / g(h) = (x_o,y_o) + h e_1$, con $\delta > 0$, lo suficientemente peque\~{n}o como para que $\im(g) \subset A$ \footnote{Cu\'al de las hip\'oteis asegura la existencia de un tal $\delta$?}, y llamamos $(x,y) = g(h)$. Notemos que $g(h) \to (x_o,y_o)$ cuando $h \to 0$. 
+Sea $(\mathbf{x},y) = (\mathbf{x}_0,y_0) + h \mathbf{e}_1$, siendo $h \in \R$ y $\mathbf{e}_1$ el primer vector can\'onico ($\mathbf{e}_1 = (1,0)$). Es decir, definimos una funci\'on $\mathbf{g}:(-\delta,\delta) \to \Rn{2} / \mathbf{g}(h) = (\mathbf{x}_0,y_0) + h \mathbf{e}_1$, con $\delta > 0$, lo suficientemente peque\~{n}o como para que $\text{Img}(\mathbf{g}) \subset A$ \footnote{Cu\'al de las hip\'oteis asegura la existencia de un tal $\delta$?}, y llamamos $(\mathbf{x},y) = \mathbf{g}(h)$. Notemos que $\mathbf{g}(h) \to (\mathbf{x}_0,y_0)$ cuando $h \to 0$. 
 
 Por la diferenciabilidad, tenemos que 
 \[
- \lim_{(x,y) \to (x_o,y_o)} \frac{f(x,y) - f(x_o,y_o) - \alpha(x - x_o) - \beta(y - y_o)}
-                                 {\norm{(x - x_o, y - y_o)}} = 0
+ \lim_{(\mathbf{x},y) \to (\mathbf{x}_0,y_0)} \frac{f(\mathbf{x},y) - f(\mathbf{x}_0,y_0) - \alpha(\mathbf{x} - \mathbf{x}_0) - \beta(y - y_0)}
+                                 {\norm{(\mathbf{x} - \mathbf{x}_0, y - y_0)}} = 0
 \]
-y entonces, si componemos con la funci\'on $g$ (reemplazamos $(x,y) = (x_o,y_o) + h e_1$), la propiedad del l\'imite de la composici\'on \eqref{prop:lim_comp} implica que
+y entonces, si componemos con la funci\'on $\mathbf{g}$ (reemplazamos $(\mathbf{x},y) = (\mathbf{x}_0,y_0) + h \mathbf{e}_1$), la propiedad del l\'imite de la composici\'on \eqref{prop:lim_comp} implica que
 \begin{align*}
-  0 & = \lim_{h \to 0} \frac{f(x_o + h,y_o) - f(x_o,y_o) - \alpha(x_o + h - x_o) - \beta(y_o - y_o)}
-                                 {\norm{(x_o + h - x_o, y_o - y_o)}} = \\
-    & = \lim_{h \to 0} \frac{f(x_o + h,y_o) - f(x_o,y_o) - \alpha h}{\norm{h e_1}} = \\
-    & = \lim_{h \to 0} \frac{f(x_o + h,y_o) - f(x_o,y_o) - \alpha h}{\abs{h}} .
+  0 & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) - \alpha(\mathbf{x}_0 + h - \mathbf{x}_0) - \beta(y_0 - y_0)}
+                                 {\norm{(\mathbf{x}_0 + h - \mathbf{x}_0, y_0 - y_0)}} = \\
+    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) - \alpha h}{\norm{h \mathbf{e}_1}} = \\
+    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) - \alpha h}{\abs{h}} .
 \end{align*}                                
-Ahora bien, este l\'imite es $0$ si y solo si
+Ahora bien, este l\'imite es $0$ si y s\'olo si
 \[
- \lim_{h \to 0} \abs{ \frac{f(x_o + h,y_o) - f(x_o,y_o) - \alpha h}{\abs{h}} } = 0,
+ \lim_{h \to 0} \abs{ \frac{f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) - \alpha h}{\abs{h}} } = 0,
 \]
 por la propiedad \eqref{prop:lim_1}. Entonces,
 \begin{align*}
-  0 & =  \lim_{h \to 0} \abs{ \frac{f(x_o + h,y_o) - f(x_o,y_o) - \alpha h}{\abs{h}} }
-      = \lim_{h \to 0} \frac{ \abs{ f(x_o + h,y_o) - f(x_o,y_o) - \alpha h }}{\abs{ \, \abs{h} \, }} = \\
-    & = \lim_{h \to 0} \frac{ \abs{ f(x_o + h,y_o) - f(x_o,y_o) - \alpha h }}{\abs{h}}
-      = \lim_{h \to 0} \abs{ \frac{ f(x_o + h,y_o) - f(x_o,y_o) - \alpha h }{h}},
+  0 & =  \lim_{h \to 0} \abs{ \frac{f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) - \alpha h}{\abs{h}} }
+      = \lim_{h \to 0} \frac{ \abs{ f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) - \alpha h }}{\abs{ \, \abs{h} \, }} = \\
+    & = \lim_{h \to 0} \frac{ \abs{ f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) - \alpha h }}{\abs{h}}
+      = \lim_{h \to 0} \abs{ \frac{ f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) - \alpha h }{h}},
 \end{align*} 
 lo cual, otra vez por la propiedad \eqref{prop:lim_1}, implica que 
 \[
- 0 = \lim_{h \to 0} \frac{ f(x_o + h,y_o) - f(x_o,y_o) - \alpha h }{h} =
-     \lim_{h \to 0} \left( \frac{ f(x_o + h,y_o) - f(x_o,y_o) }{h} - \alpha \right) .
+ 0 = \lim_{h \to 0} \frac{ f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) - \alpha h }{h} =
+     \lim_{h \to 0} \left( \frac{ f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) }{h} - \alpha \right) .
 \]
 \fi
 
 \iffalse
 Entonces, por la propiedad \eqref{prop:lim_2}, tenemos que
 \[
- \lim_{h \to 0} \frac{ f(x_o + h,y_o) - f(x_o,y_o) }{h} = \alpha,
+ \lim_{h \to 0} \frac{ f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) }{h} = \alpha,
 \]
 \fi
-Sean $f: A \subset \Rn{n} \to \R$ y $x_o \in \interior{(A)}$, tales que $\exists m = (m_1, m_2, \cdots, m_n) \in \Rn{n} \, /$
+Sean $f: A \subset \Rn{n} \to \R$ y $\mathbf{x}_0 \in \interior{(A)}$, tales que $\exists \mathbf{m} = (m_1, m_2, \cdots, m_n) \in \Rn{n} \, /$
 \[
- \lim_{x \to x_o} \frac{f(x) - f(x_o) - m \cdot (x - x_o)}
-                                 {\norm{x - x_o}} = 0
+ \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{f(\mathbf{x}) - f(\mathbf{x}_0) - \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0)}
+                                 {\norm{\mathbf{x} - \mathbf{x}_0}} = 0
 \]
-(es decir, $f$ es diferenciable en $x_o$). Entonces existen las derivadas parciales de $f$ en $x_o$ y, adem\'as,
+(es decir, $f$ es diferenciable en $\mathbf{x}_0$). Entonces existen las derivadas parciales de $f$ en $\mathbf{x}_0$ y, adem\'as,
 \[
- \dif{f}{x_j} (x_o) = m_j \quad \forall j = 1, 2, \cdots, n.
+ \dif{f}{x_j} (\mathbf{x}_0) = m_j \quad \forall j = 1, 2, \cdots, n.
 \]
 
  \begin{proof}
  \mbox{}
  
-Sea $x = x_o + h e_j$, siendo $h \in \R$ y $e_j$ el $j$-\'esimo vector can\'onico (el vector de $\Rn{n}$ que tiene un $1$ en la posici\'on $j$ y ceros en todas las dem\'as). Es decir, definimos una funci\'on $g:(-\delta,\delta) \to \Rn{n} / g(h) = x_o + h e_j$, con $\delta > 0$, lo suficientemente peque\~{n}o como para que $\im(g) \subset A$ \footnote{¿Cul\'al de las hip\'otesis asegura la existencia de un tal $\delta$?}, y llamamos $x = g(h)$. Notemos que $g(h) \to x_o$ cuando $h \to 0$. 
+Sea $\mathbf{x} = \mathbf{x}_0 + h \mathbf{e}_j$, siendo $h \in \R$ y $\mathbf{e}_j$ el $j$-\'esimo vector can\'onico (el vector de $\Rn{n}$ que tiene un $1$ en la posici\'on $j$ y ceros en todas las dem\'as). Es decir, definimos una funci\'on $\mathbf{g}:(-\delta,\delta) \to \Rn{n}\;|\; \mathbf{g}(h) = \mathbf{x}_0 + h \mathbf{e}_j$, con $\delta > 0$, lo suficientemente peque\~{n}o como para que $\text{Img}(\mathbf{g}) \subset A$ \footnote{¿Cul\'al de las hip\'otesis asegura la existencia de un tal $\delta$?}, y llamamos $\mathbf{x} = \mathbf{g}(h)$. Notemos que $\mathbf{g}(h) \to \mathbf{x}_0$ cuando $h \to 0$. 
 
 Por la diferenciabilidad, tenemos que 
 \[
- \lim_{x \to x_o} \frac{f(x) - f(x_o) - m \cdot (x - x_o)}
-                                 {\norm{x - x_o}} = 0
+ \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{f(\mathbf{x}) - f(\mathbf{x}_0) - \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0)}
+                                 {\norm{\mathbf{x} - \mathbf{x}_0}} = 0
 \]
-y entonces, si componemos con la funci\'on $g$ (reemplazamos $x = x_o + h e_j$), la propiedad del l\'imite de la composici\'on \eqref{prop:lim_comp} implica que
+y entonces, si componemos con la funci\'on $\mathbf{g}$ (reemplazamos $\mathbf{x} = \mathbf{x}_0 + h \mathbf{e}_j$), la propiedad del l\'imite de la composici\'on \eqref{prop:lim_comp} implica que
 \begin{align*}
-  0 & = \lim_{h \to 0} \frac{f(x_o + h e_j) - f(x_o) - m \cdot ((x_o + he_j) - x_o)}
-                                 {\norm{(x_o + he_j) - x_o}} = \\
-    & = \lim_{h \to 0} \frac{f(x_o + h e_j) - f(x_o) - m \cdot (he_j)}{\norm{h e_j}} = \lim_{h \to 0} \frac{f(x_o + h e_j) - f(x_o) - h(m \cdot e_j)}{\norm{h e_j}} =\\
-    & = \lim_{h \to 0} \frac{f(x_o + h e_j) - f(x_o) - h m_j}{\abs{h}} .
+  0 & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) - \mathbf{m} \cdot ((\mathbf{x}_0 + h\mathbf{e}_j) - \mathbf{x}_0)}
+                                 {\norm{(\mathbf{x}_0 + h\mathbf{e}_j) - \mathbf{x}_0}} = \\
+    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) - \mathbf{m} \cdot (h\mathbf{e}_j)}{\norm{h \mathbf{e}_j}} = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) - h(\mathbf{m} \cdot \mathbf{e}_j)}{\norm{h \mathbf{e}_j}} =\\
+    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) - h m_j}{\abs{h}} .
 \end{align*}                                
-Ahora bien, este l\'imite es $0$ si y solo si
+Ahora bien, este l\'imite es $0$ si y s\'olo si
 \[
- \lim_{h \to 0} \abs{ \frac{f(x_o + h e_j) - f(x_o) - h m_j}{\abs{h}} } = 0,
+ \lim_{h \to 0} \abs{ \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) - h m_j}{\abs{h}} } = 0,
 \]
 por la propiedad \eqref{prop:lim_1}. Entonces,
 \begin{align*}
-  0 & = \lim_{h \to 0} \abs{ \frac{f(x_o + h e_j) - f(x_o) - h m_j}{\abs{h}} }
-      = \lim_{h \to 0} \frac{\abs{f(x_o + h e_j) - f(x_o) - h m_j}}{\abs{\abs{h}}} = \\
-    & = \lim_{h \to 0} \frac{\abs{f(x_o + h e_j) - f(x_o) - h m_j}}{\abs{h}}
-      = \lim_{h \to 0} \abs{ \frac{f(x_o + h e_j) - f(x_o) - h m_j}{h} },
+  0 & = \lim_{h \to 0} \abs{ \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) - h m_j}{\abs{h}} }
+      = \lim_{h \to 0} \frac{\abs{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) - h m_j}}{\abs{\abs{h}}} = \\
+    & = \lim_{h \to 0} \frac{\abs{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) - h m_j}}{\abs{h}}
+      = \lim_{h \to 0} \abs{ \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) - h m_j}{h} },
 \end{align*} 
 lo cual, otra vez por la propiedad \eqref{prop:lim_1}, implica que 
 \[
- 0 = \lim_{h \to 0} \frac{f(x_o + h e_j) - f(x_o) - h m_j}{h} =
-     \lim_{h \to 0} \left( \frac{f(x_o + h e_j) - f(x_o)}{h} - m_j \right) .
+ 0 = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) - h m_j}{h} =
+     \lim_{h \to 0} \left( \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0)}{h} - m_j \right) .
 \]
 
 Es f\'acil probar por definici\'on que esta \'ultima condici\'on implica que
 \[
- \lim_{h \to 0} \frac{ f(x_o + h e_j) - f(x_o) }{h} = m_j.
+ \lim_{h \to 0} \frac{ f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) }{h} = m_j.
 \]
 En efecto, dado $\epsilon > 0$ existe $\delta > 0$ tal que 
 \[
- \abs{ \left( \frac{ f(x_o + h e_j) - f(x_o) }{h} - m_j \right) - 0 } < \epsilon, \, \forall h : 0 < \abs{h} < \delta,
+ \abs{ \left( \frac{ f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) }{h} - m_j \right) - 0 } < \epsilon, \, \forall h : 0 < \abs{h} < \delta,
 \]
 porque el l\'imite es 0. Como claramente 
 \[
- \abs{ \left( \frac{ f(x_o + h e_j) - f(x_o) }{h} - m_j \right) - 0 } = 
- \abs{\frac{ f(x_o + h e_j) - f(x_o) }{h} - m_j},
+ \abs{ \left( \frac{ f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) }{h} - m_j \right) - 0 } = 
+ \abs{\frac{ f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) }{h} - m_j},
 \]
 se tiene (por definici\'on de l\'imite) que 
 \[
- \lim_{h \to 0} \frac{ f(x_o + h e_j) - f(x_o) }{h} = m_j.
+ \lim_{h \to 0} \frac{ f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0) }{h} = m_j.
 \]
 Esto \'ultimo, por definici\'on de derivada parcial, significa que
 \[
-  \dif{f}{x_j} (x_o) = m_j,
+  \dif{f}{x_j} (\mathbf{x}_0) = m_j,
 \]
 como quer\'iamos probar. 
 
@@ -208,12 +208,12 @@ como quer\'iamos probar.
 \begin{obs}
  Es un error decir, en el \'ultimo paso de la demostraci\'on, que por la linealidad del l\'imite
  \[
-  \lim_{h \to 0} \left( \frac{f(x_o + h e_j) - f(x_o)}{h} - m_j \right) = 
-  \lim_{h \to 0} \left( \frac{f(x_o + h e_j) - f(x_o)}{h} \right) - \lim_{h \to 0} m_j = 0,
+  \lim_{h \to 0} \left( \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0)}{h} - m_j \right) = 
+  \lim_{h \to 0} \left( \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0)}{h} \right) - \lim_{h \to 0} m_j = 0,
  \]
 ya que la existencia del l\'imite 
 \[
-\lim_{h \to 0} \left( \frac{f(x_o + h e_j) - f(x_o)}{h} \right)
+\lim_{h \to 0} \left( \frac{f(\mathbf{x}_0 + h \mathbf{e}_j) - f(\mathbf{x}_0)}{h} \right)
 \]
 es parte de lo que debemos probar.
 \end{obs}
@@ -238,14 +238,14 @@ Se deja como ejercicio para el lector la demostraci\'on de esta afirmaci\'on.
 \end{obs}
 \end{theorem}
 
-Una consecuencia directa del teorema \eqref{teo:difDer} es el siguiente corolario:
+Una consecuencia directa del teorema \eqref{teo:difDer} es el siguiente corolario.
 \begin{corollary}
- Sean $f: A \subset \Rn{n} \to \R$ y $x_o \in A^{\circ}$. Son equivalentes:
+ Sean $f: A \subset \Rn{n} \to \R$ y $\mathbf{x}_0 \in A^{\circ}$. Son equivalentes:
  \begin{enumerate} %[I.]
-  \item $f$ es diferenciable en $x_o$;
-  \item existen todas las derivadas parciales de $f$ en $x_o$ y 
+  \item $f$ es diferenciable en $\mathbf{x}_0$;
+  \item existen todas las derivadas parciales de $f$ en $\mathbf{x}_0$ y 
   \[
-   \lim_{x \to x_o} \frac{f(x) - f(x_o) - \grad f (x_o) \cdot (x - x_o)}{\norm{x - x_o}} = 0.
+   \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{f(\mathbf{x}) - f(\mathbf{x}_0) - \grad f (\mathbf{x}_0) \cdot (\mathbf{x} - \mathbf{x}_0)}{\norm{\mathbf{x} - \mathbf{x}_0}} = 0.
   \]
  \end{enumerate}
 \end{corollary}
@@ -254,50 +254,50 @@ Una consecuencia directa del teorema \eqref{teo:difDer} es el siguiente corolari
 % La idea es incluir tres demostraciones, una usando la misma idea que para la demo de las derivadas parciales, otra usando que el delta f se puede escribir de una determinada manera y construyendo el cociente incremental, una tercera utilizando la regla de la cadena
 \mbox{}
 
-Sea $f: A \subset \Rn{n} \to \R$ diferenciable en $x_o \in \interior{A}$. Entonces, $\forall \check{u} \in \Rn{n} \text{tal que } \norm{\check{u}} = 1$ existe en $x_o$ la derivada de $f$ en la direcci\'on de $\check{u}$ y, adem\'as,
+Sea $f: A \subset \Rn{n} \to \R$ diferenciable en $\mathbf{x}_0 \in \interior{A}$. Entonces, $\forall \hat{\mathbf{u}} \in \Rn{n}\;\text{tal que } \norm{\hat{\mathbf{u}}} = 1$ existe en $\mathbf{x}_0$ la derivada de $f$ en la direcci\'on de $\hat{\mathbf{u}}$ y, adem\'as,
 \[
- \frac{\partial f}{\partial \check{u}} (x_o) = \grad f (x_o) \cdot \check{u}.
+ \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}.
 \]
 
  \begin{proof}
  \mbox{}
  
- Sea $x = x_o + h \check{u}$, siendo $h \in \R$. Es decir, definimos una funci\'on 
- \begin{align*}
-      g & :(-\delta,\delta) \to \Rn{n} \\
-        & g(h) = x_o + h \check{u}
- \end{align*}
+ Sea $\mathbf{x} = \mathbf{x}_0 + h \hat{\mathbf{u}}$, siendo $h \in \R$. Es decir, definimos una funci\'on 
+ \begin{gather*}
+      \mathbf{g} :(-\delta,\delta) \to \Rn{n} \\
+      \mathbf{g}(h) = \mathbf{x}_0 + h \hat{\mathbf{u}}
+ \end{gather*}
 
-con $\delta > 0$, lo suficientemente peque\~{n}o como para que $\im(g) \subset A$, y llamamos $x = g(h)$. Notemos que $g(h) \to x_o$ cuando $h \to 0$. 
+con $\delta > 0$, lo suficientemente peque\~{n}o como para que $\text{Img}(\mathbf{g}) \subset A$, y llamamos $\mathbf{x} = \mathbf{g}(h)$. Notemos que $\mathbf{g}(h) \to \mathbf{x}_0$ cuando $h \to 0$. 
 
 Por la diferenciabilidad, tenemos que 
 \[
- \lim_{x \to x_o} \frac{f(x) - f(x_o) - \grad f (x_o) \cdot (x - x_o)}
-                                 {\norm{x - x_o}} = 0
+ \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{f(\mathbf{x}) - f(\mathbf{x}_0) - \grad f (\mathbf{x}_0) \cdot (\mathbf{x} - \mathbf{x}_0)}
+                                 {\norm{\mathbf{x} - \mathbf{x}_0}} = 0
 \]
-y entonces, si componemos con la funci\'on $g$ (reemplazamos $x = x_o + h \check{u}$), la propiedad del l\'imite de la composici\'on \eqref{prop:lim_comp} implica que
+y entonces, si componemos con la funci\'on $\mathbf{g}$ (reemplazamos $\mathbf{x} = \mathbf{x}_0 + h \hat{\mathbf{u}}$), la propiedad del l\'imite de la composici\'on \eqref{prop:lim_comp} implica que
 \begin{align*}
-  0 & = \lim_{h \to 0} \frac{f(x_o + h \check{u}) - f(x_o) - \grad f (x_o) \cdot ((x_o + h _{\delta}(x_o)\check{u}) - x_o) }
-                    {\norm{(x_o + h \check{u}) - x_o}} = \\
-    & = \lim_{h \to 0} \frac{f(x_o + h \check{u}) - f(x_o) - \grad f (x_o) \cdot (h \check{u}) }
-                    {\norm{h \check{u}}} = \\
-    & = \lim_{h \to 0} \frac{f(x_o + h \check{u}) - f(x_o) - h \grad f (x_o) \cdot \check{u} }
-                    {\abs{h} \norm{\check{u}}} = \\
-    & = \lim_{h \to 0} \frac{f(x_o + h \check{u}) - f(x_o) - h \grad f (x_o) \cdot \check{u} }
+  0 & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0) - \grad f (\mathbf{x}_0) \cdot ((\mathbf{x}_0 + h _{\delta}(\mathbf{x}_0)\hat{\mathbf{u}}) - \mathbf{x}_0) }
+                    {\norm{(\mathbf{x}_0 + h \hat{\mathbf{u}}) - \mathbf{x}_0}} = \\
+    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0) - \grad f (\mathbf{x}_0) \cdot (h \hat{\mathbf{u}}) }
+                    {\norm{h \hat{\mathbf{u}}}} = \\
+    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0) - h \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}} }
+                    {\abs{h} \norm{\hat{\mathbf{u}}}} = \\
+    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0) - h \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}} }
                     {\abs{h}}.  
 \end{align*}                                
-Como en la demostraci\'on de la propiedad \eqref{teo:difDer}, este l\'imite es $0$ si y solo si
+Como en la demostraci\'on de la propiedad \eqref{teo:difDer}, este l\'imite es $0$ si y s\'olo si
 \[
- 0 = \lim_{h \to 0} \frac{f(x_o + h \check{u}) - f(x_o) - h \grad f (x_o) \cdot \check{u}}{h} = 
-     \lim_{h \to 0} \left( \frac{f(x_o + h \check{u}) - f(x_o)}{h} - \grad f (x_o) \cdot \check{u} \right),
+ 0 = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0) - h \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}}{h} = 
+     \lim_{h \to 0} \left( \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0)}{h} - \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}} \right),
 \]
 que, como en la demostraci\'on de \eqref{teo:difDer}, implica que 
 \[
- \lim_{h \to 0} \frac{f(x_o + h \check{u}) - f(x_o)}{h} = \grad f (x_o) \cdot \check{u}
+ \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0)}{h} = \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}
 \]
 y por lo tanto, por definici\'on,
 \[
- \frac{\partial f}{\partial \check{u}} (x_o) = \grad f (x_o) \cdot \check{u}.
+ \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}.
 \]
  \end{proof}
 \end{theorem}
@@ -305,75 +305,106 @@ y por lo tanto, por definici\'on,
 \begin{theorem}\textbf{Valores extremos de la derivada direccional.} \label{teo:max_deriv}
 \mbox{}
 
- Sean $f: A \subset \Rn{n} \to \R$ diferenciable en un punto $x_o \in \interior{A}$. Entonces 
+ Sean $f: A \subset \Rn{n} \to \R$ diferenciable en un punto $\mathbf{x}_0 \in \interior{A}$. Entonces 
  \[
-  \max_{\norm{\check{u}} = 1} \frac{\partial f}{\partial \check{u}} (x_o) = \norm{\grad f (x_o)}, \quad 
-  \min_{\norm{\check{u}} = 1} \frac{\partial f}{\partial \check{u}} (x_o) = -\norm{\grad f (x_o)}
+  \max_{\norm{\hat{\mathbf{u}}} = 1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f (\mathbf{x}_0)}, \quad 
+  \min_{\norm{\hat{\mathbf{u}}} = 1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f (\mathbf{x}_0)}
  \]
-y, si $\grad f(x_o) \ne \mathbf{0}$,
+y, si $\grad f(\mathbf{x}_0) \ne \mathbf{0}$,
 \[
- \frac{\partial f}{\partial \check{u}} (x_o) = \norm{\grad f (x_o)} \iff \check{u} = \frac{\grad f(x_o)}{\norm{\grad f(x_o)}}
+ \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f (\mathbf{x}_0)} \iff \hat{\mathbf{u}} = \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}
 \]
 y
 \[
- \frac{\partial f}{\partial \check{u}} (x_o) = -\norm{\grad f (x_o)} \iff \check{u} = -\frac{\grad f(x_o)}{\norm{\grad f(x_o)}}.
+ \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f (\mathbf{x}_0)} \iff \hat{\mathbf{u}} = -\frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}.
 \]
 \begin{proof}
 \mbox{}
 
- Como $f$ es diferenciable en $x_o$, por el teorema \eqref{teo:difDir}, $\forall \check{u} \in \Rn{n} \text{tal que } \norm{\check{u}} = 1$ existe en $x_o$ la derivada de $f$ en la direcci\'on de $\check{u}$ y, adem\'as,
+ Como $f$ es diferenciable en $\mathbf{x}_0$, por el teorema \eqref{teo:difDir}, $\forall \hat{\mathbf{u}} \in \Rn{n}\;\text{tal que } \norm{\hat{\mathbf{u}}} = 1$ existe en $\mathbf{x}_0$ la derivada de $f$ en la direcci\'on de $\hat{\mathbf{u}}$ y, adem\'as,
 \[
- \frac{\partial f}{\partial \check{u}} (x_o) = \grad f (x_o) \cdot \check{u}.
+ \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}.
 \]
 Por la desigualdad de Cauchy-Schwarz, 
 \[
- \abs{\frac{\partial f}{\partial \check{u}} (x_o)} = \abs{\grad f (x_o) \cdot \check{u}} \le \norm{\grad f (x_o)}\norm{\check{u}} = \norm{\grad f (x_o)},
+ \abs{\frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0)} = \abs{\grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}} \le \norm{\grad f (\mathbf{x}_0)}\norm{\hat{\mathbf{u}}} = \norm{\grad f (\mathbf{x}_0)},
 \]
 de modo que tenemos las cotas:
 \[
- -\norm{\grad f (x_o)} \le \frac{\partial f}{\partial \check{u} (x_o)} \le \norm{\grad f (x_o)}.
+ -\norm{\grad f (\mathbf{x}_0)} \le \frac{\partial f}{\partial \hat{\mathbf{u}}}(\mathbf{x}_0) \le \norm{\grad f (\mathbf{x}_0)}.
 \]
 Adem\'as, la desigualdad de Cauchy-Schwarz nos dice que vale
 \[
- \abs{\frac{\partial f}{\partial \check{u}} (x_o)} = \norm{\grad f (x_o)}
+ \abs{\frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0)} = \norm{\grad f (\mathbf{x}_0)}
 \]
-si y solo si el conjunto $\{\grad f(x_o), \check{u} \}$ es linealmente dependiente, condici\'on que, si $\grad f(x_o) \ne \mathbf{0}$, es equivalente a decir que $\check{u}$ es un vector unitario en la direcci\'on de $\grad f(x_o)$. Existen exactamente dos vectores $\check{u}$ con esta caracter\'istica:
+si y s\'olo si el conjunto $\{\grad f(\mathbf{x}_0), \hat{\mathbf{u}} \}$ es linealmente dependiente, condici\'on que, si $\grad f(\mathbf{x}_0) \ne \mathbf{0}$, es equivalente a decir que $\hat{\mathbf{u}}$ es un vector unitario en la direcci\'on de $\grad f(\mathbf{x}_0)$. Existen exactamente dos vectores $\hat{\mathbf{u}}$ con esta caracter\'istica:
 \[
- \check{u}_1 = \frac{\grad f(x_o)}{\norm{\grad f(x_o)}} \quad \text{ y } \quad \check{u}_2 = -\frac{\grad f(x_o)}{\norm{\grad f(x_o)}}.
+ \hat{\mathbf{u}}_1 = \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}} \quad \text{ y } \quad \hat{\mathbf{u}}_2 = -\frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}.
 \]
 Por c\'alculo directo:
 \begin{align*}
- \frac{\partial f}{\partial \check{u}_1} (x_o) &= \grad f (x_o) \cdot \frac{\grad f(x_o)}{\norm{\grad f(x_o)}} = \frac{ \grad f (x_o) \cdot \grad f(x_o) }{\norm{\grad f(x_o)}} = \frac{\norm{\grad f (x_o)}^2 }{\norm{\grad f(x_o)}} = \norm{\grad f (x_o)} \\
+ \frac{\partial f}{\partial \hat{\mathbf{u}}_1} (\mathbf{x}_0) &= \grad f (\mathbf{x}_0) \cdot \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}} = \frac{ \grad f (\mathbf{x}_0) \cdot \grad f(\mathbf{x}_0) }{\norm{\grad f(\mathbf{x}_0)}} = \frac{\norm{\grad f (\mathbf{x}_0)}^2 }{\norm{\grad f(\mathbf{x}_0)}} = \norm{\grad f (\mathbf{x}_0)} \\
 %  
- \frac{\partial f}{\partial \check{u}_2} (x_o) &= \grad f (x_o) \cdot \left( - \frac{\grad f(x_o)}{\norm{\grad f(x_o)}} \right) = -\frac{ \grad f (x_o) \cdot \grad f(x_o) }{\norm{\grad f(x_o)}} = -\frac{\norm{\grad f (x_o)}^2 }{\norm{\grad f(x_o)}} = -\norm{\grad f (x_o)},
+ \frac{\partial f}{\partial \hat{\mathbf{u}}_2} (\mathbf{x}_0) &= \grad f (\mathbf{x}_0) \cdot \left( - \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}} \right) = -\frac{ \grad f (\mathbf{x}_0) \cdot \grad f(\mathbf{x}_0) }{\norm{\grad f(\mathbf{x}_0)}} = -\frac{\norm{\grad f (\mathbf{x}_0)}^2 }{\norm{\grad f(\mathbf{x}_0)}} = -\norm{\grad f (\mathbf{x}_0)},
 \end{align*}
 de modo que efectivamente
 \[
- \max_{\norm{\check{u}}=1} \frac{\partial f}{\partial \check{u}} (x_o) = \norm{\grad f (x_o)}
+ \max_{\norm{\hat{\mathbf{u}}}=1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f (\mathbf{x}_0)}
 \]
-y el m\'aximo se realiza en $\check{u}_1 = \frac{\grad f(x_o)}{\norm{\grad f(x_o)}}$,
+y el m\'aximo se realiza en $\hat{\mathbf{u}}_1 = \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}$,
 y
 \[
- \min_{\norm{\check{u}}=1} \frac{\partial f}{\partial \check{u}} (x_o) = -\norm{\grad f (x_o)}
+ \min_{\norm{\hat{\mathbf{u}}}=1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f (\mathbf{x}_0)}
 \]
-y el m\'onimo se realiza en $\check{u}_2 = -\frac{\grad f(x_o)}{\norm{\grad f(x_o)}}$. \\
+y el m\'inimo se realiza en $\hat{\mathbf{u}}_2 = -\frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}$. \\
 
-Finalmente, observemos que, si $\grad f(x_o) = \mathbf{0}$, 
+Finalmente, observemos que, si $\grad f(\mathbf{x}_0) = \mathbf{0}$, 
 \[
- \frac{\partial f}{\partial \check{u}} (x_o) = \grad f (x_o) \cdot \check{u} = 0 = \norm{\grad f(x_o)} \quad \forall \check{u} \in \Rn{n},
+ \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}} = 0 = \norm{\grad f(\mathbf{x}_0)} \quad \forall \hat{\mathbf{u}} \in \Rn{n},
 \]
 y por lo tanto:
 \[
- \max_{\norm{\check{u}}=1} \frac{\partial f}{\partial \check{u}} (x_o) = \norm{\grad f(x_o)} = 0
+ \max_{\norm{\hat{\mathbf{u}}}=1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f(\mathbf{x}_0)} = 0
 \]
 y
 \[
- \min_{\norm{\check{u}}=1} \frac{\partial f}{\partial \check{u}} (x_o) = -\norm{\grad f(x_o)} = 0.
+ \min_{\norm{\hat{\mathbf{u}}}=1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f(\mathbf{x}_0)} = 0.
 \]
-
 \end{proof}
-
 \end{theorem}
+
+\begin{definition}
+  Sea $\mathbf{F}:U\subseteq\Rn{n}\to\Rn{m}$, diferenciable en $\mathbf{x}_0\in\interior{U}$. Se define la \emph{matriz diferencial de $\mathbf{F}$ en $\mathbf{x}_0$}, y se nota por $\boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)$, a 
+  \[
+  \boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)=
+    \begin{bmatrix*}[r]
+      \grad{f_1} \\
+      \grad{f_2} \\
+      \vdots     \\
+      \grad{f_m}
+    \end{bmatrix*}
+    =
+    \begin{bmatrix*}[r]
+      \dif{f_1}{x_1} & \dif{f_1}{x_2} & \cdots & \dif{f_1}{x_n} \\
+                     &                &        &                \\
+      \dif{f_2}{x_1} & \dif{f_2}{x_2} & \cdots & \dif{f_2}{x_n} \\
+                     &                &        &                \\
+      \vdots         &                & \ddots & \vdots         \\
+                     &                &        &                \\
+      \dif{f_m}{x_1} & \dif{f_m}{x_2} & \cdots & \dif{f_m}{x_n}
+    \end{bmatrix*},
+  \]
+  donde $\mathbf{F}=(f_1, f_2, \dots, f_m)\;|\;f_i:U\subseteq\Rn{n}\to\R,\;i=1,2,\dots, m.$
+
+  Y a su vez, en el caso particular de que $n=m$; se define el \emph{jacobiano de $\mathbf{F}$ en $\mathbf{x}_0$}, y se lo nota por $J_{\mathbf{F}}(\mathbf{x}_0)$, al determinante de la matriz diferencial, \emph{i.e.}
+  \[
+    J_{\mathbf{F}}(\mathbf{x}_0) = \det(\boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)). 
+  \]
+\end{definition}
+
+\begin{obs}
+Notar que $\boldsymbol{D}_{\mathbf{F}}\in\R^{m\times n}$.
+\end{obs}
 
 \begin{theorem}\textbf{Regla de la cadena.} \label{teo:cadena}
 \mbox{}
@@ -383,37 +414,37 @@ y
     g &:A \subset \Rn{n} \to B \subset \Rn{m} \\
     f &:B \subset \Rn{m} \to \Rn{p},
     \end{align*}
-  y un punto $x_o \in \interior{A} \text{ tal que } g(x_o) \in \interior{B}$. Supongamos que $g$ es diferenciable en $x_o$ y que $f$ es diferenciable en $yo = g(x_o)$. Entonces la composic\'on $f \circ g$ es diferenciable en $x_o$ y, adem\'as,
+  y un punto $\mathbf{x}_0 \in \interior{A} \text{ tal que } g(\mathbf{x}_0) \in \interior{B}$. Supongamos que $g$ es diferenciable en $\mathbf{x}_0$ y que $f$ es diferenciable en $yo = g(\mathbf{x}_0)$. Entonces la composic\'on $f \circ g$ es diferenciable en $\mathbf{x}_0$ y, adem\'as,
   \[
-   \boldsymbol{D}(f \circ g)_{(x_o)} = \boldsymbol{D}f_{(y_o)} 
-   \boldsymbol{D}g_{(x_o)}.
+   \boldsymbol{D}(f \circ g)_{(\mathbf{x}_0)} = \boldsymbol{D}f_{(y_0)} 
+   \boldsymbol{D}g_{(\mathbf{x}_0)}.
   \]
 \end{theorem}
 
-\begin{theorem}\textbf{Teorema de la Funci\'on Inversa.} \label{teo:inversa}
+\begin{theorem}\textbf{Teorema de la funci\'on inversa.} \label{teo:inversa}
 \mbox{}
 
- Sean $A \subset \Rn{n}$ un conjunto abierto y $F: A \subset \Rn{n} \to \Rn{n}$ una funci\'on de clase $\mathcal{C}^1$. Sea $x_o \in A$ y supongamos que $\det(\boldsymbol{D}F_{(x_o)}) \ne 0$. Entonces existen un entorno abierto $U \subset A$ de $x_o$ y un entorno abierto $V \subset \Rn{n}$ de $F(x_o)$ tal que $F:U \to V$ (la restricci\'on de $F$ a $U$) tiene inversa $F^{-1}:V \to U$. Esta funci\'on $F^{-1}$ es de clase $\mathcal{C}^1$ y, adem\'as,
+ Sean $A \subset \Rn{n}$ un conjunto abierto y $\mathbf{F}: A \subset \Rn{n} \to \Rn{n}$ una funci\'on de clase $\mathcal{C}^1$. Sea $\mathbf{x}_0 \in A$ y supongamos que $\det(\boldsymbol{D}F_{(\mathbf{x}_0)}) \ne 0$. Entonces existen un entorno abierto $U \subset A$ de $\mathbf{x}_0$ y un entorno abierto $V \subset \Rn{n}$ de $\mathbf{F}(\mathbf{x}_0)$ tal que $\mathbf{F}:U \to V$ (la restricci\'on de $\mathbf{F}$ a $U$) tiene inversa $\mathbf{F}^{-1}:V \to U$. Esta funci\'on $\mathbf{F}^{-1}$ es de clase $\mathcal{C}^1$ y, adem\'as,
  \[
-  \boldsymbol{D}F^{-1}_{(F(x_o))} = \left[ \boldsymbol{D}F_{(x_o)} \right]^{-1}.
+  \boldsymbol{D}\mathbf{F}^{-1}_{(\mathbf{F}(\mathbf{x}_0))} = \left[ \boldsymbol{D}F_{(\mathbf{x}_0)} \right]^{-1}.
  \]
- Si $F$ es de clase $\mathcal{C}^p, p \ge 1,$ entonces $F^{-1}$ tambi\'en.
+ Si $\mathbf{F}$ es de clase $\mathcal{C}^p, p \ge 1,$ entonces $\mathbf{F}^{-1}$ tambi\'en.
 \end{theorem}
 
-\begin{theorem}\textbf{Caso particular del Teorema de la Funci\'on Impl\'icita.} \label{teo:implicit_part}
+\begin{theorem}\textbf{Caso particular del teorema de la funci\'on impl\'icita.} \label{teo:implicit_part}
 \mbox{}
 
-Sean $A \subset \Rn{3}$ un conjunto abierto y $F: A \to \R$ una funci\'on de clase $\mathcal{C}^1$. Sea $(x_o,y_o,z_o) \in A$ tal que $F(x_o,y_o,z_o) = 0$. Supongamos que 
+Sean $A \subset \Rn{3}$ un conjunto abierto y $F: A \to \R$ una funci\'on de clase $\mathcal{C}^1$. Sea $(x_0,y_0,z_0) \in A$ tal que $F(x_0,y_0,z_0) = 0$. Supongamos que 
  \[
-   F_z (x_o,y_o,z_o) \ne 0.
+   F_z (x_0,y_0,z_0) \ne 0.
  \]
- Entonces existen un entorno abierto $U \subset \Rn{2}$ de $(x_o,y_o)$
- %, un entorno abierto $V \subset \Rn{m}$ de $y_o$ 
- y una \'onica funci\'on $g: U \to \R$ tales que $g(x_o,y_o) = z_o$ y
+ Entonces existen un entorno abierto $U \subset \Rn{2}$ de $(x_0,y_0)$
+ %, un entorno abierto $V \subset \Rn{m}$ de $y_0$ 
+ y una \'unica funci\'on $g: U \to \R$ tales que $g(x_0,y_0) = z_0$ y
  \[
   F(x,y,g(x,y)) = 0 \, \forall (x,y) \in U.
  \]
- M\'as a\'on, $g$ es de clase $\mathcal{C}^1$ y, adem\'as, $\forall (x,y) \in U$ vale que
+ M\'as a\'un, $g$ es de clase $\mathcal{C}^1$ y, adem\'as, $\forall (x,y) \in U$ vale que
  \begin{align*}
   g_{x}(x,y) &= -\frac{F_x (x,y,g(x,y))}{F_z (x,y,g(x,y))}  \\
   g_{y}(x,y) &= -\frac{F_y (x,y,g(x,y))}{F_z (x,y,g(x,y))} \\
@@ -423,10 +454,10 @@ Sean $A \subset \Rn{3}$ un conjunto abierto y $F: A \to \R$ una funci\'on de cla
 \end{theorem}
 
 
-\begin{theorem}\textbf{Teorema de la Funci\'on Impl\'icita.} \label{teo:implicit}
+\begin{theorem}\textbf{Teorema de la funci\'on impl\'icita.} \label{teo:implicit}
 \mbox{}
 
- Sean $A \subset \Rn{n} \times \Rn{m}$ un conjunto abierto y $F: A \to \Rn{m}$ una funci\'on de clase $\mathcal{C}^1$. Sea $(x_o,z_o) \in A$ tal que $F(x_o,z_o) = \mathbf{0}$. Formemos el determinante
+ Sean $A \subset \Rn{n} \times \Rn{m}$ un conjunto abierto y $\mathbf{F}: A \to \Rn{m}$ una funci\'on de clase $\mathcal{C}^1$. Sea $(\mathbf{x}_0,\mathbf{z}_0) \in A$ tal que $\mathbf{F}(\mathbf{x}_0,\mathbf{z}_0) = \mathbf{0}$. Formemos el determinante
  \[
   \Delta = \det \begin{bmatrix*}[r]
                 \dif{f_1}{z_1} & \dif{f_1}{z_2} & \cdots & \dif{f_1}{z_m} \\
@@ -438,13 +469,13 @@ Sean $A \subset \Rn{3}$ un conjunto abierto y $F: A \to \R$ una funci\'on de cla
                 \dif{f_m}{z_1} & \dif{f_m}{z_2} & \cdots & \dif{f_m}{z_m}
                 \end{bmatrix*},
  \]
- donde $F = (f_1, f_2, \cdots , f_m)$ y todas las derivadas est\'on evaluadas en $(x_o,z_o)$. Si $\Delta \ne 0$, entonces existen un entorno abierto $U \subset \Rn{n}$ de $x_o$
- %, un entorno abierto $V \subset \Rn{m}$ de $z_o$ 
- y una \'onica funci\'on $g: U \to \Rn{m}$ tales que $g(x_o) = z_o$ y
+ donde $\mathbf{F} = (f_1, f_2, \cdots , f_m)$ y todas las derivadas est\'an evaluadas en $(\mathbf{x}_0,\mathbf{z}_0)$. Si $\Delta \ne 0$, entonces existen un entorno abierto $U \subset \Rn{n}$ de $\mathbf{x}_0$
+ %, un entorno abierto $V \subset \Rn{m}$ de $\mathbf{z}_0$ 
+ y una \'unica funci\'on $\mathbf{g}: U \to \Rn{m}$ tales que $\mathbf{g}(\mathbf{x}_0) = \mathbf{z}_0$ y
  \[
-  F(x,g(x)) = \mathbf{0} \, \forall x \in U.
+  \mathbf{F}(\mathbf{x},\mathbf{g}(\mathbf{x})) = \mathbf{0},\quad \forall \mathbf{x} \in U.
  \]
- M\'as a\'on, $g$ es de clase $\mathcal{C}^1$ y, adem\'as, si $g = (g_1, g_2, \cdots , g_m)$,
+ M\'as a\'un, $\mathbf{g}$ es de clase $\mathcal{C}^1$ y, adem\'as, si $\mathbf{g} = (g_1, g_2, \cdots , g_m)$,
  \[
   \begin{bmatrix*}[r]
                 \dif{g_1}{x_1} & \dif{g_1}{x_2} & \cdots & \dif{g_1}{x_n} \\
@@ -474,6 +505,6 @@ Sean $A \subset \Rn{3}$ un conjunto abierto y $F: A \to \R$ una funci\'on de cla
                 \dif{f_m}{x_1} & \dif{f_m}{x_2} & \cdots & \dif{f_m}{x_n}
                 \end{bmatrix*}.            
  \]
-Si $F$ es de clase $\mathcal{C}^p, p \ge 1,$ entonces $g$ tambi\'en.
+Si $\mathbf{F}$ es de clase $\mathcal{C}^p, p \ge 1,$ entonces $\mathbf{g}$ tambi\'en.
  
 \end{theorem}
