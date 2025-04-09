@@ -21,21 +21,94 @@
 
 \textcolor{red}{Aca hay un lio en los ejemplos, la tabla y el grafico no corresponden a la formula. Hacer dos ejemplos completo por separado. }
 
-
 \begin{example}
-   Sea $$f:  [0,\infty]  \subseteq \mathbb{R} \rightarrow  \mathbb{R} \:|\:  f(x)=2x-1$$ tenemos que, $f$ es el nombre de la función, $x$ es la variable independiente de $f$  y $2x-1$ su  fórmula, es decir,  el valor que la asigna $f$ a cada $x \in  [0,\infty]. $ Adem\'as,   $\text{Dom}(f)=  [0,\infty]$,   $\text{Cod}(f)=  \mathbb{R}$ y $\text{Im}(f)= [-1,\infty]$ 
- \end{example}
-
-
-
-\begin{example}  Sea $$f: A  \subseteq \mathbb{R} \rightarrow  \mathbb{R} \:|\:  f(x)=..........$$ 
-
-,   armar la siguiente tabla de valores:
+    Sea $$f:  [0,\infty]  \subseteq \mathbb{R} \rightarrow  \mathbb{R} \:|\:  f(x)=2x-1$$ tenemos que, $f$ es el nombre de la función, 
+    $x$ es la variable independiente de $f$  y $2x-1$ su  fórmula, es decir,  el valor que la asigna $f$ a cada $x \in  [0,+\infty). $ 
+    Adem\'as,   $\text{Dom}(f)=  [0,+\infty)$,   $\text{Cod}(f)=  \mathbb{R}$ y $\text{Im}(f)= [-1,+\infty)$ .
+    Si se quisiera, se puede hacer una tabla de valores para la función:
     \begin{table}[H]
         \centering
         \begin{tabular}{|c|c|}
             \hline
-            $x$ & $y=f(x)$ \\ \hline
+            $x$ & $y=f(x)=2x-1$ \\ \hline
+            -2  & -5        \\ \hline
+            -1  & -3        \\ \hline
+            0   & -1        \\ \hline
+            1   & 1        \\ \hline
+            2   & 3        \\ \hline
+            \end{tabular}
+      \end{table}
+
+      Estos puntos, se pueden graficar sobre un plano cartesiano.
+      \begin{figure}[H] 
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                    axis lines = middle,
+                    xmin = -2.5, xmax = 2.5,
+                    ymin = 0, ymax = 4.5,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    domain = -2:2,
+                    samples = 100,
+                    xtick={-2,-1,1,2},
+                    ytick={1,2,3,4},
+                    clip=false,
+                    ]
+                
+                    % Define the curves
+                    \fill[red] (0,-1) circle (4pt);
+                    \fill[red] (-2,-5) circle (4pt);
+                    \fill[red] (-1,-3) circle (4pt);
+                    \fill[red] (1,1) circle (4pt);
+                    \fill[red] (2,3) circle (4pt);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        \caption{Conjunto de puntos pertenecientes a la tabla de valores de $f(x)=2x-1$ posicionados sobre el plano cartesiano.}
+        %\label{fig:unitCircle1} % Etiqueta para hacer referencia a la imagen
+    \end{figure}
+    Además, sabemos que la función corresponde a una función lineal, por lo que, para graficar los infinitos puntos pertenecientes
+    a la $\text{Graf}(f)$ podemos unir los anteriores con una recta.
+    \begin{figure}[H] 
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                    axis lines = middle,
+                    xmin = -2.5, xmax = 2.5,
+                    ymin = 0, ymax = 4.5,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    domain = -2:2,
+                    samples = 100,
+                    xtick={-2,-1,1,2},
+                    ytick={1,2,3,4},
+                    clip=false,
+                    ]
+                
+                    % Define the curves
+                    \addplot[name path=A, blue, thick, domain=-2:2] {2x-1};
+                    \fill[red] (0,-1) circle (4pt);
+                    \fill[red] (-2,-5) circle (4pt);
+                    \fill[red] (-1,-3) circle (4pt);
+                    \fill[red] (1,1) circle (4pt);
+                    \fill[red] (2,3) circle (4pt);
+                \end{axis}
+            \end{tikzpicture}
+            \end{center}
+        \caption{En rojo, los puntos de la tabla de valores. En azul, $\text{Graf}(f)$, con sus infinitos puntos, en el intervalo $[-2,2]$.}
+        %\label{fig:unitCircle1} % Etiqueta para hacer referencia a la imagen
+    \end{figure}
+
+  \end{example}
+\begin{example}  Sea $$f: [-2,2]  \subseteq \mathbb{R} \rightarrow  \mathbb{R} \:|\:  f(x)=x^2$$ 
+
+ Se arma la siguiente tabla de valores, para valores discretos de $x\in [0,2]$:
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $x$ & $y=f(x)=x^2$ \\ \hline
             -2  & 4        \\ \hline
             -1  & 1        \\ \hline
             0   & 0        \\ \hline
@@ -43,44 +116,79 @@
             2   & 4        \\ \hline
             \end{tabular}
       \end{table}
+    En este caso, haciendo un análisis de la función, se puede ver que 
+    $\text{Dom}(f)=  [-2,2]$,   $\text{Cod}(f)=  \mathbb{R}$ y $\text{Im}(f)= [0,4]$
     Luego, el siguiente conjunto de puntos, se encuentran incluidos en la
     gráfica de la función (que cabe aclarar, tiene infinitos elementos).
     \begin{equation*}
         \left\{ (-2,4),(-1,1),(0,0),(1,1),(2,4) \right\}\subset \text{Graf}(f)
     \end{equation*}
+    Este conjunto se puede graficar en el plano coordenado x-y de la siguiente forma.
+    \begin{figure}[H] 
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                    axis lines = middle,
+                    xmin = -2.5, xmax = 2.5,
+                    ymin = 0, ymax = 4.5,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    domain = -2:2,
+                    samples = 100,
+                    xtick={-2,-1,1,2},
+                    ytick={1,2,3,4},
+                    clip=false,
+                    ]
+                
+                    % Define the curves
+                    \fill[red] (0,0) circle (4pt);
+                    \fill[red] (-2,4) circle (4pt);
+                    \fill[red] (-1,1) circle (4pt);
+                    \fill[red] (1,1) circle (4pt);
+                    \fill[red] (2,4) circle (4pt);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        \caption{Subconjunto de los puntos pertenecientes a la $\text{Graf}(f)$ posicionados sobre el plano x-y.}
+        %\label{fig:unitCircle1} % Etiqueta para hacer referencia a la imagen
+    \end{figure}
+    
   
   \textcolor{red}{hacer dos dibujos, el primero solo con los puntos rojos y el segundo con los mismos puntos mas el trazo. Decir algo asi como: por conocimiemto previo sabemos que la manera de unir los puntos es a trav\'es de..... }
   
-    De hecho, si se fuera a posicionar los puntos de $\text{Graf}(f)$, se obtendría
-    lo que se entiende normalmente si se habla de la gráfica de la función. De hecho,
+    Por conocimiento previo, sabemos que la forma de unir estos puntos para graficar $f(x)$ es a través de una parábola. Así, 
     graficando la función como uno lo haría normalmente, en realidad
     se están dibujando los infinitos puntos pertenecientes
-    al $\text{Graf}(f)$ sobre el plano.
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{axis}[
-                axis lines = middle,
-                xmin = -2.5, xmax = 2.5,
-                ymin = 0, ymax = 4.5,
-                xlabel = {$x$},
-                ylabel = {$y$},
-                domain = -2:2,
-                samples = 100,
-                xtick={-2,-1,1,2},
-                ytick={1,2,3,4},
-                clip=false,
-                ]
-            
-                % Define the curves
-                \addplot[name path=A, blue, thick, domain=-2:2] {x^2};
-                \fill[red] (0,0) circle (4pt);
-                \fill[red] (-2,4) circle (4pt);
-                \fill[red] (-1,1) circle (4pt);
-                \fill[red] (1,1) circle (4pt);
-                \fill[red] (2,4) circle (4pt);
-            \end{axis}
-        \end{tikzpicture}
-        \end{center}
+    a la $\text{Graf}(f)$ sobre el plano.
+        \begin{figure}[H] 
+            \begin{center}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        axis lines = middle,
+                        xmin = -2.5, xmax = 2.5,
+                        ymin = 0, ymax = 4.5,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        domain = -2:2,
+                        samples = 100,
+                        xtick={-2,-1,1,2},
+                        ytick={1,2,3,4},
+                        clip=false,
+                        ]
+                    
+                        % Define the curves
+                        \addplot[name path=A, blue, thick, domain=-2:2] {x^2};
+                        \fill[red] (0,0) circle (4pt);
+                        \fill[red] (-2,4) circle (4pt);
+                        \fill[red] (-1,1) circle (4pt);
+                        \fill[red] (1,1) circle (4pt);
+                        \fill[red] (2,4) circle (4pt);
+                    \end{axis}
+                \end{tikzpicture}
+                \end{center}
+            \caption{En rojo, los puntos del subconjunto de la gráfica de la figura anterior. En azul, $\text{Graf}(f)$, con sus infinitos puntos, en el intervalo $[-2,2]$.}
+            %\label{fig:unitCircle1} % Etiqueta para hacer referencia a la imagen
+        \end{figure}
 \end{example}
 \begin{definition}
   
@@ -97,4 +205,52 @@
     \end{equation*} 
 
     Finalmente, diremos que $f$  es \textit{biyectiva} cuando es simultáneamente \textit{sobreyectiva} e \textit{inyectiva} a la vez.
+\end{definition}
+
+\begin{definition}
+    Sea $f(x)$ definida en un intervalo abierto alrededor de $x_0$, excepto posiblemente $x_0$, es decir, en un entorno reducido aldededor del mismo
+    $\varepsilon_0(x_0)$, se define el \textit{límite de $f(x)$ cuando x se aproxima a $x_0$}:
+    \begin{equation*}
+        \lim_{x\to x_0}{f(x)}=L 
+    \end{equation*}
+    si y solo si
+    \begin{equation*}
+        \forall \epsilon>0 : \exists \delta >0 : 0<\left\lvert x-x_0 \right\rvert<\delta \Rightarrow \left\lvert f(x) - L\right\rvert < \epsilon 
+    \end{equation*}
+\end{definition}
+
+\begin{obs}{Límites Notables}
+    A continuación se presenta una lista de límites notables que pueden ser de utilidad:
+    \begin{equation}
+        \lim_{x\to 0}{\frac{\sin{x}}{x}}=1
+        \label{limNot:sen(x)/x}
+    \end{equation}
+    \begin{equation}
+        \lim_{x\to 0}{\frac{1-\cos{x}}{x}}=0
+        \label{limNot:(1-cos(x))/x}
+    \end{equation}
+    \begin{equation}
+        \lim_{x\to 0}{\frac{\exp{kx}-1}{x}}=k
+        \label{limNot:(\exp{kx}-1)/(x)}
+    \end{equation}
+    \begin{equation}
+        \lim_{x\to 0}{\frac{a^{kx}-1}{x}}=k\ln{a}
+        \label{limNot:(a^(kx)-1)/(x)}
+    \end{equation}
+    \begin{equation}
+        \lim_{x\to +\inf}{\left( 1+\frac{1}{x} \right)^x}=e
+        \label{limNot:e}
+    \end{equation}
+    \begin{equation}
+        \lim_{x\to 0}{\ln{\left(\frac{1+x}{x} \right)}}=1
+        \label{limNot:ln(1+x/x)}
+    \end{equation}
+\end{obs}
+
+\begin{definition}{Polinomio de Taylor}
+    Sea $f$ una función con derivades de orden $n$ en $x=a \in \text{Dom}(f)$. Se llama \textit{Polinomio de Taylor} 
+    de grado $n$ de la función $f$ en $x=a$, y se simboliza $T_{f,a,n}(x)$, a:
+    \begin{equation*}
+        T_{f,a,n}(x) = \sum^n_{k=0} \frac{f^{(k)}(a)}{k!}(x-a)^k 
+    \end{equation*}
 \end{definition}
