@@ -21,7 +21,8 @@
 \begin{definition} Sean    $\boldsymbol{v}\in\mathbb{R}^n$   no nulo y  $\boldsymbol{x_0}\in\mathbb{R}^n,$  el conjunto $L \subset \mathbb{R}^n $  que cumple  
  \begin{equation*}
       L = \{   \boldsymbol{x} \in\mathbb{R}^n  \:| \:    \boldsymbol{x}=  \lambda \cdot \boldsymbol{v} + \boldsymbol{x_0},  \:  \mbox{  con }  \lambda\in\mathbb{R} \}.
-    \end{equation*}  es una recta en $ \mathbb{R}^n $  y a la ecuaci\'on $$ \boldsymbol{x}=  \lambda \cdot \boldsymbol{v} + \boldsymbol{x_0}$$  se  llama  \textbf{expresi\'on vectorial} de la misma.  Adem\'as, llamaremos al vector $\boldsymbol{x_0}$   como \textbf{vector posici\'on} ( o punto de paso )  de la recta   y al vector  $\boldsymbol{v}$ como \textbf{vector director} de la recta.
+    \end{equation*}  es una recta en $ \mathbb{R}^n $  y a la ecuaci\'on $$ \boldsymbol{x}=  \lambda \cdot \boldsymbol{v} + \boldsymbol{x_0}$$  se  llama  \textbf{expresi\'on vectorial} de la misma.  
+    Adem\'as, llamaremos al vector $\boldsymbol{x_0}$ como \textbf{vector posici\'on} (o punto de paso) de la recta y al vector $\boldsymbol{v}$ como \textbf{vector director} de la recta.
  \end{definition}
 
 
@@ -32,7 +33,18 @@
     \begin{equation*}
       \pi  = \{   \boldsymbol{x} \in\mathbb{R}^3  \:| \:    \boldsymbol{n}\cdot(\boldsymbol{x} - \boldsymbol{x_0}) =0   \}.
     \end{equation*} es un plano en $\mathbb{R}^3$  y a la ecuaci\'on   $$ \boldsymbol{n}\cdot(\boldsymbol{x} - \boldsymbol{x_0}) =0$$  se llama  \textbf{expresi\'on canónica} del mismo.  Adem\'as, llamaremos al vector $\boldsymbol{n}$   como \textbf{vector normal} del plano 
-    y al vector  $\boldsymbol{x_0}$  \textbf{ punto de paso }  del  plano. 
+    y al vector  $\boldsymbol{x_0}$ \textbf{punto de paso} del plano. 
+
+    A su vez, también se puede expresar un plano análogamente a la forma propuesta para la recta:
+    \begin{equation*}
+      \pi  = \{   \boldsymbol{x} \in\mathbb{R}^3  \:| \:    \boldsymbol{x}=\boldsymbol{x_0}+\alpha \boldsymbol{u} + \beta \boldsymbol{u},  \:  \mbox{  con }  \alpha,\beta\in\mathbb{R}    \}.
+    \end{equation*} tal que la ecuación
+    \begin{equation*}
+       \boldsymbol{x}=\boldsymbol{x_0}+\alpha \boldsymbol{u} + \beta \boldsymbol{v}
+    \end{equation*}
+    se conoce como la \textbf{forma vectorial} del plano. Donde $\boldsymbol{u}$ y $\boldsymbol{v}$ son dos \textbf{vectores paralelos al plano}, que cumplen que $\boldsymbol{v}\times\boldsymbol{u}\shortparallel \boldsymbol{n}$, el vector normal del plano.
+    Finalmente, $\alpha$ y $\beta$ son \textbf{parámetros} reales.
+
  \end{definition}
    
    \textcolor{red}{DIBUJO}
@@ -61,14 +73,14 @@
    
 \begin{definition}\textbf{Ecuación de la esfera.}
     La cáscara de una esfera (es decir, sólo su superficie exterior, hueca) 
-    en $\mathbb{R}^3$ se expresa con la ecuación
+    se expresa como un conjunto $A\subset\mathbb{R}^3$ que cumple
     \begin{equation*}
-        (x-x_0)^2+(y-y_0)^2+(z-z_0)^2=r^2
+      A = \{  (x,y,z)  \in \mathbb{R}^3 \:|\:   (x-x_0)^2+(y-y_0)^2+(z-z_0)^2=r^2 \}
     \end{equation*}
     Se tiene $(x_0,y_0,z_0)$ como el centro de la cáscara y $r$ como el radio de la misma.
-    Para obtener la esfera completa, es decir, cáscara y relleno interior, se usa la inecuación:
+    Para obtener un conjunto $B\subset\mathbb{R}^3$ que represente la esfera completa, es decir, cáscara y relleno interior, se debe tener
     \begin{equation*}
-        (x-x_0)^2+(y-y_0)^2+(z-z_0)^2\leq r^2
+      B = \{  (x,y,z)  \in \mathbb{R}^3 \:|\:   (x-x_0)^2+(y-y_0)^2+(z-z_0)^2\leq r^2 \}
     \end{equation*}
     Esto es análogo al caso de la circunferencia y el círculo.
 \end{definition}
