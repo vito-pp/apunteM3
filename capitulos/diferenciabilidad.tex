@@ -377,22 +377,22 @@ y
   Sea $\mathbf{F}:U\subseteq\Rn{n}\to\Rn{m}$, diferenciable en $\mathbf{x}_0\in\interior{U}$. Se define la \emph{matriz diferencial de $\mathbf{F}$ en $\mathbf{x}_0$}, y se nota por $\boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)$, a 
   \[
   \boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)=
-    \begin{bmatrix*}[r]
+    \begin{bmatrix} 
       \grad{f_1} \\
       \grad{f_2} \\
       \vdots     \\
       \grad{f_m}
-    \end{bmatrix*}
+    \end{bmatrix}
     =
-    \begin{bmatrix*}[r]
+    \begin{bmatrix} 
       \dif{f_1}{x_1} & \dif{f_1}{x_2} & \cdots & \dif{f_1}{x_n} \\
                      &                &        &                \\
       \dif{f_2}{x_1} & \dif{f_2}{x_2} & \cdots & \dif{f_2}{x_n} \\
                      &                &        &                \\
-      \vdots         &                & \ddots & \vdots         \\
+       \vdots         &  \vdots        & \ddots & \vdots         \\
                      &                &        &                \\
       \dif{f_m}{x_1} & \dif{f_m}{x_2} & \cdots & \dif{f_m}{x_n}
-    \end{bmatrix*},
+    \end{bmatrix},
   \]
   donde $\mathbf{F}=(f_1, f_2, \dots, f_m)\;|\;f_i:U\subseteq\Rn{n}\to\R,\;i=1,2,\dots, m.$
 
@@ -458,15 +458,15 @@ Sean $A \subset \Rn{3}$ un conjunto abierto y $F: A \to \R$ una funci\'on de cla
 
  Sean $A \subset \Rn{n} \times \Rn{m}$ un conjunto abierto y $\mathbf{F}: A \to \Rn{m}$ una funci\'on de clase $\mathcal{C}^1$. Sea $(\mathbf{x}_0,\mathbf{z}_0) \in A$ tal que $\mathbf{F}(\mathbf{x}_0,\mathbf{z}_0) = \mathbf{0}$. Formemos el determinante
  \[
-  \Delta = \det \begin{bmatrix*}[r]
+  \Delta = \det \begin{bmatrix} 
                 \dif{f_1}{z_1} & \dif{f_1}{z_2} & \cdots & \dif{f_1}{z_m} \\
                                &                &        &                \\
                 \dif{f_2}{z_1} & \dif{f_2}{z_2} & \cdots & \dif{f_2}{z_m} \\
                                &                &        &                \\
-                \vdots         &                & \ddots & \vdots         \\
+                \vdots         &  \vdots        & \ddots & \vdots         \\
                                &                &        &                \\
                 \dif{f_m}{z_1} & \dif{f_m}{z_2} & \cdots & \dif{f_m}{z_m}
-                \end{bmatrix*},
+                \end{bmatrix},
  \]
  donde $\mathbf{F} = (f_1, f_2, \cdots , f_m)$ y todas las derivadas est\'an evaluadas en $(\mathbf{x}_0,\mathbf{z}_0)$. Si $\Delta \ne 0$, entonces existen un entorno abierto $U \subset \Rn{n}$ de $\mathbf{x}_0$
  %, un entorno abierto $V \subset \Rn{m}$ de $\mathbf{z}_0$ 
@@ -476,33 +476,33 @@ Sean $A \subset \Rn{3}$ un conjunto abierto y $F: A \to \R$ una funci\'on de cla
  \]
  M\'as a\'un, $\mathbf{G}$ es de clase $\mathcal{C}^1$ y, adem\'as, si $\mathbf{G} = (g_1, g_2, \cdots , g_m)$,
  \[
-  \begin{bmatrix*}[r]
+  \begin{bmatrix} 
                 \dif{g_1}{x_1} & \dif{g_1}{x_2} & \cdots & \dif{g_1}{x_n} \\
                                &                &        &                \\
                 \dif{g_2}{x_1} & \dif{g_2}{x_2} & \cdots & \dif{g_2}{x_n} \\
                                &                &        &                \\
-                \vdots         &                & \ddots & \vdots         \\
+                 \vdots         &  \vdots        & \ddots & \vdots         \\
                                &                &        &                \\
                 \dif{g_m}{x_1} & \dif{g_m}{x_2} & \cdots & \dif{g_m}{x_n}
-                \end{bmatrix*} =
- -\begin{bmatrix*}[r]
+                \end{bmatrix} =
+ -\begin{bmatrix} 
                 \dif{f_1}{z_1} & \dif{f_1}{z_2} & \cdots & \dif{f_1}{z_m} \\
                                &                &        &                \\
                 \dif{f_2}{z_1} & \dif{f_2}{z_2} & \cdots & \dif{f_2}{z_m} \\
                                &                &        &                \\
-                \vdots         &                & \ddots & \vdots         \\
+                 \vdots         &  \vdots        & \ddots & \vdots         \\
                                &                &        &                \\
                 \dif{f_m}{z_1} & \dif{f_m}{z_2} & \cdots & \dif{f_m}{z_m}
-                \end{bmatrix*}^{-1}
-  \begin{bmatrix*}[r]
+                \end{bmatrix}^{-1}
+  \begin{bmatrix} 
                 \dif{f_1}{x_1} & \dif{f_1}{x_2} & \cdots & \dif{f_1}{x_n} \\
                                &                &        &                \\
                 \dif{f_2}{x_1} & \dif{f_2}{x_2} & \cdots & \dif{f_2}{x_n} \\
                                &                &        &                \\
-                \vdots         &                & \ddots & \vdots         \\
+                 \vdots         &  \vdots        & \ddots & \vdots         \\
                                &                &        &                \\
                 \dif{f_m}{x_1} & \dif{f_m}{x_2} & \cdots & \dif{f_m}{x_n}
-                \end{bmatrix*}.            
+                \end{bmatrix}.            
  \]
 Si $\mathbf{F}$ es de clase $\mathcal{C}^p, p \ge 1,$ entonces $\mathbf{G}$ tambi\'en.
  
