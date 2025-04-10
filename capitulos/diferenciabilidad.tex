@@ -396,7 +396,7 @@ y
   \]
   donde $\mathbf{F}=(f_1, f_2, \dots, f_m)\;|\;f_i:U\subseteq\Rn{n}\to\R,\;i=1,2,\dots, m.$
 
-  Y a su vez, en el caso particular de que $n=m$; se define el \emph{jacobiano de $\mathbf{F}$ en $\mathbf{x}_0$}, y se lo nota por $J_{\mathbf{F}}(\mathbf{x}_0)$, al determinante de la matriz diferencial, \emph{i.e.}
+  Y a su vez, en el caso particular en que $n=m$; se define el \emph{jacobiano de $\mathbf{F}$ en $\mathbf{x}_0$}, y se lo nota por $J_{\mathbf{F}}(\mathbf{x}_0)$, al determinante de la matriz diferencial, \emph{i.e.}
   \[
     J_{\mathbf{F}}(\mathbf{x}_0) = \det(\boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)). 
   \]
@@ -409,24 +409,24 @@ Notar que $\boldsymbol{D}_{\mathbf{F}}\in\R^{m\times n}$.
 \begin{theorem}\textbf{Regla de la cadena.} \label{teo:cadena}
 \mbox{}
 
-  Sean $f, g$ funciones 
+  Sean $\mathbf{f}, \mathbf{g}$ funciones 
     \begin{align*}
-    g &:A \subset \Rn{n} \to B \subset \Rn{m} \\
-    f &:B \subset \Rn{m} \to \Rn{p},
+    \mathbf{g} &:A \subset \Rn{n} \to B \subset \Rn{m} \\
+    \mathbf{f} &:B \subset \Rn{m} \to \Rn{p},
     \end{align*}
-  y un punto $\mathbf{x}_0 \in \interior{A} \text{ tal que } g(\mathbf{x}_0) \in \interior{B}$. Supongamos que $g$ es diferenciable en $\mathbf{x}_0$ y que $f$ es diferenciable en $yo = g(\mathbf{x}_0)$. Entonces la composic\'on $f \circ g$ es diferenciable en $\mathbf{x}_0$ y, adem\'as,
+  y un punto $\mathbf{x}_0 \in \interior{A} \text{ tal que } \mathbf{g}(\mathbf{x}_0) \in \interior{B}$. Supongamos que $\mathbf{g}$ es diferenciable en $\mathbf{x}_0$ y que $\mathbf{f}$ es diferenciable en $\mathbf{y}_0 = \mathbf{g}(\mathbf{x}_0)$. Entonces la composic\'on $\mathbf{f} \circ \mathbf{g}$ es diferenciable en $\mathbf{x}_0$ y, adem\'as,
   \[
-   \boldsymbol{D}(f \circ g)_{(\mathbf{x}_0)} = \boldsymbol{D}f_{(y_0)} 
-   \boldsymbol{D}g_{(\mathbf{x}_0)}.
+   \boldsymbol{D}_{\mathbf{f} \circ \mathbf{g}}{(\mathbf{x}_0)} = \boldsymbol{D}_\mathbf{f}{(\mathbf{y}_0)} 
+   \boldsymbol{D}_\mathbf{g}{(\mathbf{x}_0)}.
   \]
 \end{theorem}
 
 \begin{theorem}\textbf{Teorema de la funci\'on inversa.} \label{teo:inversa}
 \mbox{}
 
- Sean $A \subset \Rn{n}$ un conjunto abierto y $\mathbf{F}: A \subset \Rn{n} \to \Rn{n}$ una funci\'on de clase $\mathcal{C}^1$. Sea $\mathbf{x}_0 \in A$ y supongamos que $\det(\boldsymbol{D}F_{(\mathbf{x}_0)}) \ne 0$. Entonces existen un entorno abierto $U \subset A$ de $\mathbf{x}_0$ y un entorno abierto $V \subset \Rn{n}$ de $\mathbf{F}(\mathbf{x}_0)$ tal que $\mathbf{F}:U \to V$ (la restricci\'on de $\mathbf{F}$ a $U$) tiene inversa $\mathbf{F}^{-1}:V \to U$. Esta funci\'on $\mathbf{F}^{-1}$ es de clase $\mathcal{C}^1$ y, adem\'as,
+ Sean $A \subset \Rn{n}$ un conjunto abierto y $\mathbf{F}: A \subset \Rn{n} \to \Rn{n}$ una funci\'on de clase $\mathcal{C}^1$. Sea $\mathbf{x}_0 \in A$ y supongamos que $J_\mathbf{F}(\mathbf{x}) \ne 0$. Entonces existen un entorno abierto $U \subset A$ de $\mathbf{x}_0$ y un entorno abierto $V \subset \Rn{n}$ de $\mathbf{F}(\mathbf{x}_0)$ tal que $\mathbf{F}:U \to V$ (la restricci\'on de $\mathbf{F}$ a $U$) tiene inversa $\mathbf{F}^{-1}:V \to U$. Esta funci\'on $\mathbf{F}^{-1}$ es de clase $\mathcal{C}^1$ y, adem\'as,
  \[
-  \boldsymbol{D}\mathbf{F}^{-1}_{(\mathbf{F}(\mathbf{x}_0))} = \left[ \boldsymbol{D}F_{(\mathbf{x}_0)} \right]^{-1}.
+  \boldsymbol{D}_{\mathbf{F}^{-1}}{(\mathbf{F}(\mathbf{x}_0))} = \left[ \boldsymbol{D}_\mathbf{F}{(\mathbf{x}_0)} \right]^{-1}.
  \]
  Si $\mathbf{F}$ es de clase $\mathcal{C}^p, p \ge 1,$ entonces $\mathbf{F}^{-1}$ tambi\'en.
 \end{theorem}
@@ -436,21 +436,20 @@ Notar que $\boldsymbol{D}_{\mathbf{F}}\in\R^{m\times n}$.
 
 Sean $A \subset \Rn{3}$ un conjunto abierto y $F: A \to \R$ una funci\'on de clase $\mathcal{C}^1$. Sea $(x_0,y_0,z_0) \in A$ tal que $F(x_0,y_0,z_0) = 0$. Supongamos que 
  \[
-   F_z (x_0,y_0,z_0) \ne 0.
+    \dif{F}{z} (x_0,y_0,z_0) \ne 0.
  \]
  Entonces existen un entorno abierto $U \subset \Rn{2}$ de $(x_0,y_0)$
  %, un entorno abierto $V \subset \Rn{m}$ de $y_0$ 
  y una \'unica funci\'on $g: U \to \R$ tales que $g(x_0,y_0) = z_0$ y
  \[
-  F(x,y,g(x,y)) = 0 \, \forall (x,y) \in U.
+  F(x,y,g(x,y)) = 0,\quad \forall (x,y) \in U.
  \]
  M\'as a\'un, $g$ es de clase $\mathcal{C}^1$ y, adem\'as, $\forall (x,y) \in U$ vale que
  \begin{align*}
-  g_{x}(x,y) &= -\frac{F_x (x,y,g(x,y))}{F_z (x,y,g(x,y))}  \\
-  g_{y}(x,y) &= -\frac{F_y (x,y,g(x,y))}{F_z (x,y,g(x,y))} \\
+  \dif{g}{x}(x,y) &= -\frac{\dif{F}{x} (x,y,g(x,y))}{\dif{F}{z} (x,y,g(x,y))}  \\[.4cm]
+  \dif{g}{y}(x,y) &= -\frac{\dif{F}{y} (x,y,g(x,y))}{\dif{F}{z} (x,y,g(x,y))} \\
  \end{align*}
  Si $F$ es de clase $\mathcal{C}^p, p \ge 1,$ entonces $g$ tambi\'en.
- 
 \end{theorem}
 
 
@@ -471,11 +470,11 @@ Sean $A \subset \Rn{3}$ un conjunto abierto y $F: A \to \R$ una funci\'on de cla
  \]
  donde $\mathbf{F} = (f_1, f_2, \cdots , f_m)$ y todas las derivadas est\'an evaluadas en $(\mathbf{x}_0,\mathbf{z}_0)$. Si $\Delta \ne 0$, entonces existen un entorno abierto $U \subset \Rn{n}$ de $\mathbf{x}_0$
  %, un entorno abierto $V \subset \Rn{m}$ de $\mathbf{z}_0$ 
- y una \'unica funci\'on $\mathbf{g}: U \to \Rn{m}$ tales que $\mathbf{g}(\mathbf{x}_0) = \mathbf{z}_0$ y
+ y una \'unica funci\'on $\mathbf{G}: U \to \Rn{m}$ tales que $\mathbf{G}(\mathbf{x}_0) = \mathbf{z}_0$ y
  \[
-  \mathbf{F}(\mathbf{x},\mathbf{g}(\mathbf{x})) = \mathbf{0},\quad \forall \mathbf{x} \in U.
+  \mathbf{F}(\mathbf{x},\mathbf{G}(\mathbf{x})) = \mathbf{0},\quad \forall \mathbf{x} \in U.
  \]
- M\'as a\'un, $\mathbf{g}$ es de clase $\mathcal{C}^1$ y, adem\'as, si $\mathbf{g} = (g_1, g_2, \cdots , g_m)$,
+ M\'as a\'un, $\mathbf{G}$ es de clase $\mathcal{C}^1$ y, adem\'as, si $\mathbf{G} = (g_1, g_2, \cdots , g_m)$,
  \[
   \begin{bmatrix*}[r]
                 \dif{g_1}{x_1} & \dif{g_1}{x_2} & \cdots & \dif{g_1}{x_n} \\
@@ -505,6 +504,6 @@ Sean $A \subset \Rn{3}$ un conjunto abierto y $F: A \to \R$ una funci\'on de cla
                 \dif{f_m}{x_1} & \dif{f_m}{x_2} & \cdots & \dif{f_m}{x_n}
                 \end{bmatrix*}.            
  \]
-Si $\mathbf{F}$ es de clase $\mathcal{C}^p, p \ge 1,$ entonces $\mathbf{g}$ tambi\'en.
+Si $\mathbf{F}$ es de clase $\mathcal{C}^p, p \ge 1,$ entonces $\mathbf{G}$ tambi\'en.
  
 \end{theorem}
