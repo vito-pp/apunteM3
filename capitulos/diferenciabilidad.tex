@@ -1,5 +1,7 @@
 \label{sec:diferenciabilidad}
 
+\textcolor{red}{definiciones derivabilidad}
+
 \begin{definition}\textbf{Diferenciabilidad de campos escalares.} \label{def:dif_escalar}
 \mbox{}
 Sean $f: A \subset \Rn{n} \to \R$ y $\mathbf{x}_0 \in \interior{A}$. Decimos que $f$ es \emph{diferenciable en $\mathbf{x}_0$} si $\exists\:\mathbf{m} \in \Rn{n}$ tal que
@@ -374,7 +376,8 @@ y
 \end{theorem}
 
 \begin{definition}
-  Sea $\mathbf{F}:U\subseteq\Rn{n}\to\Rn{m}$, diferenciable en $\mathbf{x}_0\in\interior{U}$. Se define la \emph{matriz diferencial de $\mathbf{F}$ en $\mathbf{x}_0$}, y se nota por $\boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)$, a 
+  Sea $\mathbf{F}:U\subseteq\Rn{n}\to\Rn{m}$, diferenciable en $\mathbf{x}_0\in\interior{U}$. Se define la \emph{matriz diferencial de $\mathbf{F}$ en $\mathbf{x}_0$}, y se nota por $\boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)$, a
+  \textcolor{red}{agregar X0} 
   \[
   \boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)=
     \begin{bmatrix} 
@@ -396,6 +399,7 @@ y
   \]
   donde $\mathbf{F}=(f_1, f_2, \dots, f_m)\;|\;f_i:U\subseteq\Rn{n}\to\R,\;i=1,2,\dots, m.$
 
+  \textcolor{red}{hacer otra definicion}
   Y a su vez, en el caso particular en que $n=m$; se define el \emph{jacobiano de $\mathbf{F}$ en $\mathbf{x}_0$}, y se lo nota por $J_{\mathbf{F}}(\mathbf{x}_0)$, al determinante de la matriz diferencial, \emph{i.e.}
   \[
     J_{\mathbf{F}}(\mathbf{x}_0) = \det(\boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)). 
@@ -408,7 +412,7 @@ Notar que $\boldsymbol{D}_{\mathbf{F}}\in\R^{m\times n}$.
 
 \begin{theorem}\textbf{Regla de la cadena.} \label{teo:cadena}
 \mbox{}
-
+\textcolor{red}{campos en mayus}
   Sean $\mathbf{f}, \mathbf{g}$ funciones 
     \begin{align*}
     \mathbf{g} &:A \subset \Rn{n} \to B \subset \Rn{m} \\
@@ -426,7 +430,7 @@ Notar que $\boldsymbol{D}_{\mathbf{F}}\in\R^{m\times n}$.
 
  Sean $A \subset \Rn{n}$ un conjunto abierto y $\mathbf{F}: A \subset \Rn{n} \to \Rn{n}$ una funci\'on de clase $\mathcal{C}^1$. Sea $\mathbf{x}_0 \in A$ y supongamos que $J_\mathbf{F}(\mathbf{x}) \ne 0$. Entonces existen un entorno abierto $U \subset A$ de $\mathbf{x}_0$ y un entorno abierto $V \subset \Rn{n}$ de $\mathbf{F}(\mathbf{x}_0)$ tal que $\mathbf{F}:U \to V$ (la restricci\'on de $\mathbf{F}$ a $U$) tiene inversa $\mathbf{F}^{-1}:V \to U$. Esta funci\'on $\mathbf{F}^{-1}$ es de clase $\mathcal{C}^1$ y, adem\'as,
  \[
-  \boldsymbol{D}_{\mathbf{F}^{-1}}{(\mathbf{F}(\mathbf{x}_0))} = \left[ \boldsymbol{D}_\mathbf{F}{(\mathbf{x}_0)} \right]^{-1}.
+  \boldsymbol{D}_{\mathbf{F}^{-1}}{(\mathbf{F}(\mathbf{x}_0))} = \boldsymbol{D}_\mathbf{F}{(\mathbf{x}_0)}^{-1}.
  \]
  Si $\mathbf{F}$ es de clase $\mathcal{C}^p, p \ge 1,$ entonces $\mathbf{F}^{-1}$ tambi\'en.
 \end{theorem}

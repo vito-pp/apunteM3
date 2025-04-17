@@ -1,27 +1,34 @@
 \label{sec:extremos}
 
+\textcolor{red}{crear seccion derivabilidad}
+  - def derivada parcial 
+  - def derivada direccional
+  - def C1, C2, Cn
+  - notacion derivadas
+  - lema de Schwarz
+
 \begin{definition}
   Sea $f:U\subseteq\Rn{n}\to\R$ de clase $\mathcal{C}^1$. Se define la \emph{matriz hessiana de $f$ en $\mathbf{x}_0$}, y se nota por $\boldsymbol{H}_f(\mathbf{x}_0)$, a 
   \[
     \boldsymbol{H}_f(\mathbf{x}_0)=
     \begin{bmatrix}
-      \grad{\dif{f}{x_1}(\mathbf{x}_0)}\\[.4cm]
-      \grad{\dif{f}{x_2}(\mathbf{x}_0)}\\[.4cm]
+      \grad{\dif{f(\mathbf{x}_0)}{x_1}}\\[.4cm]
+      \grad{\dif{f(\mathbf{x}_0)}{x_2}}\\[.4cm]
       \vdotswithin{f}\\[.4cm]
-      \grad{\dif{f}{x_n}(\mathbf{x}_0)}
+      \grad{\dif{f(\mathbf{x}_0)}{x_n}}
     \end{bmatrix}
     =
     \begin{bmatrix}
-      \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial^2 f}{\partial x_1 \partial x_2} &  \cdots & \dfrac{\partial^2 f}{\partial x_1 \partial x_n} \\[.4cm]
-      \dfrac{\partial^2 f}{\partial x_2 \partial x_1} & \dfrac{\partial^2 f}{\partial x_2^2} & \cdots & \dfrac{\partial^2 f}{\partial x_2 \partial x_n} \\[.4cm]
+      \dfrac{\partial^2 f(\mathbf{x}_0)}{\partial x_1^2} & \dfrac{\partial^2 f(\mathbf{x}_0)}{\partial x_1 \partial x_2} &  \cdots & \dfrac{\partial^2 f(\mathbf{x}_0)}{\partial x_1 \partial x_n} \\[.4cm]
+      \dfrac{\partial^2 f(\mathbf{x}_0)}{\partial x_2 \partial x_1} & \dfrac{\partial^2 f(\mathbf{x}_0)}{\partial x_2^2} & \cdots & \dfrac{\partial^2 f(\mathbf{x}_0)}{\partial x_2 \partial x_n} \\[.4cm]
       \vdots & \vdots & \ddots & \vdots \\[.4cm]
-      \dfrac{\partial^2 f}{\partial x_n \partial x_1} & \dfrac{\partial^2 f}{\partial x_n \partial x_2} & \cdots & \dfrac{\partial^2 f}{\partial x_n^2}.
-    \end{bmatrix}
+      \dfrac{\partial^2 f(\mathbf{x}_0)}{\partial x_n \partial x_1} & \dfrac{\partial^2 f(\mathbf{x}_0)}{\partial x_n \partial x_2} & \cdots & \dfrac{\partial^2 f(\mathbf{x}_0)}{\partial x_n^2}
+    \end{bmatrix}.
 \]
 \end{definition}
 
 \begin{obs}
-Notar que $\boldsymbol{H}_f(\mathbf{x}_0)$ es una matriz cuadrada y sim\'etrica $\in \R^{n\times n}$, ya que $f\in\mathcal{C}^2$. \textcolor{red}{esta escrito el teorema de schwartz? donde lo pongo?}
+Notar que $\boldsymbol{H}_f(\mathbf{x}_0)$ es una matriz cuadrada y sim\'etrica $\in \R^{n\times n}$, ya que $f\in\mathcal{C}^2$.
 \end{obs}
 
 \begin{theorem} \textbf{Polinimio de Taylor de primer orden.}
@@ -41,7 +48,6 @@ Notar que $\boldsymbol{H}_f(\mathbf{x}_0)$ es una matriz cuadrada y sim\'etrica 
   \[
     R_1[f,\mathbf{x}_0](\mathbf{x})=\frac{1}{2!}(\mathbf{x-x}_0)\boldsymbol{H}_f(\mathbf{c})(\mathbf{x-x}_0)^\text{T}.
   \]
-  \textcolor{red}{definir segmento entre puntos?}
 \end{theorem}
 
 \begin{theorem} \textbf{Polinimio de Taylor de segundo orden.}
@@ -59,9 +65,8 @@ Notar que $\boldsymbol{H}_f(\mathbf{x}_0)$ es una matriz cuadrada y sim\'etrica 
   \]
   Si, adem\'as, $f\in\mathcal{C}^3\implies\exists\:\mathbf{c}\in\Rn{n}$, en el segmento que une $\mathbf{x}$ con $\mathbf{x}_0$, tal que
   \[
-    R_2[f,\mathbf{x}_0](\mathbf{x})=\sum_{i,j,k=1}^{n}\frac{1}{3!}\dfrac{\partial^3 f(\mathbf{c})}{\partial x_i \partial x_j \partial x_k}[\dots].
+    R_2[f,\mathbf{x}_0](\mathbf{x})=\sum_{i,j,k=1}^{n}\frac{1}{3!}\dfrac{\partial^3 f(\mathbf{c})}{\partial x_i \partial x_j \partial x_k}(x_i-x_{0i})(x_j-x_{0j})(x_k-x_{0k}).
   \]
-  \textcolor{red}{no se como escribir bien el resto}
 \end{theorem}
 
 
@@ -101,17 +106,31 @@ Notar que $\boldsymbol{H}_f(\mathbf{x}_0)$ es una matriz cuadrada y sim\'etrica 
 
    Sean $A \subset \Rn{2}$ un conjunto abierto y $f: A \subset \Rn{2} \to \R$ una funci\'on de clase $\mathcal{C}^2$. Sea $(x_0,y_0) \in A$ y supongamos que $\grad f(x_0,y_0) = \mathbf{0}$. Entonces,  
    \begin{enumerate} %[I.]
-      \item si $\det(\mathbf{H}_f (x_0,y_0)) > 0$ y
+      \item si $\det(\boldsymbol{H}_f (x_0,y_0)) > 0$ y
       \begin{enumerate} %[(a)]
-          \item $\pdv[2]{f}{x} (x_0,y_0) > 0$, $f$ tiene un m\'inimo local en $(x_0,y_0)$;
-          \item $\pdv[2]{f}{x} (x_0,y_0) < 0$, $f$ tiene un m\'aximo local en $(x_0,y_0)$;
+          \item $f_{xx} (x_0,y_0) > 0\implies f$ tiene un m\'inimo local en $(x_0,y_0)$;
+          \item $f_{xx} (x_0,y_0) < 0\implies f$ tiene un m\'aximo local en $(x_0,y_0)$;
       \end{enumerate}
-      \item si $\det(\mathbf{H}_f (x_0,y_0)) < 0$, $f$ tiene un \emph{punto silla} en $(x_0,y_0)$.
+      \item si $\det(\boldsymbol{H}_f (x_0,y_0)) < 0 \implies f$ tiene un \emph{punto silla} en $(x_0,y_0)$.
    \end{enumerate}  
 \end{theorem}
 
 \begin{obs}
-  \textcolor{red}{decir pq se puede evaluar tanto $f_{xx}$ como $f_{yy}$}
+  Notar que es indistinto evaluar el signo de $f_{xx}$ o $f_{yy}$; ya que si $f:A\subset\Rn{2}\to\R$ y $f\in\mathcal{C}^2$, entonces
+  \[
+    \boldsymbol{H}_f=\begin{bmatrix}
+                      f_{xx} & f_{xy}\\
+                      f_{yx} & f_{yy}
+                     \end{bmatrix}\implies \text{det}(\boldsymbol{H}_f)=f_{xx}f_{yy}-f_{xy}^2,
+  \]
+  $\because f_{xy}=f_{yx}$, por el teorema de Schwarz. Luego si 
+  \[
+    \text{det}(\boldsymbol{H}_f)>0\implies f_{xx}f_{yy}>f_{xy}^2\implies f_{xx}>0\;\land\; f_{yy}>0\quad\lor\quad f_{xx}<0\;\land\; f_{yy}<0.
+  \]
+  Lo que significa que 
+  \[
+    \text{sgn}(f_{xx})=\text{sgn}(f_{yy}).
+  \]
 \end{obs}
 
 \begin{theorem}\textbf{de los valores extremos de Weierstra\ss.} \label{teo:weier}
