@@ -1,7 +1,37 @@
-\textcolor{red}{definir paralelep\'ipedo rectangular B en R3. }
-\textcolor{red}{definir particion de un  paralelep\'ipedo rectangular. quien es $\Delta V_{ijk}$  quien es $V_{ijk}$. Explicar la notacion que aparece en la primer definicion }
-\textcolor{red}{se podria hacer algun dibujo} 
+\begin{definition}	
+Sea \( B \) un paralelepípedo rectangular que pertenece a \( \Rn{3} \), tal que    
+\[
+B = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; a \leq x \leq b,\; c \leq y \leq d,\; e \leq z \leq f \right\}.
+\]
+\end{definition}
 
+La \textit{partición} del paralelepípedo rectangular \( B \) consiste en dividir el conjunto \( B \) (una caja) en pequeñas cajas de igual volumen. Esto se hace dividiendo:
+
+\begin{itemize}
+    \item el intervalo \( [a, b] \) en \( l \) subintervalos \( [x_i, x_{i+1}] \), cada uno de ancho \( \Delta x \),
+    \item el intervalo \( [c, d] \) en \( n \) subintervalos \( [y_j, y_{j+1}] \), cada uno de ancho \( \Delta y \),
+    \item el intervalo \( [e, f] \) en \( m \) subintervalos \( [z_k, z_{k+1}] \), cada uno de ancho \( \Delta z \).
+\end{itemize}
+
+\input{figs/conjunto_B.tex}
+
+Los planos que pasan por los puntos finales de estos subintervalos, paralelos a los planos coordenados \( (x, y, z) \), dividen al paralelepípedo \( B \) en pequeñas subcajas.
+
+Estas subcajas se denotan como
+\[
+B_{ijk} = [x_i, x_{i+1}] \times [y_j, y_{j+1}] \times [z_k, z_{k+1}].
+\]
+
+Se definen:
+
+\begin{itemize}
+    \item \( c_{ijk} \): punto dentro del subconjunto \( B \), en particular, dentro de alguna partición.
+    \item \( V_{ijk} \): conjunto de puntos dentro de la partición \( B_{ijk} \); es decir, la partición misma.
+    \item \( \Delta V_{ijk} \): volumen de la partición \( B_{ijk} \), dado por:
+    \[
+    \Delta V_{ijk} = \Delta x_i\Delta y_j\Delta z_k.
+    \]
+\end{itemize}
 
 \begin{definition}
 Dada una funci\'on continua $f:U\to\R$, donde $U$ es un paralelep\'ipedo rectangular (una caja) en $\Rn{3}$, se define la suma de Reimann de $f$ sobre $U$, partiendo los tres lados de $U$ en $n$ partes iguales, a
