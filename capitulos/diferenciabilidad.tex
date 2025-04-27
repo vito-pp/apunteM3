@@ -375,30 +375,30 @@ y
 
 \begin{definition}
   Sea $\mathbf{F}:U\subseteq\Rn{n}\to\Rn{m}$, diferenciable en $\mathbf{x}_0\in\interior{U}$. Se define la \emph{matriz diferencial de $\mathbf{F}$ en $\mathbf{x}_0$}, y se nota por $\boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)$, a
-  \textcolor{red}{agregar X0} 
   \[
   \boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)=
     \begin{bmatrix} 
-      \grad{f_1} \\
-      \grad{f_2} \\
+      \grad{f_1}(\mathbf{x}_0) \\
+      \grad{f_2}(\mathbf{x}_0) \\
       \vdots     \\
-      \grad{f_m}
+      \grad{f_m}(\mathbf{x}_0)
     \end{bmatrix}
     =
     \begin{bmatrix} 
-      \dif{f_1}{x_1} & \dif{f_1}{x_2} & \cdots & \dif{f_1}{x_n} \\
+      \dif{f_1}{x_1}(\mathbf{x}_0) & \dif{f_1}{x_2}(\mathbf{x}_0) & \cdots & \dif{f_1}{x_n}(\mathbf{x}_0) \\
                      &                &        &                \\
-      \dif{f_2}{x_1} & \dif{f_2}{x_2} & \cdots & \dif{f_2}{x_n} \\
+      \dif{f_2}{x_1}(\mathbf{x}_0) & \dif{f_2}{x_2}(\mathbf{x}_0) & \cdots & \dif{f_2}{x_n}(\mathbf{x}_0) \\
                      &                &        &                \\
        \vdots         &  \vdots        & \ddots & \vdots         \\
                      &                &        &                \\
-      \dif{f_m}{x_1} & \dif{f_m}{x_2} & \cdots & \dif{f_m}{x_n}
+      \dif{f_m}{x_1}(\mathbf{x}_0) & \dif{f_m}{x_2}(\mathbf{x}_0) & \cdots & \dif{f_m}{x_n}(\mathbf{x}_0)
     \end{bmatrix},
   \]
   donde $\mathbf{F}=(f_1, f_2, \dots, f_m)\;|\;f_i:U\subseteq\Rn{n}\to\R,\;i=1,2,\dots, m.$
+\end{definition}
 
-  \textcolor{red}{hacer otra definicion}
-  Y a su vez, en el caso particular en que $n=m$; se define el \emph{jacobiano de $\mathbf{F}$ en $\mathbf{x}_0$}, y se lo nota por $J_{\mathbf{F}}(\mathbf{x}_0)$, al determinante de la matriz diferencial, \emph{i.e.}
+\begin{definition}
+  Sea $\mathbf{F}:U\subseteq\Rn{n}\to\Rn{n}$, diferenciable en $\mathbf{x}_0\in\interior{U}$. Se define el \emph{jacobiano de $\mathbf{F}$ en $\mathbf{x}_0$}, y se lo nota por $J_{\mathbf{F}}(\mathbf{x}_0)$, al determinante de la matriz diferencial, \emph{i.e.}
   \[
     J_{\mathbf{F}}(\mathbf{x}_0) = \det(\boldsymbol{D}_{\mathbf{F}}(\mathbf{x}_0)). 
   \]
@@ -410,16 +410,15 @@ Notar que $\boldsymbol{D}_{\mathbf{F}}\in\R^{m\times n}$.
 
 \begin{theorem}\textbf{Regla de la cadena.} \label{teo:cadena}
 \mbox{}
-\textcolor{red}{campos en mayus}
-  Sean $\mathbf{f}, \mathbf{g}$ funciones 
+  Sean $\mathbf{F}, \mathbf{G}$ funciones 
     \begin{align*}
-    \mathbf{g} &:A \subset \Rn{n} \to B \subset \Rn{m} \\
-    \mathbf{f} &:B \subset \Rn{m} \to \Rn{p},
+    \mathbf{G} &:A \subset \Rn{n} \to B \subset \Rn{m} \\
+    \mathbf{F} &:B \subset \Rn{m} \to \Rn{p},
     \end{align*}
-  y un punto $\mathbf{x}_0 \in \interior{A} \text{ tal que } \mathbf{g}(\mathbf{x}_0) \in \interior{B}$. Supongamos que $\mathbf{g}$ es diferenciable en $\mathbf{x}_0$ y que $\mathbf{f}$ es diferenciable en $\mathbf{y}_0 = \mathbf{g}(\mathbf{x}_0)$. Entonces la composic\'on $\mathbf{f} \circ \mathbf{g}$ es diferenciable en $\mathbf{x}_0$ y, adem\'as,
+  y un punto $\mathbf{x}_0 \in \interior{A} \text{ tal que } \mathbf{G}(\mathbf{x}_0) \in \interior{B}$. Supongamos que $\mathbf{G}$ es diferenciable en $\mathbf{x}_0$ y que $\mathbf{F}$ es diferenciable en $\mathbf{y}_0 = \mathbf{G}(\mathbf{x}_0)$. Entonces la composic\'on $\mathbf{F} \circ \mathbf{G}$ es diferenciable en $\mathbf{x}_0$ y, adem\'as,
   \[
-   \boldsymbol{D}_{\mathbf{f} \circ \mathbf{g}}{(\mathbf{x}_0)} = \boldsymbol{D}_\mathbf{f}{(\mathbf{y}_0)} 
-   \boldsymbol{D}_\mathbf{g}{(\mathbf{x}_0)}.
+   \boldsymbol{D}_{\mathbf{F} \circ \mathbf{G}}{(\mathbf{x}_0)} = \boldsymbol{D}_\mathbf{F}{(\mathbf{y}_0)} 
+   \boldsymbol{D}_\mathbf{G}{(\mathbf{x}_0)}.
   \]
 \end{theorem}
 
