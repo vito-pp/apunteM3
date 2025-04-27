@@ -1,7 +1,5 @@
 \label{sec:diferenciabilidad}
 
-\textcolor{red}{definiciones derivabilidad}
-
 \begin{definition}\textbf{Diferenciabilidad de campos escalares.} \label{def:dif_escalar}
 \mbox{}
 Sean $f: A \subset \Rn{n} \to \R$ y $\mathbf{x}_0 \in \interior{A}$. Decimos que $f$ es \emph{diferenciable en $\mathbf{x}_0$} si $\exists\:\mathbf{m} \in \Rn{n}$ tal que
@@ -14,9 +12,9 @@ Si $A$ es un conjunto abierto, decimos que $f$ es \emph{diferenciable} si es dif
 \begin{definition}\textbf{Diferenciabilidad, caso general.} \label{def:dif_general}
 \mbox{}
 
-Sean $f: A \subset \Rn{n} \to \Rn{m}$ y $\mathbf{x}_0 \in \interior{(A)}$. Decimos que $f$ es \emph{diferenciable en $\mathbf{x}_0$} si $\exists M \in \Rnp{m}{n}$ tal que
+Sean $f: A \subset \Rn{n} \to \Rn{m}$ y $\mathbf{x}_0 \in \interior{A}$. Decimos que $f$ es \emph{diferenciable en $\mathbf{x}_0$} si $\exists\:\boldsymbol{M} \in \Rnp{m}{n}$ tal que
 \[
-  \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{\norm{f(\mathbf{x}) - f(\mathbf{x}_0) - M \cdot (\mathbf{x} - \mathbf{x}_0)}}{\norm{\mathbf{x} - \mathbf{x}_0}} = 0.
+  \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{\norm{f(\mathbf{x}) - f(\mathbf{x}_0) - \boldsymbol{M} \cdot (\mathbf{x} - \mathbf{x}_0)}}{\norm{\mathbf{x} - \mathbf{x}_0}} = 0.
 \]
 Si $A$ es un conjunto abierto, decimos que $f$ es \emph{diferenciable} si es diferenciable en cada punto $\mathbf{x}_0 \in A$.
 \end{definition}
@@ -138,7 +136,7 @@ Entonces, por la propiedad \eqref{prop:lim_2}, tenemos que
  \lim_{h \to 0} \frac{ f(\mathbf{x}_0 + h,y_0) - f(\mathbf{x}_0,y_0) }{h} = \alpha,
 \]
 \fi
-Sean $f: A \subset \Rn{n} \to \R$ y $\mathbf{x}_0 \in \interior{(A)}$, tales que $\exists \mathbf{m} = (m_1, m_2, \cdots, m_n) \in \Rn{n} \, /$
+Sean $f: A \subset \Rn{n} \to \R$ y $\mathbf{x}_0 \in \interior{(A)}$, tales que $\exists\: \mathbf{m} = (m_1, m_2, \cdots, m_n) \in \Rn{n} \, /$
 \[
  \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{f(\mathbf{x}) - f(\mathbf{x}_0) - \mathbf{m} \cdot (\mathbf{x} - \mathbf{x}_0)}
                                  {\norm{\mathbf{x} - \mathbf{x}_0}} = 0
@@ -151,7 +149,7 @@ Sean $f: A \subset \Rn{n} \to \R$ y $\mathbf{x}_0 \in \interior{(A)}$, tales que
  \begin{proof}
  \mbox{}
  
-Sea $\mathbf{x} = \mathbf{x}_0 + h \mathbf{e}_j$, siendo $h \in \R$ y $\mathbf{e}_j$ el $j$-\'esimo vector can\'onico (el vector de $\Rn{n}$ que tiene un $1$ en la posici\'on $j$ y ceros en todas las dem\'as). Es decir, definimos una funci\'on $\mathbf{g}:(-\delta,\delta) \to \Rn{n}\;|\; \mathbf{g}(h) = \mathbf{x}_0 + h \mathbf{e}_j$, con $\delta > 0$, lo suficientemente peque\~{n}o como para que $\text{Img}(\mathbf{g}) \subset A$ \footnote{¿Cul\'al de las hip\'otesis asegura la existencia de un tal $\delta$?}, y llamamos $\mathbf{x} = \mathbf{g}(h)$. Notemos que $\mathbf{g}(h) \to \mathbf{x}_0$ cuando $h \to 0$. 
+Sea $\mathbf{x} = \mathbf{x}_0 + h \mathbf{e}_j$, siendo $h \in \R$ y $\mathbf{e}_j$ el $j$-\'esimo vector can\'onico. Es decir, definimos una funci\'on $\mathbf{g}:(-\delta,\delta) \to \Rn{n}\;|\; \mathbf{g}(h) = \mathbf{x}_0 + h \mathbf{e}_j$, con $\delta > 0$, lo suficientemente peque\~{n}o como para que $\text{Img}(\mathbf{g}) \subset A$ \footnote{¿Cul\'al de las hip\'otesis asegura la existencia de un tal $\delta$?}, y llamamos $\mathbf{x} = \mathbf{g}(h)$. Notemos que $\mathbf{g}(h) \to \mathbf{x}_0$ cuando $h \to 0$. 
 
 Por la diferenciabilidad, tenemos que 
 \[
