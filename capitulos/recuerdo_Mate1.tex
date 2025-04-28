@@ -1,18 +1,20 @@
-\begin{definition}
+\begin{definition}{\textbf{Función.}}
    Se llama \textit{función} a la regla que asigna a cada elemento de un conjunto
     $A$  un y s\'olo un elemento de un conjunto $B$. Tomaremos, en esta secci\'on,  el caso  donde $A, B \subseteq \mathbb{R}.$   La manera habitual de denotar una funci\'on $f$ es $$f: A \subseteq \mathbb{R} \rightarrow B \subseteq \mathbb{R}.$$  A los conjuntos $A$ y $B$  se los llama, respectivamente, \textit{dominio}  y \textit{codominio} de la funci\'on y  la notaci\'on usual para los mismos  es  $A=\text{Dom}(f)$ y $B=\text{Cod}(f)$.
     \label{def:FuncMate1}
 \end{definition}
 
 
-\begin{definition} Dada una funci\'on $f: A \subseteq \mathbb{R} \rightarrow B \subseteq \mathbb{R},$  se llama \textit{imagen} de una función y se nota  $\text{Im}(f)$, a
+\begin{definition} {\textbf{Imagen.}}
+    Dada una funci\'on $f: A \subseteq \mathbb{R} \rightarrow B \subseteq \mathbb{R},$  se llama \textit{imagen} de una función y se nota  $\text{Im}(f)$, a
     al conjunto 
     \begin{equation*}
         \text{Im}(f) = \left\{ y\in B: \exists\;x\in A\:|\:f(x)=y \right\}.    
     \end{equation*}
 \end{definition}
 
-\begin{definition}\label{grafm1}
+\begin{definition}{\textbf{Gráfica.}}
+    \label{grafm1}
    Dada una función $f: A \subseteq \mathbb{R} \rightarrow B \subseteq \mathbb{R}$ se define la \textit{gráfica} de $f$, y se nota  $\text{Graf}(f)$, al conjunto
     \begin{equation*}
         \text{Graf}(f) = \left\{ (x,y)\in \mathbb{R}^{2}: x \in A \land y=f(x)\right\}.    
@@ -204,7 +206,7 @@
     Finalmente, diremos que $f$  es \textit{biyectiva} cuando es simultáneamente \textit{sobreyectiva} e \textit{inyectiva} a la vez.
 \end{definition}
 
-\begin{definition}
+\begin{definition}{\textbf{Límite.}}
     Sea $f(x)$ definida en un intervalo abierto alrededor de $x_0$, excepto posiblemente $x_0$, es decir, en un entorno reducido aldededor del mismo
     $\varepsilon_0(x_0)$, se define el \textit{límite de $f(x)$ cuando x se aproxima a $x_0$}:
     \begin{equation*}
@@ -217,7 +219,7 @@
     \label{def:Limite}
 \end{definition}
 
-\begin{obs}{Límites Notables}
+\begin{obs}{\textbf{Límites Notables.}}
     \label{obs:LimitesNotables}
     A continuación se presenta una lista de límites notables que pueden ser de utilidad:
 
@@ -252,11 +254,26 @@
     \end{minipage}
 \end{obs}
 
-\begin{definition}{\textbf{Polinomio de Taylor}}
-    Sea $f$ una función con derivades de orden $n$ en $x=a \in \text{Dom}(f)$. Se llama \textit{Polinomio de Taylor} 
-    de grado $n$ de la función $f$ en $x=a$, y se simboliza $T_{f,a,n}(x)$, a:
+\begin{definition}{\textbf{Polinomio de Taylor.}}
+    Sea $f$ una función con derivadas de orden $n$ en $x=a \in \text{Dom}(f)$. Se llama \textit{Polinomio de Taylor} 
+    de órden $n$ de la función $f$ en $x=a$, y se simboliza $T_{f,a,n}(x)$, a:
     \begin{equation*}
         T_{f,a,n}(x) = \sum^n_{k=0} \frac{f^{(k)}(a)}{k!}(x-a)^k 
     \end{equation*}
     \label{def:PolTaylor}
+\end{definition}
+
+\begin{definition}{\textbf{Resto de Taylor.}}
+    Se llama \textit{Resto de Taylor}, o término de
+    error de la aproximación, a:
+    \begin{equation*}
+        R_{f,a,n}(x) = f(x)-T_{f,a,n}(x)
+    \end{equation*}
+    Sea $f$ una función con derivadas de orden $n+1$ en el intervalo cerrado entre $a$ y $x$. 
+    Existe $c\in\mathbb{R}$ en el intervalo abierto entre $a$ y $x$ tal que:
+    \begin{equation*}
+        R_{f,a,n}(x) = f^{(n+1)}(c) \cdot \frac{(x-x_0)^{n+1}}{(n+1)!}
+    \end{equation*}
+    A esta última se la llama la \textit{fórmula de Lagrange del Resto}.
+    \label{def:RestoTaylor}
 \end{definition}

@@ -1,28 +1,37 @@
-\begin{definition} Se define el  espacio $\mathbb{R}^n$  como el conjunto formado por todas las $n$-uplas de n\'umeros reales ordenados.   Es decir:
+\begin{definition}
+  Se define el  espacio $\mathbb{R}^n$  como el conjunto formado por todas las $n$-uplas de n\'umeros reales ordenados.   Es decir:
     \begin{equation*}
-        \mathbb{R}^n = \left\{ \boldsymbol{v} / \boldsymbol{v}=(x_1,x_2,x_3,...,x_n), \; x_i \in \mathbb{R} \;\forall \;   1\leq  i \leq n  \right\}
+        \mathbb{R}^n = \left\{ \vect{v} / \vect{v}=(x_1,x_2,x_3,...,x_n), \; x_i \in \mathbb{R} \;\forall \;   1\leq  i \leq n  \right\}
     \end{equation*}
 \end{definition}
 
-\begin{definition}  Sean  $\mathbb{V}$ y $\mathbb{W}$ sub-espacios vectoriales de $\mathbb{R}^n$.  Se  define a  una transformación lineal  como a  una función 
+\begin{definition}{\textbf{Transformación Lineal.}}
+  Sean  $\mathbb{V}$ y $\mathbb{W}$ sub-espacios vectoriales de $\mathbb{R}^n$.  Se  define a  una \textit{transformación lineal}  como a  una función 
     \begin{equation*}
-       \boldsymbol{T}: \mathbb{V} \rightarrow  \mathbb{W}
+       \campoVec{T}: \mathbb{V} \rightarrow  \mathbb{W}
     \end{equation*}
     que cumple con la condición de linealidad:
     \begin{equation}\label{tl}
-        \boldsymbol{T}(\alpha \cdot \boldsymbol{v_1} + \beta \cdot \boldsymbol{v_2})=\alpha \cdot \boldsymbol{T}(\boldsymbol{v_2}) + \beta \cdot \boldsymbol{T}(\boldsymbol{v_2}),
+        \campoVec{T}(\alpha \cdot \vect{v_1} + \beta \cdot \vect{v_2})=\alpha \cdot \campoVec{T}(\vect{v_2}) + \beta \cdot \campoVec{T}(\vect{v_2}),
     \end{equation}
-    donde $\boldsymbol{v_1},\boldsymbol{v_2} \in \mathbb{V}$ y $\alpha,\beta \in \mathbb{R}$. 
+    donde $\vect{v_1},\vect{v_2} \in \mathbb{V}$ y $\alpha,\beta \in \mathbb{R}$. 
     \label{def:TL}
 \end{definition}
 
+\begin{definition}{\textbf{Producto Vectorial.}}
+    Se define el \textit{producto vectorial}, o \textit{producto interno canónico}, en $\mathbb{R}^n$ para dos vectores
+    $\vect{u}=(u_1, u_2,\ldots, u_n )$ y $\vect{v}=(v_1,v_2,\ldots,v_n)$ como:
+    \begin{equation*}
+      \vect{u} \cdot \vect{v} = u_1v_1 + u_2v_2 + \ldots + u_nv_n = \sum_{i = 1}^{n} u_iv_i  
+    \end{equation*}
+\end{definition}
 
-
-\begin{definition} Sean    $\boldsymbol{v}\in\mathbb{R}^n$   no nulo y  $\boldsymbol{x_0}\in\mathbb{R}^n,$  el conjunto $L \subset \mathbb{R}^n $  que cumple  
+\begin{definition} {\textbf{Recta en el espacio.}}
+  Sean $\vect{v}\in\mathbb{R}^n$   no nulo y  $\vect{x_0}\in\mathbb{R}^n,$  el conjunto $L \subset \mathbb{R}^n $  que cumple  
  \begin{equation*}
-      L = \{   \boldsymbol{x} \in\mathbb{R}^n  \:| \:    \boldsymbol{x}=  \lambda \cdot \boldsymbol{v} + \boldsymbol{x_0},  \:  \mbox{  con }  \lambda\in\mathbb{R} \}.
-    \end{equation*}  es una recta en $ \mathbb{R}^n $  y a la ecuaci\'on $$ \boldsymbol{x}=  \lambda \cdot \boldsymbol{v} + \boldsymbol{x_0}$$  se  llama  \textbf{expresi\'on vectorial} de la misma.  
-    Adem\'as, llamaremos al vector $\boldsymbol{x_0}$ como \textbf{vector posici\'on} (o punto de paso) de la recta y al vector $\boldsymbol{v}$ como \textbf{vector director} de la recta.
+      L = \{   \vect{x} \in\mathbb{R}^n  \:| \:    \vect{x}=  \lambda \cdot \vect{v} + \vect{x_0},  \:  \mbox{  con }  \lambda\in\mathbb{R} \}.
+    \end{equation*}  es una \textit{recta} en $ \mathbb{R}^n $  y a la ecuaci\'on $$ \vect{x}=  \lambda \cdot \vect{v} + \vect{x_0}$$  se  llama  \textbf{expresi\'on vectorial} de la misma.  
+    Adem\'as, llamaremos al vector $\vect{x_0}$ como \textbf{vector posici\'on} (o punto de paso) de la recta y al vector $\vect{v}$ como \textbf{vector director} de la recta.
  \end{definition}
 
  \begin{figure}[H]
@@ -33,7 +42,7 @@
       width=12cm,
       height=12cm,
       axis lines=middle,
-      axis line style={black!70},
+      axis line style={black!70, dashed},
       label style={black!70},
       enlargelimits=0.5,
       ticks=none,
@@ -63,7 +72,7 @@
       \node at (axis cs:5,4.5,3.2) {$L$};
   
        % Vector director v (desde x_0)
-      \addplot3[->, thick, blue] coordinates {(1,1,1) (5.5,4,2.5)};
+      \addplot3[->, thick, blue] coordinates {(0,0,0) (4.5,3,1.5)};
       \node at (axis cs:3.3,2.5,2.3) {$\textcolor{blue}{\vec{v}}$};
   
     \end{axis}
@@ -72,23 +81,28 @@
   \end{center}
 \end{figure}
 
-\begin{definition} Sean    $\boldsymbol{n}\in\mathbb{R}^3$   no nulo  y  $\boldsymbol{x_0}\in\mathbb{R}^3,$  el conjunto $\pi \subset \mathbb{R}^3 $  que cumple  
+\begin{definition}{\textbf{Plano en el espacio.}}
+  Sean    $\vect{n}\in\mathbb{R}^3$   no nulo  y  $\vect{x_0}\in\mathbb{R}^3,$  el conjunto $\pi \subset \mathbb{R}^3 $  que cumple  
     \begin{equation*}
-      \pi  = \{   \boldsymbol{x} \in\mathbb{R}^3  \:| \:    \boldsymbol{n}\cdot(\boldsymbol{x} - \boldsymbol{x_0}) =0   \}.
-    \end{equation*} es un plano en $\mathbb{R}^3$  y a la ecuaci\'on   $$ \boldsymbol{n}\cdot(\boldsymbol{x} - \boldsymbol{x_0}) =0$$  se llama  \textbf{expresi\'on canónica} del mismo.  Adem\'as, llamaremos al vector $\boldsymbol{n}$   como \textbf{vector normal} del plano 
-    y al vector  $\boldsymbol{x_0}$ \textbf{punto de paso} del plano. 
+      \pi  = \{   \vect{x} \in\mathbb{R}^3  \:| \:    \vect{n}\cdot(\vect{x} - \vect{x_0}) =0   \}.
+    \end{equation*} es un \textit{plano} en $\mathbb{R}^3$  y a la ecuaci\'on   $$ \vect{n}\cdot(\vect{x} - \vect{x_0}) =0$$  se llama  \textbf{expresi\'on canónica} del mismo.  Adem\'as, llamaremos al vector $\vect{n}$   como \textbf{vector normal} del plano 
+    y al vector  $\vect{x_0}$ \textbf{punto de paso} del plano. 
 
     A su vez, también se puede expresar un plano análogamente a la forma propuesta para la recta:
     \begin{equation*}
-      \pi  = \{   \boldsymbol{x} \in\mathbb{R}^3  \:| \:    \boldsymbol{x}=\boldsymbol{x_0}+\alpha \boldsymbol{u} + \beta \boldsymbol{u},  \:  \mbox{  con }  \alpha,\beta\in\mathbb{R}    \}.
+      \pi  = \{   \vect{x} \in\mathbb{R}^3  \:| \:    \vect{x}=\vect{x_0}+\alpha \vect{u} + \beta \vect{u},  \:  \mbox{  con }  \alpha,\beta\in\mathbb{R}    \}.
     \end{equation*} tal que la ecuación
     \begin{equation*}
-       \boldsymbol{x}=\boldsymbol{x_0}+\alpha \boldsymbol{u} + \beta \boldsymbol{v}
+       \vect{x}=\vect{x_0}+\alpha \vect{u} + \beta \vect{v}
     \end{equation*}
-    se conoce como la \textbf{forma vectorial} del plano. Donde $\boldsymbol{u}$ y $\boldsymbol{v}$ son dos \textbf{vectores paralelos al plano}, que cumplen que $\boldsymbol{v}\times\boldsymbol{u}\shortparallel \boldsymbol{n}$, el vector normal del plano.
+    se conoce como la \textbf{forma vectorial} del plano. Donde $\vect{u}$ y $\vect{v}$ son dos \textbf{vectores paralelos al plano}, tal que  $\boldsymbol{v}\nparallel\boldsymbol{u}$.
     Finalmente, $\alpha$ y $\beta$ son \textbf{parámetros} reales.
-
+    \label{def:planoR3}
  \end{definition}
+
+ \begin{obs}
+    Notar que se cumple $\vect{v}\times\vect{u}=\lambda \cdot \vect{n}$, con $\lambda\in\mathbb{R}-\{0\}$.
+ \end{obs}
    
  \begin{figure}[H]
   \begin{center}
@@ -186,17 +200,18 @@
    \caption{Ejemplo del mismo plano de la figura anterior, $\pi$, pero con sus vectores directores $\vect{v}$ y $\vect{u}$ y punto de paso $\vect{x_0}$.}
    \end{center}
  \end{figure}
-\begin{definition} Sean  $(x_0,y_0) \in \mathbb{R}^2$ y $r \in \mathbb{R}_{ > 0}. $
+\begin{definition}{\textbf{Circunferencia y Círculo en el plano.}} 
+  Sean  $(x_0,y_0) \in \mathbb{R}^2$ y $r \in \mathbb{R}_{ > 0}. $
 
   El conjunto $C \subset \mathbb{R}^2$ que cumple
     \begin{equation*}\label{circ}
     C = \{  (x,y)  \in \mathbb{R}^2 \:|\:   (x-x_0)^2+(y-y_0)^2=r^2 \}
-    \end{equation*}  es una circunferencia en el plano. Adem\'as, al vector $(x_0,y_0)$  se lo llama centro y al n\'umero $r$  se lo llama radio de la misma.
+    \end{equation*}  es una \textit{circunferencia en el plano}. Adem\'as, al vector $(x_0,y_0)$  se lo llama centro y al n\'umero $r$  se lo llama radio de la misma.
    
   El conjunto $D \subset \mathbb{R}^2$ que cumple
     \begin{equation*}
     D = \{  (x,y)  \in \mathbb{R}^2 \:|\:   (x-x_0)^2+(y-y_0)^2 \leq r^2 \}
-    \end{equation*}  es un c\'irculo en el plano. Adem\'as, al vector $(x_0,y_0)$  se lo llama centro y al n\'umero $r$  se lo llama radio del mismo.  
+    \end{equation*}  es un \textit{c\'irculo en el plano}. Adem\'as, al vector $(x_0,y_0)$  se lo llama centro y al n\'umero $r$  se lo llama radio del mismo.  
    \end{definition}
    \begin{figure}[H]
     \begin{center}
@@ -289,7 +304,7 @@
    \end{figure}
    
    
-\begin{definition}\textbf{Ecuación de la esfera.}
+\begin{definition}\textbf{Esfera y su cáscara en el espacio.}
     La cáscara de una esfera (es decir, sólo su superficie exterior, hueca) 
     se expresa como un conjunto $A\subset\mathbb{R}^3$ que cumple
     \begin{equation*}

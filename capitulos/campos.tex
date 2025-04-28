@@ -1,17 +1,18 @@
 
 \begin{obs}
-Si en la definicion \ref{def:FuncMate1} cambiemos  $A \subset \mathbb{R}$ y $B \subset \mathbb{R}$ por $A \subset \mathbb{R}^{n}$ y $B \subset \mathbb{R}^{m}$  obtenemos de manera analoga la siguiente definici\'on.    
+Si en la definicion (\ref{def:FuncMate1}) cambiemos  $A \subset \mathbb{R}$ y $B \subset \mathbb{R}$ por $A \subset \mathbb{R}^{n}$ y $B \subset \mathbb{R}^{m}$  obtenemos de manera analoga la siguiente definici\'on.    
 \end{obs}
-\begin{definition} Un campo $\mathbf{F}$ es una funci\'on  tal que
+\begin{definition} {\textbf{Campos.}}
+  Un \textit{campo} $\mathbf{F}$ es una funci\'on  tal que
     $\mathbf{F}:A\subseteq \mathbb{R}^n \rightarrow B \subseteq \mathbb{R}^m.$   Si $m=1$ lo llamaremos  \textit{ campo vectorial }  y  si  $m\geq 2$ lo llamaremos   \textit{ campo escalar}. Al igual que en la definición \ref{def:FuncMate1}, a los conjuntos $A$ y $B$  se los llama, respectivamente, \textit{dominio}  y \textit{codominio} del campo $F$ y  la notaci\'on usual para los mismos  es  $A=\text{Dom}( \mathbf{F})$ y $B=\text{Cod}( \mathbf{F})$.   
   \end{definition}
   
   
   
-  \textit{Notaci\'on:} En general,  para nombrar a   campos escalars lo haremos con  letras minúsculas de imprenta y para nombrar a   campos vectorials lo haremos con  letras mayúsculas de imprenta.
+  \textit{Notaci\'on:} En general,  para nombrar a   campos escalares lo haremos con  letras minúsculas de imprenta y para nombrar a   campos vectorials lo haremos con  letras mayúsculas de imprenta.
   
-  \begin{definition}
-  Sea   $\mathbf{F}:A\subseteq \mathbb{R}^n \rightarrow B \subseteq \mathbb{R}^m$   un campo vectorial, dado $\boldsymbol{X} \in A$ se puede pensar a  $\mathbf{F}(\boldsymbol{X})$   como la evaluación de $m$ campos escalares en $\boldsymbol{X}$, 
+  \begin{definition} {\textbf{Componentes de un campo vectorial.}}
+  Sea   $\mathbf{F}:A\subseteq \mathbb{R}^n \rightarrow B \subseteq \mathbb{R}^m$   un \textit{campo vectorial}, dado $\boldsymbol{X} \in A$ se puede pensar a  $\mathbf{F}(\boldsymbol{X})$   como la evaluación de $m$ campos escalares en $\boldsymbol{X}$, 
     es decir,
     \begin{equation*}
         \mathbf{F}(\boldsymbol{X})=(f_0(\boldsymbol{X}), f_1(\boldsymbol{X}),..., f_m(\boldsymbol{X})).
@@ -20,8 +21,8 @@ Si en la definicion \ref{def:FuncMate1} cambiemos  $A \subset \mathbb{R}$ y $B \
  \end{definition}
   
   
-  \begin{definition}
-    Sea  $\mathbf{F}:A\subseteq \mathbb{R}^n \rightarrow B \subseteq \mathbb{R}^m$, se define el conjunto im\'agen de $\mathbf{F}$, y se nota $ \text{Img}(\mathbf{F})$, a 
+  \begin{definition}{\textbf{Conjunto Imagen.}}
+    Sea  $\mathbf{F}:A\subseteq \mathbb{R}^n \rightarrow B \subseteq \mathbb{R}^m$, se define el \textit{conjunto imagen} de $\mathbf{F}$, y se nota $ \text{Im}(\mathbf{F})$, a 
     \begin{equation*}
         \text{Im}(\mathbf{F})=\{\boldsymbol{Y}\in\mathbb{R}^m: \mathbf{F}(\boldsymbol{X})=\boldsymbol{Y}, \boldsymbol{X} \in A\}
     \end{equation*}
@@ -42,7 +43,7 @@ Si en la definicion \ref{def:FuncMate1} cambiemos  $A \subset \mathbb{R}$ y $B \
         \end{equation*}
         lo que describe, en el plano u-v-w la forma de un paraboloide hiperbólico.
         \begin{equation*}
-          Im(f)=\left\{ (u,v,w)\in\Re^3 \:|\: w=\frac{u^2}{4}-\frac{v^2}{4} \right\}
+          \text{Im}(f)=\left\{ (u,v,w)\in\Re^3 \:|\: w=\frac{u^2}{4}-\frac{v^2}{4} \right\}
         \end{equation*}
         Por lo tanto, se podría visualizar el campo vectorial como se visualizaría una función, como una relación entre
         dominio y codominio. Por ejemplo,
@@ -179,18 +180,108 @@ Si en la definicion \ref{def:FuncMate1} cambiemos  $A \subset \mathbb{R}$ y $B \
 
 
     \begin{example}
-    Probar que el campo $T(x,y) = (x+y,x-y,x+y)$  es una transformaci\'on lineal, es decir, que cumple  la condi\'on de   (\ref{def:TL}). Calcular su dominio, Imagen y mostrar sus componetes.
+    Probar que el campo $\campoVec{T}(x,y) = (x+y,x-y,x+y)$  es una transformaci\'on lineal, es decir, que cumple  la condici\'on de la definición (\ref{def:TL}). Calcular su Dominio, Imagen y mostrar sus componentes.
     
-     \textcolor{red}{Resolver hacer un dibujo de dominio y codominio}
+    Para probar que es una transformación lineal, primero planteamos dos vectores en $\mathbb{R}^2$, $\vect{u}=(u_1,u_2)$ y
+    $\vect{v}=(v_1,v_2)$, y dos escalares reales, $\alpha$ y $\beta$, tal que:
+    \begin{align*}
+      \campoVec{T}(\alpha\cdot\vect{u}+\beta\cdot\vect{v})&=\campoVec{T}((\alpha u_1,\alpha u_2)+(\beta v_1, \beta v_2))\\
+      &=\campoVec{T}(\alpha u_1+\beta v_1,\alpha u_2 + \beta v_2)\\
+      &= ((\alpha u_1+\beta v_1)+(\alpha u_2 + \beta v_2),(\alpha u_1+\beta v_1)-(\alpha u_2 + \beta v_2),(\alpha u_1+\beta v_1)+(\alpha u_2 + \beta v_2))\\
+      &= (\alpha u_1+\beta v_1+\alpha u_2+\beta v_2, \alpha u_1+\beta v_1 - \alpha u_2-\beta v_2, \alpha u_1+\beta v_1+\alpha u_2+\beta v_2)\\
+      &= (\alpha u_1+\alpha u_2, \alpha u_1 - \alpha u_2,\alpha u_1+\alpha u_2) + (\beta v_1+\beta v_2, \beta v_1 - \beta v_2,\beta v_1+\beta v_2)\\
+      &= \alpha \cdot (u_1+u_2,u_1-u_2,u_1+u_2) + \beta \cdot (v_1+v_2,v_1-v_2,v_1+v_2)\\
+      &= \alpha \cdot \campoVec{t}((u_1,u_2)) + \beta \cdot \campoVec{T}(v_1,v_2)\\
+      \therefore \campoVec{T}(\alpha\cdot\vect{u}+\beta\cdot\vect{v})&= \alpha \cdot \campoVec{T}(\vect{u}) + \beta \cdot \campoVec{T}(\vect{v})
+    \end{align*}
+    Luego, las componentes del campo son los campos escalares:
+    \begin{align*}
+      t_1(x,y)&=x+y\\
+      t_2(x,y)&=x-y\\
+      t_3(x,y)&=x+y
+    \end{align*}
+    Puesto que no tiene restricciones a los vectores que puede transformar, tiene $\text{Dom}(\campoVec{T})=\mathbb{R}^2$. Su codominio resulta $\text{Cod}(f)=\mathbb{R}^3$.
+    Y, para encontrar su imagen:
+    \begin{align*}
+      \campoVec{T}(u_1,u_2)&=(u_1+u_2,u_1-u_2,u_1+u_2)\\
+      &=(u_1,u_1,u_1)+(u_2,-u_2,u_2)\\
+      &=u_1\cdot(1,1,1) + u_2\cdot (1,-1,1)\\
+      &=\alpha\cdot(1,1,1) + \beta\cdot (1,-1,1), \:\alpha, \beta \in \mathbb{R}
+    \end{align*}
+    Así, la imagen resulta:
+    \begin{equation*}
+      \text{Im}(\campoVec{T})=\{   \vect{x} \in\mathbb{R}^3  \:| \:    \vect{x}=\alpha (1,1,1) + \beta (1,-1,1),  \:  \mbox{  con }  \alpha,\beta\in\mathbb{R}    \}
+    \end{equation*}
+    Que representa un plano en $\mathbb{R}^3$, con punto de paso $(0,0,0)$ y vectores paralelos al mismo $(1,1,1)$ y $(1,-1,1)$,
+    acorde a la definición (\ref{def:planoR3}). Es equivalente representar el plano con la ecuación $z=x+y$.
     
+    Finalmente, se puede representar gráficamente el dominio y codominio.
+    \begin{figure}[H]
+      \begin{center}
+      \begin{tikzpicture}[scale=1]
+  
+          % --- Espacio R^2 (dominio) a la izquierda ---
+          \begin{axis}[
+              at={(0,0)},
+              anchor=origin,
+              width=6cm,
+              height=6cm,
+              axis lines=middle,
+              axis line style={black!70},
+              label style={black!70},
+              ticks=none,
+              xlabel={$x$}, ylabel={$y$},
+              xmin=0, xmax=3,
+              ymin=0, ymax=3,
+          ]
+              % Punto (2,1) en R^2
+              \addplot[only marks, mark=*, red] coordinates {(2,1)};
+              \node at (axis cs:1.6,0.8) {\textcolor{red}{$(2,1)$}};
+          \end{axis}
+  
+          % --- Título dominio ---
+          \node at (2.5,4.5) {Dominio};
+  
+          % --- Espacio R^3 (codominio) a la derecha ---
+          \begin{axis}[
+              at={(8cm,1.4cm)},
+              anchor=origin,
+              width=6cm,
+              height=6cm,
+              view={120}{30},
+              axis lines=middle,
+              axis line style={black!70},
+              label style={black!70},
+              ticks=none,
+              xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+              xmin=0, xmax=4,
+              ymin=0, ymax=4,
+              zmin=0, zmax=4,
+          ]
+              % Punto (3,1,3) en R^3
+              \addplot3[only marks, mark=*, blue] coordinates {(3,1,3)};
+              \node at (axis cs:4,0.8,2.6) {\textcolor{blue}{$(3,1,3)$}};
+          \end{axis}
+  
+          % --- Título codominio ---
+          \node at (8,4.5) {Codominio};
+  
+          % --- Flecha curvada entre los puntos ---
+          \draw[->, thick, black]
+              (3.1,1.6) .. controls (5,4) and (6,3.5) .. (7.3,2.4);
+          \node at (5.5,3.9) {\Large$\campoVec{T}$};
+  
+      \end{tikzpicture}
+      \caption{Representación de $\campoVec{T}$ en el caso $\campoVec{T}(2,1) = (3,1,3)$.}
+      \end{center}
+  \end{figure}
    \end{example}
-
-
-\begin{definition} Se llaman parametrizaciones a las funciones de la forma $\boldsymbol{\sigma}:A\subseteq\mathbb{R}\rightarrow B\subseteq\mathbb{R}^m$ con $ m>1$.   
+\begin{definition} {\textbf{Parametrización.}}
+  Se llaman parametrizaciones a las funciones de la forma $\boldsymbol{\sigma}:A\subseteq\mathbb{R}\rightarrow B\subseteq\mathbb{R}^m$ con $ m>1$.   
 \end{definition}
    
    
-   Notaci\'on:  \textcolor{red}{(enumerar)}  En general,  a una  parametrización se la suele notar con una letra min\'uscula del alfabeta griego.
+   \textit{Notaci\'on}:  En general,  a una  parametrización se la suele notar con una letra min\'uscula del alfabeta griego.
 
     \begin{example} Hallar una parametrizacion del conjuto 
       \begin{equation*}
@@ -210,7 +301,7 @@ Si en la definicion \ref{def:FuncMate1} cambiemos  $A \subset \mathbb{R}$ y $B \
         \begin{equation*}
             \boldsymbol{\sigma}:[0,2\pi)\rightarrow\mathbb{R}^2/ \\ \boldsymbol{\sigma}(t)=(\cos{t},\sin{t})
         \end{equation*}
-        Así, si se graficase $\text{Img}(\boldsymbol{\sigma})$ como puntos en el plano se obtendría toda la circunferencia unitaria.
+        Así, si se graficase $\text{Im}(\boldsymbol{\sigma})$ como puntos en el plano se obtendría toda la circunferencia unitaria.
         Vale aclarar que se tomó el dominio como cerrado en $0$ y abierto en $2\pi$, para que, puesto que ambos valores de 
         entrada corresponden al mismo punto de salida, la parametrización no tenga "puntos repetidos", es decir, que sea inyectiva 
         (análogo a la inyectividad de funciones de $\mathbb{R}$ a $\mathbb{R}$).
