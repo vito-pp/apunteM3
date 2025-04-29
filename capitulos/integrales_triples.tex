@@ -110,13 +110,42 @@ Entonces si $U$ es una caja que contiene a $W$ y $\partial W$ est\'a formada por
     \]
 \end{theorem}
 
-\begin{definition}  \textcolor{red}{No queda claro quien es el conjunto D.  }
+\begin{definition}
     \textbf{Conjunto elemental en }$\Rn{3}$.
-    Sea $W\subseteq\Rn{3}$. Sean $\phi_1,\;\phi_2:[a,b]\to\R$ funciones y sean $\gamma_1,\;\gamma_2:D\to\R$ funciones continuas.  Un conjunto $W\subseteq\Rn{3}$ se llama elemental, si puede ser escrito  \textcolor{red}{de algunas de las siguientes 6 maneras: es largo pero escribirlas todas, ojo con la notacion} como el conjunto de puntos $(x,y,z)$ que satifacen
-    \begin{equation*}
-        x\in[a,b], \qquad \phi_1(x)\leq y\leq\phi_2(x), \qquad \gamma_1(x,y)\leq z\leq\gamma_2(x,y). 
-    \end{equation*}
-    O bien, intercambiando el orden de las variables.
+    Sea $W\subseteq\Rn{3}$ y sea donde \( D \subseteq \mathbb{R}^2 \), un dominio acotado. Sean $\phi_1,\;\phi_2:[a,b]\to\R$ funciones y sean $\gamma_1,\;\gamma_2:D\to\R$ funciones continuas.  Un conjunto $W\subseteq\Rn{3}$ se llama elemental, si puede ser escrito como el conjunto de puntos $(x,y,z)$ que satifacen
+    % \begin{equation*}
+    %     x\in[a,b], \qquad \phi_1(x)\leq y\leq\phi_2(x), \qquad \gamma_1(x,y)\leq z\leq\gamma_2(x,y). 
+    % \end{equation*}
+    \subsection*{Forma 1:}
+	\[
+	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; a \leq x \leq b,\ \phi_1(x) \leq y \leq \phi_2(x),\ \eta_1(x, y) \leq z \leq \eta_2(x, y) \right\}
+	\]
+	
+	\subsection*{Forma 2:}
+	\[
+	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; a \leq x \leq b,\ \psi_1(x) \leq z \leq \psi_2(x),\ \eta_1(x, z) \leq y \leq \eta_2(x, z) \right\}
+	\]
+	
+	\subsection*{Forma 3:}
+	\[
+	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; c \leq y \leq d,\ \phi_1(y) \leq x \leq \phi_2(y),\ \eta_1(x, y) \leq z \leq \eta_2(x, y) \right\}
+	\]
+	
+	\subsection*{Forma 4:}
+	\[
+	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; c \leq y \leq d,\ \psi_1(y) \leq z \leq \psi_2(y),\ \eta_1(y, z) \leq x \leq \eta_2(y, z) \right\}
+	\]
+	
+	\subsection*{Forma 5:}
+	\[
+	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; r \leq z \leq s,\ \phi_1(z) \leq x \leq \phi_2(z),\ \eta_1(x, z) \leq y \leq \eta_2(x, z) \right\}
+	\]
+	
+	\subsection*{Forma 6:}
+	\[
+	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; r \leq z \leq s,\ \psi_1(z) \leq y \leq \psi_2(z),\ \eta_1(y, z) \leq x \leq \eta_2(y, z) \right\}
+	\]
+    % O bien, intercambiando el orden de las variables.
 \end{definition}
 
 
