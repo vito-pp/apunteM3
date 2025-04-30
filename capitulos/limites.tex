@@ -44,7 +44,6 @@ donde $\norm{\cdot}_n$ y $\norm{\cdot}_m$ son las normas en $\Rn{n}$ y $\Rn{m}$,
 \end{definition}
 
 \begin{example} Probar, usando la definici\'on, los siguientes l\'imites
- 
  \[
   \lim_{(x,y) \to (0,0)} \frac{x^2  y}{x^2 + y^2} = 0.
  \]
@@ -52,12 +51,111 @@ donde $\norm{\cdot}_n$ y $\norm{\cdot}_m$ son las normas en $\Rn{n}$ y $\Rn{m}$,
  \[
   \lim_{(x,y) \to (0,0)} \frac{x^2 \sin( y)}{x^2 + y^2} = 0.
  \]
-
-\textcolor{red}{mejorar los espacios. Resolver los ejemplos. Hacer menci\'on de los cotas utiles}
-
-
 \end{example}
 
+\begin{obs} Para resolver límites por definicion, usualmente se utilizan ciertas cotas conocidas, en primer lugar, fijamos $(x,y)\neq (0,0)$
+  \renewcommand{\theenumi}{\Roman{enumi}}
+  \begin{enumerate}
+  \item 
+  \[
+  x^2\leq x^2+y^2 \iff \frac{x}{ x^2+y^2}\leq 1 \iff \frac{x^2}{||(x,y)||^2}\leq 1
+  \]
+  
+  \item 
+  
+  \[
+  \frac{|x|}{||(x,y)||}\leq 1
+  \]
+  \item 
+  \[
+  |sen(x)|\leq 1 
+  \]
+  \[
+  |cos(x)|\leq 1 
+  \]
+  \item 
+  \[
+   |sen(x)|\leq |x|
+  \]
+  
+  \end{enumerate}
+\end{obs}
+Se pide calcular los siguientes límites por definición
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+  \item
+  \[
+  \lim_{(x, y) \to (0, 0)} \frac{x^2 y}{x^2 + y^2} = 0
+  \]
+  
+  \item
+  \[
+  \lim_{(x, y) \to (0, 0)} \frac{x^2 \sin(y)}{x^2 + y^2} = 0
+  \]
+\end{enumerate}
+
+Empezamos enunciando la definición formal de límite:
+\[
+\forall \varepsilon > 0 \space\space\space \exists \space\delta > 0 \space/\space\space |f(x,y) - L| < \varepsilon  \space\space\space \Rightarrow \space \forall (x,y) \in \Re^2 \space/\space\space0 < ||(x-x_o,y-y_o)|| < \delta
+\]
+entonces,
+\[
+\lim_{(x,y) \to (x_o,y_o)} f(x,y) = L
+\]
+
+\renewcommand{\labelenumi}{\alph{enumi})}
+
+\begin{enumerate}
+  \item
+Se escribira la definicion con el límite solicitado, proponiendo $L=0$
+\[
+\forall \varepsilon > 0 \space\space\space \exists \space\delta > 0 \space/\space\space | \frac{x^2y}{x^2+y^2} - 0| < \varepsilon  \space\space\space \Rightarrow \space \forall (x,y) \in \Re^2 \space/\space\space0 < ||(x-0,y-0)|| < \delta
+\]
+
+Partimos de
+\[
+| \frac{x^2y}{x^2+y^2} - 0|=| \frac{x^2y}{x^2+y^2}|= \frac{x^2|y|}{x^2+y^2}
+\]
+ahora, utilizando las cotas conocidas sabemos que
+\[
+x^2\leq x^2+y^2 
+\]
+\[
+|y|\leq \sqrt{x^2+y^2} 
+\]
+por lo cual
+\[
+\frac{x^2|y|}{x^2+y^2}\leq\frac{(x^2+y^2)\sqrt{x^2+y^2} }{x^2+y^2}=\sqrt{x^2+y^2}=||(x,y)||<\delta
+\]
+Basta con tomar $\delta=\epsilon$ entonces
+\[
+\frac{x^2|y|}{x^2+y^2}\leq\sqrt{x^2+y^2}<\delta=\epsilon
+\]
+\item 
+Se escribira la definicion con el límite solicitado, proponiendo $L=0$
+\[
+\forall \varepsilon > 0 \space\space\space \exists \space\delta > 0 \space/\space\space | \frac{x^2sen(y)}{x^2+y^2} - 0| < \varepsilon  \space\space\space \Rightarrow \space \forall (x,y) \in \Re^2 \space/\space\space0 < ||(x-0,y-0)|| < \delta
+\]
+Partimos de
+\[
+| \frac{x^2sen(y)}{x^2+y^2} - 0|=| \frac{x^2sen(y)}{x^2+y^2}|= \frac{x^2|sen(y)|}{x^2+y^2}
+\]
+ahora, utilizando las cotas conocidas sabemos que
+\[
+x^2\leq x^2+y^2 
+\]
+\[
+|sen(y)|\leq |y|
+\]
+por lo cual
+\[
+\frac{x^2|sen(y)|}{x^2+y^2}\leq\frac{(x^2+y^2).|y| }{x^2+y^2}\leq\frac{(x^2+y^2)\sqrt{x^2+y^2} }{x^2+y^2}=\sqrt{x^2+y^2}=||(x,y)||<\delta
+\]
+Basta con tomar $\delta=\epsilon$ entonces
+\[
+\frac{x^2sen (y)}{x^2+y^2}\leq\sqrt{x^2+y^2}<\delta=\epsilon
+\]
+\end{enumerate}
 
 \begin{theorem}\textbf{Unicidad del l\'imite.} \label{teo:unicidad_limite}
 \mbox{}
