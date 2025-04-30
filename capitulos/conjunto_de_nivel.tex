@@ -1,152 +1,418 @@
 
+
+%---------------------------------------------------------def conjunto de nivel----------------------------------------------------
 \begin{definition} [Conjunto de nivel] 
-\label{def:conjunto de nivel}
- \mbox{}
- 
-Sea $f: U\subset\Rn{n}\rightarrow\R$ y sea $c \in \R$, se define  el conjunto de nivel de $f$ de nivel  $c$, y se nota $C(c,f)$,  a  
-\[
-C(c,f)=\{ x \in U \backslash f (x)=c \}.
- \]
+    \label{def:conjunto de nivel}
+     \mbox{}
+     
+    Sea $f: U \subset \mathbb{R}^n \rightarrow \mathbb{R}$ y sea $c \in \mathbb{R}$, se define  el conjunto de nivel de $f$ de nivel  $c$, y se nota $C(c,f)$,  a  
+    \[
+    C(c,f)=\{ \mathbf{x} \in U \backslash f (\mathbf{x})=c \}.
+     \]
+    Es decir,  $C(c,f)$ son aquellos puntos $x\in\ U$ para las cuales $f(x)=c$, o dicho de otra manera,  $C(c,f)$ es la preimagen de $c$ por $f$.   Si $n=2$ hablamos de curva de nivel  y si $n=3$  hablamos de superficie de nivel  
+    
+    \begin{obs}  Si $f: A \subseteq \mathbb{R}^n \rightarrow \mathbb{R}$ entonces $C(c,f)  \subset \mathbb{R}^{n}.$
+       \end{obs}
+\end{definition}
 
-
-
-
-
-Es decir,  $C(c,f)$ son aquellos puntos $x\in\ U$ para las cuales $f(x)=c$, o dicho de otra manera,  $C(c,f)$ es la preimagen de $c$ por $f$.   Si $n=2$ hablamos de curva de nivel  y si $n=3$  hablamos de superficie de nivel  
-
-Observaci\'on: \textcolor{red}{Enumerar}   Si $f: A\subseteq\Rn{n}\rightarrow\R$ entonces $C(c,f)  \subset \mathbb{R}^{n}.$
-
-
+%---------------------------------------------------------def corte transversal---------------------------------------------------------------
+    
+\begin{definition}
+        Se llama \textbf{corte transversal} de un conjunto \( S \subseteq \mathbb{R}^n \) a la intersección de \( S \) con un hiperplano \( H \subseteq \mathbb{R}^n \).
+        
+        Formalmente, dado un hiperplano \( H \), el corte transversal es el conjunto:
+        \[
+        S \cap H
+        \]
+        que describe la "sección" de \( S \) en el hiperplano \( H \).
+        
+        En \(\mathbb{R}^3\), típicamente, un corte transversal se realiza con un plano de la forma \( z = c \) (plano horizontal), \( x = c \) (plano vertical) o \( y = c \).
+\end{definition}
+    
+%----------------------------------------------------------ejemplos--------------------------------------------------------------
 
 \begin{example}   Sea  el campo  $f: \mathbb{R}^{2} \rightarrow \mathbb{R} \:|\:  f(x,y)=x^2+y^2.$
-\end{example}
-1. Calcular y graficar los conjuntos de nivel de $f$.
 
-2. Hacer un gr\'afico de  $graf(f)$.
-
-
-
-Observemos que, dado $c \in \mathbb{R}$: 
- $$C(c,f)=\{(x,y) \in U \backslash   x^2+y^2  =c \}.$$
- Tomando, para ilustrar,  $c=0$, $c=1$ y $c=4$, quedando (ver (\ref{circ})) 
- \[
-C(0,f)=\{(x,y) \in U \backslash x^2+y^2=0 \}
-\]
- \[
-C(1,f)=\{(x,y) \in U \backslash x^2+y^2=1 \}
-\]
- \[
-C(4,f)=\{(x,y) \in U \backslash x^2+y^2=4 \}
- \]
-
-\begin{figure}[h!] % El entorno figure te permite incluir imágenes
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/conjunto1_r.png} % Cambia esta ruta por la ubicación de tu imagen
-    \caption{Conjuntos de nivel}
-    \label{fig:ejemplo} % Etiqueta para hacer referencia a la imagen
-\end{figure}
-
-En general, podemos determinar: 
-
-   \[
-        C(c,f)=
-        \begin{dcases}
-           \textnormal{Circunferencia centrada en (0,0) de radio} \sqrt{c},  & \textnormal{si}:  c>0 \\
-(0,0)  & \textnormal{si}:\ c=0\\
-\emptyset  & \textnormal{si}:\ c<0\\
-        \end{dcases}
+    1. Calcular y graficar los conjuntos de nivel de $f$.
+    
+    2. Hacer un gr\'afico de  $graf(f)$.
+    
+    
+    
+    Observemos que, dado $c \in \mathbb{R}$: 
+     $$C(c,f)=\{(x,y) \in U \backslash   x^2+y^2  =c \}.$$
+    Tomando, para ilustrar,  $c=0$, $c=1$ y $c=4$, 
+    % quedando (ver (\ref{circ})) 
+     \[
+    C(0,f)=\{(x,y) \in U \backslash x^2+y^2=0 \}
     \]
+     \[
+    C(1,f)=\{(x,y) \in U \backslash x^2+y^2=1 \}
+    \]
+     \[
+    C(4,f)=\{(x,y) \in U \backslash x^2+y^2=4 \}
+     \]
+    
+    
+\begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Dibujar ejes coordenados con números
+        \draw[->] (-2.5,0) -- (2.5,0) node[right] {\footnotesize $x$};
+        \draw[->] (0,-2.5) -- (0,2.5) node[above] {\footnotesize $y$};
+        
+        % Marcas y etiquetas en los ejes
+        \foreach \x in {-2,-1,1,2}
+            \draw (\x,0.1) -- (\x,-0.1) node[below] {\footnotesize \x};
+        \foreach \y in {-2,-1,1,2}
+            \draw (0.1,\y) -- (-0.1,\y) node[left] {\footnotesize \y};
+        
+        % Dibujar los círculos de nivel en sentido antihorario
+        \draw[thick, green] (0,0) circle (1);
+        \draw[thick, blue] (0,0) circle (2);
 
-\textcolor{red}{Aca ``dibujar'' los conjuntos de nivel en $\mathbb{R}^{3}$ y notar que no es suficinte para graficar.}  
+        
+        % Etiquetas de los conjuntos de nivel
+        \node[green] at (1,0.7) {\footnotesize C=1};
+        \node[blue] at (1.8,1.4) {\footnotesize C=4};
+        \node[red] at (0.3,0.2) {\footnotesize C=0};
+        
+        % Punto en el origen
+        \filldraw[red] (0,0) circle (1pt);
+    \end{tikzpicture}
+\end{center}
+    
+    En general, podemos determinar: 
+    
+       \[
+            C(c,f)=
+            \begin{dcases}
+               \textnormal{Circunferencia centrada en (0,0) de radio} \sqrt{c},  & \textnormal{si}:  c>0 \\
+    (0,0)  & \textnormal{si}:\ c=0\\
+    \emptyset  & \textnormal{si}:\ c<0\\
+            \end{dcases}
+        \]
 
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            view={60}{20},
+            xlabel={$x$},
+            ylabel={$y$},
+            zlabel={$z$},
+            xmin=-2, xmax=2,
+            ymin=-2, ymax=2,
+            zmin=0, zmax=6,  % Extender el eje z hasta 5
+            samples=50,
+            width=10cm,
+            height=12cm,
+            colormap/viridis
+        ]
+            \addplot3 [
+                surf, opacity=0.5, draw=none, 
+                restrict z to domain=0:5.6,
+                data cs=polar, 
+                domain=0:360, 
+                y domain=0:{sqrt(5.9)}  % Ajustar el dominio radial
+            ] 
+            (x, y, y^2);
+                % Dibujar los círculos de nivel en sentido antihorario
+        \draw[thick, green] (0,0,1) circle (1);
+        \draw[thick, blue] (0,0,4) circle (2);
 
-\textcolor{red}{Definir cortes transversales y dibujarlos.}
-
-
-\begin{figure}[h!] % El entorno figure te permite incluir imágenes
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/conjunto1_r3.png} % Cambia esta ruta por la ubicación de tu imagen
-    \caption{graf(f)}
-    \label{fig:ejemplo} % Etiqueta para hacer referencia a la imagen
-\end{figure}
-
-
-
- 
-
+     
+        
+        % Etiquetas de los conjuntos de nivel
+        \node[green] at (1.2,0.8,1) {\footnotesize C=1};
+        \node[blue] at (1.7,1.7,4) {\footnotesize C=4};
+        \node[red] at (0.4,0.6) {\footnotesize C=0};
+        
+        % Punto en el origen
+        \filldraw[red] (0,0) circle (1pt);
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+\end{example}
+     
+    
 \begin{example}   Sea  el campo  $g: \mathbb{R}^{2} \rightarrow \mathbb{R} \:|\:  g(x,y) = \sqrt{x^2+y^2}.$
-\end{example}
-1. Calcular y graficar los conjuntos de nivel de $g$.
+    1. Calcular y graficar los conjuntos de nivel de $g$.
+    
+    2. Hacer un gr\'afico de  $graf(g)$.
+    
+    
+     
+    Observemos que, dado $c \in \mathbb{R}$: 
+     $$C(c,f)=\{(x,y) \in U \backslash   \sqrt{x^2+y^2}  =c \}.$$
+    Tomando, para ilustrar,  $c=0$, $c=1$ y $c=2$, 
+    % quedando (ver (\ref{circ})) 
+    \[
+        C(0,f)=\{(x,y) \in U \backslash \sqrt{x^2+y^2}=0 \}
+        \]
+         \[
+        C(1,f)=\{(x,y) \in U \backslash \sqrt{x^2+y^2}=1 \}
+        \]
+         \[
+        C(2,f)=\{(x,y) \in U \backslash \sqrt{x^2+y^2}=2 \}
+         \]
+    
+    
+  
+    
 
-2. Hacer un gr\'afico de  $graf(g)$.
-
-
-\textcolor{red}{Resolver identico al ejercicio  anterior.}  
-
-
-
-: Se toma la funcion $f(x,y)=\sqrt{x^2+y^2}$, donde empezamos a analizar los distintos conjuntos de nivel, tomando $c$ con diferentes constantes
- \[
-C(0,f)=\{(x,y) \in U \backslash \sqrt{x^2+y^2}=0 \}
-\]
- \[
-C(1,f)=\{(x,y) \in U \backslash \sqrt{x^2+y^2}=1 \}
-\]
- \[
-C(2,f)=\{(x,y) \in U \backslash \sqrt{x^2+y^2}=2 \}
- \]
-
-\begin{figure}[h!] % El entorno figure te permite incluir imágenes
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/conjunto2_r2.png} % Cambia esta ruta por la ubicación de tu imagen
-    \caption{Conjuntos de nivel}
-    \label{fig:ejemplo} % Etiqueta para hacer referencia a la imagen
-\end{figure}
-
-En general, podemos determinar: 
-
-   \[
-        C(c,f)=
+     \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+            % Dibujar ejes coordenados con números
+            \draw[->] (-2.5,0) -- (2.5,0) node[right] {\footnotesize $x$};
+            \draw[->] (0,-2.5) -- (0,2.5) node[above] {\footnotesize $y$};
+            
+            % Marcas y etiquetas en los ejes
+            \foreach \x in {-2,-1,1,2}
+                \draw (\x,0.1) -- (\x,-0.1) node[below] {\footnotesize \x};
+            \foreach \y in {-2,-1,1,2}
+                \draw (0.1,\y) -- (-0.1,\y) node[left] {\footnotesize \y};
+            
+            % Dibujar los círculos de nivel en sentido antihorario
+            \draw[thick, green] (0,0) circle (1);
+            \draw[thick, blue] (0,0) circle (2);
+    
+            
+            % Etiquetas de los conjuntos de nivel
+            \node[green] at (1,0.7) {\footnotesize C=1};
+            \node[blue] at (1.8,1.4) {\footnotesize C=2};
+            \node[red] at (0.3,0.2) {\footnotesize C=0};
+            
+            % Punto en el origen
+            \filldraw[red] (0,0) circle (1pt);
+        \end{tikzpicture}
+        
+    \end{center}
+    
+    En general, podemos determinar: 
+    
+       \[
+            C(c,f)=
+            \begin{dcases}
+               \textnormal{Circunferencia centrada en (0,0) de radio} c,  & \textnormal{si}:  c>0 \\
+    (0,0)  & \textnormal{si}:\ c=0\\
+    \emptyset  & \textnormal{si}:\ c<0\\
+            \end{dcases}
+        \]
+   
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                        view={60}{20},
+                        xlabel=$x$,
+                        ylabel=$y$,
+                        zlabel=$z$,
+                        xmin=-4,
+                        ymin=-4,
+                        zmin=0,
+                        xmax=4,
+                        ymax=4,
+                        zmax=4,
+                        samples=50,
+                        width=10cm,
+                        height=12cm,
+                        colormap/viridis,
+                    ]
+                    \addplot3[
+                surf,
+                domain=0:4,
+                y domain=0:360,
+                samples=30,
+                samples y=60
+            ]
+            ({x*cos(y)},{x*sin(y)},{x}); % Parámetrico: x = r cos(θ), y = r sin(θ), z = r
+               % Dibujar los círculos de nivel en sentido antihorario
+            \draw[thick, green] (0,0,1) circle (1);
+            \draw[thick, blue] (0,0,2) circle (2);
+    
+         
+            
+            % Etiquetas de los conjuntos de nivel
+            \node[green] at (1.5,0.8,1) {\footnotesize C=1};
+            \node[blue] at (2,2,2) {\footnotesize C=2};
+            \node[red] at (0.4,0.6) {\footnotesize C=0};
+            
+            % Punto en el origen
+            \filldraw[red] (0,0) circle (1pt);
+                \end{axis}
+                
+            \end{tikzpicture}
+            
+        \end{center}
+    \end{example}
+    
+    
+    \begin{obs}
+        Dada la ecuación \( z^2 = x^2 + y^2 \), si despejamos \( z \) obtenemos dos expresiones:
+        
+        \[
+        z = \sqrt{x^2 + y^2} ,
+        \quad
+        z = -\sqrt{x^2 + y^2} 
+        \]
+        
+        Definimos entonces las funciones:
+        
+        \[
+        f_1 : \mathbb{R}^2 \to [0,+\infty), \quad f_1(x,y) = \sqrt{x^2 + y^2},
+        \]
+        \[
+        f_2 : \mathbb{R}^2 \to (-\infty,0], \quad f_2(x,y) = -\sqrt{x^2 + y^2}.
+        \]
+        
+        Así, los conjuntos de nivel de \( f_1 \) y \( f_2 \) son:
+        
+        \[
+        C(c,f_1) =
         \begin{dcases}
-           \textnormal{Circunferencia centrada en (0,0) de radio} c,  & \textnormal{si}:  c>0 \\
-(0,0)  & \textnormal{si}:\ c=0\\
-\emptyset  & \textnormal{si}:\ c<0\\
+        \textnormal{Circunferencia centrada en } (0,0) \textnormal{ de radio } c, & \textnormal{si } c>0, \\
+        \{(0,0)\}, & \textnormal{si } c=0, \\
+        \emptyset, & \textnormal{si } c<0,
         \end{dcases}
-    \]
-\begin{figure}[h!] % El entorno figure te permite incluir imágenes
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/conjunto2_r3.png} % Cambia esta ruta por la ubicación de tu imagen
-    \caption{Conjuntos de nivel y graf(f)}
-    \label{fig:ejemplo} % Etiqueta para hacer referencia a la imagen
-\end{figure}
-
-De esta manera, considerando la definicion de gráfica de una funci\'on, podemos representar la misma en $\Rn{3}$ tomando  la ecuaci\'on de la parte superior de un cono: $z=\sqrt{x^2+y^2}$
-
-
-
-\textcolor{red}{Corregir esta observaci\'on. esta mal escrito, quien es la funci\'on f?}
-
-
-Observaci\'on \textcolor{red}{enumerar}:Dada la  ecuaci\'on $z^2=x^2+y^2$ al despejar z obtenemos $|z|=\sqrt{x^2+y^2}$ obtendriamos que: 
- \[
-        C(c,f)=
+        \]
+        \[
+        C(c,f_2) =
         \begin{dcases}
-           \textnormal{Circunferencia centrada en (0,0) de radio} c,  & \textnormal{si}:  c>0 \\
-(0,0)  & \textnormal{si}:\ c=0\\
-\textnormal{Circunferencia centrada en (0,0) de radio} c,  & \textnormal{si}:\ c<0\\
+        \textnormal{Circunferencia centrada en } (0,0) \textnormal{ de radio } -c, & \textnormal{si } c<0, \\
+        \{(0,0)\}, & \textnormal{si } c=0, \\
+        \emptyset, & \textnormal{si } c>0.
         \end{dcases}
-    \]
+        \]
+        
+        De esta manera, considerando la definición de gráfica de una función, podemos representar en \(\mathbb{R}^3\) las gráficas de \( f_1 \) y \( f_2 \), que juntas forman el cono dado por la ecuación \( z^2 = x^2 + y^2 \).
+        
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                        view={60}{20},
+                        xlabel=$x$,
+                        ylabel=$y$,
+                        zlabel=$z$,
+                        xmin=-4,
+                        ymin=-4,
+                        zmin=-4,
+                        xmax=4,
+                        ymax=4,
+                        zmax=4,
+                        samples=50,
+                        width=10cm,
+                        height=12cm,
+                        colormap/viridis,
+                    ]
+                    % Cono superior
+                    \addplot3[
+                        surf,
+                        domain=0:4,
+                        y domain=0:360,
+                        samples=30,
+                        samples y=60
+                    ]
+                    ({x*cos(y)},{x*sin(y)},{x});
+                    
+                    % Cono inferior
+                    \addplot3[
+                        surf,
+                        domain=0:4,
+                        y domain=0:360,
+                        samples=30,
+                        samples y=60
+                    ]
+                    ({x*cos(y)},{x*sin(y)},{-x});
+        
+                    % Dibujar los círculos de nivel en sentido antihorario
+                    \draw[thick, green] (0,0,1) circle (1);
+                    \draw[thick, blue] (0,0,2) circle (2);
+                    \draw[thick, purple] (0,0,-1) circle (1);
+                    \draw[thick, orange] (0,0,-2) circle (2);
+        
+                    % Etiquetas de los conjuntos de nivel
+                    \node[green] at (1.5,0.8,1) {\footnotesize C=1};
+                    \node[blue] at (2,2,2) {\footnotesize C=2};
+                    \node[purple] at (1,-2,0.2) {\footnotesize C=-1};
+                    \node[orange] at (2,2,-1.6) {\footnotesize C=-2};
+                    \node[red] at (0.8,0.5,0) {\footnotesize C=0};
+                    
+                    % Punto en el origen
+                    \filldraw[red] (0,0,0) circle (1pt);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        \end{obs}
 
-De esta manera, considerando la definicion de gráfica de una funcion, podemos representar la misma en $\Rn{3}$ tomando  la ecuacion del cono: $z^2=x^2+y^2$
 
-\begin{figure}[h!] % El entorno figure te permite incluir imágenes
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/conjunto3_r3.png} % Cambia esta ruta por la ubicación de tu imagen
-    \caption{Conjuntos de nivel y graf(f)}
-    \label{fig:ejemplo} % Etiqueta para hacer referencia a la imagen
-\end{figure}
+  
+\begin{obs} Notemos que graficando solamente los conjuntos de nivel de los ejemplos 1 y 2, los mismos no son suficientes para determinar la gráfica de la función.
+    \begin{center}
+        \begin{tabular}{cc}
+            \begin{minipage}{0.45\textwidth}
+                \centering
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        view={60}{20},
+                        xlabel={$x$},
+                        ylabel={$y$},
+                        zlabel={$z$},
+                        xmin=-2, xmax=2,
+                        ymin=-2, ymax=2,
+                        zmin=0, zmax=5,
+                        samples=50,
+                        width=6cm,
+                        height=7cm,
+                        colormap/viridis
+                    ]
+                        \draw[thick, green] (0,0,1) circle (1);
+                        \draw[thick, blue] (0,0,4) circle (2);
+                        \node[green] at (1.2,0.8,1) {\footnotesize C=1};
+                        \node[blue] at (1.7,1.7,4) {\footnotesize C=4};
+                        \node[red] at (0.4,0.6) {\footnotesize C=0};
+                        \filldraw[red] (0,0) circle (1pt);
+                    \end{axis}
+                \end{tikzpicture}
+            \end{minipage}
+            &
+            \begin{minipage}{0.45\textwidth}
+                \centering
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        view={60}{20},
+                        xlabel={$x$},
+                        ylabel={$y$},
+                        zlabel={$z$},
+                        xmin=-2, xmax=2,
+                        ymin=-2, ymax=2,
+                        zmin=0, zmax=5,
+                        samples=50,
+                        width=6cm,
+                        height=7cm,
+                        colormap/viridis
+                    ]
+                    \draw[thick, green] (0,0,1) circle (1);
+                    \draw[thick, blue] (0,0,2) circle (2);
+            
+                 
+                    
+                    % Etiquetas de los conjuntos de nivel
+                    \node[green] at (1.5,0.8,1) {\footnotesize C=1};
+                    \node[blue] at (2,2,2) {\footnotesize C=2};
+                    \node[red] at (0.4,0.6) {\footnotesize C=0};
+                    
+                    % Punto en el origen
+                    \filldraw[red] (0,0) circle (1pt);
+                    \end{axis}
+                \end{tikzpicture}
+            \end{minipage}
+        \end{tabular}
+        \end{center}
 
 
-\textcolor{red}{Mejorar la figura, no se llega a apreciar el cono completo}
+            \end{obs}
 
-\end{definition}
+
+
+
+
+
+    
