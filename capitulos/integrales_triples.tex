@@ -49,24 +49,24 @@ donde $c_{ijk}\in U_{ijk}$, el $ijk$-\'esimo paralelep\'ipedo rectangular en la 
 \end{definition}
 
 \begin{obs}
-\textcolor{red}{agregar condiciones sobre f para la  existencia del limite}
+\textcolor{red}{agregar condiciones sobre f para la  existencia del limite. CONTINUIDAD}
 \end{obs}
 
 
 Para extender esta noci\'on de integral a un conjunto acotado m\'as general, esto es, conjuntos que puedan ser encerrados por una caja, definimos lo siguiente. 
 
 \begin{definition}
-Dada $f:U\to\R$, se define la funci\'on $f^*$ tal que
+Dada $f:W\to\R$, se define la funci\'on $f^*$ tal que
 \[
     f^*(x,y,z)=
     \begin{dcases*}
         f(x,y,z) & si $(x,y,z)\in W$ \\[.2cm]
-        0        & si $(x,y,z)\notin W.$
+        0        & si $(x,y,z)\notin B\smallsetminus W.$
     \end{dcases*}
 \]
 Entonces si $U$ es una caja que contiene a $W$ y $\partial W$ est\'a formada por las gr\'aficas de un n\'umero finito de funciones continuas, $f^*$ ser\'a integrable.  Se define
 \[
-    \iiint_W f\:dV=\iiint_U f^*\:dV.  
+    \iiint_W f\:dV=\iiint_B f^*\:dV.  
 \]
 \end{definition}
 

@@ -21,21 +21,22 @@ donde $c_{ij}\in B_{ij}$, el $ij$-\'esimo rect\'angulo en la partici\'on de $B$,
 \end{definition}
 
 \begin{obs}
-\textcolor{red}{agregar condiciones sobre f para la  existencia del limite}
+\textcolor{red}{agregar condiciones sobre f para la  existencia del limite. que sea continua, salvo discontinuidad en curvas.}
 \end{obs}
 
 
 Para extender esta noci\'on de integral a  conjuntos acotados m\'as generales que no sean  rect\'angulos, definimos lo siguiente. 
 
-\begin{definition}\label{int_D} \textcolor{red}{Hacer un dibujo}
+\begin{definition}\label{int_D} \textcolor{red}{Hacer un dibujo. como en el tromba}
 Dada $f:D\to\R$, se define la funci\'on $f^*$ tal que \textcolor{red}{quien es D?}
 \[
     f^*(x,y)=
     \begin{dcases*}
         f(x,y) & si $(x,y)\in D$ \\[.2cm]
-        0        & si $(x,y)\notin D.$
+        0        & si $(x,y)\notin R\smallsetminus D.$
     \end{dcases*}
 \]
+\textcolor{red}{quien es R?}
 Entonces si $B$ es un rect\'angulo que contiene a $D$ y $\partial D$ est\'a formada por las gr\'aficas de un n\'umero finito de funciones continuas,  $f^*$ ser\'a integrable.  Se define
 \[
     \iint_D f\:dA=\iint_B f^*\:dA.  
@@ -172,14 +173,10 @@ La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
     \]
 \end{theorem}
 
-
-\textcolor{red}{Falta definir  $\boldsymbol{D}_\mathbf{F}$}
-
-
 \begin{definition}
-    Sea $\mathbf{F}:A\subseteq\Rn{n}\to\Rn{n}$ un campo $\mathcal{C}^1(A)$ y sea $\boldsymbol{D}_\mathbf{F}$ su matriz diferencial definida en $A$. Se define el \textbf{jacobiano}, o \textbf{determinante jacobiano}, y se lo nota $J_\mathbf{F}$ a 
+    Sea $\mathbf{F}:A\subseteq\Rn{n}\to\Rn{n}$ un campo $\mathcal{C}^1(A)$ y sea $\boldsymbol{D}_\mathbf{F}$ \textcolor{red}{agregar ref de Df} su matriz diferencial definida en $A$. Se define el \textbf{jacobiano}, o \textbf{determinante jacobiano}, y se lo nota $J_\mathbf{F}$ a 
     \[
-        J_\mathbf{F}=\left|\text{det}(\boldsymbol{D}_\mathbf{F})\right|.
+        J_\mathbf{F}=\text{det}(\boldsymbol{D}_\mathbf{F}).
     \]
 \end{definition}
 
@@ -190,6 +187,7 @@ La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
 \begin{theorem} % lo escribi como lo tenia en mis apuntes
     \textbf{Teorema del cambio de variables para integrales dobles}. Sea $f:D\subseteq\Rn{2}\to\Rn{2}$ un campo escalar integrable. Sea $\mathbf{T}:D^*\subseteq\Rn{2}\to D$ continua de clase $\mathcal{C}^1$ en $\interior{(D^*)}$, inyectiva en $\interior{(D^*)}$ y tal que $\mathbf{T}(D^*)=D$. Entonces
     \[
-        \iint_D f\:dA=\iint_{D^*}(f\circ\mathbf{T})J_\mathbf{T}\:dA.
+        \iint_D f\:dA=\iint_{D^*}(f\circ\mathbf{T})|J_\mathbf{T}|\:dA,
     \]
+    donde $|J_\mathbf{T}|$ es el m\'odulo del jacobiano de $\mathbf{T}$.
 \end{theorem}
