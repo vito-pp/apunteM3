@@ -1,36 +1,45 @@
 \begin{definition}
-   Sea $\boldsymbol{\Sigma}:D\subseteq\Rn{2} \to\Rn{3}$ una parametrizaci\'on continua e  inyectiva de una superficie $S$. Si $ \partial D$ es la curva cerrada, simple,  frontera del conjunto $D$,  se define el \textbf{borde} o \textbf{frontera} de $S$, y se lo nota $\partial S$, a la curva cerrada simple en $\Rn{3}$ tal que 
+   Sea $\boldsymbol{\Sigma}:D\subseteq\Rn{2} \to\Rn{3}$ una parametrizaci\'on continua e  inyectiva de una superficie $S$. Si $ \partial D$ es la curva cerrada, simple,  frontera del conjunto $D$,  se define el \emph{borde} o \emph{frontera} de $S$, y se lo nota $\partial S$, a la curva cerrada simple en $\Rn{3}$ tal que 
     \[
         \partial S=\boldsymbol{\Sigma}(\partial D).
     \]
 \end{definition}
 
-\begin{obs} 
-    Si $\partial D$ est\'a orientada de manera antihoraria, entonces $\boldsymbol{\Sigma}$ \textbf{induce} una orientaci\'on sobre $\partial S$. Adem\'as $\boldsymbol{\Sigma}$ \textbf{induce} una orientaci\'on sobre $S$.
+\begin{obs} \label{sigma_induce}
+    Si $\partial D$ est\'a orientada de manera antihoraria, entonces $\boldsymbol{\Sigma}$ \emph{induce} una orientaci\'on sobre $\partial S$. Adem\'as $\boldsymbol{\Sigma}$ \emph{induce} una orientaci\'on sobre $S$.
 \end{obs}
 
-\textcolor{red}{Mano derecha. Explicacion e ilustracion}
-
-
-\begin{definition} \textcolor{red}{mandar a topologia y referenciar}
-    Sea $D$ un conjunto conexo (en $\Rn{2}$ o en $\Rn{3}$).  $D$ se llama \textbf{simplemente conexo}  si toda curva cerrada y  simple  $C\subset D$  es el borde de un conjunto $\hat{D}$ tal que $\hat{D} \subset  D.$
-\end{definition}
+\begin{obs}\textbf{Regla de la mano derecha.}
+    En $\Rn{2}$ la orientaci\'on ortogonal de los ejes $x$ e $y$ es \'unica; en cambio en $\Rn{3}$, el tercer eje ortogonal $z$, admite dos posibles 
+    orientaci\'ones ``hacia arriba o hacia abajo''. Entonces se define una convenci\'on para la orientaci\'on de este tercer eje de manera que 
+    \[
+        \vu{i}\times\vu{j}=\vu{k},
+    \]  
+    donde $\vu{i}$, $\vu{j}$ y $\vu{k}$ son los versores c\'anonicos para los ejes cartesianos $x,\;y,\;z$, respectivamente. Luego \emph{la regla de la mano derecha} es una mnemot\'ecnica que sirve para recordar dicha orientaci\'on.
+    \input{figs/mano_derecha.tex}
+\end{obs}
 
 \begin{theorem}
-    \textbf{Teorema de Green}. Sea $D\subset \Rn{2}$ un conjunto simplemente conexo y sea   la curva simple y cerrada  $\partial D$ su frontera. Si  $\mathbf{F}:D\to\Rn{2}$  es continuo y de clase $\mathcal{C}^1$, entonces
+    \textbf{Teorema de Green}. Sea $D\subset \Rn{2}$ un conjunto simplemente conexo (\autoref{def:conjuntosimpconexo}) y sea la curva simple y cerrada  $\partial D$ su frontera. Si  $\mathbf{F}:D\to\Rn{2}$ es continuo y de clase $\mathcal{C}^1$, entonces
     \[
         \oint_{\partial D^{+}} \mathbf{F}\cdot d\mathbf{s} = \iint_D \grad\times\mathbf{F}\cdot d\mathbf{A}.
     \]
 \end{theorem}
 
-\begin{obs}  \textcolor{red}{Notacion: dar}
-   \[
-        \int_{\partial D}P\:dx+Q\:dy=.
+\begin{obs} Sea $\mathbf{F}:D\subset \Rn{2}\to\Rn{2}$, con $\mathbf{F}(x,y)=(P(x,y),Q(x,y))=P(x,y)\vu{i}+Q(x,y)\vu{j}$. Entonces, si se cumple el teorema de Green para $\mathbf{F}$ en $D$, se puede escribir el teorema de la siguiente manera alternativa:
+\[
+    \oint_{\partial D^+}P\:dx+Q\:dy=\iint_D\left(\dif{Q}{x}-\dif{P}{y}\right)dA,
 \]
+ya que 
+\[
+    \oint_{\partial D^+}P\:dx+Q\:dy=\oint_{\partial D^{+}} \mathbf{F}\cdot d\mathbf{s}
+\]
+y 
+\[
+    \left(\dif{Q}{x}-\dif{P}{y}\right)\vu{k}=\nabla\times\mathbf{F}.
+\]
+\textcolor{red}{no se bien como escribir esto, pq $\vu{k}$ es una direcci\'on ``virtual'' en R2.}
 \end{obs}
-
-
-
 
 \begin{obs}
     \textbf{Extensi\'on de Green.} El teorema de Green es aplicable a regiones a\'un m\'as generales que simplemente conexas. De hecho, a cualquier regi\'on en $\Rn{2}$ cuya frontera se pueda descomponer en un n\'umero finito de curvas cerradas simples orientadas se le puede aplicar el teorema de Green. La idea es ``recorrer" dicha frontera pasando por todas las curvas que la confroman. 
@@ -108,12 +117,12 @@ Si $\mathbf{F}:  D\to \Rn{2}$ es un campo vectorial continuo y de clase $\mathca
 \textbf{Teorema de Stokes}. Sea $\boldsymbol{\Sigma}:D\subset\Rn{2} \to S\subset\Rn{3}$    una parametrizaci\'on de una superficie $S$.   Si $\mathbf{F}:  A\subset \Rn{3}\to \Rn{3}$ es un campo vectorial continuo, de clase  $\mathcal{C}^1(\interior{A})$ tal que  $S \subset A$, entonces
 \[
     \oint_{\partial S}\mathbf{F}\cdot d\mathbf{s}=\iint_S\grad\times\mathbf{F}\cdot d\mathbf{A}, 
-\]  donde las orientaciones tanto de  $S$ como de $\partial S$ son las inducidas \textcolor{red}{ref inducidas por sigma} por $\boldsymbol{\Sigma}$ sobre ellas.
+\]  donde las orientaciones tanto de  $S$ como de $\partial S$ son las inducidas por $\boldsymbol{\Sigma}$ sobre ellas (\ref{sigma_induce}).
 
 \end{theorem}
 
 \begin{theorem}
-\textbf{Teorema de la divergencia o de Gauss}. Sea $S\subset\Rn{3}$ una superficie que encierra un volumen $\Omega$ ( $S=\partial \Omega$ ) orientada de manera exterior.  Si $\mathbf{F}:A \subset \Rn{3} \to\Rn{3}$ es  un campo vectorial continuo y de clase $\mathcal{C}^1(\interior{A})$ tal que $\Omega \subset \interior{A}$, entonces
+\textbf{Teorema de la divergencia o de Gauss}. Sea $S\subset\Rn{3}$ una superficie que encierra un volumen $\Omega$, \textit{i.e.} $S=\partial \Omega$, orientada de manera exterior.  Si $\mathbf{F}:A \subset \Rn{3} \to\Rn{3}$ es  un campo vectorial continuo y de clase $\mathcal{C}^1(\interior{A})$ tal que $\Omega \subset \interior{A}$, entonces
 \[
     \oiint_{\partial \Omega}\mathbf{F}\cdot d\mathbf{S}=\iiint_{\Omega}\grad\cdot\mathbf{F}\:dV.
 \]

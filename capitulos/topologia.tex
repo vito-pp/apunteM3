@@ -1,7 +1,4 @@
-
 \textcolor{red}{Falta definicion de distancia, de norma y la relacion entre ellas.  Como ejemplo poner la norma 1 y 2. Graficar algunos mismos conjuntos con diferente normas}
-
-
 
 \begin{definition} [Bola de radio $\delta$ y centro $x_o$] \label{def:bola}
     Sean $x_o \in \Rn{n},\;\delta > 0$ y $\text{d}$ una distancia en $\Rn{n}$. La \emph{bola de radio $\delta$ y centro $x_o$}, que denotamos con $B_{\delta}(x_o)$, es el conjunto:
@@ -85,14 +82,14 @@
     Equivalentemente, $A$ es un \emph{conjunto acotado} si $\exists \delta > 0, x_o \in \Rn{n} : A \subset B_{\delta}(x_o)$.
    \end{definition}
    
-   
    \begin{definition}
-    Sea un conjunto $A\subseteq\Rn{n}$. $A$ se llama \textbf{conexo} si dados dos puntos cualquiera de $A$ se los puede unir por una curva continua que este incluida en $A$.
+    Sea un conjunto $A\subseteq\Rn{n}$. $A$ se llama \emph{conexo} si dados dos puntos cualquiera de $A$ se los puede unir por una curva continua que este incluida en $A$.
 \end{definition}
-   
-   
 
-
+% \begin{definition}\label{def:simp_conexo}
+%     Sea $D$ un conjunto conexo (en $\Rn{2}$ o en $\Rn{3}$).  $D$ se llama \emph{simplemente conexo}  si toda curva cerrada y  simple  $C\subset D$  es el borde de un conjunto $\hat{D}$ tal que $\hat{D} \subset  D.$
+% \end{definition}
+   
 %------------------------------------------------------conjunto conexo----------------------------
 \begin{definition} [Conjunto conexo] \label{def:conjuntoconexo} Un conjunto \( A \subset \mathbb{R}^n \) es \textbf{conexo} si para cualesquiera dos puntos \( x_0, y_0 \in A \), existe una curva continua \( \gamma : [0,1] \to A \) tal que:
 
@@ -233,7 +230,7 @@
     
     %------------------------------------------------------conjunto simplemente conexo----------------------------
     \vspace{0.5cm}
-    \begin{definition}[Conjunto conexo] \label{def:conjuntoconexo}
+    \begin{definition}[Conjunto conexo] \label{def:conjuntosimpconexo}
     Un conjunto \( A \subset \mathbb{R}^2 \) es \textbf{simplemente conexo} si es conexo y todo lazo cerrado dentro de \( A \) puede ser continuamente deformado a un punto, sin salir de \( A \).
     
     \vspace{0.3cm} % Pequeño espacio entre el texto y las figuras
