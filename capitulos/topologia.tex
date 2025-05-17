@@ -1,22 +1,61 @@
-\textcolor{red}{Falta definicion de distancia, de norma y la relacion entre ellas.  Como ejemplo poner la norma 1 y 2. Graficar algunos mismos conjuntos con diferente normas}
+\begin{definition}\label{def:norma-general}
+    Una \emph{norma} en $\mathbb{R}^n$ es una función $\|\cdot\| : \mathbb{R}^n \to \mathbb{R}$ que asigna a cada vector $\mathbf{x} \in \mathbb{R}^n$ un número real no negativo $\|\mathbf{x}\|$, y que satisface las siguientes propiedades para todos $\mathbf{x},\;\mathbf{y} \in \mathbb{R}^n$ y todo escalar $\lambda \in \mathbb{R}$:
+    \begin{enumerate}
+        \item Positividad: $\|\mathbf{x}\| \geq 0\;\land\;\|\mathbf{x}\| = 0 \iff \mathbf{x} = \boldsymbol{0}$.
+        \item Homogeneidad: $\|\lambda \mathbf{x}\| = |\lambda|\|\mathbf{x}\|$.
+        \item Desigualdad triangular: $\|\mathbf{x} + \mathbf{y}\| \leq \|\mathbf{x}\| + \|\mathbf{y}\|$.
+    \end{enumerate}
+\end{definition}
+
+\begin{obs}
+    El espacio $\Rn{n}$ existen muchas funciones que cumplen con las propiedades anteriormente mecionadas, las cuales algunas se mostrar\'an a continuaci\'on. Notar que para todas ellas miden la ``magnitud'' o ``distancia'' de un vector, aunque cada una con una geometr\'ia distinta.
+\end{obs}
+
+\begin{definition}\label{def:norm1}
+    Sea $\mathbf{x}\in \mathbb{R}^n$. Se define la \emph{norma 1} de $\mathbf{x}$, denotada por $\|\mathbf{x}\|_1$, como
+    \[
+        \|\mathbf{x}\|_1 = \sum_{i=1}^n |x_i|,
+    \]
+    donde $\mathbf{x}=(x_1,\ldots,x_n)$, con $i=1,\ldots,n.$
+\end{definition}
+
+\begin{definition}\label{def:norm2}
+    Sea $\mathbf{x}\in \mathbb{R}^n$. Se define la \emph{norma 2} o \emph{norma euclidiana} de $\mathbf{x}$, denotada por $\|\mathbf{x}\|_2$, como
+    \[
+        \|\mathbf{x}\|_2 = \sqrt{ \sum_{i=1}^n x_i^2 }.
+    \]
+    donde $\mathbf{x}=(x_1,\ldots,x_n)$, con $i=1,\ldots,n.$
+\end{definition}
+
+\begin{definition}
+    Sean $\mathbf{x},\;\mathbf{y}\in\Rn{n}$. Se define la \emph{distancia} entre $\mathbf{x}\text{ e }\mathbf{y}$ como la funci\'on d$:\Rn{n}\times\Rn{n}\to\R$ tal que
+    \[
+        \text{d}(\mathbf{x},\mathbf{y})=\|\mathbf{x}-\mathbf{y}\|,
+    \]
+    donde $\|\cdot\|$ es una norma cualquiera de $\Rn{n}$.
+\end{definition}
 
 \begin{definition} [Bola de radio $\delta$ y centro $x_o$] \label{def:bola}
-    Sean $x_o \in \Rn{n},\;\delta > 0$ y $\text{d}$ una distancia en $\Rn{n}$. La \emph{bola de radio $\delta$ y centro $x_o$}, que denotamos con $B_{\delta}(x_o)$, es el conjunto:
+    Sean $x_o \in \Rn{n},\;\delta > 0$ y $\text{d}$ una distancia en $\Rn{n}$. La \emph{bola de radio $\delta$ y centro $x_o$}, que denotamos con $B_{\delta}(x_o)$, es el conjunto
     \[
      B_{\delta}(x_o) = \left\lbrace x \in \Rn{n} : \text{d}(x,x_o) < \delta \right\rbrace.
     \]
     El conjunto
     \[
-     B^*_{\delta}(x_o) = B_{\delta}(x_o) - \{ x_o \}
+     B^*_{\delta}(x_o) = B_{\delta}(x_o) \smallsetminus \{ x_o \}
     \]
     es la \emph{bola reducida de radio $\delta$ y centro $x_o$}.
    
    \end{definition}
+
+   \begin{example}
+    \textcolor{red}{bola con norma 1 vs norma 2}
+   \end{example}
    
    \begin{definition} [Punto interior, interior de un conjunto] \label{def:interior}
     Sean $A \subset \Rn{n} \text{ y } x_o \in A$. Decimos que $x_o$ es \emph{punto interior} de $A$ si
     \[
-     \exists \delta > 0 / B_{\delta}(x_o) \subset A.
+     \exists\:\delta > 0: B_{\delta}(x_o) \subset A.
     \]
     El \emph{interior} de $A$, que denotamos con $A^{\circ}$, es el conjunto de todos los puntos interiores de $A$:
     \[
