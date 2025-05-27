@@ -28,22 +28,112 @@ de funciones continuas. Es decir, $f$ debe ser contínua, excepto, tal vez, sobr
 
 Para extender esta noci\'on de integral a  conjuntos acotados m\'as generales que no sean  rect\'angulos, definimos lo siguiente. 
 
-\begin{definition}\label{int_D} \textcolor{red}{Hacer un dibujo}
-Dada $f:D\to\R$, se define la funci\'on $f^*$ tal que \textcolor{red}{quien es D?}
+\begin{definition}\label{int_D}
+Dada $f:D\subset R\to\R$ contínua, con $R=[a,b]\times[c,d]$, se define la funci\'on $f^*$ tal que 
 \[
     f^*(x,y)=
     \begin{dcases*}
         f(x,y) & si $(x,y)\in D$ \\[.2cm]
-        0        & si $(x,y)\notin D.$
+        0        & si $(x,y)\in R \setminus D.$
     \end{dcases*}
 \]
-Entonces si $B$ es un rect\'angulo que contiene a $D$ y $\partial D$ est\'a formada por las gr\'aficas de un n\'umero finito de funciones continuas,  $f^*$ ser\'a integrable.  Se define
+$f^*$ no es contínua sobre $\partial D$, pero sí en el resto de $R$. Entonces, siempre que $\partial D$ esté formada por las gráficas de un número finito de funciones continuas,  
+$f^*$ es integrable. Luego, se define
 \[
     \iint_D f\:dA=\iint_B f^*\:dA.  
 \]
-\end{definition}
+La explicación se puede observar mejor en la siguiente figura:
+\begin{figure}[H]
+    \centering
 
-\textcolor{red}{Mejor la explicacion anterior}
+    % === Subfigura (a) ===
+    \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        view={160}{40},
+        xmin=0, xmax=2,
+        ymin=0, ymax=2,
+        zmin=0, zmax=3,
+        axis lines=center,
+        ticks=none,
+        xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+        domain=0:2, y domain=0:2,
+        samples=30, z buffer=sort
+    ]
+        % Región R (rectángulo base)
+        \addplot3[
+    surf,
+    shader=faceted,
+    draw=black, % dibuja las líneas de la malla
+    fill=gray, fill opacity=0.2,
+    domain=0.5:2, y domain=0.5:2,
+    samples=20
+] {0};
+
+        % Superficie sobre región R (solo en R)
+        \addplot3[
+            surf, opacity=0.7, colormap={mycolor}{rgb255=(100,180,255) rgb255=(100,180,255)},
+            domain=0.5:2, y domain=0.5:2,
+        ] {sin(x*y*50)+2};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfica de \( f(x,y) \) sobre  \( R \)}
+    \end{subfigure}
+    \hfill
+    % === Subfigura (b) ===
+    \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        view={160}{40},
+        xmin=0, xmax=2,
+        ymin=0, ymax=2,
+        zmin=0, zmax=3,
+        axis lines=center,
+        ticks=none,
+        xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+        domain=0:2, y domain=0:2,
+        samples=60, z buffer=sort
+    ]
+
+        % Superficie f(x,y) sobre toda R, con 0 fuera de D
+        \addplot3[
+            surf, opacity=0.8,
+            domain=0.5:1.5, y domain=0.5:1.5,
+            colormap={mycolor}{rgb255=(100,180,255) rgb255=(100,180,255)},
+             restrict z to domain=2.1:10, % recorta para evitar planicies
+    unbounded coords=jump,
+        ]
+        { ( (x-1)^2 + (y-1)^2 < 0.2 ) * sin(x*y*50)+2 };
+
+         % Región R en gris claro
+      \addplot3[
+    surf,
+    shader=faceted,
+    draw=black, % dibuja las líneas de la malla
+    fill=gray, fill opacity=0.2,
+    domain=0.5:2, y domain=0.5:2,
+    samples=20
+] {0};
+        
+        \addplot3[
+            surf, opacity=0.8,
+            domain=0.5:2, y domain=0.5:2,
+            colormap={mycolor}{rgb255=(100,180,255) rgb255=(100,180,255)},
+             restrict z to domain=-0.1:0.1, % recorta para evitar planicies
+    unbounded coords=jump,
+        ]
+        { ( (x-1)^2 + (y-1)^2 < 0.2 ) + 0 };
+
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfica de \( f^*(x,y) \) sobre \( R \)}
+    \end{subfigure}
+
+    \caption{Integración doble sobre una región no rectangular \( D \subseteq R \)}
+\end{figure}
+\end{definition}
 
 \begin{obs} 
 La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
