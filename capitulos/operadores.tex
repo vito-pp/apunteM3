@@ -54,10 +54,9 @@
 \begin{obs}
     Estas f\'ormulas son m\'as f\'aciles de recordar si pensamos a nabla ($\grad$) como   el siguiente operador 
     \[
-        \grad = (\frac{\partial}{\partial x_1},\frac{\partial}{\partial x_2},\:\ldots,\: \frac{\partial}{\partial x_n}).  
+        \grad = \left(\frac{\partial}{\partial x_1},\frac{\partial}{\partial x_2},\:\ldots,\: \frac{\partial}{\partial x_n}\right).  
     \]
-    De esta manera,   la divergencia es el producto escalar de $\grad$  con un campo vectorial  y para el caso del rotor en $\Rn{3}$ es el producto cruz  con un campo vectorial. \textcolor{red}{laplaciano}
-    
+    De esta manera, la divergencia es el producto escalar de $\grad$ con un campo vectorial, para el caso del rotor en $\Rn{3}$ es el producto cruz  con un campo vectorial y para el laplaciano es el producto escalar de $\grad$ con un campo escalar.
 \end{obs}
 
 \begin{example}
@@ -106,8 +105,7 @@
         \item Sea $\mathbf{F}:U\subseteq\Rn{3}\to\Rn{3}$ (o $\Rn{2}$) de clase $\mathcal{C}^1(U)$, entonces $\grad\times(h\mathbf{F})=h\grad\times\mathbf{F}+\grad h\times\mathbf{F}$
     \end{enumerate}
 \end{propertie}
-\begin{propertie} Sea $f,g$ de clase c1 y $F,G$ de clase c1
-    Productos:
+\begin{propertie}\textbf{Productos.} Sea $f,g$ de clase $\mathcal{C}^1$ y $\mathbf{F},\mathbf{G}$ de clase $\mathcal{C}^1$
     \begin{enumerate}
         \item $\grad(fg)=f\grad g+g\grad f$
         \item $\grad\cdot(\mathbf{F}\times\mathbf{G})=\grad\times\mathbf{F}\cdot\mathbf{G}-\mathbf{F}\cdot\grad\times\mathbf{G}$

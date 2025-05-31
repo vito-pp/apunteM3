@@ -1,3 +1,5 @@
+\textcolor{red}{falta corregir la notacion}
+
 \begin{definition}\label{def:norma-general}
     Una \emph{norma} en $\mathbb{R}^n$ es una función $\|\cdot\| : \mathbb{R}^n \to \mathbb{R}$ que asigna a cada vector $\mathbf{x} \in \mathbb{R}^n$ un número real no negativo $\|\mathbf{x}\|$, y que satisface las siguientes propiedades para todos $\mathbf{x},\;\mathbf{y} \in \mathbb{R}^n$ y todo escalar $\lambda \in \mathbb{R}$:
     \begin{enumerate}
@@ -49,7 +51,11 @@
    \end{definition}
 
    \begin{example}
-    \textcolor{red}{bola con norma 1 vs norma 2}
+    Para ilustrar lo mencionado, podemos tomar el caso de una bola en $\Rn{2}$ centrada en el origen y de ``radio'' $\delta$.
+
+    \input{figs/bola.tex}
+
+    De aqu\'i podemos ver como esta definici\'on general de bola desaf\'ia nuestra intuici\'on al ser utilizada con distintos tipos de norma. Donde lo ``natural'' ser\'ia pensar en la ilustrada a partir de la norma 2 o euclidiana.
    \end{example}
    
    \begin{definition} [Punto interior, interior de un conjunto] \label{def:interior}
@@ -67,7 +73,7 @@
    \begin{definition} [Conjunto abierto] \label{def:abierto}
        Sea $A \subset \Rn{n}$. Decimos que $A$ es \emph{abierto} si
    \[
-        \forall x_o \in \exists \delta > 0 : B_{\delta}(x_o) \subset A.\footnote{\text{i.e.: $A$  es abierto si todos sus puntos son interiores.}}
+        \forall x_o \in \exists \delta > 0 : B_{\delta}(x_o) \subset A.\footnote{\text{\textit{i.e.}: $A$  es abierto si todos sus puntos son interiores.}}
    \]
    \end{definition}
    

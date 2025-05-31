@@ -1,9 +1,9 @@
-\begin{definition} Sea  $\boldsymbol{\Sigma}:D \subseteq\Rn{2} \to\Rn{3}$ continua y de clase $\mathcal{C}^1(\interior{D})$.  Al conjunto  $S = Img(\Sigma)$ se lo llama  \textbf{superficie}   parametrizada por  $\boldsymbol{\Sigma}$  y   
-   a  $\boldsymbol{\Sigma}$  una \textbf{parametrizaci\'on} de $S$.
+\begin{definition} Sea  $\boldsymbol{\Sigma}:D \subseteq\Rn{2} \to\Rn{3}$ continua y de clase $\mathcal{C}^1(\interior{D})$.  Al conjunto  $S = \text{Img}(\Sigma)$ se lo llama  \emph{superficie}   parametrizada por  $\boldsymbol{\Sigma}$  y   
+   a  $\boldsymbol{\Sigma}$  una \emph{parametrizaci\'on} de $S$.
 \end{definition}
 
 \begin{definition}
-    Sea $\boldsymbol{\Sigma}:D\subseteq\Rn{2} \to\Rn{3}$ una parametrizaci\'on de $S$ y sea $(u_0, v_0) \in \interior{D}$.   $\Sigma$ se llama  \textbf{parametrizaci\'on regular de $S$} en  $(u_0, v_0)$ si
+    Sea $\boldsymbol{\Sigma}:D\subseteq\Rn{2} \to\Rn{3}$ una parametrizaci\'on de $S$ y sea $(u_0, v_0) \in \interior{D}$.   $\boldsymbol{\Sigma}$ se llama  \emph{parametrizaci\'on regular de $S$} en  $(u_0, v_0)$ si
     \[
         \boldsymbol{\Sigma}_u(u_0,v_0)\times\boldsymbol{\Sigma}(u_0,v_0)\neq \boldsymbol{0}.
     \]
@@ -11,15 +11,15 @@
 \end{definition}
 
 \begin{definition}
-    Sea $S\subseteq\Rn{3}$. Se define a $S$ como \textbf{orientable} si existe un campo vectorial $\boldsymbol{\eta}:S\to\Rn{3}$, continuo talque $\boldsymbol{\eta}(p)$ es ortogonal a $S$ en $p$ y $\norm{\boldsymbol{\eta}(p)}=1\;\forall p\in S$. Al campo $\boldsymbol{\eta}$ se lo llama \textbf{orientaci\'on} de $S$. De no existir tal $\boldsymbol{\eta}$ diremos que la superficie se \textbf{no orientable}.
+    Sea $S\subseteq\Rn{3}$. Se define a $S$ como \emph{orientable} si existe un campo vectorial $\boldsymbol{\eta}:S\to\Rn{3}$, continuo talque $\boldsymbol{\eta}(\mathbf{p})$ es ortogonal a $S$ en $\mathbf{p}$ y $\norm{\boldsymbol{\eta}(\mathbf{p})}=1\;\forall \mathbf{p}\in S$. Al campo $\boldsymbol{\eta}$ se lo llama \emph{orientaci\'on} de $S$. De no existir tal $\boldsymbol{\eta}$ diremos que la superficie se \emph{no orientable}.
 \end{definition}
 
 
-\begin{obs} \textcolor{red}{ Vincular la grafica de un $f$ con una superficie y mostrar una parametrizacio $\Sigma(x,y) = (x,y,f(x,y))$. Lo necesitan para que se entienda el ejemplo} 
+\begin{obs} Notar que para cualquier campo escalar $f:\Rn{2}\to\R$, su gr\'afica Graf$(f)$ es una superficie con parametrización $\boldsymbol{\Sigma}(x,y)=(x,y,f(x,y))$.
 \end{obs}
 
 
-\begin{example} Un ejemplo de una superficie no orientable es el de una cinta de Möbius.        y el de una orientable la gr\'afica de $f(x,y) = x^2-y^2$.
+\begin{example} Sea $f(x,y) = x^2-y^2$. Por la observaci\'on anterior sabemos que la gr\'afica de $f$ es una superficie y existe una parametrización $\boldsymbol{\Sigma}(x,y)=(x,y,x^2-y^2)$. La gr\'afica de $f$ constituye a una superficie orientable. Por otro lado, una superficie no orientable es el de una cinta de Möebius. Ambas superficies se ilustran a continuaci\'on.
 \input{figs/moebius.tex}
 \end{example}
 
@@ -27,22 +27,19 @@
     Sea $S$ una superficie orientable. Entonces $S$ admite dos orientaciones posibles: $\boldsymbol{\eta}$ y $-\boldsymbol{\eta}$.
 \end{obs}
 
-
- \textcolor{red}{Se podria explicar un poco más el ejemplo? }
-
-
-\begin{definition}
+\begin{definition}\label{def:preseva}
     Sea $S\subseteq\Rn{3}$ una superficie orientada por $\boldsymbol{\eta}$. Sea $\boldsymbol{\Sigma}:D\subseteq\Rn{2}\to S$ una parametrizaci\'on continua de clase $\mathcal{C}^1$ y regular de $S$.
     \begin{itemize}
         \item Si \[
             \frac{\boldsymbol{\Sigma}_u\times\boldsymbol{\Sigma}_v}{\norm{\boldsymbol{\Sigma}_u\times\boldsymbol{\Sigma}_v}}(u,v)=\boldsymbol{\eta}\left(\boldsymbol{\Sigma}(u,v)\right),
         \]  
-        decimos que $\boldsymbol{\Sigma}$ \textbf{preserva} la orientaci\'on de $S$.
+        decimos que $\boldsymbol{\Sigma}$ \emph{preserva} la orientaci\'on de $S$.
         \item Si \[
             \frac{\boldsymbol{\Sigma}_u\times\boldsymbol{\Sigma}_v}{\norm{\boldsymbol{\Sigma}_u\times\boldsymbol{\Sigma}_v}}(u,v)=-\boldsymbol{\eta}\left(\boldsymbol{\Sigma}(u,v)\right),
         \]
-        decimos que $\boldsymbol{\Sigma}$ \textbf{invierte} la orientaci\'on de $S$.  
+        decimos que $\boldsymbol{\Sigma}$ \emph{invierte} la orientaci\'on de $S$.  
     \end{itemize}
+    Para ambos casos, decimos que $\boldsymbol{\Sigma}$ \emph{induce} una orientaci\'on sobre $S$.
 \end{definition}
 
  \textcolor{red}{OJO. Falta todo lo de campos escalares.}
@@ -55,12 +52,9 @@
 \end{definition}
 
 \begin{obs}   Sean $S\subseteq\Rn{3}$ una superficie orientada por $\boldsymbol{\eta}$ y  sea  $\boldsymbol{\Sigma}:D\subseteq\Rn{2}\to S\subseteq\Rn{3}$ una parametrizaci\'on de $S$ tal que preserve su orientaci\'on, entonces 
-
  $$ \iint_S \mathbf{F}\cdot d\mathbf{S} = \iint_D \mathbf{F}\circ\boldsymbol{\Sigma}\cdot\left(\boldsymbol{\Sigma}_u\times\boldsymbol{\Sigma}_v\right)dudv.$$
 \end{obs}
-
-
-Veamos que esto efectivamente es as\'i.  Sabemos que \textcolor{red}{por referencia}
+Veamos que esto efectivamente es as\'i.  Sabemos que, por la \autoref{def:preseva},
 \[
     \frac{\boldsymbol{\Sigma}_u\times\boldsymbol{\Sigma}_v}{\norm{\boldsymbol{\Sigma}_u\times\boldsymbol{\Sigma}_v}}(u,v)=\boldsymbol{\eta}\left(\boldsymbol{\Sigma}(u,v)\right).
 \]
