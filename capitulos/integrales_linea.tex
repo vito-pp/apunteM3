@@ -6,7 +6,72 @@
     donde $\boldsymbol{\sigma}\lvert_{I_i}$ es de clase $\mathcal{C}^1$.
 \end{definition}
 
-\textcolor{red}{Ejemplos: puede ser la circunsferencia y un segmento.  Ilustrar}
+\begin{example}
+    Consideremos la curva $\Gamma$ que describe una circunferencia de radio $R$ centrada en el origen, \emph{i.e.}
+        \[
+            \Gamma = \bigl\{(x,y)\in\Rn{2} \;:\; x^2 + y^2 = R^2 \bigr\}.
+        \]
+        Una parametrización regular \(\mathcal{C}^1\) de \(\Gamma\) es
+        \[
+            \boldsymbol{\sigma}(t) 
+            = 
+            \bigl(R\cos t,\;R\sin t\bigr),
+            \qquad t\in [\,0,\,2\pi\,].
+        \]
+        Por lo tanto, 
+        \begin{gather*}
+            \boldsymbol{\sigma}'(t)
+            =
+            \bigl(-R\sin t,\;R\cos t\bigr),\\[.2cm]
+            \|\boldsymbol{\sigma}'(t)\|
+            =
+            \sqrt{(-R\sin t)^2 + (R\cos t)^2}
+            =
+            R\,\sqrt{\sin^2 t + \cos^2 t}
+            = 
+            R.
+        \end{gather*}
+        Dado que \(\boldsymbol{\sigma}\) ya es \(\mathcal{C}^1\) en todo \([0,2\pi]\), se calcula la longitud de $\Gamma$
+        \[
+            \mathrm{Long}(\Gamma)
+            =
+            \int_{0}^{2\pi} \bigl\|\boldsymbol{\sigma}'(t)\bigr\| \, dt
+            =
+            \int_{0}^{2\pi} R \; dt
+            =
+            2\pi R.
+        \]
+        Por lo tanto, la circunferencia de radio \(R\) tiene longitud \(2\pi R\).
+    \end{example}
+
+    \begin{example}
+    Sean $\mathbf{p}$ y $\mathbf{q}$ dos puntos cualesquiera en \(\Rn{n}\). El segmento \(\overline{\mathbf{pq}}\) se puede parametrizar de forma lineal como
+        \[
+            \boldsymbol{\sigma}(t) 
+            = 
+            \mathbf{p} + t\, (\,\mathbf{q} - \mathbf{p}\,),
+            \qquad t\in [\,0,\,1\,].
+        \]
+        Entonces 
+        \[
+            \boldsymbol{\sigma}'(t) = \mathbf{q} - \mathbf{p}
+            \implies \|\boldsymbol{\sigma}'(t)\| = \|\mathbf{q} - \mathbf{p}\|
+        \]
+        Dado que \(\boldsymbol{\sigma}'(t)\) es continuo en \([0,1]\), la longitud del segmento \(\overline{\mathbf{pq}}\) se calcula como
+        \[
+            \mathrm{Long}(\overline{\mathbf{pq}})
+            =
+            \int_{0}^{1} \|\boldsymbol{\sigma}'(t)\|\: dt
+            =
+            \int_{0}^{1} \|\mathbf{q} - \mathbf{p}\|\: dt
+            =
+            \|\mathbf{q} - \mathbf{p}\|.
+        \]
+        Que no es m\'as que la norma euclidea o norma 2 del vector $\mathbf{q} - \mathbf{p}$.
+
+        \textcolor{red}{en la parte de topologia cuando introducimos la norma, notamos a la norma 2 como $\|\cdot\|_2$ y en el resto del documento no le ponemos subindice 2. habria que aclarar esto}
+\end{example}
+
 
 \begin{definition}
     Sea $\boldsymbol{\sigma}:I=[a,b]\to\Rn{n}$ una trayectoria continua y de clase $\mathcal{C}^1(\interior{I})$ y sea $f$ un campo escalar tal que la funci\'on compuesta $f\circ\boldsymbol{\sigma}(t)$ sea continua en $I$. Se define la \emph{integral de trayectoria}, o \emph{integral de} $f$ \emph{a lo largo de la trayectoria} $\boldsymbol{\sigma}$, y se la nota $\int_{\boldsymbol{\sigma}}f\:ds$, a
@@ -17,27 +82,67 @@
 
 Si $\boldsymbol{\sigma}(t)$ es s\'olo $\mathcal{C}^1$ a trozos o $f\circ\boldsymbol{\sigma}(t)$ es continua a trozos, se define $\int_{\boldsymbol{\sigma}}f\:ds$ sobre una partici\'on de $[a,b]$, donde sobre cada intervalo de la partici\'on $(f\circ\boldsymbol{\sigma})\|\boldsymbol{\sigma}'(t)\|$ sea continua, y sumando las integrales sobre cada intervalo de la partici\'on. 
 
-\begin{definition}
+\begin{definition}\label{def:int_de_linea}
     Sea $\Gamma$ una curva simple en $\Rn{n}$ y sea $\boldsymbol{\sigma}:I\subseteq\R\to\Rn{n}$ una parametrizaci\'on regular de $\Gamma$.  Sea $f:A\subseteq\Rn{n}\to\R$ continua con $\Gamma \subset A$.  Se define la \emph{integral de l\'inea del campo $f$ sobre la curva} $\Gamma$, y se nota por $\int_{\Gamma}f\:ds$ a
     \[
         \int_{\Gamma}f\:ds=\sum_{i=1}^{m}\int_{I_i}f\circ\boldsymbol{\sigma}(t)\|\boldsymbol{\sigma}'(t)\|\:dt,  
     \]
     donde $\boldsymbol{\sigma}\lvert_{I_i}$ es de clase $\mathcal{C}^1$ e $I_i$ una partici\'on de $I$.
 
-    \textcolor{red}{No es m\'as f\'acil decir que sigma es C1 a trozos y listo?}
+    \textcolor{red}{No es m\'as f\'acil decir que sigma es C1 a trozos y listo? siento que estan un poco embrolladas estas definiciones}
 \end{definition}
 
 \begin{obs} La definici\'on anterior no depende de la parametrizaci\'on.
 \end{obs} 
 
-\textcolor{red}{Ejemplos.}
+\begin{example}
+    Veamos un ejemplo en donde el valor de la integral de l\'inea sobre una curva es independiente de la parametrización. 
+    
+    Sea $\Gamma$ el segmento que uno los puntos $(0.0)$ y $(1,1)$. Y sea $f:\Gamma\to\R$ tal que
+    \[
+        f(x,y)=x.
+    \]
+
+    Sea $\boldsymbol{\sigma}_1(t)=(t,t)$, con $t\in[0,1]$, una parametrización de $\Gamma$. Entonces, por la \autoref{def:int_de_linea}, la integral de l\'inea de $f$ sobre $\Gamma$ es
+    \[
+        \int_\Gamma f\;ds=\int_0^1f\circ\boldsymbol{\sigma}_1(t)\|\boldsymbol{\sigma}_1'(t)\|\:dt.
+    \]
+    Luego como
+    \[
+        f\circ\boldsymbol{\sigma}_1(t)=t
+    \]
+    y
+    \[
+        \boldsymbol{\sigma}_1'(t)=(1,1)\implies\|\boldsymbol{\sigma}_1'(t)\|=\sqrt{1^2+1^2}=\sqrt{2};
+    \]
+    se llega a que
+    \[
+        \int_\Gamma f\;ds=\int_0^1t\sqrt{2}\;dt=\frac{\sqrt{2}}{2}.
+    \]
+
+    Ahora sea $\boldsymbol{\sigma}_2(t)=(t^2,t^2)$, con $t\in[0,1]$, otra parametrización de $\Gamma$. \'Idem
+    \[
+        \int_\Gamma f\;ds=\int_0^1f\circ\boldsymbol{\sigma}_2(t)\|\boldsymbol{\sigma}_2'(t)\|\:dt,
+    \]
+    con
+    \[
+        f\circ\boldsymbol{\sigma}_2(t)=t^2,
+    \]
+    y
+    \[
+        \boldsymbol{\sigma}_2'(t)=(2t,2t)\implies\|\boldsymbol{\sigma}_2'(t)\|=\sqrt{(2t)^2+(2t)^2}=2t\sqrt{2};
+    \]
+    por lo que queda
+    \[
+        \int_\Gamma f\;ds=\int_0^1t^22t\sqrt{2}=2\sqrt{2}\int_0^1t^3\;dt=\frac{\sqrt{2}}{2}.
+    \]
+    Que es igual a lo calculado con $\boldsymbol{\sigma}_1$.
+  \end{example}  
 
 \begin{obs} 
  Sea $f:A\subseteq\Rn{2} \to\R$   tal que  $f(x,y)>0 \; \forall (x,y) \in A$ y   sea $\Gamma \subset A$ una curva simple en $\Rn{2}$.   La integral de l\'inea de $f$ sobre $\Gamma$  se puede interpretar geom\'etricamente como el ``\'area de la valla de base $\Gamma$ y altura $f$". 
-\textcolor{red}{ilustracion de la aplicacion}
+\textcolor{red}{ilustracion de la aplicacion con ejemplo (me esta resultando dificil hacer esto)}
 \end{obs}
-
-\textcolor{red}{Ejemplo.}
 
 \begin{definition}
     Sea $\mathbf{F}:A\subseteq\Rn{n}\to\Rn{n}$ un campo vectorial continuo sobre una curva simple orientada $\Gamma\subset A$. Sea $\boldsymbol{\sigma}:[a,b]\to A\subseteq\Rn{n}$ una parametrizaci\'on de $\Gamma$ que preserva su orientaci\'on. Se define la \emph{integral de} $\mathbf{F}$ \emph{sobre la curva simple} $\boldsymbol{\Gamma}$ como
