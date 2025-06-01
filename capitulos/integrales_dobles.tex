@@ -11,8 +11,6 @@ Dada una funci\'on $f:B\to\R$, donde $B$ es un rect\'angulo en $\Rn{2}$, se defi
 donde $c_{ij}\in B_{ij}$, el $ij$-\'esimo rect\'angulo en la partici\'on de $B$, y $\Delta A$ es el \'area de $B_{ij}$.
 \end{definition}
 
-
-
 \begin{definition} 
     Sea $f:B=[a,b]\times[c,d]\to\R$ una funci\'on. Diremos que $f$ es integrable sobre $B$ si  el l\'imite $\lim_{n\to\infty}S_n$  existe y es finito, en tal caso el valor de dicho  l\'imite  se llama \textbf{integral doble} de $f$ sobre $B$ y se nota 
     \[
@@ -94,6 +92,17 @@ La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
     
     \end{enumerate}
 \end{definition}
+
+\begin{example}
+    Para poder clasificar a una regi\'on como tipo 3 es necesario poder encontrar simult\'aneamente funciones $\phi_1$, $\phi_2$, $\psi_1$ y $\psi_2$ tales que
+    \begin{itemize}
+        \item $x\in[a,b], \qquad \phi_1(x)\leq y\leq\phi_2(x)$
+        \item $y\in[c,d], \qquad \psi_1(y)\leq x\leq\psi_2(y)$. 
+    \end{itemize}
+    Un ejemplo simple de tal regi\'on es una circunferencia.
+
+    \input{figs/ex_tipo3.tex}
+\end{example}
 
 \begin{propertie} \label{col:fubini}
    

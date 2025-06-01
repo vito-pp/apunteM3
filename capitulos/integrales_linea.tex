@@ -7,29 +7,29 @@
 \end{definition}
 
 \begin{example}
-    Consideremos la curva $\Gamma$ que describe una circunferencia de radio $R$ centrada en el origen, \emph{i.e.}
+    Consideremos la curva $\Gamma$ que describe una circunferencia de radio $r$ centrada en el origen, \emph{i.e.}
         \[
-            \Gamma = \bigl\{(x,y)\in\Rn{2} \;:\; x^2 + y^2 = R^2 \bigr\}.
+            \Gamma = \bigl\{(x,y)\in\Rn{2} \;:\; x^2 + y^2 = r^2 \bigr\}.
         \]
         Una parametrización regular \(\mathcal{C}^1\) de \(\Gamma\) es
         \[
             \boldsymbol{\sigma}(t) 
             = 
-            \bigl(R\cos t,\;R\sin t\bigr),
+            \bigl(r\cos t,\;r\sin t\bigr),
             \qquad t\in [\,0,\,2\pi\,].
         \]
         Por lo tanto, 
         \begin{gather*}
             \boldsymbol{\sigma}'(t)
             =
-            \bigl(-R\sin t,\;R\cos t\bigr),\\[.2cm]
+            \bigl(-r\sin t,\;r\cos t\bigr),\\[.2cm]
             \|\boldsymbol{\sigma}'(t)\|
             =
-            \sqrt{(-R\sin t)^2 + (R\cos t)^2}
+            \sqrt{(-r\sin t)^2 + (r\cos t)^2}
             =
-            R\,\sqrt{\sin^2 t + \cos^2 t}
+            r\,\sqrt{\sin^2 t + \cos^2 t}
             = 
-            R.
+            r.
         \end{gather*}
         Dado que \(\boldsymbol{\sigma}\) ya es \(\mathcal{C}^1\) en todo \([0,2\pi]\), se calcula la longitud de $\Gamma$ como
         \[
@@ -37,11 +37,11 @@
             =
             \int_{0}^{2\pi} \bigl\|\boldsymbol{\sigma}'(t)\bigr\| \, dt
             =
-            \int_{0}^{2\pi} R \; dt
+            \int_{0}^{2\pi} r \; dt
             =
-            2\pi R.
+            2\pi r.
         \]
-        Por lo tanto, la circunferencia de radio \(R\) tiene longitud \(2\pi R\).
+        Por lo tanto, la circunferencia de radio \(r\) tiene longitud \(2\pi r\).
     \end{example}
 
     \begin{example}
