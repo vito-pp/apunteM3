@@ -25,13 +25,14 @@ Notar que $\boldsymbol{H}_f(\mathbf{x}_0)$ es una matriz cuadrada y sim\'etrica 
 \end{obs}
 
 \begin{theorem} \textbf{Polinimio de Taylor de primer orden.}
-  Sea $f:U\subseteq\Rn{n}\to\R$ de clase $\mathcal{C}^1$. Se define el \emph{polinomio de Taylor de primer orden centrado en $\mathbf{x}_0$ de $f$}, y se nota por $P_1[f,\mathbf{x}_0](\mathbf{x})$, a
+
+  Sea $f:U\subseteq\Rn{n}\to\R$ de clase $\mathcal{C}^1$. Se define el \emph{polinomio de Taylor de primer orden centrado en $\mathbf{x}_0$ de $f$}, y se nota por $T_1[f,\mathbf{x}_0](\mathbf{x})$, a
   \[
-    P_1[f,\mathbf{x}_0](\mathbf{x})=f(\mathbf{x}_0)+\grad{f}(\mathbf{x}_0)\cdot(\mathbf{x-x}_0).
+    T_1[f,\mathbf{x}_0](\mathbf{x})=f(\mathbf{x}_0)+\grad{f}(\mathbf{x}_0)\cdot(\mathbf{x-x}_0).
   \]
   Se define el \emph{resto del polinomio de Taylor de primer orden centrado en $\mathbf{x}_0$ de $f$}, y se nota por $R_1[f,\mathbf{x}_0](\mathbf{x})$, a
   \[
-    R_1[f,\mathbf{x}_0](\mathbf{x})=f(\mathbf{x})-P_1[f,\mathbf{x}_0](\mathbf{x}).
+    R_1[f,\mathbf{x}_0](\mathbf{x})=f(\mathbf{x})-T_1[f,\mathbf{x}_0](\mathbf{x}).
   \]
   Entonces se cumple que
   \[
@@ -44,13 +45,14 @@ Notar que $\boldsymbol{H}_f(\mathbf{x}_0)$ es una matriz cuadrada y sim\'etrica 
 \end{theorem}
 
 \begin{theorem} \textbf{Polinimio de Taylor de segundo orden.}
-  Sea $f:U\subseteq\Rn{n}\to\R$ de clase $\mathcal{C}^2$. Se define el \emph{polinomio de Taylor de segundo orden centrado en $\mathbf{x}_0$ de $f$}, y se nota por $P_2[f,\mathbf{x}_0](\mathbf{x})$, a
+
+  Sea $f:U\subseteq\Rn{n}\to\R$ de clase $\mathcal{C}^2$. Se define el \emph{polinomio de Taylor de segundo orden centrado en $\mathbf{x}_0$ de $f$}, y se nota por $T_2[f,\mathbf{x}_0](\mathbf{x})$, a
   \[
-    P_2[f,\mathbf{x}_0](\mathbf{x})=f(\mathbf{x}_0)+\grad{f}(\mathbf{x}_0)\cdot(\mathbf{x-x}_0)+\frac{1}{2!}(\mathbf{x-x}_0)\boldsymbol{H}_f(\mathbf{x}_0)(\mathbf{x-x}_0)^\text{T}.
+    T_2[f,\mathbf{x}_0](\mathbf{x})=f(\mathbf{x}_0)+\grad{f}(\mathbf{x}_0)\cdot(\mathbf{x-x}_0)+\frac{1}{2!}(\mathbf{x-x}_0)\boldsymbol{H}_f(\mathbf{x}_0)(\mathbf{x-x}_0)^\text{T}.
   \]
   Se define el \emph{resto del polinomio de Taylor de segundo orden centrado en $\mathbf{x}_0$ de $f$}, y se nota por $R_2[f,\mathbf{x}_0](\mathbf{x})$, a
   \[
-    R_2[f,\mathbf{x}_0](\mathbf{x})=f(\mathbf{x})-P_2[f,\mathbf{x}_0](\mathbf{x}).
+    R_2[f,\mathbf{x}_0](\mathbf{x})=f(\mathbf{x})-T_2[f,\mathbf{x}_0](\mathbf{x}).
   \]
   Entonces se cumple que
   \[
@@ -81,6 +83,7 @@ Notar que $\boldsymbol{H}_f(\mathbf{x}_0)$ es una matriz cuadrada y sim\'etrica 
 \end{obs}
 
 \begin{theorem}\textbf{Condici\'on necesaria de extremo.} \label{teo:grad_nulo}
+ 
  Sea $f: A \subset \Rn{n} \to \R$ diferenciable en alg\'un entorno abierto de $\mathbf{x}_0 \in \interior{(A)}$. Supongamos que $f$ tiene un extremo en $\mathbf{x}_0$. Entonces
  \[
   \grad f(\mathbf{x}_0) = \mathbf{0}.
@@ -127,10 +130,12 @@ Notar que $\boldsymbol{H}_f(\mathbf{x}_0)$ es una matriz cuadrada y sim\'etrica 
 \end{obs}
 
 \begin{theorem}\textbf{de los valores extremos de Weierstra\ss.} \label{teo:weier}
+
   Sean $A \subset \Rn{n}$ un conjunto cerrado y acotado y $f: A \subset \Rn{n} \to \R$ una funci\'on continua. Entonces $f$ alcanza un m\'aximo y un m\'inimo absoluto en $A$.
 \end{theorem}
 
 \begin{theorem} \textbf{M\'etodo de multiplicadores de Lagrange.} \label{teo:lagrange}
+  
     Sean $f:U \subset \Rn{n} \to \R$ y $g:U \subset \Rn{n} \to \R$ funciones de clase $\mathcal{C}^1$. Sea $\mathbf{x}_0 \in U$ y sea $c = g(\mathbf{x}_0)$. Sea $S$ el conjunto de nivel $c$ de $g$. Supongamos que $\grad g (\mathbf{x}_0) \ne \mathbf{0}$. Si $f|_S$ (que denota a la restricci\'on de $f$ a $S$) tiene un extremo local en $\mathbf{x}_0$, entonces $\exists\: \lambda \in \R$ tal que
     \[
      \grad f (\mathbf{x}_0) = \lambda \grad g (\mathbf{x}_0).
