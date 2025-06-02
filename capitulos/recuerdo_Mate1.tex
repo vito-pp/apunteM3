@@ -1,7 +1,7 @@
 \begin{definition}{\textbf{Partición.}}
-    Se llama \textit{partición} de un intervalo real $[a,b]$ a un conjunto de puntos $P=\left\{x_1,x_2,...,x_{n-1}\right\}$, tal que:
+    Se llama \textit{partición} de un intervalo real $[a,b]$ a un conjunto de puntos $P=\left\{x_1,x_2,...,x_{n-1}\right\}$, tal que
     \begin{equation*}
-        a=x_0<x_1<x_2<...<x_{n-1}<b=x_n
+        a=x_0<x_1<x_2<...<x_{n-1}<b=x_n.
     \end{equation*}
     Así, la partición $P$ divide $[a,b]$ en $n$ subintervalos cerrados
     \begin{equation*}
@@ -17,10 +17,10 @@
 
 
 \begin{definition} {\textbf{Imagen.}}
-    Dada una funci\'on $f: A \subseteq \mathbb{R} \rightarrow B \subseteq \mathbb{R},$  se llama \textit{imagen} de una función y se nota  $\text{Im}(f)$, a
+    Dada una funci\'on $f: A \subseteq \mathbb{R} \rightarrow B \subseteq \mathbb{R},$  se llama \textit{imagen} de una función y se nota  $\text{Img}(f)$, a
     al conjunto 
     \begin{equation*}
-        \text{Im}(f) = \left\{ y\in B: \exists\;x\in A\:|\:f(x)=y \right\}.    
+        \text{Img}(f) = \left\{ y\in B: \exists\;x\in A\:|\:f(x)=y \right\}.    
     \end{equation*}
 \end{definition}
 
@@ -28,7 +28,7 @@
     \label{grafm1}
    Dada una función $f: A \subseteq \mathbb{R} \rightarrow B \subseteq \mathbb{R}$ se define la \textit{gráfica} de $f$, y se nota  $\text{Graf}(f)$, al conjunto
     \begin{equation*}
-        \text{Graf}(f) = \left\{ (x,y)\in \mathbb{R}^{2}: x \in A \land y=f(x)\right\}.    
+        \text{Graf}(f) = \left\{ (x,y)\in \mathbb{R}^{2}: x \in A\;\land\;y=f(x)\right\}.    
     \end{equation*}
 \end{definition}
 
@@ -38,7 +38,7 @@
 \begin{example}
     Sea $$f:  [0,\infty]  \subseteq \mathbb{R} \rightarrow  \mathbb{R} \:|\:  f(x)=2x-1$$ tenemos que, $f$ es el nombre de la función, 
     $x$ es la variable independiente de $f$  y $2x-1$ su  fórmula, es decir,  el valor que la asigna $f$ a cada $x \in  [0,+\infty). $ 
-    Adem\'as,   $\text{Dom}(f)=  [0,+\infty)$,   $\text{Cod}(f)=  \mathbb{R}$ y $\text{Im}(f)= [-1,+\infty)$ .
+    Adem\'as,   $\text{Dom}(f)=  [0,+\infty)$,   $\text{Cod}(f)=  \mathbb{R}$ y $\text{Img}(f)= [-1,+\infty)$ .
     Si se quisiera, se puede hacer una tabla de valores para la función:
     \begin{table}[H]
         \centering
@@ -131,7 +131,7 @@
             \end{tabular}
       \end{table}
     En este caso, haciendo un análisis de la función, se puede ver que 
-    $\text{Dom}(f)=  [-2,2]$,   $\text{Cod}(f)=  \mathbb{R}$ y $\text{Im}(f)= [0,4]$
+    $\text{Dom}(f)=  [-2,2]$,   $\text{Cod}(f)=  \mathbb{R}$ y $\text{Img}(f)= [0,4]$
     Luego, el siguiente conjunto de puntos, se encuentran incluidos en la
     gráfica de la función (que cabe aclarar, tiene infinitos elementos).
     \begin{equation*}
@@ -205,7 +205,7 @@
   Sea la funci\'on $f: A \subseteq \mathbb{R} \rightarrow B \subseteq \mathbb{R}$. Diremos que
    $f$ es \textit{sobreyectiva} si se cumple que su codominio es igual a su imagen, esto es
    \begin{equation*}
-        \text{Cod}(f)=\text{Im}(f).
+        \text{Cod}(f)=\text{Img}(f).
     \end{equation*}   Es decir que cada elemento del conjunto de salida es la evaluación de la función en al menos un elemento del dominio.
 
  Diremos que $f$ es   \textit{inyectiva} si a cada elemento en el conjunto imagen le corresponde un único
@@ -266,25 +266,24 @@
 \end{obs}
 
 \begin{definition}{\textbf{Polinomio de Taylor.}}
-    Sea $f$ una función con derivadas de orden $n$ en $x=a \in \text{Dom}(f)$. Se llama \textit{Polinomio de Taylor} 
-    de órden $n$ de la función $f$ en $x=a$, y se simboliza $T_{f,a,n}(x)$, a:
+    Sea $f$ una función con derivadas de orden $n$ en $a \in \text{Dom}(f)$. Se llama \textit{polinomio de Taylor de orden $n$ centrado en $a$ de la función $f$}, y se nota por $T_n[f,a](x)$, a:
     \begin{equation*}
-        T_{f,a,n}(x) = \sum^n_{k=0} \frac{f^{(k)}(a)}{k!}(x-a)^k 
+        T_n[f,a](x) = \sum^n_{k=0} \frac{f^{(k)}(a)}{k!}(x-a)^k 
     \end{equation*}
     \label{def:PolTaylor}
 \end{definition}
 
 \begin{definition}{\textbf{Resto de Taylor.}}
-    Se llama \textit{Resto de Taylor}, o término de
-    error de la aproximación, a:
+    Se llama \textit{resto de Taylor}, o término de
+    error de la aproximación, a
     \begin{equation*}
-        R_{f,a,n}(x) = f(x)-T_{f,a,n}(x)
+        R_n[f,a](x) = f(x)-T_n[f,a](x).
     \end{equation*}
     Sea $f$ una función con derivadas de orden $n+1$ en el intervalo cerrado entre $a$ y $x$. 
-    Existe $c\in\mathbb{R}$ en el intervalo abierto entre $a$ y $x$ tal que:
+    Existe $c\in\mathbb{R}$ en el intervalo abierto entre $a$ y $x$ tal que
     \begin{equation*}
-        R_{f,a,n}(x) = f^{(n+1)}(c) \cdot \frac{(x-x_0)^{n+1}}{(n+1)!}
+        R_n[f,a](x) = f^{(n+1)}(c)\frac{(x-x_0)^{n+1}}{(n+1)!}.
     \end{equation*}
-    A esta última se la llama la \textit{fórmula de Lagrange del Resto}.
+    A esta última se la llama \textit{fórmula de Lagrange para resto}.
     \label{def:RestoTaylor}
 \end{definition}

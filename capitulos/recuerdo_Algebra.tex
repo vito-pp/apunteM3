@@ -1,7 +1,7 @@
 \begin{definition}
-  Se define el  espacio $\mathbb{R}^n$  como el conjunto formado por todas las $n$-uplas de n\'umeros reales ordenados.   Es decir:
+  Se define el  espacio $\mathbb{R}^n$  como el conjunto formado por todas las $n$-tuplas de n\'umeros reales ordenados, \textit{i.e.}
     \begin{equation*}
-        \mathbb{R}^n = \left\{ \vect{v} / \vect{v}=(x_1,x_2,x_3,...,x_n), \; x_i \in \mathbb{R} \;\forall \;   1\leq  i \leq n  \right\}
+        \mathbb{R}^n = \left\{ \vect{v}\;\rvert\;\vect{v}=(x_1,x_2,x_3,...,x_n), \; x_i \in \mathbb{R} \;\forall \;   1\leq  i \leq n  \right\}.
     \end{equation*}
 \end{definition}
 
@@ -12,26 +12,26 @@
     \end{equation*}
     que cumple con la condición de linealidad:
     \begin{equation}\label{tl}
-        \campoVec{T}(\alpha \cdot \vect{v_1} + \beta \cdot \vect{v_2})=\alpha \cdot \campoVec{T}(\vect{v_2}) + \beta \cdot \campoVec{T}(\vect{v_2}),
+        \campoVec{T}(\alpha\vect{v}_1 + \beta\vect{v}_2)=\alpha\campoVec{T}(\vect{v}_1) + \beta\campoVec{T}(\vect{v}_2),
     \end{equation}
-    donde $\vect{v_1},\vect{v_2} \in \mathbb{V}$ y $\alpha,\beta \in \mathbb{R}$. 
+    donde $\vect{v}_1,\vect{v}_2 \in \mathbb{V}$ y $\alpha,\beta \in \mathbb{R}$. 
     \label{def:TL}
 \end{definition}
 
 \begin{definition}{\textbf{Producto Vectorial.}}
-    Se define el \textit{producto vectorial}, o \textit{producto interno canónico}, en $\mathbb{R}^n$ para dos vectores
-    $\vect{u}=(u_1, u_2,\ldots, u_n )$ y $\vect{v}=(v_1,v_2,\ldots,v_n)$ como:
+    Se define el \textit{producto vectorial}, o \textit{producto interno canónico} en $\mathbb{R}^n$ para dos vectores
+    $\vect{u}=(u_1, u_2,\ldots, u_n )$ y $\vect{v}=(v_1,v_2,\ldots,v_n)$ como
     \begin{equation*}
-      \vect{u} \cdot \vect{v} = u_1v_1 + u_2v_2 + \ldots + u_nv_n = \sum_{i = 1}^{n} u_iv_i  
+      \vect{u} \cdot \vect{v} = u_1v_1 + u_2v_2 + \ldots + u_nv_n = \sum_{i = 1}^{n} u_iv_i . 
     \end{equation*}
 \end{definition}
 
 \begin{definition} {\textbf{Recta en el espacio.}}
-  Sean $\vect{v}\in\mathbb{R}^n$   no nulo y  $\vect{x_0}\in\mathbb{R}^n,$  el conjunto $L \subset \mathbb{R}^n $  que cumple  
+  Sean $\vect{v}\in\mathbb{R}^n$   no nulo y  $\vect{x_0}\in\mathbb{R}^n$.  El conjunto $L \subset \mathbb{R}^n $,  que cumple  
  \begin{equation*}
-      L = \{   \vect{x} \in\mathbb{R}^n  \:| \:    \vect{x}=  \lambda \cdot \vect{v} + \vect{x_0},  \:  \mbox{  con }  \lambda\in\mathbb{R} \}.
-    \end{equation*}  es una \textit{recta} en $ \mathbb{R}^n $  y a la ecuaci\'on $$ \vect{x}=  \lambda \cdot \vect{v} + \vect{x_0}$$  se  llama  \textbf{expresi\'on vectorial} de la misma.  
-    Adem\'as, llamaremos al vector $\vect{x_0}$ como \textbf{vector posici\'on} (o punto de paso) de la recta y al vector $\vect{v}$ como \textbf{vector director} de la recta.
+      L = \{   \vect{x} \in\mathbb{R}^n  \;\rvert\;    \vect{x}=  \lambda  \vect{v} + \vect{x_0},  \:  \mbox{  con }  \lambda\in\mathbb{R} \},
+    \end{equation*}  es una \textit{recta} en $ \mathbb{R}^n$;  y a la ecuaci\'on $$ \vect{x}=  \lambda  \vect{v} + \vect{x_0}$$  se  llama  \emph{expresi\'on vectorial} de la misma.  
+    Adem\'as, llamaremos al vector $\vect{x_0}$ como \emph{vector posici\'on} (o punto de paso) de la recta y al vector $\vect{v}$ como \emph{vector director} de la recta.
  \end{definition}
 
  \begin{figure}[H]
@@ -54,7 +54,7 @@
   
       % Punto de paso x_0
       \addplot3[only marks, color=red, mark=*] coordinates {(1, 1, 1)};
-      \node at (axis cs:3.3,2,2.3) {$\textcolor{red}{\vec{x}_0}$};
+      \node at (axis cs:3.3,2,2.3) {$\textcolor{red}{\vect{x}_0}$};
   
      
   
@@ -73,7 +73,7 @@
   
        % Vector director v (desde x_0)
       \addplot3[->, thick, blue] coordinates {(0,0,0) (4.5,3,1.5)};
-      \node at (axis cs:1.3,2.7,1) {$\textcolor{blue}{\vec{v}}$};
+      \node at (axis cs:1.3,2.7,1) {$\textcolor{blue}{\vect{v}}$};
   
     \end{axis}
   \end{tikzpicture}
@@ -82,26 +82,26 @@
 \end{figure}
 
 \begin{definition}{\textbf{Plano en el espacio.}}
-  Sean    $\vect{n}\in\mathbb{R}^3$   no nulo  y  $\vect{x_0}\in\mathbb{R}^3,$  el conjunto $\pi \subset \mathbb{R}^3 $  que cumple  
+  Sean    $\vect{n}\in\mathbb{R}^3$   no nulo  y  $\vect{x_0}\in\mathbb{R}^3,$  el conjunto $\Pi \subset \mathbb{R}^3 $  que cumple  
     \begin{equation*}
-      \pi  = \{   \vect{x} \in\mathbb{R}^3  \:| \:    \vect{n}\cdot(\vect{x} - \vect{x_0}) =0   \}.
-    \end{equation*} es un \textit{plano} en $\mathbb{R}^3$  y a la ecuaci\'on   $$ \vect{n}\cdot(\vect{x} - \vect{x_0}) =0$$  se llama  \textbf{expresi\'on canónica} del mismo.  Adem\'as, llamaremos al vector $\vect{n}$   como \textbf{vector normal} del plano 
-    y al vector  $\vect{x_0}$ \textbf{punto de paso} del plano. 
+      \Pi  = \{   \vect{x} \in\mathbb{R}^3  \;|\;    \vect{n}\cdot(\vect{x} - \vect{x_0}) =0   \}.
+    \end{equation*} es un \textit{plano} en $\mathbb{R}^3$  y a la ecuaci\'on   $$ \vect{n}\cdot(\vect{x} - \vect{x_0}) =0$$  se llama  \emph{expresi\'on canónica} del mismo.  Adem\'as, llamaremos al vector $\vect{n}$   como \emph{vector normal} del plano 
+    y al vector  $\vect{x_0}$ \emph{punto de paso} del plano. 
 
     A su vez, también se puede expresar un plano análogamente a la forma propuesta para la recta:
     \begin{equation*}
-      \pi  = \{   \vect{x} \in\mathbb{R}^3  \:| \:    \vect{x}=\vect{x_0}+\alpha \vect{u} + \beta \vect{u},  \:  \mbox{  con }  \alpha,\beta\in\mathbb{R}    \}.
+      \Pi  = \{   \vect{x} \in\mathbb{R}^3  \;|\;    \vect{x}=\vect{x_0}+\alpha \vect{u} + \beta \vect{u},  \:  \mbox{  con }  \alpha,\beta\in\mathbb{R}    \},
     \end{equation*} tal que la ecuación
     \begin{equation*}
        \vect{x}=\vect{x_0}+\alpha \vect{u} + \beta \vect{v}
     \end{equation*}
-    se conoce como la \textbf{forma vectorial} del plano. Donde $\vect{u}$ y $\vect{v}$ son dos \textbf{vectores paralelos al plano}, tal que  $\boldsymbol{v}\nparallel\boldsymbol{u}$.
-    Finalmente, $\alpha$ y $\beta$ son \textbf{parámetros} reales.
+    se conoce como la \emph{forma vectorial} del plano. Donde $\vect{u}$ y $\vect{v}$ son dos \emph{vectores paralelos al plano}, tal que  $\vect{v}\nparallel\vect{u}$.
+    Finalmente, $\alpha$ y $\beta$ son \emph{parámetros} reales.
     \label{def:planoR3}
  \end{definition}
 
  \begin{obs}
-    Notar que se cumple $\vect{v}\times\vect{u}=\lambda \cdot \vect{n}$, con $\lambda\in\mathbb{R}-\{0\}$.
+    Notar que se cumple $\vect{v}\times\vect{u}=\lambda\vect{n}$, con $\lambda\in\mathbb{R}\smallsetminus\{0\}$.
  \end{obs}
    
  \begin{figure}[H]
@@ -139,15 +139,15 @@
     
         % Punto de paso x_0
         \addplot3[only marks, color=red, mark=*] coordinates {(1, 1, 1)};
-        \node at (axis cs:1.6,1.3,2) {$\textcolor{red}{\vec{x}_0}$};
+        \node at (axis cs:1.6,1.3,2) {$\textcolor{red}{\vect{x}_0}$};
     
         % Vectores u y v
         \addplot3[->, thick, blue] coordinates {(1,1,1) ({1+0.398*3},{1-0.597*3},{1+0.696*3})};
-        \node at (axis cs:4.2,-1.1,3.6) {$\textcolor{blue}{\vec{n}}$};
+        \node at (axis cs:4.2,-1.1,3.6) {$\textcolor{blue}{\vect{n}}$};
     
       \end{axis}
     \end{tikzpicture}
-   \caption{Ejemplo un plano $\pi$, con su punto de paso $\vect{x_0}$ y vector normal $\vect{n}$.}
+   \caption{Ejemplo un plano $\Pi$, con su punto de paso $\vect{x_0}$ y vector normal $\vect{n}$.}
    \end{center}
  \end{figure}
 
@@ -186,23 +186,22 @@
     
         % Punto de paso x_0
         \addplot3[only marks, color=red, mark=*] coordinates {(1, 1, 1)};
-        \node at (axis cs:1.6,1.3,2) {$\textcolor{red}{\vec{x}_0}$};
+        \node at (axis cs:1.6,1.3,2) {$\textcolor{red}{\vect{x}_0}$};
     
         % Vectores u y v
         \addplot3[->, thick, blue] coordinates {(1,1,1) (7,5,1)};
-        \node at (axis cs:4.2,3.2,0.6) {$\textcolor{blue}{\vec{u}}$};
+        \node at (axis cs:4.2,3.2,0.6) {$\textcolor{blue}{\vect{u}}$};
     
         \addplot3[->, thick, orange] coordinates {(1,1,1) (2,4,3)};
-        \node at (axis cs:2.2,4.3,3.2) {$\textcolor{orange}{\vec{v}}$};
+        \node at (axis cs:2.2,4.3,3.2) {$\textcolor{orange}{\vect{v}}$};
     
       \end{axis}
     \end{tikzpicture}
-   \caption{Ejemplo del mismo plano de la figura anterior, $\pi$, pero con sus vectores directores $\vect{v}$ y $\vect{u}$ y punto de paso $\vect{x_0}$.}
+   \caption{Ejemplo del mismo plano de la figura anterior, $\Pi$, pero con sus vectores directores $\vect{v}$ y $\vect{u}$ y punto de paso $\vect{x_0}$.}
    \end{center}
  \end{figure}
 \begin{definition}{\textbf{Circunferencia y Círculo en el plano.}} 
   Sean  $(x_0,y_0) \in \mathbb{R}^2$ y $r \in \mathbb{R}_{ > 0}. $
-
   El conjunto $C \subset \mathbb{R}^2$ que cumple
     \begin{equation*}\label{circ}
     C = \{  (x,y)  \in \mathbb{R}^2 \:|\:   (x-x_0)^2+(y-y_0)^2=r^2 \}
@@ -308,12 +307,12 @@
     La cáscara de una esfera (es decir, sólo su superficie exterior, hueca) 
     se expresa como un conjunto $A\subset\mathbb{R}^3$ que cumple
     \begin{equation*}
-      S = \{  (x,y,z)  \in \mathbb{R}^3 \:|\:   (x-x_0)^2+(y-y_0)^2+(z-z_0)^2=r^2 \}
+      S = \{  (x,y,z)  \in \mathbb{R}^3 \:|\:   (x-x_0)^2+(y-y_0)^2+(z-z_0)^2=r^2 \}.
     \end{equation*}
     Se tiene $(x_0,y_0,z_0)$ como el centro de la cáscara y $r$ como el radio de la misma.
     Para obtener un conjunto $B\subset\mathbb{R}^3$ que represente la esfera completa, es decir, cáscara y relleno interior, se debe tener
     \begin{equation*}
-      V = \{  (x,y,z)  \in \mathbb{R}^3 \:|\:   (x-x_0)^2+(y-y_0)^2+(z-z_0)^2\leq r^2 \}
+      V = \{  (x,y,z)  \in \mathbb{R}^3 \:|\:   (x-x_0)^2+(y-y_0)^2+(z-z_0)^2\leq r^2 \}.
     \end{equation*}
     Esto es análogo al caso de la circunferencia y el círculo.
 \end{definition}
