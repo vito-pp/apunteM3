@@ -344,7 +344,7 @@
 
 
   
-\begin{obs} \textcolor{red}{Notemos que graficando solamente los conjuntos de nivel de los ejemplos 1 y 2, los mismos no son suficientes para determinar la gráfica de la función. ESTO NO SON LOS CONJUNTOS DE NIVEL}
+\begin{obs} Notemos que solamente graficando los conjuntos de nivel de los ejemplos 1 y 2 sobre los planos $z=c$, los mismos no son suficientes para determinar la gráfica de la función.
     \begin{center}
         \begin{tabular}{cc}
             \begin{minipage}{0.45\textwidth}
@@ -406,13 +406,56 @@
             \end{minipage}
         \end{tabular}
         \end{center}
+Por esta razón, se recurre también al uso de cortes transversales. Dado un plano vertical de la forma \( x = c \) o \( y = c \), un \textbf{corte transversal} es la intersección entre la gráfica de la función y dicho plano. Matemáticamente, corresponde a restringir la función \( f(x, y) \) a una recta del dominio, obteniendo así una función de una sola variable:
+\[
+\text{Si } x = c, \text{ entonces se considera } g(y) = f(c, y); \quad
+\text{si } y = c, \text{ se analiza } h(x) = f(x, c)
+\]
+En el ejemplo 1, tomando el corte en x=0 podemos observar que:
+\[
+f(0,y)=0^2+y^2 \Rightarrow f(y)=y^2
+\]
+\begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Ejes coordenados
+        \draw[->] (-2.5,0) -- (2.5,0) node[right] {\footnotesize $y$};
+        \draw[->] (0,-0.5) -- (0,4.5) node[above] {\footnotesize $z$};
 
+        % Marcas en los ejes
+        \foreach \x in {-2,-1,1,2}
+            \draw (\x,0.1) -- (\x,-0.1) node[below] {\footnotesize \x};
+        \foreach \y in {1,2,3,4}
+            \draw (0.1,\y) -- (-0.1,\y) node[left] {\footnotesize \y};
 
+        % Gráfica de f(y) = y^2
+        \draw[domain=-2:2, smooth, variable=\y, blue, thick] 
+            plot ({\y}, {\y*\y});
+
+        % Etiqueta de la curva
+        \node[blue] at (2, 1.6) {\footnotesize $z = y^2$};
+    \end{tikzpicture}
+\end{center}
+En el ejemplo 2, tomando el corte en x=0 podemos observar que:
+\[
+f(0,y)=\sqrt{0^2+y^2} \Rightarrow f(y)=|y|
+\]
+\begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Ejes coordenados
+        \draw[->] (-2.5,0) -- (2.5,0) node[right] {\footnotesize $y$};
+        \draw[->] (0,-0.5) -- (0,2.5) node[above] {\footnotesize $z$};
+
+        % Marcas en los ejes
+        \foreach \x in {-2,-1,1,2}
+            \draw (\x,0.1) -- (\x,-0.1) node[below] {\footnotesize \x};
+        \foreach \y in {1,2}
+            \draw (0.1,\y) -- (-0.1,\y) node[left] {\footnotesize \y};
+
+        % Gráfica de f(y) = |y|
+        \draw[thick, blue] (-2,2) -- (0,0) -- (2,2);
+
+        % Etiqueta de la curva
+        \node[blue] at (1.3, 1.2) {\footnotesize $z = |y|$};
+    \end{tikzpicture}
+\end{center}
             \end{obs}
-
-
-
-
-
-
-    
