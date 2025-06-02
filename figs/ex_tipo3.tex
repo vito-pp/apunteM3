@@ -13,20 +13,17 @@
     % Circunferencia centrada en (2,2) con radio 1
     %——————————————————————————————————————————————
     % Color rojo, grosor "very thick"
-    \draw[red, very thick] (2,2) circle [radius=1];
+    \draw[color=black, thick, fill=blue!30] (2,2) circle [radius=1.5];
   
     %——————————————————————————————————————————————
     % Marcas de -delta y +delta (en este caso 2) sobre cada eje
     %——————————————————————————————————————————————
     % Tick en x=2
-    \draw (2,0) -- ++(0,-0.1) node[below] {$2$};
+    \draw (2,0) -- ++(0,-0.1) node[below] {$x_0$};
     % Tick en y=2
-    \draw (0,2) -- ++(-0.1,0) node[left]  {$2$};
-  
-    %——————————————————————————————————————————————
-    % Etiqueta con la ecuación de la circunferencia
-    %——————————————————————————————————————————————
-    \node at (3,3) {$(x-2)^2 + (y-2)^2 = 1$};
+    \draw (0,2) -- ++(-0.1,0) node[left]  {$y_0$};
+
+    \node at (2,2) {$D$};
   \end{scope}
 \end{tikzpicture}
 \end{center}
