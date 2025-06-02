@@ -1,6 +1,20 @@
-\textcolor{red}{definir rectangulo B en R2. }
-\textcolor{red}{definir particion de un rectangulo B. quien es $\Delta A_{ij}$  quien es $B_{ij}$. Explicar la notacion que aparece en la primer definicion }
-
+\begin{definition}
+    Sea \( B \) un rectángulo que pertenece a \( \mathbb{R}^2 \), tal que
+	\[
+	B = [a, b] \times [c, d] = \{(x, y) \in \mathbb{R}^2 \mid a \leq x \leq b, \; c \leq y \leq d\}
+	\]
+	La partición del rectángulo \( B \) consiste en dividir el conjunto \( B \) (el rectángulo) en pequeños rectángulos de igual área. Esto se hace dividiendo:
+	
+	\begin{itemize}
+		\item el intervalo \( [a, b] \) en \( l \) subintervalos \( [x_i, x_{i+1}] \), cada uno de ancho \( \Delta x \),
+		\item el intervalo \( [c, d] \) en \( m \) subintervalos \( [y_j, y_{j+1}] \), cada uno de ancho \( \Delta y \).
+	\end{itemize}
+	
+	Estos subrectángulos se denotan como
+	\[
+	B_{ij} = [x_i, x_{i+1}] \times [y_j, y_{j+1}].
+	\]
+\end{definition}
 
 
 \begin{definition}
@@ -10,8 +24,6 @@ Dada una funci\'on $f:B\to\R$, donde $B$ es un rect\'angulo en $\Rn{2}$, se defi
 \]  
 donde $c_{ij}\in B_{ij}$, el $ij$-\'esimo rect\'angulo en la partici\'on de $B$, y $\Delta A$ es el \'area de $B_{ij}$.
 \end{definition}
-
-
 
 \begin{definition} 
     Sea $f:B=[a,b]\times[c,d]\to\R$ una funci\'on. Diremos que $f$ es integrable sobre $B$ si  el l\'imite $\lim_{n\to\infty}S_n$  existe y es finito, en tal caso el valor de dicho  l\'imite  se llama \textbf{integral doble} de $f$ sobre $B$ y se nota 
@@ -90,14 +102,41 @@ La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
     \item[iii.]
     $D$ se llama conjunto elemental de \textit{tipo 3} si es \textit{tipo 1} y \textit{tipo 2} a la vez.
     
-    
-    
-    
-    \textcolor{red}{Dibujar los casos.}
-    
+    \input{figs/conj-elementales.tex}
     
     \end{enumerate}
 \end{definition}
+
+\begin{example}
+    Para poder clasificar a una regi\'on como tipo 3 es necesario poder encontrar simult\'aneamente funciones $\phi_1$, $\phi_2$, $\psi_1$ y $\psi_2$ tales que
+    \[
+    \begin{dcases}
+        \phi_1(x)\leq y\leq\phi_2(x) & x\in[a,b]\\[.2cm]
+        \psi_1(y)\leq x\leq\psi_2(y) & y\in[c,d].
+    \end{dcases}
+    \]
+    Un ejemplo simple de tal regi\'on es una circunferencia, donde la ecuaci\'on de esta regi\'on es $D=\{(x,y)\in\Rn{2}:(x-x_0)^2+(y-y_0)^2\leq r\}$, con $r>0$.
+
+    \input{figs/ex_tipo3.tex}
+
+    Para esta regi\'on se pueden encontrar las funciones
+    \[
+        \phi_1(x)=-\sqrt{r-(x-x_0)^2}+y_0,\quad x\in[x_0-r,x_0+r],
+    \]
+    y
+    \[
+        \phi_2(x)=\sqrt{r-(x-x_0)^2}+y_0,\quad x\in[x_0-r,x_0+r].
+    \]
+    A su vez, se pueden hallar las funciones
+    \[
+        \psi_1(y)=-\sqrt{r-(y-y_0)^2}+x_0,\quad y\in[y_0-r,y_0+r],
+    \]
+    y
+    \[
+        \psi_2(y)=\sqrt{r-(y-y_0)^2}+x_0,\quad y\in[y_0-r,y_0+r].
+    \]
+    Por tanto, $D$ es una regi\'on de tipo 3.
+\end{example}
 
 \begin{propertie} \label{col:fubini}
    
@@ -157,7 +196,7 @@ La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
     Luego $D$ es de tipo 1. Notar que la \'unica manera de demostrar que un conjunto es elemental es dando su descripci\'on impl\'icita. Por el \autoref{col:fubini}
     \begin{gather*}
         \iint_D x^2y\:dA=\int_0^1\left(\int_{x^3}^{x^2}\:dy\right)dx=\int_0^1\left(x^2\frac{1}{2}y^2\Big\lvert_{x^3}^{x^2}\right)dx\\
-        =\int_0^1\frac{1}{2}x^2\left((x^2)^2-(x^3)^2\right)=\int_0^1\frac{1}{2}x^6-\frac{1}{2}x^8\;dx\\=\frac{1}{14}x^7-\frac{1}{18}x^9\Big\lvert_0^1=\frac{1}{14}-\frac{1}{18}.
+        =\int_0^1\frac{1}{2}x^2\left((x^2)^2-(x^3)^2\right)=\int_0^1\frac{1}{2}x^6-\frac{1}{2}x^8\;dx\\=\frac{1}{14}x^7-\frac{1}{18}x^9\Big\lvert_0^1=\frac{1}{14}-\frac{1}{18}=\frac{1}{63}.
     \end{gather*}
 \end{example}
 \begin{definition} %cambie la palabra region --> conjunto
@@ -181,8 +220,99 @@ La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
 \end{definition}
 
 
-\textcolor{red}{dos ejemplos  sencillos en n=2 y n=3}
-
+\begin{example} \textbf{Coordenadas polares (\(n = 2\))} \newline
+    Sea \( F(r, \theta) = (x,y)= (r\cos\theta, r\sin\theta) \). Calculamos la matriz jacobiana:
+   
+       \[
+       D_F = \begin{bmatrix}
+       \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} \\
+       \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta}
+       \end{bmatrix}
+       =
+       \begin{bmatrix}
+       \cos\theta & -r\sin\theta \\
+       \sin\theta & r\cos\theta
+       \end{bmatrix}
+       \]
+       
+       Entonces, el jacobiano es:
+       
+       \[
+       J_F = \det(D_F) = 
+       \begin{vmatrix}
+       \cos\theta & -r\sin\theta \\
+       \sin\theta & r\cos\theta
+       \end{vmatrix}
+       = r(\cos^2\theta + \sin^2\theta) = r
+       \]
+       
+       \vspace{0.5cm}
+   \end{example}
+   
+   \begin{example} \textbf{Coordenadas cilíndricas (\(n = 3\))} \newline
+       Sea \( F(r, \theta, z) = (x, y, z) = (r\cos\theta, r\sin\theta, z) \). Calculamos la matriz jacobiana:
+   
+   \[
+   D_F =
+   \begin{bmatrix}
+   \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial z} \\
+   \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial z} \\
+   \frac{\partial z}{\partial r} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial z}
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+   \cos\theta & -r\sin\theta & 0 \\
+   \sin\theta & r\cos\theta & 0 \\
+   0 & 0 & 1
+   \end{bmatrix}
+   \]
+   
+   \[
+   J_F = \det(D_F) = 
+   \begin{vmatrix}
+   \cos\theta & -r\sin\theta & 0 \\
+   \sin\theta & r\cos\theta & 0 \\
+   0 & 0 & 1
+   \end{vmatrix}
+   = r
+   \]
+   \end{example}
+   
+   
+   
+   
+   \vspace{0.5cm}
+   
+   \begin{example} \textbf{Coordenadas esféricas (\(n = 3\))} \newline
+       Sea \( F(\rho, \theta, \phi) = (x, y, z) = (\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \). Calculamos la matriz jacobiana:
+   
+       \[
+   D_F =
+   \begin{bmatrix}
+   \frac{\partial x}{\partial \rho} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial \phi} \\
+   \frac{\partial y}{\partial \rho} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial \phi} \\
+   \frac{\partial z}{\partial \rho} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial \phi}
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+   \sin\phi \cos\theta & -\rho \sin\phi \sin\theta & \rho \cos\phi \cos\theta \\
+   \sin\phi \sin\theta & \rho \sin\phi \cos\theta & \rho \cos\phi \sin\theta \\
+   \cos\phi & 0 & -\rho \sin\phi
+   \end{bmatrix}
+   \]
+   
+   \vspace{0.3cm}
+   
+   \[
+   J_F = \det(D_F) = \begin{vmatrix}
+       \sin\phi \cos\theta & -\rho \sin\phi \sin\theta & \rho \cos\phi \cos\theta \\
+       \sin\phi \sin\theta & \rho \sin\phi \cos\theta & \rho \cos\phi \sin\theta \\
+       \cos\phi & 0 & -\rho \sin\phi
+       \end{vmatrix}=\rho^2 \sin\phi
+   \]
+   
+   
+   \end{example}
 
 \begin{theorem} % lo escribi como lo tenia en mis apuntes
     \textbf{Teorema del cambio de variables para integrales dobles}. Sea $f:D\subseteq\Rn{2}\to\Rn{2}$ un campo escalar integrable. Sea $\mathbf{T}:D^*\subseteq\Rn{2}\to D$ continua de clase $\mathcal{C}^1$ en $\interior{(D^*)}$, inyectiva en $\interior{(D^*)}$ y tal que $\mathbf{T}(D^*)=D$. Entonces
