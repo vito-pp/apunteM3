@@ -1,5 +1,3 @@
-\textcolor{red}{falta corregir la notacion}
-
 \begin{definition}\label{def:norma-general}
     Una \emph{norma} en $\mathbb{R}^n$ es una función $\|\cdot\| : \mathbb{R}^n \to \mathbb{R}$ que asigna a cada vector $\mathbf{x} \in \mathbb{R}^n$ un número real no negativo $\|\mathbf{x}\|$, y que satisface las siguientes propiedades para todos $\mathbf{x},\;\mathbf{y} \in \mathbb{R}^n$ y todo escalar $\lambda \in \mathbb{R}$:
     \begin{enumerate}
@@ -37,7 +35,7 @@
     donde $\|\cdot\|$ es una norma cualquiera de $\Rn{n}$.
 \end{definition}
 
-\begin{definition} [Bola de radio $\delta$ y centro $x_o$] \label{def:bola}
+\begin{definition} \textbf{Bola de radio $\delta$ y centro $x_o$.} \label{def:bola}
     Sean $x_o \in \Rn{n},\;\delta > 0$ y $\text{d}$ una distancia en $\Rn{n}$. La \emph{bola de radio $\delta$ y centro $x_o$}, que denotamos con $B_{\delta}(x_o)$, es el conjunto
     \[
      B_{\delta}(x_o) = \left\lbrace x \in \Rn{n} : \text{d}(x,x_o) < \delta \right\rbrace.
@@ -58,73 +56,75 @@
     De aqu\'i podemos ver como esta definici\'on general de bola desaf\'ia nuestra intuici\'on al ser utilizada con distintos tipos de norma. Donde lo ``natural'' ser\'ia pensar en la ilustrada a partir de la norma 2 o euclidiana.
    \end{example}
    
-   \begin{definition} [Punto interior, interior de un conjunto] \label{def:interior}
-    Sean $A \subset \Rn{n} \text{ y } x_o \in A$. Decimos que $x_o$ es \emph{punto interior} de $A$ si
+   \begin{definition} \textbf{Punto interior, interior de un conjunto.} \label{def:interior}
+    Sean $A \subset \Rn{n} \text{ y } \vect{x}_0 \in A$. Decimos que $\vect{x}_0$ es \emph{punto interior} de $A$ si
     \[
-     \exists\:\delta > 0: B_{\delta}(x_o) \subset A.
+     \exists\:\delta > 0: B_{\delta}(\vect{x}_0) \subset A.
     \]
     El \emph{interior} de $A$, que denotamos con $A^{\circ}$, es el conjunto de todos los puntos interiores de $A$:
     \[
-    A^{\circ}= \left\lbrace x \in A : x \text{ es punto interior de } A \right\rbrace.
+    A^{\circ}= \left\lbrace\vect{x}\in A :\vect{x}\text{ es punto interior de } A \right\rbrace.
     \]
    \end{definition}
    
    
-   \begin{definition} [Conjunto abierto] \label{def:abierto}
+   \begin{definition} \textbf{Conjunto abierto.} \label{def:abierto}
        Sea $A \subset \Rn{n}$. Decimos que $A$ es \emph{abierto} si
    \[
-        \forall x_o \in \exists \delta > 0 : B_{\delta}(x_o) \subset A.\footnote{\text{\textit{i.e.}: $A$  es abierto si todos sus puntos son interiores.}}
+        \forall \vect{x}_0 \in \exists \delta > 0 : B_{\delta}(\vect{x}_0) \subset A.\footnote{\text{\textit{i.e.}: $A$  es abierto si todos sus puntos son interiores.}}
    \]
    \end{definition}
    
-   \begin{propertie}  \label{prop:abierto_int}    Sea  $A \subseteq \Rn{n}$
-   
-    1.  $A \subseteq  A^{\circ}.$      \:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:                        2.  $\text{   A  es abierto }  \iff   A =  A^{\circ}.$
+   \begin{propertie}  \label{prop:abierto_int}    Sea  $A \subseteq \Rn{n}$, entonces:
+   \begin{enumerate}
+    \item \(A\subseteq \interior{A}\).
+    \item \(A\) es abierto \(\iff A=\interior{A}\).
+    \end{enumerate}
     \end{propertie}
    
-   \begin{definition} [Conjunto cerrado] \label{def:cerrado}
-    Sea $A \subset \Rn{n}$. Decimos que $A$ es \emph{cerrado} si su complemento $A^c = \Rn{n} - A$ es abierto.
+   \begin{definition} \textbf{Conjunto cerrado.} \label{def:cerrado}
+    Sea $A \subset \Rn{n}$. Decimos que $A$ es \emph{cerrado} si su complemento $A^c = \Rn{n} \smallsetminus A$ es abierto.
    \end{definition}
    
-   \begin{definition} [Frontera de un conjunto] \label{def:frontera}
-    Sea $A \subset \Rn{n}$. La \emph{frontera} de $A$, que denotamos con $\front A$ o $\frontera(A)$, es el conjunto:
+   \begin{definition} \textbf{Frontera de un conjunto.} \label{def:frontera}
+    Sea $A \subset \Rn{n}$. La \emph{frontera} de $A$, que denotamos con $\partial A$ o $\frontera(A)$, es el conjunto
     \[
-     \front A = \left\lbrace x_o \in \Rn{n} : \forall \delta > 0 \,
-     B_{\delta}(x_o) \cap A \ne \emptyset \wedge
-     B_{\delta}(x_o) \cap A^c \ne \emptyset \right\rbrace.
+     \partial A = \left\lbrace \vect{x}_0 \in \Rn{n} \;|\; \forall \delta > 0, \;
+     B_{\delta}(\vect{x}_0) \cap A \ne \varnothing\;\land\;
+     B_{\delta}(\vect{x}_0) \cap A^c \ne \varnothing \right\rbrace.
     \]
    \end{definition}
    
    \begin{propertie} \label{prop:cerrado_front}
-    Un conjunto $A \subset \Rn{n}$ es cerrado si y solo si $\front A \subset A$.
+    Un conjunto $A \subset \Rn{n}$ es cerrado si y solo si $\partial A \subset A$.
    \end{propertie}
    
-   \begin{definition} [Punto de acumulaci\'on] \label{def:pto_acum}
-    Sean $A \subset \Rn{n} \text{ y } x_o \in \Rn{n}$. Decimos que $x_o$ es \emph{punto de acumulaci\'on} de $A$ si
+   \begin{definition} \textbf{Punto de acumulaci\'on.} \label{def:pto_acum}
+    Sean $A \subset \Rn{n} \text{ y } \vect{x}_0 \in \Rn{n}$. Decimos que $\vect{x}_0$ es \emph{punto de acumulaci\'on} de $A$ si
     \[
-     \forall \delta > 0 \left( B_{\delta}(x_o) - \{ x_o \} \right) \cap A \ne \emptyset. 
+     \forall \delta > 0 \left( B_{\delta}(\vect{x}_0) - \{ \vect{x}_0 \} \right) \cap A \ne \varnothing. 
     \]
     Denotamos el conjunto de todos los puntos de acumulaci\'on de $A$ con $A'$:
     \[
-     A' = \{ x \in \Rn{n} : x \text{ es punto de acumulaci\'on de } A \}.
+     A' = \{\vect{x}\in \Rn{n} :\vect{x}\text{ es punto de acumulaci\'on de } A \}.
     \]
    
    \end{definition}
    
-   \begin{definition} [Entorno de un punto] \label{def:entorno}
-    Sean $N \subset  \Rn{n}$ y $x_o \in \Rn{n}$. Decimos que $N$ es \emph{entorno} de $x_o$ si
+   \begin{definition} \textbf{Entorno de un punto.} \label{def:entorno}
+    Sean $N \subset  \Rn{n}$ y $\vect{x}_0 \in \Rn{n}$. Decimos que $N$ es \emph{entorno} de $\vect{x}_0$ si
     \[
-     \exists \delta > 0 : B_{\delta}(x_o) \subset N.
+     \exists \delta > 0 \;|\; B_{\delta}(\vect{x}_0) \subset N.
     \]
    \end{definition}
    
-   \begin{definition} [Punto aislado] \label{def:pto_ais}
-    Sean $A \subset  \Rn{n}$ y $x_o \in A$. Decimos que $x_o$ es \emph{punto aislado} de $A$ si $x_o$ no es punto de acumulaci\'on de $A$.
+   \begin{definition} \textbf{Punto aislado.} \label{def:pto_ais}
+    Sean $A \subset  \Rn{n}$ y $\vect{x}_0 \in A$. Decimos que $\vect{x}_0$ es \emph{punto aislado} de $A$ si $\vect{x}_0$ no es punto de acumulaci\'on de $A$.
    \end{definition}
    
-   \begin{definition} [Conjunto acotado] \label{def:conj_acotado}
+   \begin{definition} \textbf{Conjunto acotado.} \label{def:conj_acotado}
     Sea $A \subset \Rn{n}$. Decimos que $A$ es un \emph{conjunto acotado} si existe $\delta > 0$ tal que la bola de radio $\delta$  centrada en el origen contiene al conjunto $A$, es decir, si $\exists \delta > 0 : A \subset B_{\delta}(\mathbf{0})$.\\
-    Equivalentemente, $A$ es un \emph{conjunto acotado} si $\exists \delta > 0, x_o \in \Rn{n} : A \subset B_{\delta}(x_o)$.
+    Equivalentemente, $A$ es un \emph{conjunto acotado} si $\exists \delta > 0, \vect{x}_0 \in \Rn{n} : A \subset B_{\delta}(\vect{x}_0)$.
    \end{definition}
    
    \begin{definition}
@@ -133,7 +133,7 @@
 
 
 %------------------------------------------------------conjunto conexo----------------------------
-\begin{definition} [Conjunto conexo] \label{def:conjuntoconexo} Un conjunto \( A \subset \mathbb{R}^n \) es \textbf{conexo} si para cualesquiera dos puntos \( x_0, y_0 \in A \), existe una curva continua \( \gamma : [0,1] \to A \) tal que:
+\begin{definition} \textbf{Conjunto conexo.} \label{def:conjuntoconexo} Un conjunto \( A \subset \mathbb{R}^n \) es \textbf{conexo} si para cualesquiera dos puntos \( \vect{x}_0, y_0 \in A \), existe una curva continua \( \gamma : [0,1] \to A \) tal que:
 
     \[
     \gamma(0) = x_1 \quad \text{y} \quad \gamma(1) = y_1
@@ -183,9 +183,9 @@
     \end{definition}
     
     %------------------------------------------------------conjunto conexo----------------------------
-    \begin{definition} [Conjunto convexo] \label{def:conjuntoconvexo}Un subconjunto \( A \subseteq \mathbb{R}^n \) es \textbf{convexo} si para cualesquiera dos puntos \( x, y \in A \), el segmento que los une está completamente contenido en \( A \):
+    \begin{definition} \textbf{Conjunto convexo.} \label{def:conjuntoconvexo}Un subconjunto \( A \subseteq \mathbb{R}^n \) es \textbf{convexo} si para cualesquiera dos puntos \( x, y \in A \), el segmento que los une está completamente contenido en \( A \):
         \[
-        \forall x_1,y_1, \quad \lambda x + (1 - \lambda)y \in A \quad \text{para todo } \lambda \in [0,1].
+        \forall x_1,y_1, \quad \lambda\vect{x}+ (1 - \lambda)y \in A \quad \text{para todo } \lambda \in [0,1].
         \]
         
     
@@ -272,7 +272,7 @@
     
     %------------------------------------------------------conjunto simplemente conexo----------------------------
     \vspace{0.5cm}
-    \begin{definition}[Conjunto conexo] \label{def:conjuntoconexo}
+    \begin{definition} \textbf{Conjunto conexo.} \label{def:conjuntoconexo}
     Un conjunto \( A \subset \mathbb{R}^2 \) es \textbf{simplemente conexo} si es conexo y todo lazo cerrado dentro de \( A \) puede ser continuamente deformado a un punto, sin salir de \( A \).
     
     \vspace{0.3cm} % Pequeño espacio entre el texto y las figuras
@@ -294,7 +294,7 @@
     
                 \node at (-1,1) {\textcolor{gray}{$A$}};
                 \node at (1.4,0.4) {\textcolor{red}{lazo}};
-                \filldraw[black] (0,0) circle (1pt) node[below] {\(x_0\)};
+                \filldraw[black] (0,0) circle (1pt) node[below] {\(\vect{x}_0\)};
             \end{tikzpicture}
         \end{minipage}
         \hspace{1cm}
@@ -314,7 +314,7 @@
                     };
                 \node at (2,-1.2) {\textcolor{gray}{$A$}};
                 \node[red] at (2.3,0.2) {lazo};
-                \filldraw[black] (1.5,0) circle (0.5pt) node[below] {\(x_0\)};
+                \filldraw[black] (1.5,0) circle (0.5pt) node[below] {\(\vect{x}_0\)};
             \end{tikzpicture}
         \end{minipage}
     \end{center}
@@ -346,7 +346,7 @@
             };
                 \node at (-1,1) {\textcolor{gray}{$A$}};
                 \node at (1,0.9) {\textcolor{red}{lazo}};
-                \filldraw[black] (1,0) circle (0.5pt) node[below] {\(x_0\)};
+                \filldraw[black] (1,0) circle (0.5pt) node[below] {\(\vect{x}_0\)};
         \end{tikzpicture}
         \end{center}
         \begin{center}
