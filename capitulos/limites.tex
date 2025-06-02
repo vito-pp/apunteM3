@@ -3,7 +3,7 @@
 Sean $f:A \subset \Rn{n} \to \Rn{m}$ una funci\'on, $L \in \Rn{m}$ y $x_0$ un punto de acumulaci\'on de $A$. Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_0$ es $L$} o que \emph{$f$ tiende a $L$ cuando $x$ tiende a $x_0$}
 si
 \[
- \forall \varepsilon > 0 \, \exists \delta > 0 / f(x) \in B_{\varepsilon}(L) \, \forall 
+ \forall \varepsilon > 0 \, \exists\: \delta > 0 \;|\; f(x) \in B_{\varepsilon}(L) \; \forall 
  x \in B_{\delta}^*(x_0) \cap A.
 \]
 
@@ -11,14 +11,14 @@ En este caso, utilizamos la notaci\'on
 \[
  f(x) \xrightarrow[x \to x_0]{} L \quad \text{o} \quad \lim_{x \to x_0} f(x) = L.
 \]
-\begin{obs} Si $f$ es un \emph{campo escalar} (es decir, si en la definici\'on \eqref{def:limite} es $m = 1$), la condici\'on 
+\begin{obs} Si $f$ es un \emph{campo escalar} (es decir, si en la Definici\'on \eqref{def:limite} es $m = 1$), la condici\'on 
  \[
- \forall \varepsilon > 0 \, \exists \delta > 0 / f(x) \in B_{\varepsilon}(L) \, \forall 
+ \forall \varepsilon > 0 \, \exists\: \delta > 0 \;|\; f(x) \in B_{\varepsilon}(L) \; \forall 
  x \in B_{\delta}^*(x_0) \cap A
 \]
 es equivalente a 
 \[
- \forall \varepsilon > 0 \, \exists \delta > 0 / \abs{ f(x) - L } < \varepsilon \, \forall 
+ \forall \varepsilon > 0 \, \exists\: \delta > 0 \;|\; \abs{ f(x) - L } < \varepsilon \; \forall 
  x \in B_{\delta}^*(x_0) \cap A.
 \]
 \end{obs}
@@ -27,14 +27,14 @@ es equivalente a
 \begin{itemize} 
  \item Sean $f:A \subset \Rn{n} \to \Rn{m}$ una funci\'on, $L \in \Rn{m}$ y $x_0$ un punto de acumulaci\'on de $A$. Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_0$ es $L$} o que \emph{$f$ tiende a $L$ cuando $x$ tiende a $x_0$} si
 \[
- \forall \varepsilon > 0 \, \exists \delta > 0 / \dis_m {(f(x),L)} < \varepsilon \, \forall 
+ \forall \varepsilon > 0 \, \exists\: \delta > 0 \;|\; \dis_m {(f(x),L)} < \varepsilon \, \forall 
  x\in A : 0 < \dis_n {(x,x_0)} < \delta,
 \] 
 donde $\dis_n$ y $\dis_m$ son las distancias en $\Rn{n}$ y $\Rn{m}$, respectivamente.
 
  \item Sean $f:A \subset \Rn{n} \to \Rn{m}$ una funci\'on, $L \in \Rn{m}$ y $x_0$ un punto de acumulaci\'on de $A$. Decimos que \emph{el l\'imite de $f$ para $x$ tendiendo a $x_0$ es $L$} o que \emph{$f$ tiende a $L$ cuando $x$ tiende a $x_0$} si
 \[
- \forall \varepsilon > 0 \, \exists \delta > 0 / \norm{f(x) - L}_m < \varepsilon \, \forall 
+ \forall \varepsilon > 0 \, \exists\: \delta > 0 \;|\; \norm{f(x) - L}_m < \varepsilon \, \forall 
  x\in A : 0 < \norm{x - x_0}_n < \delta,
 \] 
 donde $\norm{\cdot}_n$ y $\norm{\cdot}_m$ son las normas en $\Rn{n}$ y $\Rn{m}$, respectivamente.
@@ -49,33 +49,33 @@ donde $\norm{\cdot}_n$ y $\norm{\cdot}_m$ son las normas en $\Rn{n}$ y $\Rn{m}$,
  \]
 
  \[
-  \lim_{(x,y) \to (0,0)} \frac{x^2 \sin( y)}{x^2 + y^2} = 0.
+  \lim_{(x,y) \to (0,0)} \frac{x^2 \sin y}{x^2 + y^2} = 0.
  \]
 \end{example}
 
-\begin{obs} Para resolver límites por definicion, usualmente se utilizan ciertas cotas conocidas, en primer lugar, fijamos $(x,y)\neq (0,0)$
+\begin{obs} Para resolver límites por definici\'on usualmente se utilizan ciertas cotas conocidas. En primer lugar, fijamos $(x,y)\neq (0,0)$.
   \renewcommand{\theenumi}{\Roman{enumi}}
   \begin{enumerate}
   \item 
   \[
-  x^2\leq x^2+y^2 \iff \frac{x}{ x^2+y^2}\leq 1 \iff \frac{x^2}{||(x,y)||^2}\leq 1
+  x^2\leq x^2+y^2 \iff \frac{x}{ x^2+y^2}\leq 1 \iff \frac{x^2}{\|(x,y)\|^2}\leq 1
   \]
   
   \item 
   
   \[
-  \frac{|x|}{||(x,y)||}\leq 1
+  \frac{|x|}{\|(x,y)\|}\leq 1
   \]
   \item 
   \[
-  |sen(x)|\leq 1 
+  |\sen x|\leq 1 
   \]
   \[
-  |cos(x)|\leq 1 
+  |\cos x|\leq 1 
   \]
   \item 
   \[
-   |sen(x)|\leq |x|
+   |\sen x|\leq |x|
   \]
   
   \end{enumerate}
@@ -90,70 +90,70 @@ Se pide calcular los siguientes límites por definición
   
   \item
   \[
-  \lim_{(x, y) \to (0, 0)} \frac{x^2 \sin(y)}{x^2 + y^2} = 0
+  \lim_{(x, y) \to (0, 0)} \frac{x^2 \sin(y)}{x^2 + y^2} = 0.
   \]
 \end{enumerate}
 
-Empezamos enunciando la definición formal de límite:
+Empezamos enunciando la definición formal de límite.
 \[
-\forall \varepsilon > 0 \space\space\space \exists \space\delta > 0 \space/\space\space |f(x,y) - L| < \varepsilon  \space\space\space \Rightarrow \space \forall (x,y) \in \Re^2 \space/\space\space0 < ||(x-x_o,y-y_o)|| < \delta
+\forall \varepsilon > 0\; \exists\:\delta > 0 \;|\; |f(x,y) - L| < \varepsilon  \implies \forall (x,y) \in \R^2 \;|\;0 < \|(x-x_0,y-y_0)\| < \delta
 \]
-entonces,
+Entonces,
 \[
-\lim_{(x,y) \to (x_o,y_o)} f(x,y) = L
+\lim_{(x,y) \to (x_0,y_0)} f(x,y) = L.
 \]
 
 \renewcommand{\labelenumi}{\alph{enumi})}
 
 \begin{enumerate}
   \item
-Se escribira la definicion con el límite solicitado, proponiendo $L=0$
+Se escribir\'a la definici\'on con el límite solicitado, proponiendo $L=0$.
 \[
-\forall \varepsilon > 0 \space\space\space \exists \space\delta > 0 \space/\space\space | \frac{x^2y}{x^2+y^2} - 0| < \varepsilon  \space\space\space \Rightarrow \space \forall (x,y) \in \Re^2 \space/\space\space0 < ||(x-0,y-0)|| < \delta
+\forall \varepsilon > 0 \; \exists\: \:\delta > 0 \;|\; \left| \frac{x^2y}{x^2+y^2} - 0\right| < \varepsilon  \implies \forall (x,y) \in \R^2 \;|\; 0 < \|(x-0,y-0)\| < \delta
 \]
 
 Partimos de
 \[
-| \frac{x^2y}{x^2+y^2} - 0|=| \frac{x^2y}{x^2+y^2}|= \frac{x^2|y|}{x^2+y^2}
+\left| \frac{x^2y}{x^2+y^2} - 0\right|=\left| \frac{x^2y}{x^2+y^2}\right|= \frac{x^2|y|}{x^2+y^2};
 \]
 ahora, utilizando las cotas conocidas sabemos que
 \[
 x^2\leq x^2+y^2 
 \]
 \[
-|y|\leq \sqrt{x^2+y^2} 
+|y|\leq \sqrt{x^2+y^2} ,
 \]
 por lo cual
 \[
-\frac{x^2|y|}{x^2+y^2}\leq\frac{(x^2+y^2)\sqrt{x^2+y^2} }{x^2+y^2}=\sqrt{x^2+y^2}=||(x,y)||<\delta
+\frac{x^2|y|}{x^2+y^2}\leq\frac{(x^2+y^2)\sqrt{x^2+y^2} }{x^2+y^2}=\sqrt{x^2+y^2}=\|(x,y)\|<\delta.
 \]
-Basta con tomar $\delta=\epsilon$ entonces
+Basta con tomar $\delta=\epsilon$. Entonces
 \[
-\frac{x^2|y|}{x^2+y^2}\leq\sqrt{x^2+y^2}<\delta=\epsilon
+\frac{x^2|y|}{x^2+y^2}\leq\sqrt{x^2+y^2}<\delta=\varepsilon.
 \]
 \item 
-Se escribira la definicion con el límite solicitado, proponiendo $L=0$
+Se escribir\'a la definici\'on con el límite solicitado, proponiendo $L=0$.
 \[
-\forall \varepsilon > 0 \space\space\space \exists \space\delta > 0 \space/\space\space | \frac{x^2sen(y)}{x^2+y^2} - 0| < \varepsilon  \space\space\space \Rightarrow \space \forall (x,y) \in \Re^2 \space/\space\space0 < ||(x-0,y-0)|| < \delta
+\forall \varepsilon > 0 \;\exists\: \:\delta > 0 \;|\; \left| \frac{x^2sen(y)}{x^2+y^2} - 0\right| < \varepsilon \implies \forall (x,y) \in \R^2 \;|\; 0 < \|(x-0,y-0)\| < \delta.
 \]
 Partimos de
 \[
-| \frac{x^2sen(y)}{x^2+y^2} - 0|=| \frac{x^2sen(y)}{x^2+y^2}|= \frac{x^2|sen(y)|}{x^2+y^2}
+| \frac{x^2sen(y)}{x^2+y^2} - 0|=| \frac{x^2sen(y)}{x^2+y^2}|= \frac{x^2|sen(y)|}{x^2+y^2};
 \]
 ahora, utilizando las cotas conocidas sabemos que
 \[
-x^2\leq x^2+y^2 
+x^2\leq x^2+y^2, 
 \]
 \[
 |sen(y)|\leq |y|
 \]
 por lo cual
 \[
-\frac{x^2|sen(y)|}{x^2+y^2}\leq\frac{(x^2+y^2).|y| }{x^2+y^2}\leq\frac{(x^2+y^2)\sqrt{x^2+y^2} }{x^2+y^2}=\sqrt{x^2+y^2}=||(x,y)||<\delta
+\frac{x^2|\sen y|}{x^2+y^2}\leq\frac{(x^2+y^2)|y| }{x^2+y^2}\leq\frac{(x^2+y^2)\sqrt{x^2+y^2} }{x^2+y^2}=\sqrt{x^2+y^2}=\|(x,y)\|<\delta
 \]
-Basta con tomar $\delta=\epsilon$ entonces
+Basta con tomar $\delta=\epsilon$. Entonces
 \[
-\frac{x^2sen (y)}{x^2+y^2}\leq\sqrt{x^2+y^2}<\delta=\epsilon
+\frac{x^2sen (y)}{x^2+y^2}\leq\sqrt{x^2+y^2}<\delta=\varepsilon.
 \]
 \end{enumerate}
 
@@ -222,7 +222,6 @@ Como
 
  Sea $\delta = \min\{ \delta_1, \delta_2 \}$. \\
  Como $B_{\delta}^*(\mathbf{x}_0) \subset B_{\delta_1}^*(\mathbf{x}_0)$ y $B_{\delta}^*(\mathbf{x}_0) \subset B_{\delta_2}^*(\mathbf{x}_0)$, si tomamos alg\'un $\mathbf{x} \in B_{\delta}^*(\mathbf{x}_0) \cap A$\footnote{Notemos que $B_{\delta}^*(\mathbf{x}_0) \cap A \ne \varnothing$ porque $\mathbf{x}_0$ es un punto de acumulaci\'on de $A$.}, vale que $f(\mathbf{x}) \in B_{\varepsilon}(\mathbf{L}_1)$ y tambi\'en $f(\mathbf{x}) \in B_{\varepsilon}(\mathbf{L}_2)$, por lo que $f(\mathbf{x}) \in B_{\varepsilon}(\mathbf{L}_1) \cap B_{\varepsilon}(\mathbf{L}_2)$. Absurdo, pues $B_{\varepsilon}(\mathbf{L}_1) \cap B_{\varepsilon}(\mathbf{L}_2) = \varnothing$. El absurdo provino de suponer que $\mathbf{L}_1 \ne \mathbf{L}_2$, por lo cual debe ser $\mathbf{L}_1 = \mathbf{L}_2$.
-
 \end{proof}
 
 \end{theorem}
@@ -309,7 +308,7 @@ Como
 
   \begin{propertie} \label{prop:lim_1}
     Sean $f:A \subset \Rn{n} \to \R$ una funci\'on y $\mathbf{x}_0$ un punto de acumulaci\'on de $A$. Las siguientes proposiciones son equivalentes:
- \begin{enumerate} %[i.]
+ \begin{enumerate} 
   \item $\lim_{\mathbf{x} \to \mathbf{x}_0} f(\mathbf{x}) = 0$.
   \item $\lim_{\mathbf{x} \to \mathbf{x}_0} | f(\mathbf{x}) | = 0$.
  \end{enumerate}
@@ -352,14 +351,12 @@ Como
    \lim_{\mathbf{x} \to \mathbf{x}_0} f(\mathbf{x}) = 0.
   \]
  \end{enumerate}
-
-  
  \end{proof}
 
 \end{propertie} 
 
 \begin{propertie} \label{prop:sandwich} %[Principio de intercalaci\'on]
-Sean $f, g, h : A \subset \Rn{n} \to \R$ funciones y $\mathbf{x}_0$ un punto de acumulaci\'on de $A$. Supongamos que $\exists \delta_0 > 0$ tal que 
+Sean $f, g, h : A \subset \Rn{n} \to \R$ funciones y $\mathbf{x}_0$ un punto de acumulaci\'on de $A$. Supongamos que $\exists\: \delta_0 > 0$ tal que 
 \[
  f(\mathbf{x}) \le g(\mathbf{x}) \le h(\mathbf{x}) \; \forall \mathbf{x} \in B_{\delta_0}(\mathbf{x}_0) \cap A.
 \]
@@ -371,9 +368,9 @@ Si $\lim_{\mathbf{x} \to \mathbf{x}_0}f(\mathbf{x}) = \lim_{\mathbf{x} \to \math
 \end{propertie}
 
 \begin{propertie} \label{prop:cero_x_acotada}
- Sean $f, g : A \subset \Rn{n} \to \R$ funciones y $\mathbf{x}_0$ un punto de acumulaci\'on de $A$. Si $\exists \delta_0 > 0$ tal que $f$ es acotada en $B_{\delta_0}(\mathbf{x}_0) \cap A$ (\textit{i.e.} $\exists M > 0 \text{ tal que } \abs{f(\mathbf{x})} \le M,\;\forall \mathbf{x} \in  B_{\delta_0}(\mathbf{x}_0) \cap A$) y $\lim_{\mathbf{x} \to \mathbf{x}_0}g(\mathbf{x}) = 0$, entonces
+ Sean $f, g : A \subset \Rn{n} \to \R$ funciones y $\mathbf{x}_0$ un punto de acumulaci\'on de $A$. Si $\exists\: \delta_0 > 0$ tal que $f$ es acotada en $B_{\delta_0}(\mathbf{x}_0) \cap A$ (\textit{i.e.} $\exists\: M > 0 \text{ tal que } \abs{f(\mathbf{x})} \le M,\;\forall \mathbf{x} \in  B_{\delta_0}(\mathbf{x}_0) \cap A$) y $\lim_{\mathbf{x} \to \mathbf{x}_0}g(\mathbf{x}) = 0$, entonces
 \[
- \lim_{\mathbf{x} \to \mathbf{x}_0}(f \cdot g)(\mathbf{x}) = 0.
+ \lim_{\mathbf{x} \to \mathbf{x}_0}(f  g)(\mathbf{x}) = 0.
 \]
 \begin{proof}
 \mbox{}
@@ -390,15 +387,13 @@ dado $\varepsilon > 0 $, por definici\'on de l\'imite, podemos elegir $\delta_1 
 Sea $\delta = \min{ \left\{ \delta_0, \delta_1 \right\} }$. \\
 Se cumple que
 \[
- \abs{ (f \cdot g)(\mathbf{x}) - 0 } = \abs{ f(\mathbf{x}) \cdot g(\mathbf{x}) } = \abs{f(\mathbf{x})}\abs{g(\mathbf{x})} \le 
+ \abs{ (fg)(\mathbf{x}) - 0 } = \abs{ f(\mathbf{x}) \cdot g(\mathbf{x}) } = \abs{f(\mathbf{x})}\abs{g(\mathbf{x})} \le 
  M \abs{g(\mathbf{x})} < M \frac{\varepsilon}{M} = \varepsilon \quad \forall \mathbf{x} \in  B^*_{\delta}(\mathbf{x}_0) \cap A,
 \]
 Por lo tanto, por definici\'on de l\'imite,
 \[
- \lim_{\mathbf{x} \to \mathbf{x}_0}(f \cdot g)(\mathbf{x}) = 0.
-\]
-
-\end{proof}
+ \lim_{\mathbf{x} \to \mathbf{x}_0}(fg)(\mathbf{x}) = 0.
+\]\end{proof}
 \end{propertie}
 
 
@@ -426,27 +421,25 @@ Entonces
  \]
  En efecto, sabemos que 
   \[
-    \lim_{u \to 0} \frac{\sin(u)}{u} = 1,
+    \lim_{u \to 0} \frac{\sin u}{u} = 1,
   \]
   y que
   \[
     \lim_{(x,y) \to (0,0)} x^2 + y^2 = 0.
   \]  
   Por lo tanto, si definimos 
-  \begin{align*}
-   f&: \R - \{0\} \to \R \\
-    &f(u) = \frac{\sin(u)}{u} \\
-   g&: \Rn{2} - \{(0,0)\} \to \R \\
-    &g(x,y) = x^2 + y^2,
-  \end{align*}
-  por la propiedad \eqref{prop:lim_comp} es
+  \begin{gather*}
+   f: \R \smallsetminus \{0\} \to \R \;|\;f(u) = \frac{\sin u}{u} \\
+   g: \Rn{2} \smallsetminus \{(0,0)\} \to \R \;|\; g(x,y) = x^2 + y^2,
+  \end{gather*}
+  por la Propiedad \ref{prop:lim_comp} es
   \[
    \lim_{(x,y) \to (0,0)} \left( f \circ g \right)(x,y) = 
    \lim_{(x,y) \to (0,0)} \frac{\sin(x^2 + y^2)}{x^2 + y^2} = 1.
   \]
 \end{example}
 
-Una consecuencia directa de la propiedad \eqref{prop:lim_comp} es el siguiente corolario: 
+Una consecuencia directa de la Propiedad \ref{prop:lim_comp} es el siguiente corolario: 
 \begin{corollary} \textbf{L\'imites por curvas.} \label{cor:lim_curva}
   Sean $f: A \subset \Rn{2} \to \R, \, (x_0,y_0)$ un punto de acumulaci\'on de $A$ y $L \in \R$ tales que 
   \[
@@ -457,14 +450,13 @@ Una consecuencia directa de la propiedad \eqref{prop:lim_comp} es el siguiente c
   \[
     \lim_{t \to t_0} \left( g_1(t),g_2(t) \right) = \left( x_0 , y_0 \right)
   \]
-  y, adem\'as, $\left( g_1(t), g_2(t) \right) \in A \, \forall t \in \left( I - \{t_0\} \right),$ se cumple que
-  
+  y, adem\'as, $\left( g_1(t), g_2(t) \right) \in A \, \forall t \in \left( I \smallsetminus \{t_0\} \right),$ se cumple que
   \[
    \lim_{t \to t_0} f\left( g_1(t),g_2(t) \right) = L.
   \]
 \end{corollary}
 
-\begin{example} Probar que $f$ no tiene l\'imite para $(x,y) \to (0,0)$ siendo $$ f: \left\lbrace (x,y) \in \Rn{2} : x \ne y \right\rbrace \to \R \: |\:  f(x,y) = \frac{x^2}{x - y}$$
+\begin{example} Probar que $f$ no tiene l\'imite para $(x,y) \to (0,0)$ siendo $$ f: \left\lbrace (x,y) \in \Rn{2} : x \ne y \right\rbrace \to \R \: |\:  f(x,y) = \frac{x^2}{x - y}.$$
    \begin{enumerate} 
    \item  Sean $g_1(t) = t, \,  g_2(t) = t + t^2$.
   \[
@@ -539,10 +531,10 @@ Sea $\mathbf{F}_2$ la \emph{restricci\'on de $\mathbf{F}$ a $A_2$}:
  Sea 
   \[
    f(x,y) = 
-     \begin{cases}
+     \begin{dcases}
         \dfrac{e^x - 1}{x}  & \text{ si } x \ne 0  \\
          1                 & \text{ si } x = 0
-     \end{cases}
+     \end{dcases}
   \]
  Veamos que $\lim_{(x,y) \to (0,0)} f(x,y) = 1$.\\
  Sean $A_1 = \{ (x,y) \in \Rn{2} : x \ne 0\}, \, A_2 = \{ (x,y) \in \Rn{2} : x = 0\}$ y 
@@ -558,11 +550,11 @@ Sea $\mathbf{F}_2$ la \emph{restricci\'on de $\mathbf{F}$ a $A_2$}:
  \[
     \lim_{(x,y) \to (0,0)} x = 0,
  \]
- por la propiedad \eqref{prop:lim_comp} es 
+ por la Propiedad \ref{prop:lim_comp} es 
  \[
     \lim_{(x,y) \to (0,0)} f_1(x,y) = 1.
  \]
-Como adem\'as $\lim_{(x,y) \to (0,0)} f_2(x,y) = 1$ y $A_1 \cup A_2 = \Rn{2}$, por la propiedad \eqref{prop:lim_x_conj} es
+Como adem\'as $\lim_{(x,y) \to (0,0)} f_2(x,y) = 1$ y $A_1 \cup A_2 = \Rn{2}$, por la Propiedad \ref{prop:lim_x_conj} es
  \[
   \lim_{(x,y) \to (0,0)} f(x,y) = 1.
  \]
@@ -573,7 +565,7 @@ Como adem\'as $\lim_{(x,y) \to (0,0)} f_2(x,y) = 1$ y $A_1 \cup A_2 = \Rn{2}$, p
   \begin{enumerate} %[I.]
    \item Decimos que \emph{el l\'imite de $f$ para $\mathbf{x}$ tendiendo a $\mathbf{x}_0$ es $+\infty$} o que \emph{$f$ tiende a $+\infty$ cuando $\mathbf{x}$ tiende a $\mathbf{x}_0$} si
     \[
-      \forall M > 0\;\;\exists \delta > 0\;|\;f(\mathbf{x}) > M, \; \forall 
+      \forall M > 0\;\;\exists\: \delta > 0\;|\;f(\mathbf{x}) > M, \; \forall 
 	  \mathbf{x} \in B_{\delta}^*(\mathbf{x}_0) \cap A.
     \]
     En este caso, utilizamos la notaci\'on
@@ -582,7 +574,7 @@ Como adem\'as $\lim_{(x,y) \to (0,0)} f_2(x,y) = 1$ y $A_1 \cup A_2 = \Rn{2}$, p
     \]
    \item Decimos que \emph{el l\'imite de $f$ para $\mathbf{x}$ tendiendo a $\mathbf{x}_0$ es $-\infty$} o que \emph{$f$ tiende a $-\infty$ cuando $\mathbf{x}$ tiende a $\mathbf{x}_0$} si
     \[
-      \forall M > 0\;\;\exists \delta > 0 \;|\; f(\mathbf{x}) < -M, \; \forall 
+      \forall M > 0\;\;\exists\: \delta > 0 \;|\; f(\mathbf{x}) < -M, \; \forall 
 	  \mathbf{x} \in B_{\delta}^*(\mathbf{x}_0) \cap A.
     \]
     En este caso, utilizamos la notaci\'on
@@ -591,7 +583,7 @@ Como adem\'as $\lim_{(x,y) \to (0,0)} f_2(x,y) = 1$ y $A_1 \cup A_2 = \Rn{2}$, p
     \]
    \item Decimos que \emph{el l\'imite de $f$ para $\mathbf{x}$ tendiendo a $\mathbf{x}_0$ es $\infty$} o que \emph{$f$ tiende a $\infty$ cuando $\mathbf{x}$ tiende a $\mathbf{x}_0$} si
     \[
-      \forall M > 0 \;\; \exists \delta > 0 \;|\; \abs{f(\mathbf{x})} > M.\; \forall \mathbf{x} \in B_{\delta}^*(\mathbf{x}_0) \cap A.
+      \forall M > 0 \;\; \exists\: \delta > 0 \;|\; \abs{f(\mathbf{x})} > M.\; \forall \mathbf{x} \in B_{\delta}^*(\mathbf{x}_0) \cap A.
     \]
     En este caso, utilizamos la notaci\'on
     \[
@@ -608,7 +600,7 @@ Sean $f : \Rn{n} \to \R$ una funci\'on y $L \in \R$. Decimos que
 \]
 si 
 \[ 
- \forall \varepsilon > 0 \;\;\exists \delta > 0 \;|\; f(\mathbf{x}) \in B_{\varepsilon}(L),\; \forall 
+ \forall \varepsilon > 0 \;\;\exists\: \delta > 0 \;|\; f(\mathbf{x}) \in B_{\varepsilon}(L),\; \forall 
  \mathbf{x} \;|\; \norm{\mathbf{x}} > \delta.
 \]
 \end{definition}
