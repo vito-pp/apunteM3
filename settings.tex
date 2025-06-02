@@ -11,6 +11,7 @@
 \usepackage[spanish, shorthands=off]{babel} % Disable shorthands to prevent conflicts
 \usepackage{chngcntr} % para cambiar los contadores
 \usepackage{hyperref} % para hyperlinks asociados al documento
+\usepackage{subcaption}
     % Configure the hyperref package
   \hypersetup{
     colorlinks=false, % Disable colored links
@@ -28,6 +29,7 @@
   \usepgfplotslibrary{fillbetween}
   \usetikzlibrary{patterns, shapes, 3d, calc}
   \usetikzlibrary{arrows.meta, decorations.pathmorphing, positioning}
+  \usetikzlibrary{decorations.markings}
 % estas lineas estan para acelerar la compilacion, pero antes se debe activar 
 % el flag --shell-escape de compilacion. en cada editor de texto/compilador de 
 % latex es distinto. si usan overleaf no le den bola. checkear:

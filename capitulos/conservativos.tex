@@ -1,50 +1,111 @@
-
-
 \begin{theorem} \label{thm:t1}
     Sean $A\subseteq\Rn{n}$ un conjuto abierto y conexo y  $f:A\subseteq\Rn{n}\to\R$ un campo de clase $\mathcal{C}^1(\interior{A})$. Si $\boldsymbol{\sigma}:[a,b]\to A\subseteq\Rn{n}$ es una trayectoria continua,  entonces
     \[
        \int_{\boldsymbol{\sigma}}\grad f\cdot d\mathbf{s}=f(\boldsymbol{\sigma}(b))-f(\boldsymbol{\sigma}(a)).
     \]    
+
+    \textit{Demostración.}
+    Al aplicar la regla de la cadena a la función compuesta
+    \begin{equation*}
+        F:t \rightarrow f(\boldsymbol{\sigma}(t))
+    \end{equation*}
+    se obtiene
+    \begin{equation*}
+        F'(t)=(f\circ\boldsymbol{\sigma})'(t)=\grad{f(\boldsymbol{\sigma})}\cdot\boldsymbol{\sigma}'(t)
+    \end{equation*}
+    La función F es una función con valores reales de la variable $t$ y, por lo tanto, por el teorema fundamental
+    del cálculo de una variable:
+    \begin{equation*}
+        \int_{a}^{b}F'(t)dt=F(b)-F(a)=f(\boldsymbol{\sigma}(b))-f(\boldsymbol{\sigma}(a)).
+    \end{equation*}
+    Por consiguiente,
+    \begin{align*}
+        \int_{\boldsymbol{\sigma}}\grad f\cdot d\mathbf{s}&=\int_{a}^{b}\grad{f(\boldsymbol{\sigma}(t))}\cdot\boldsymbol{\sigma}'(t)dt\\
+        &=\int_{a}^{b}F'(t)dt=F(b)-F(a)\\
+        &=f(\boldsymbol{\sigma}(b))-f(\boldsymbol{\sigma}(a)).
+    \end{align*}
 \end{theorem}
 
-\textcolor{red}{Demostracion}
 
-\begin{corollary}
+
+\begin{corollary}\label{tmh:c1}
     Sean $A\subseteq\Rn{n}$ un conjuto abierto y conexo y  $f:A\subseteq\Rn{n}\to\R$ un campo de clase $\mathcal{C}^1(\interior{A})$.  Si  $\boldsymbol{\sigma}_1:[a_1,b_1]\to A_1\subseteq\Rn{n}$ y $\boldsymbol{\sigma}_2:[a_2,b_2]\to A_2\subseteq\Rn{n}$ son dos trayectorias continuas  tales que $\boldsymbol{\sigma}_1(a_1)=\boldsymbol{\sigma}_2(a_2)\;\land\;\boldsymbol{\sigma}_1(b_1)=\boldsymbol{\sigma}_2(b_2)$, entonces
     \[
     \int_{\boldsymbol{\sigma}_1}\grad f\cdot d\mathbf{s}=\int_{\boldsymbol{\sigma}_2}\grad f\cdot d\mathbf{s}.
     \]
     
  Es decir,  $\int_{\boldsymbol{\sigma}}\grad f\cdot d\mathbf{s}$  s\'olo depende de los puntos inicial y final de la trayectoria.
+
+\textit{Demostración.} 
+Usando el Teorema \ref{thm:t1}, se tiene que
+\begin{align*}
+    \int_{\boldsymbol{\sigma}_1}\grad f\cdot d\mathbf{s}&=f(\boldsymbol{\sigma}_1(b_1))-f(\boldsymbol{\sigma}_1(a_1))\\
+    \int_{\boldsymbol{\sigma}_2}\grad f\cdot d\mathbf{s}&=f(\boldsymbol{\sigma}_2(b_2))-f(\boldsymbol{\sigma}_2(a_2)).
+\end{align*}
+Así, con $\boldsymbol{\sigma}_1(a_1)=\boldsymbol{\sigma}_2(a_2)\;\land\;\boldsymbol{\sigma}_1(b_1)=\boldsymbol{\sigma}_2(b_2)$,
+\begin{equation*}
+    f(\boldsymbol{\sigma}_1(a_1))=f(\boldsymbol{\sigma}_2(a_2))\;\land\;f(\boldsymbol{\sigma}_1(b_1))=f(\boldsymbol{\sigma}_2(b_2))
+\end{equation*}
+Luego,
+\begin{equation*}
+    f(\boldsymbol{\sigma}_1(b_1))-f(\boldsymbol{\sigma}_1(a_1))=f(\boldsymbol{\sigma}_2(b_2))-f(\boldsymbol{\sigma}_2(a_2))
+\end{equation*}
+Por lo tanto, se demuestra que:
+\begin{equation*}
+    \int_{\boldsymbol{\sigma}_1}\grad f\cdot d\mathbf{s}=\int_{\boldsymbol{\sigma}_2}\grad f\cdot d\mathbf{s}.
+\end{equation*}
 \end{corollary}
 
-\textcolor{red}{Demostracion}
 
-\begin{corollary}
+\begin{corollary}\label{tmh:c2}
     Sean $A\subseteq\Rn{n}$ abierto y conexo y $f:A\subseteq\Rn{n}\to\R$ de clase $\mathcal{C}^1$. Si $\mathbf{F}:A\subseteq\Rn{n}\to\Rn{n}$ es un campo vectorial para el cual $\exists f:A\subseteq\Rn{n}\to\R$ clase $\mathcal{C}^1$ tal que 
     $$\grad f(\mathbf{x})=\mathbf{F}(\mathbf{x})\quad\forall\:\mathbf{x}\in A,$$
     entonces para todo par de curvas $C_1$ y $C_2$ en $A$, con los mismos extremos y misma orientaci\'on,
     \[
     \int_{C_1}\mathbf{F}\cdot d\mathbf{s}=\int_{C_2}\mathbf{F}\cdot d\mathbf{s}. 
     \]
-    Dada esta igualdad se dice \emph{independencia del camino}.
+    Dada esta igualdad, se dice que la integral de línea de un campo conservativo tiene \textit{independencia del camino}.
+
+    \textit{Demostración.} 
+    Sean $C_1$ y $C_2$ parametrizadas por las trayectorias $\boldsymbol{\sigma}_1:[a_1,b_1]\to C_1$ y $\boldsymbol{\sigma}_2:[a_2,b_2]\to C_2$, con $\grad f(\mathbf{x})=\mathbf{F}(\mathbf{x})$:
+    \begin{align*}
+        \int_{C_1}\mathbf{F}\cdot d\mathbf{s}&=\int_{\boldsymbol{\sigma}_1}\grad f\cdot d\mathbf{s}\\
+        \int_{C_2}\mathbf{F}\cdot d\mathbf{s}&=\int_{\boldsymbol{\sigma}_2}\grad f\cdot d\mathbf{s}
+    \end{align*}
+    Además, como $C_1$ y $C_2$ comparten extremos, se da que $\boldsymbol{\sigma}_1(a_1)=\boldsymbol{\sigma}_2(a_2)\;\land\;\boldsymbol{\sigma}_1(b_1)=\boldsymbol{\sigma}_2(b_2)$.
+    Por lo tanto, según el Corolario \ref{tmh:c1}:
+    \begin{align*}
+        \int_{\boldsymbol{\sigma}_1}\grad f\cdot d\mathbf{s}&=\int_{\boldsymbol{\sigma}_2}\grad f\cdot d\mathbf{s}\\
+        \therefore \int_{C_1}\mathbf{F}\cdot d\mathbf{s}&=\int_{C_2}\mathbf{F}\cdot d\mathbf{s}
+    \end{align*}
 \end{corollary}
 
-
-\textcolor{red}{Demostracion}
-
-\begin{corollary}
+\begin{corollary}\label{tmh:c3}
     Sean $A\subseteq\Rn{n}$ abierto y conexo y $f:A\subseteq\Rn{n}\to\R$ de clase $\mathcal{C}^1$. Si $\mathbf{F}=\grad f$, entonces
     $$\oint_C\mathbf{F}\cdot d\mathbf{s}=0,$$
     para toda curva $C$ simple cerrada contenida en $A$.
+
+    \textit{Demostración.} 
+    Sea $C$ parametrizada por la trayectoria continua $\boldsymbol{\sigma}:[a,b]\to C$, y $\mathbf{F}=\grad f$:
+    \begin{equation*}
+        \oint_C\mathbf{F}\cdot d\mathbf{s}=\int_{\sigma}\grad f\cdot d\mathbf{s}
+    \end{equation*}
+    Cumpliéndose las hipótesis del Teorema \ref{thm:t1},
+    \begin{equation*}
+        \int_{\sigma}\grad f\cdot d\mathbf{s}=f(\boldsymbol{\sigma}(b))-f(\boldsymbol{\sigma}(a))
+    \end{equation*}
+    Ahora, como $C$ es cerrada, $\boldsymbol{\sigma}(a)=\boldsymbol{\sigma}(a)$, entonces $f(\boldsymbol{\sigma}(b))=f(\boldsymbol{\sigma}(a))$, y,
+    \begin{align*}
+        \int_{\sigma}\grad f\cdot d\mathbf{s}&=0\\
+         \therefore \oint_C\mathbf{F}\cdot d\mathbf{s}&=0
+    \end{align*}
+
 \end{corollary}
 
-\textcolor{red}{Demostracion}
+\textit{Notación:} $\int_{\mathbf{x}_0}^{\mathbf{x}}\mathbf{F}\cdot d\mathbf{s}$ indica la integral de camino de el campo $\mathbf{F}$ sobre la recta que une los puntos $\mathbf{x}_0$
+    y $\mathbf{x}$, orientada desde el primero hacia el segundo.
 
-\textcolor{red}{Notacion:   Explicar que quiere decir  la notacion: $\int_{\mathbf{x}_0}^{\mathbf{x}}\mathbf{F}\cdot d\mathbf{s}$}
-
-
-\begin{theorem}
+\begin{theorem}\label{tmh:t2}
    Sea  $\mathbf{F}:A\subseteq\Rn{n} \to \Rn{n}$ continuo con  $A$ abierto y conexo. Si  $\int_C \mathbf{F}\cdot d\mathbf{s}$ es independiente del camino en $A$  entonces el campo
     $$f:A\subseteq\Rn{n}\to\R\: | \:f(\mathbf{x})=\int_{\mathbf{x}_0}^{\mathbf{x}}\mathbf{F}\cdot d\mathbf{s},  \mbox{ con }  \mathbf{x}_0\in A, $$
     cumple que: 
@@ -61,7 +122,82 @@
         \item La integral de $\mathbf{F}$ es independiente del camino en $A$.
         \item $\oint_C\mathbf{F}\cdot d\mathbf{s}=0$ para toda curva cerrada simple $C$ en $A$.
     \end{enumerate}
-\end{theorem}
 
-\textcolor{red}{Demostracion: las que se pueden hacer referencia a lo escrito antes}
+    \textit{Demostración.}
+    Se deben demostrar las implicaciones de a pares. 
+    
+    \begin{equation}
+        \mathbb{F}(\mathbf{x})=\grad f(\mathbf{x}) \then \int_{C_1}\mathbf{F}\cdot d\mathbf{s}=\int_{C_2}\mathbf{F}\cdot d\mathbf{s}.
+        \label{eq:CampoCons1}
+    \end{equation}
+    Con $C_1$ y $C_2$ de iguales extremos. En tanto $\mathbb{F}(\mathbf{x})=\grad f(\mathbf{x})$, y $\boldsymbol{\sigma}_1:[a_1,b_1]\to C_1$ una parametrización continua de $C_1$, según el Teorema \ref{thm:t1},
+    \begin{equation*}
+        \int_{C_1}\mathbf{F}\cdot d\mathbf{s}=\int_{\boldsymbol{\sigma}_1}\grad f(\mathbf{x})\cdot d\mathbf{s}=f(\boldsymbol{\sigma}_1(b_1))-f(\boldsymbol{\sigma}_1(a_1))
+    \end{equation*}
+    Esto se cumple análogamente para $C_2$ con parametrización $\boldsymbol{\sigma}_2:[a_2,b_2]\to C_2$. Como $C_1$ y $C_2$ comparten extremos
+    \begin{align*}
+        \boldsymbol{\sigma}_1(a_1)=\boldsymbol{\sigma}_2(a_2) \quad &\land \quad \boldsymbol{\sigma}_1(b_1)=\boldsymbol{\sigma}_2(b_2)\\
+        f(\boldsymbol{\sigma}_1(a_1))=f(\boldsymbol{\sigma}_2(a_2)) &\quad \land \quad f(\boldsymbol{\sigma}_1(b_1))=f(\boldsymbol{\sigma}_2(b_2))\\
+        \then f(\boldsymbol{\sigma}_1(b_1))-f(\boldsymbol{\sigma}_1(a_1))&=f(\boldsymbol{\sigma}_2(b_2))-f(\boldsymbol{\sigma}_2(a_2))\\
+        \therefore \int_{C_1}\mathbf{F}\cdot d\mathbf{s}&=\int_{C_2}\mathbf{F}\cdot d\mathbf{s}
+    \end{align*}
+
+    \begin{equation}
+        \int_{C_1}\mathbf{F}\cdot d\mathbf{s}=\int_{C_2}\mathbf{F}\cdot d\mathbf{s} \then \mathbb{F}(\mathbf{x})=\grad f(\mathbf{x}).
+        \label{eq:CampoCons2}
+    \end{equation}
+    Esta proposición es verdadera por el Teorema \ref{tmh:t2}.
+
+    A partir de las ecuaciones (\ref{eq:CampoCons1}) y (\ref{eq:CampoCons2}) se demostró que
+    \begin{equation}
+        \mathbb{F}(\mathbf{x})=\grad f(\mathbf{x}) \Leftrightarrow \int_{C_1}\mathbf{F}\cdot d\mathbf{s}=\int_{C_2}\mathbf{F}\cdot d\mathbf{s}.
+        \label{eq:CampoCons1y2}
+    \end{equation}
+
+    \begin{equation}
+        \mathbb{F}(\mathbf{x})=\grad f(\mathbf{x}) \then \oint_C\mathbf{F}\cdot d\mathbf{s}=0
+        \label{eq:CampoCons3}
+    \end{equation}
+    Esta proposición es verdadera por el Corolario \ref{tmh:c3}.
+
+    \begin{equation}
+        \oint_C\mathbf{F}\cdot d\mathbf{s}=0 \then \int_{C_1}\mathbf{F}\cdot d\mathbf{s}=\int_{C_2}\mathbf{F}\cdot d\mathbf{s}
+        \label{eq:CampoCons4}
+    \end{equation}
+    Para la demostración pensemos en dos curvas con iguales extremos, $C_1$ y $C_2$.
+    \begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=2, >=stealth]
+
+                % Puntos A y B
+                \coordinate (A) at (0,0);
+                \coordinate (B) at (3,0);
+
+                % Primer camino: curva hacia arriba (gamma_1)
+                \draw[thick, blue, ->, decoration={markings, mark=at position 0.5 with {\arrow{>}}},
+                    postaction={decorate}] 
+                    (A) .. controls (1,1.5) and (2,1.5) .. (B) node[midway, above] {$C_1$};
+
+                % Segundo camino: curva hacia abajo (gamma_2)
+                \draw[thick, red, ->, decoration={markings, mark=at position 0.5 with {\arrow{>}}},
+                    postaction={decorate}] 
+                    (B) .. controls (1,-1.5) and (2,-1.5) .. (A) node[midway, below] {$C_2$};
+
+                % Nombres de los puntos
+                \filldraw (A) circle(0.03) node[below left] {$A$};
+                \filldraw (B) circle(0.03) node[below right] {$B$};
+
+            \end{tikzpicture}
+            \caption{Curvas $C_1$ y $C_2$.}
+        \end{center}
+    \end{figure}
+    Luego, se puede pensar la curva $C=C_1\cup\overline{C_2}$ con $\overline{C_2}$ la curva $C_2$ en sentido opuesto. Así:
+    \begin{align*}
+        \oint_C\mathbf{F}\cdot d\mathbf{s}&=\int_{C_1}\mathbf{F}\cdot d\mathbf{s}+\int_{\overline{C_2}}\mathbf{F}\cdot d\mathbf{s}\\
+        0&=\int_{C_1}\mathbf{F}\cdot d\mathbf{s}-\int_{C_2}\mathbf{F}\cdot d\mathbf{s}\\
+        \therefore \int_{C_1}\mathbf{F}\cdot d\mathbf{s}&=\int_{C_2}\mathbf{F}\cdot d\mathbf{s}
+    \end{align*}
+   
+    A partir de haber demostrado (\ref{eq:CampoCons3}), (\ref{eq:CampoCons4}) y (\ref{eq:CampoCons1y2}) se construye lógicamente las equivalencias de este teorema.
+\end{theorem}
 
