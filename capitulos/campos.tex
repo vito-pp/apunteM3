@@ -1,56 +1,53 @@
 
 \begin{obs}
-Si en la definicion (\ref{def:FuncMate1}) cambiemos  $A \subset \mathbb{R}$ y $B \subset \mathbb{R}$ por $A \subset \mathbb{R}^{n}$ y $B \subset \mathbb{R}^{m}$  obtenemos de manera analoga la siguiente definici\'on.    
+Si en la \autoref{def:FuncMate1} cambiemos  $A \subset \mathbb{R}$ y $B \subset \mathbb{R}$ por $A \subset \mathbb{R}^{n}$ y $B \subset \mathbb{R}^{m}$  obtenemos de manera analoga la siguiente definici\'on.    
 \end{obs}
 \begin{definition} {\textbf{Campos.}}
   Un \textit{campo} $\mathbf{F}$ es una funci\'on  tal que
-    $\mathbf{F}:A\subseteq \mathbb{R}^n \rightarrow B \subseteq \mathbb{R}^m.$   Si $m=1$ lo llamaremos  \textit{ campo vectorial }  y  si  $m\geq 2$ lo llamaremos   \textit{ campo escalar}. Al igual que en la definición \ref{def:FuncMate1}, a los conjuntos $A$ y $B$  se los llama, respectivamente, \textit{dominio}  y \textit{codominio} del campo $F$ y  la notaci\'on usual para los mismos  es  $A=\text{Dom}( \mathbf{F})$ y $B=\text{Cod}( \mathbf{F})$.   
+    $\mathbf{F}:A\subseteq \mathbb{R}^n \rightarrow B \subseteq \mathbb{R}^m.$   Si $m=1$ lo llamaremos  \textit{ campo vectorial }  y  si  $m\geq 2$ lo llamaremos   \textit{ campo escalar}. Al igual que en la \autoref{def:FuncMate1}, a los conjuntos $A$ y $B$  se los llama, respectivamente, \textit{dominio}  y \textit{codominio} del campo $F$ y  la notaci\'on usual para los mismos  es  $A=\text{Dom}( \mathbf{F})$ y $B=\text{Cod}( \mathbf{F})$.   
   \end{definition}
   
-  
-  
-  \textit{Notaci\'on:} En general,  para nombrar a   campos escalares lo haremos con  letras minúsculas de imprenta y para nombrar a   campos vectorials lo haremos con  letras mayúsculas de imprenta.
+  \textit{Notaci\'on:} A lo largo del documento denotaremos a los campos escalares con letra imprenta minúscula y a los campos vectorials con letra imprenta mayúscula y en negrita.
   
   \begin{definition} {\textbf{Componentes de un campo vectorial.}}
-  Sea   $\mathbf{F}:A\subseteq \mathbb{R}^n \rightarrow B \subseteq \mathbb{R}^m$   un \textit{campo vectorial}, dado $\boldsymbol{X} \in A$ se puede pensar a  $\mathbf{F}(\boldsymbol{X})$   como la evaluación de $m$ campos escalares en $\boldsymbol{X}$, 
+  Sea   $\mathbf{F}:A\subseteq \mathbb{R}^n \rightarrow B \subseteq \mathbb{R}^m$   un \textit{campo vectorial}, dado $\vect{x}_0 \in A$ se puede pensar a  $\mathbf{F}(\vect{x}_0)$   como la evaluación de $m$ campos escalares en $\vect{x}_0$, 
     es decir,
     \begin{equation*}
-        \mathbf{F}(\boldsymbol{X})=(f_0(\boldsymbol{X}), f_1(\boldsymbol{X}),..., f_m(\boldsymbol{X})).
+        \mathbf{F}(\vect{x}_0)=(f_0(\vect{x}_0), f_1(\vect{x}_0),..., f_m(\vect{x}_0)).
     \end{equation*}
   Para $1 \leq i \leq n$,  el campo escalar $f_i: A\subseteq \mathbb{R}^n \rightarrow  \mathbb{R}$ se llama la \textit{i-\'esima componente} de $\mathbf{F}.$
  \end{definition}
   
   
   \begin{definition}{\textbf{Conjunto Imagen.}}
-    Sea  $\mathbf{F}:A\subseteq \mathbb{R}^n \rightarrow B \subseteq \mathbb{R}^m$, se define el \textit{conjunto imagen} de $\mathbf{F}$, y se nota $ \text{Im}(\mathbf{F})$, a 
+    Sea  $\mathbf{F}:A\subseteq \mathbb{R}^n \rightarrow B \subseteq \mathbb{R}^m$, se define el \textit{conjunto imagen} de $\mathbf{F}$, y se nota $ \text{Img}(\mathbf{F})$, a 
     \begin{equation*}
-        \text{Im}(\mathbf{F})=\{\boldsymbol{Y}\in\mathbb{R}^m: \mathbf{F}(\boldsymbol{X})=\boldsymbol{Y}, \boldsymbol{X} \in A\}
+        \text{Img}(\mathbf{F})=\{\boldsymbol{Y}\in\mathbb{R}^m: \mathbf{F}(\boldsymbol{X})=\boldsymbol{Y}, \boldsymbol{X} \in A\}.
     \end{equation*}
   \end{definition}
   
   
     \begin{example}  \label{ej:campoVectorial}
-        La función $\boldsymbol{T}:\mathbb{R}^2 \rightarrow \mathbb{R}^3 / \boldsymbol{T}(x,y) = (x+y,x-y,xy)$
+        La función $\mathbf{T}:\mathbb{R}^2 \rightarrow \mathbb{R}^3 \;|\; \mathbf{T}(x,y) = (x+y,x-y,xy)$
         es un campo vectorial. 
-
         En este caso, el dominio sería $\Re^2$ y el codominio $\Re^3$. La imágen se puede calcular planteando:
         \begin{equation*}
-          \boldsymbol{T}(x,y) = (x+y,x-y,xy) = (u,v,w)  
+          \mathbf{T}(x,y) = (x+y,x-y,xy) = (u,v,w)  .
         \end{equation*}
-        Luego, resolviendo el sistema de ecuaciones resultante, se llega a la ecuación:
+        Luego, resolviendo el sistema de ecuaciones resultante, se llega a la ecuación
         \begin{equation*}
-          w = \frac{u^2}{4}-\frac{v^2}{4}  
+          w = \frac{u^2}{4}-\frac{v^2}{4},
         \end{equation*}
-        lo que describe, en el plano u-v-w la forma de un paraboloide hiperbólico.
+        lo que describe, en el plano $u$-$v$-$w$ la forma de un paraboloide hiperbólico.
         \begin{equation*}
-          \text{Im}(f)=\left\{ (u,v,w)\in\Re^3 \:|\: w=\frac{u^2}{4}-\frac{v^2}{4} \right\}
+          \text{Img}(f)=\left\{ (u,v,w)\in\R^3 \:\Big|\: w=\frac{u^2}{4}-\frac{v^2}{4} \right\}
         \end{equation*}
         Por lo tanto, se podría visualizar el campo vectorial como se visualizaría una función, como una relación entre
         dominio y codominio. Por ejemplo,
         \begin{equation*}
-            \boldsymbol{T}(1,1)=(2,0,1)
+            \mathbf{T}(1,1)=(2,0,1)
         \end{equation*}
-        se podría ver cómo:
+        se podría ver como:
 
  \begin{figure}[H]
   \begin{center}
@@ -108,27 +105,24 @@ Si en la definicion (\ref{def:FuncMate1}) cambiemos  $A \subset \mathbb{R}$ y $B
         (A) arc[start angle=120, end angle=50, radius=4cm];
     
       % Etiqueta
-      \node at (4,1.5) {$T$};
+      \node at (4,1.5) {$\mathbf{T}$};
     \end{tikzpicture}
-   \caption{$T$ como una relación entre $\Re^2$ y $\Re^3$. Visualización de $\boldsymbol{T}(1,1)=(2,0,1)$}
+   \caption{$\mathbf{T}$ como una relación entre $\Re^2$ y $\Re^3$. Visualización de $\mathbf{T}(1,1)=(2,0,1)$}
    \end{center}
  \end{figure}
 
 \end{example}
 
 \begin{example}
-        La función $d:\mathbb{R}^3 \rightarrow \mathbb{R} / d(x,y,z) = \sqrt{x^2+y^2+z^2}$
-        es un campo escalar. En este caso, $\text{Dom}(f)=\Re^3$ y $\text{Cod}(f)=\text{Im}(f)=\Re$. 
+        La función $\text{d}:\mathbb{R}^3 \rightarrow \mathbb{R} \;|\; \text{d}(x,y,z) = \sqrt{x^2+y^2+z^2}$
+        es un campo escalar. En este caso, $\text{Dom}(f)=\Rn{3}$ y $\text{Cod}(f)=\text{Img}(f)=\Re$. 
 
-        \begin{obs}
-          En particular, si se piensa el vector argumento como un punto en el espacio, $d$ devuelve su distancia euclidea al orígen.
+          En particular, si se piensa el vector argumento como un punto en el espacio, d devuelve su distancia eucl\'idea al orígen, \textit{i.e.}
           \begin{equation*}
-              \Rightarrow d(1,2,3)=\sqrt{1^2+2^2+3^2}=\sqrt{14}
+              \text{d}(1,2,3)=\sqrt{1^2+2^2+3^2}=\sqrt{14}.
           \end{equation*}
           \label{ej:campoEscalar}
-        \end{obs}
-
-        Esta relación también se podría visualizar, como en el ejemplo anterior.
+        Esta relación también se podría visualizar como:
         \begin{figure}[H]
           \begin{center}
             \begin{tikzpicture}[scale=1]
@@ -159,7 +153,7 @@ Si en la definicion (\ref{def:FuncMate1}) cambiemos  $A \subset \mathbb{R}$ y $B
               \node at (0,3) {Dominio};
             
               % --- Codominio R como recta ---
-              \draw[<->, thick, black!70] (5,0.5) -- (11,0.5);
+              \draw[stealth-stealth, thick, black!70] (5,0.5) -- (11,0.5);
               \node at (9,1.3) {Codominio};
             
               % Imagen en R
@@ -169,7 +163,7 @@ Si en la definicion (\ref{def:FuncMate1}) cambiemos  $A \subset \mathbb{R}$ y $B
               % Flecha curvada entre los puntos
               \draw[->, thick, black]
                 (1.5,1) .. controls (4,3) .. (6.7,0.8);
-              \node at (4,3.2) {\Large$\boldsymbol{d}$};
+              \node at (4,3.2) {\Large$\text{d}$};
             
             \end{tikzpicture}
            \caption{Representación de $d$ en el caso $d(1,2,2)=3$.}
@@ -180,37 +174,37 @@ Si en la definicion (\ref{def:FuncMate1}) cambiemos  $A \subset \mathbb{R}$ y $B
 
 
     \begin{example}
-    Probar que el campo $\campoVec{T}(x,y) = (x+y,x-y,x+y)$  es una transformaci\'on lineal, es decir, que cumple  la condici\'on de la definición (\ref{def:TL}). Calcular su Dominio, Imagen y mostrar sus componentes.
+    Probar que el campo $\campoVec{T}(x,y) = (x+y,x-y,x+y)$  es una transformaci\'on lineal, es decir, que cumple  la condici\'on de la \autoref{def:TL}. Calcular su dominio, imagen y mostrar sus componentes.
     
     Para probar que es una transformación lineal, primero planteamos dos vectores en $\mathbb{R}^2$, $\vect{u}=(u_1,u_2)$ y
-    $\vect{v}=(v_1,v_2)$, y dos escalares reales, $\alpha$ y $\beta$, tal que:
+    $\vect{v}=(v_1,v_2)$, y dos escalares reales, $\alpha$ y $\beta$, tal que
     \begin{align*}
-      \campoVec{T}(\alpha\cdot\vect{u}+\beta\cdot\vect{v})&=\campoVec{T}((\alpha u_1,\alpha u_2)+(\beta v_1, \beta v_2))\\
-      &=\campoVec{T}(\alpha u_1+\beta v_1,\alpha u_2 + \beta v_2)\\
-      &= ((\alpha u_1+\beta v_1)+(\alpha u_2 + \beta v_2),(\alpha u_1+\beta v_1)-(\alpha u_2 + \beta v_2),(\alpha u_1+\beta v_1)+(\alpha u_2 + \beta v_2))\\
-      &= (\alpha u_1+\beta v_1+\alpha u_2+\beta v_2, \alpha u_1+\beta v_1 - \alpha u_2-\beta v_2, \alpha u_1+\beta v_1+\alpha u_2+\beta v_2)\\
-      &= (\alpha u_1+\alpha u_2, \alpha u_1 - \alpha u_2,\alpha u_1+\alpha u_2) + (\beta v_1+\beta v_2, \beta v_1 - \beta v_2,\beta v_1+\beta v_2)\\
-      &= \alpha \cdot (u_1+u_2,u_1-u_2,u_1+u_2) + \beta \cdot (v_1+v_2,v_1-v_2,v_1+v_2)\\
-      &= \alpha \cdot \campoVec{t}((u_1,u_2)) + \beta \cdot \campoVec{T}(v_1,v_2)\\
-      \therefore \campoVec{T}(\alpha\cdot\vect{u}+\beta\cdot\vect{v})&= \alpha \cdot \campoVec{T}(\vect{u}) + \beta \cdot \campoVec{T}(\vect{v})
+      \campoVec{T}(\alpha\vect{u}+\beta\vect{v})&=\campoVec{T}((\alpha u_1,\alpha u_2)+(\beta v_1, \beta v_2))\\[.2cm]
+      &=\campoVec{T}(\alpha u_1+\beta v_1,\alpha u_2 + \beta v_2)\\[.2cm]
+      &= ((\alpha u_1+\beta v_1)+(\alpha u_2 + \beta v_2),(\alpha u_1+\beta v_1)-\\[.2cm]
+      &\quad-(\alpha u_2 + \beta v_2),(\alpha u_1+\beta v_1)+(\alpha u_2 + \beta v_2))\\[.2cm]
+      &= (\alpha u_1+\beta v_1+\alpha u_2+\beta v_2, \alpha u_1+\beta v_1 - \alpha u_2-\beta v_2, \alpha u_1+\beta v_1+\alpha u_2+\beta v_2)\\[.2cm]
+      &= (\alpha u_1+\alpha u_2, \alpha u_1 - \alpha u_2,\alpha u_1+\alpha u_2) + (\beta v_1+\beta v_2, \beta v_1 - \beta v_2,\beta v_1+\beta v_2)\\[.2cm]
+      &= \alpha  (u_1+u_2,u_1-u_2,u_1+u_2) + \beta  (v_1+v_2,v_1-v_2,v_1+v_2)\\[.2cm]
+      &= \alpha  \campoVec{t}((u_1,u_2)) + \beta  \campoVec{T}(v_1,v_2)=\alpha  \campoVec{T}(\vect{u}) + \beta  \campoVec{T}(\vect{v}).\\[.2cm]
     \end{align*}
-    Luego, las componentes del campo son los campos escalares:
+    Luego, las componentes del campo son los campos escalares
     \begin{align*}
       t_1(x,y)&=x+y\\
       t_2(x,y)&=x-y\\
-      t_3(x,y)&=x+y
+      t_3(x,y)&=x+y.
     \end{align*}
     Puesto que no tiene restricciones a los vectores que puede transformar, tiene $\text{Dom}(\campoVec{T})=\mathbb{R}^2$. Su codominio resulta $\text{Cod}(f)=\mathbb{R}^3$.
-    Y, para encontrar su imagen:
+    Y, para encontrar su imagen
     \begin{align*}
       \campoVec{T}(u_1,u_2)&=(u_1+u_2,u_1-u_2,u_1+u_2)\\
       &=(u_1,u_1,u_1)+(u_2,-u_2,u_2)\\
-      &=u_1\cdot(1,1,1) + u_2\cdot (1,-1,1)\\
-      &=\alpha\cdot(1,1,1) + \beta\cdot (1,-1,1), \:\alpha, \beta \in \mathbb{R}
+      &=u_1(1,1,1) + u_2 (1,-1,1)\\
+      &=\alpha(1,1,1) + \beta (1,-1,1), \quad\alpha, \beta \in \mathbb{R}.
     \end{align*}
-    Así, la imagen resulta:
+    Así, la imagen resulta
     \begin{equation*}
-      \text{Im}(\campoVec{T})=\{   \vect{x} \in\mathbb{R}^3  \:| \:    \vect{x}=\alpha (1,1,1) + \beta (1,-1,1),  \:  \mbox{  con }  \alpha,\beta\in\mathbb{R}    \}
+      \text{Img}(\campoVec{T})=\{   \vect{x} \in\mathbb{R}^3  \:| \:    \vect{x}=\alpha (1,1,1) + \beta (1,-1,1),  \;  \alpha,\beta\in\mathbb{R}    \}.
     \end{equation*}
     Que representa un plano en $\mathbb{R}^3$, con punto de paso $(0,0,0)$ y vectores paralelos al mismo $(1,1,1)$ y $(1,-1,1)$,
     acorde a la definición (\ref{def:planoR3}). Es equivalente representar el plano con la ecuación $z=x+y$.
@@ -277,11 +271,8 @@ Si en la definicion (\ref{def:FuncMate1}) cambiemos  $A \subset \mathbb{R}$ y $B
   \end{figure}
    \end{example}
 \begin{definition} {\textbf{Parametrización.}}
-  Se llaman parametrizaciones a las funciones de la forma $\boldsymbol{\sigma}:A\subseteq\mathbb{R}\rightarrow B\subseteq\mathbb{R}^m$ con $ m>1$.   
+  Se llaman \emph{parametrizaciones} a las funciones de la forma $\boldsymbol{\sigma}:A\subseteq\mathbb{R}\rightarrow B\subseteq\mathbb{R}^m$ con $ m>1$.   
 \end{definition}
-   
-   
-   \textit{Notaci\'on}:  En general,  a una  parametrización se la suele notar con una letra min\'uscula del alfabeta griego.
 
     \begin{example} Hallar una parametrizacion del conjunto 
       \label{ej.: Parametrización circunferencia}
@@ -289,21 +280,21 @@ Si en la definicion (\ref{def:FuncMate1}) cambiemos  $A \subset \mathbb{R}$ y $B
     C = \{  (x,y)  \in \mathbb{R}^2 \:|\:   x^2+y^2=r^2 \}.
     \end{equation*}  
         Para parametrizar una circunferencia, primero pensemos en el circulo unitario.
-        En el circulo unitario, la abcisa (coordenada x) de cualquier punto es el coseno del ángulo que forma el eje horizontal con el segmento de radio
-        que une el origen con tal punto. Asimismo, el seno del ángulo representa la ordenada (coordenada y).
+        En el circulo unitario, la abcisa (coordenada $x$) de cualquier punto es el coseno del ángulo que forma el eje horizontal con el segmento de radio
+        que une el origen con tal punto. Asimismo, el seno del ángulo representa la ordenada (coordenada $y$).
         \begin{figure}[H] 
             \centering
             \includegraphics[width=0.5\textwidth]{figs/unitCircle1.png} % Cambia esta ruta por la ubicación de tu imagen
             \caption{Coordenadas de los puntos sobre una circunferencia unitaria.}
             \label{fig:unitCircle1} % Etiqueta para hacer referencia a la imagen
         \end{figure}
-        Por lo tanto, se propone una parametrización de la circunferencia unitaria de la forma:
+        Por lo tanto, se propone una parametrización de la circunferencia unitaria de la forma
         \begin{equation*}
-            \boldsymbol{\sigma}:[0,2\pi)\rightarrow\mathbb{R}^2/ \\ \boldsymbol{\sigma}(t)=(\cos{t},\sin{t})
+            \boldsymbol{\sigma}:[0,2\pi)\rightarrow\mathbb{R}^2\;|\;\boldsymbol{\sigma}(t)=(\cos{t},\sin{t}).
         \end{equation*}
-        Así, si se graficase $\text{Im}(\boldsymbol{\sigma})$ como puntos en el plano se obtendría toda la circunferencia unitaria.
+        Así, si se graficase $\text{Img}(\boldsymbol{\sigma})$ como puntos en el plano se obtendría toda la circunferencia unitaria.
         Vale aclarar que se tomó el dominio como cerrado en $0$ y abierto en $2\pi$, para que, puesto que ambos valores de 
-        entrada corresponden al mismo punto de salida, la parametrización no tenga "puntos repetidos", es decir, que sea inyectiva 
+        entrada corresponden al mismo punto de salida, la parametrización no tenga ``puntos repetidos'', \emph{i.e.}, que sea inyectiva 
         (análogo a la inyectividad de funciones de $\mathbb{R}$ a $\mathbb{R}$).
         
          \end{example}
@@ -317,7 +308,7 @@ Si en la definicion (\ref{def:FuncMate1}) cambiemos  $A \subset \mathbb{R}$ y $B
         parametrización por $(x_0,y_0)$, el centro de la nueva circunferencia.
         Por lo tanto, la parametrización de una circunferencia de radio $r\in\mathbb{R}^+$ centrada en $(x_0,y_0)$ es:
         \begin{equation*}
-            \boldsymbol{\sigma}:[0,2\pi)\rightarrow\mathbb{R}^2/ \\ \boldsymbol{\sigma}(t)=(r\cdot\cos{t}+x_0,r\cdot\sin{t}+y_0)
+            \boldsymbol{\sigma}:[0,2\pi)\rightarrow\mathbb{R}^2\;|\;\\ \boldsymbol{\sigma}(t)=(r\cos{t}+x_0,r\sin{t}+y_0)
         \end{equation*} 
         Existe otra forma clásica de parametrizar este conjunto. La idea consiste en posicionarse inicialmente en el punto $(x_0-r,y_0)\in C$.
         Luego, desde ese punto, se grafican rectas de pendientes variables. Cada una de esas rectas interseca con $C$ en exactamente dos puntos,
@@ -360,12 +351,12 @@ Si en la definicion (\ref{def:FuncMate1}) cambiemos  $A \subset \mathbb{R}$ y $B
       \caption{Representación de una forma alternativa de parametrizar la circunferencia.}
       \end{center}
   \end{figure}
-  Para ello, elegimos los puntos $(x,y)$ pertenecientes a la imagen de la parametrización alternativa $\boldsymbol{\sigma^*}(t)$ como la intersección de:
+  Para ello, elegimos los puntos $(x,y)$ pertenecientes a la imagen de la parametrización alternativa $\boldsymbol{\sigma}^*(t)$ como la intersección de
         \begin{equation*}
-          (x-x_0)^2+(y-y_0)^2=r^2 \quad\land\quad y=t(x-(x_0-r))+y_0,\, \forall t\in \mathbb{R}
+          (x-x_0)^2+(y-y_0)^2=r^2 \quad\land\quad y=t(x-(x_0-r))+y_0,\quad \forall t\in \mathbb{R}.
         \end{equation*}
-        Resolviendo ese sistema de ecuaciones para cada $t$, para encontrar la solución distinta a $(x_0-r,y_0)$ resulta que:
+        Resolviendo ese sistema de ecuaciones para cada $t$, para encontrar la solución distinta a $(x_0-r,y_0)$ resulta que
         \begin{equation*}
-          \boldsymbol{\sigma^*}:\mathbb{R}\rightarrow\mathbb{R}^2/ \\ \boldsymbol{\sigma^*}(t)=\left(r\cdot\frac{1-t^2}{1+t^2}+x_0,r\cdot\frac{2t}{1+t^2}+y_0\right)
+          \boldsymbol{\sigma}^*:\mathbb{R}\rightarrow\mathbb{R}^2\;|\; \\ \boldsymbol{\sigma}^*(t)=\left(r\frac{1-t^2}{1+t^2}+x_0,r\frac{2t}{1+t^2}+y_0\right).
         \end{equation*}
     \end{example}
