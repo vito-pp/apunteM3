@@ -1,8 +1,5 @@
-
-\textcolor{red}{Unificar lo siguiente:  lo nombres en capitulos anteriores no estan en negritas sino que estan con textit }
-
 \begin{definition}
-    Sea $f:U\subset\Rn{n}\to\R$ con $U$ abierto y $f$ diferenciable en $U$.   Se define el \textbf{gradiente} de $f$ evaluado en $\mathbf{x}\in U$, y se nota $\grad f(\mathbf{x})$,  como el vector en el espacio $\Rn{n}$ dado por 
+    Sea $f:U\subset\Rn{n}\to\R$ con $U$ abierto y $f$ diferenciable en $U$.   Se define el \emph{gradiente} de $f$ evaluado en $\mathbf{x}\in U$, y se nota $\grad f(\mathbf{x})$,  como el vector en el espacio $\Rn{n}$ dado por 
     \[
         \grad f(\mathbf{x})=\left(\frac{\partial f(\mathbf{x})}{\partial x_1},\frac{\partial f(\mathbf{x})}{\partial x_2},\:\ldots,\: \frac{\partial f(\mathbf{x})}{\partial x_n}\right),
     \]
@@ -10,7 +7,7 @@
 
 
 \begin{definition}
-    Sea $\mathbf{F}:U\subset\Rn{n}\to\Rn{n}$ con  $U$ abierto y $\mathbf{F}$ de clase $\mathcal{C}^1(U)$. Se define la \textbf{divergencia} de $\mathbf{F}$ como
+    Sea $\mathbf{F}:U\subset\Rn{n}\to\Rn{n}$ con  $U$ abierto y $\mathbf{F}$ de clase $\mathcal{C}^1(U)$. Se define la \emph{divergencia} de $\mathbf{F}$ como
     \[
         \grad\cdot \mathbf{F}(\mathbf{x})=\frac{\partial f_1(\mathbf{x})}{\partial x_1}+\frac{\partial f_2(\mathbf{x})}{\partial x_2}+\:\ldots+\: \frac{\partial f_n(\mathbf{x})}{\partial x_n}.
     \]
@@ -19,32 +16,26 @@
 
 
 \begin{definition}
-    Sea $\mathbf{F}:U\subset\Rn{3}\to\Rn{3}$ con $U$ abierto y $\mathbf{F}$ de clase $\mathcal{C}^1(U)$. Se define el \textbf{rotor} de $\mathbf{F}$  evaluado en $\mathbf{x}\in U$, y se nota  $\grad\times\mathbf{F}(\mathbf{x})$,   como el vector en el espacio $\Rn{3}$ dado por 
+    Sea $\mathbf{F}:U\subset\Rn{3}\to\Rn{3}$ con $U$ abierto y $\mathbf{F}$ de clase $\mathcal{C}^1(U)$. Se define el \emph{rotor} de $\mathbf{F}$  evaluado en $\mathbf{x}\in U$, y se nota  $\grad\times\mathbf{F}(\mathbf{x})$,   como el vector en el espacio $\Rn{3}$ dado por 
     \[
         \grad\times\mathbf{F}(\mathbf{x})=\left(\frac{\partial f_3(\mathbf{x})}{\partial y}-\frac{\partial f_2(\mathbf{x})}{\partial z},\;\frac{\partial f_1(\mathbf{x})}{\partial z}-\frac{\partial f_3(\mathbf{x})}{\partial x},\;\frac{\partial f_2(\mathbf{x})}{\partial x}-\frac{\partial f_1(\mathbf{x})}{\partial y}\right),
     \]   
     donde $\mathbf{F}(x,y,z)=(f_1(x,y,z),\:f_2(x,y,z),\:f_3(x,y,z))$.
   
   
-    Sea $\mathbf{F}:U\subset\Rn{2}\to\Rn{2}$   con $U$ abierto y $\mathbf{F}$ de clase $\mathcal{C}^1(U)$. Se define el \textbf{rotor} de $\mathbf{F}$  evaluado en $\mathbf{x}\in U$, y se nota  $\grad\times\mathbf{F}(\mathbf{x})$,   como el escalar dado por
+    Sea $\mathbf{F}:U\subset\Rn{2}\to\Rn{2}$   con $U$ abierto y $\mathbf{F}$ de clase $\mathcal{C}^1(U)$. Se define el \emph{rotor} de $\mathbf{F}$  evaluado en $\mathbf{x}\in U$, y se nota  $\grad\times\mathbf{F}(\mathbf{x})$,   como el escalar dado por
     \[
         \grad\times\mathbf{F}(\mathbf{x})=\left(\frac{\partial f_2(\mathbf{x})}{\partial x}-\frac{\partial f_1(\mathbf{x})}{\partial y}\right).
     \]
      donde $\mathbf{F}(x,y)=(f_1(x,y),\:f_2(x,y))$
 \end{definition}
 
-
-
-\textcolor{red}{Unificar lo siguiente:  lo nombres en capitulos anteriores no estan en negritas sino que estan con textit: laplaciano. irrotacional etc }
-
-
-
 \begin{definition}
-    Sea $f:U\subset\Rn{n}\to\R$ con  $U$ abierto y $f$ de clase $\mathcal{C}^2(U)$.  Se define el \textbf{laplaciano} de $f$, y se lo nota $\Delta f$ o $\grad^2 f$, a
+    Sea $f:U\subset\Rn{n}\to\R$ con  $U$ abierto y $f$ de clase $\mathcal{C}^2(U)$.  Se define el \emph{laplaciano} de $f$, y se lo nota $\Delta f$ o $\grad^2 f$, a
     \[
         \Delta f=\grad^2f=\grad\cdot\grad f.  
     \]
-    Y para el caso de un campo vectorial $\mathbf{F}:U\subset\Rn{n}\to\Rn{n}$ de clase $\mathcal{C}^2(\Rn{n})$, el \textbf{laplaciano} escalar
+    Y para el caso de un campo vectorial $\mathbf{F}:U\subset\Rn{n}\to\Rn{n}$ de clase $\mathcal{C}^2(\Rn{n})$, el \emph{laplaciano} escalar
     \[
         \Delta\mathbf{F}=(\Delta f_1,\Delta f_2,\ldots,\Delta f_n). 
     \]
@@ -75,15 +66,15 @@
  \end{example}
 
 \begin{definition}
-    Sea un campo vectorial $\mathbf{F}:U\subseteq\Rn{n}\to\Rn{n}$.  Si $\grad\times\mathbf{F}=\mathbf{0}$ se llama  \textbf{irrotacional}.
+    Sea un campo vectorial $\mathbf{F}:U\subseteq\Rn{n}\to\Rn{n}$.  Si $\grad\times\mathbf{F}=\mathbf{0}$ se llama  \emph{irrotacional}.
   \end{definition}  
   
   
   \begin{definition} Sea un campo vectorial $\mathbf{F}:U\subseteq\Rn{n}\to\Rn{n}$.
-     Si $\grad\cdot\mathbf{F}=0$  se llama  \textbf{solenoidal}.
+     Si $\grad\cdot\mathbf{F}=0$  se llama  \emph{solenoidal}.
 \end{definition}
 \begin{definition}
-    Sea un campo escalar $f$ o un campo vectorial $\mathbf{F}$. Si $\Delta f=0$ o $\Delta \mathbf{F}=0$  se llama  \textbf{arm\'onico}.
+    Sea un campo escalar $f$ o un campo vectorial $\mathbf{F}$. Si $\Delta f=0$ o $\Delta \mathbf{F}=0$  se llama  \emph{arm\'onico}.
 \end{definition}
 
 \begin{propertie}
