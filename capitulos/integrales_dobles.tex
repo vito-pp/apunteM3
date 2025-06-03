@@ -40,7 +40,7 @@ de funciones continuas. Es decir, $f$ debe ser contínua, excepto, tal vez, sobr
 
 Para extender esta noci\'on de integral a  conjuntos acotados m\'as generales que no sean  rect\'angulos, definimos lo siguiente. 
 
-\begin{definition}\label{int_D}
+\begin{definition}\label{def:int_D}
 Dada $f:D\subset R\to\R$ contínua, con $R=[a,b]\times[c,d]$, se define la funci\'on $f^*$ tal que 
 \[
     f^*(x,y)=
@@ -148,7 +148,7 @@ La explicación se puede observar mejor en la siguiente figura:
 \end{definition}
 
 \begin{obs} 
-La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
+La  \autoref{def:int_D}  es independiente  de la selecci\'on de $B$.
 \end{obs}
 
 \begin{propertie}
@@ -296,27 +296,27 @@ La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
     \]
 \end{definition}
 \begin{theorem}
-    \textbf{Teorema del valor medio para integrales dobles}. Sea $f:D\subseteq\Rn{2}\to\R$ continua y $D$ es un conjunto elemental. Entonces existe $(x_0,y_0)$ en $D$ tal que
+    \textbf{Teorema del valor medio para integrales dobles.} 
+    
+    Sea $f:D\subseteq\Rn{2}\to\R$ continua y $D$ es un conjunto elemental. Entonces existe $(x_0,y_0)$ en $D$ tal que
     \[
         \int_D f(x,y)\:dA=f(x_0,y_0)\text{A}(D).
     \]
 \end{theorem}
 
 \begin{definition}
-    Sea $\mathbf{F}:A\subseteq\Rn{n}\to\Rn{n}$ un campo $\mathcal{C}^1(A)$ y sea $\boldsymbol{D}_\mathbf{F}$ \textcolor{red}{agregar ref de Df} su matriz diferencial definida en $A$. Se define el \textbf{jacobiano}, o \textbf{determinante jacobiano}, y se lo nota $J_\mathbf{F}$ a 
+    Sea $\mathbf{F}:A\subseteq\Rn{n}\to\Rn{n}$ un campo $\mathcal{C}^1(A)$ y sea $\boldsymbol{D}_\mathbf{F}$ (\autoref{def:mat_dif}) su matriz diferencial definida en $A$. Se define el \emph{jacobiano}, o \emph{determinante jacobiano}, y se lo nota $J_\mathbf{F}$ a 
     \[
         J_\mathbf{F}=\text{det}(\boldsymbol{D}_\mathbf{F}).
     \]
 \end{definition}
 
 
-\begin{example} \textbf{Coordenadas polares (\(n = 2\))} \newline
-    Sea \( F(r, \theta) = (x,y)= (r\cos\theta, r\sin\theta) \). Calculamos la matriz jacobiana:
-   
+\begin{example} \textbf{Coordenadas polares (\(n = 2\)).} Sea \( \mathbf{F}(r, \theta) = (x,y)= (r\cos\theta, r\sin\theta) \). Calculamos su la matriz diferencial.
        \[
-       D_F = \begin{bmatrix}
-       \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} \\
-       \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta}
+       \boldsymbol{D}_{\mathbf{F}} = \begin{bmatrix}
+       \dfrac{\partial x}{\partial r} & \dfrac{\partial x}{\partial \theta} \\[.4cm]
+       \dfrac{\partial y}{\partial r} & \dfrac{\partial y}{\partial \theta}
        \end{bmatrix}
        =
        \begin{bmatrix}
@@ -324,30 +324,25 @@ La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
        \sin\theta & r\cos\theta
        \end{bmatrix}
        \]
-       
-       Entonces, el jacobiano es:
-       
+       Entonces, el jacobiano es
        \[
-       J_F = \det(D_F) = 
+       J_{\mathbf{F}} = \det(\boldsymbol{D}_{\mathbf{F}}) = 
        \begin{vmatrix}
        \cos\theta & -r\sin\theta \\
        \sin\theta & r\cos\theta
        \end{vmatrix}
-       = r(\cos^2\theta + \sin^2\theta) = r
+       = r(\cos^2\theta + \sin^2\theta) = r.
        \]
-       
-       \vspace{0.5cm}
    \end{example}
    
-   \begin{example} \textbf{Coordenadas cilíndricas (\(n = 3\))} \newline
-       Sea \( F(r, \theta, z) = (x, y, z) = (r\cos\theta, r\sin\theta, z) \). Calculamos la matriz jacobiana:
-   
+   \begin{example} \textbf{Coordenadas cilíndricas (\(n = 3\).)}
+       Sea \( \mathbf{F}(r, \theta, z) = (x, y, z) = (r\cos\theta, r\sin\theta, z) \). Calculamos su matriz diferencial y su jacobiano.
    \[
-   D_F =
+    \boldsymbol{D}_{\mathbf{F}}=
    \begin{bmatrix}
-   \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial z} \\
-   \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial z} \\
-   \frac{\partial z}{\partial r} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial z}
+   \dfrac{\partial x}{\partial r} & \dfrac{\partial x}{\partial \theta} & \dfrac{\partial x}{\partial z} \\[.4cm]
+   \dfrac{\partial y}{\partial r} & \dfrac{\partial y}{\partial \theta} & \dfrac{\partial y}{\partial z} \\[.4cm]
+   \dfrac{\partial z}{\partial r} & \dfrac{\partial z}{\partial \theta} & \dfrac{\partial z}{\partial z}
    \end{bmatrix}
    =
    \begin{bmatrix}
@@ -355,10 +350,9 @@ La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
    \sin\theta & r\cos\theta & 0 \\
    0 & 0 & 1
    \end{bmatrix}
-   \]
-   
+   \]   
    \[
-   J_F = \det(D_F) = 
+   J_\mathbf{F} = \det(D_F) = 
    \begin{vmatrix}
    \cos\theta & -r\sin\theta & 0 \\
    \sin\theta & r\cos\theta & 0 \\
@@ -368,44 +362,36 @@ La  definici\'on  (\ref{int_D})  es independiente  de la selecci\'on de $B$.
    \]
    \end{example}
    
-   
-   
-   
-   \vspace{0.5cm}
-   
-   \begin{example} \textbf{Coordenadas esféricas (\(n = 3\))} \newline
-       Sea \( F(\rho, \theta, \phi) = (x, y, z) = (\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \). Calculamos la matriz jacobiana:
-   
-       \[
-   D_F =
-   \begin{bmatrix}
-   \frac{\partial x}{\partial \rho} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial \phi} \\
-   \frac{\partial y}{\partial \rho} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial \phi} \\
-   \frac{\partial z}{\partial \rho} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial \phi}
-   \end{bmatrix}
-   =
-   \begin{bmatrix}
-   \sin\phi \cos\theta & -\rho \sin\phi \sin\theta & \rho \cos\phi \cos\theta \\
-   \sin\phi \sin\theta & \rho \sin\phi \cos\theta & \rho \cos\phi \sin\theta \\
-   \cos\phi & 0 & -\rho \sin\phi
-   \end{bmatrix}
-   \]
-   
-   \vspace{0.3cm}
-   
-   \[
-   J_F = \det(D_F) = \begin{vmatrix}
-       \sin\phi \cos\theta & -\rho \sin\phi \sin\theta & \rho \cos\phi \cos\theta \\
-       \sin\phi \sin\theta & \rho \sin\phi \cos\theta & \rho \cos\phi \sin\theta \\
-       \cos\phi & 0 & -\rho \sin\phi
-       \end{vmatrix}=\rho^2 \sin\phi
-   \]
-   
-   
-   \end{example}
+   \begin{example} \textbf{Coordenadas esféricas (\(n = 3\).)} Sea \( \mathbf{F}(\rho, \theta, \phi) = (x, y, z)=\\ = (\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \). Calculamos su matriz diferencial y su jacobiano. 
+    \[
+    \boldsymbol{D}_{\mathbf{F}} =
+    \begin{bmatrix}
+    \dfrac{\partial x}{\partial \rho} & \dfrac{\partial x}{\partial \theta} & \dfrac{\partial x}{\partial \phi} \\[.4cm]
+    \dfrac{\partial y}{\partial \rho} & \dfrac{\partial y}{\partial \theta} & \dfrac{\partial y}{\partial \phi} \\[.4cm]
+    \dfrac{\partial z}{\partial \rho} & \dfrac{\partial z}{\partial \theta} & \dfrac{\partial z}{\partial \phi}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    \sin\phi \cos\theta & -\rho \sin\phi \sin\theta & \rho \cos\phi \cos\theta \\
+    \sin\phi \sin\theta & \rho \sin\phi \cos\theta & \rho \cos\phi \sin\theta \\
+    \cos\phi & 0 & -\rho \sin\phi
+    \end{bmatrix}
+    \]
+    \[
+    J_\mathbf{F} = \det(\boldsymbol{D}_{\mathbf{F}}) = \begin{vmatrix}
+        \sin\phi \cos\theta & -\rho \sin\phi \sin\theta & \rho \cos\phi \cos\theta \\
+        \sin\phi \sin\theta & \rho \sin\phi \cos\theta & \rho \cos\phi \sin\theta \\
+        \cos\phi & 0 & -\rho \sin\phi
+        \end{vmatrix}=\rho^2 \sin\phi
+    \]
+    
+    
+    \end{example}
 
 \begin{theorem} % lo escribi como lo tenia en mis apuntes
-    \textbf{Teorema del cambio de variables para integrales dobles}. Sea $f:D\subseteq\Rn{2}\to\Rn{2}$ un campo escalar integrable. Sea $\mathbf{T}:D^*\subseteq\Rn{2}\to D$ continua de clase $\mathcal{C}^1$ en $\interior{(D^*)}$, inyectiva en $\interior{(D^*)}$ y tal que $\mathbf{T}(D^*)=D$. Entonces
+    \textbf{Teorema del cambio de variables para integrales dobles.} 
+    
+    Sea $f:D\subseteq\Rn{2}\to\Rn{2}$ un campo escalar integrable. Sea $\mathbf{T}:D^*\subseteq\Rn{2}\to D$ continua de clase $\mathcal{C}^1$ en $\interior{(D^*)}$, inyectiva en $\interior{(D^*)}$ y tal que $\mathbf{T}(D^*)=D$. Entonces
     \[
         \iint_D f\:dA=\iint_{D^*}(f\circ\mathbf{T})|J_\mathbf{T}|\:dA,
     \]
