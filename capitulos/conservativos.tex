@@ -1,10 +1,12 @@
 \begin{theorem} \label{thm:t1}
+
     Sean $A\subseteq\Rn{n}$ un conjuto abierto y conexo y  $f:A\subseteq\Rn{n}\to\R$ un campo de clase $\mathcal{C}^1(\interior{A})$. Si $\boldsymbol{\sigma}:[a,b]\to A\subseteq\Rn{n}$ es una trayectoria continua,  entonces
     \[
        \int_{\boldsymbol{\sigma}}\grad f\cdot d\mathbf{s}=f(\boldsymbol{\sigma}(b))-f(\boldsymbol{\sigma}(a)).
     \]    
 
     \textit{Demostración.}
+
     Al aplicar la regla de la cadena a la función compuesta
     \begin{equation*}
         F:t \rightarrow f(\boldsymbol{\sigma}(t))
@@ -37,6 +39,7 @@
  Es decir,  $\int_{\boldsymbol{\sigma}}\grad f\cdot d\mathbf{s}$  s\'olo depende de los puntos inicial y final de la trayectoria.
 
 \textit{Demostración.} 
+
 Usando el Teorema \ref{thm:t1}, se tiene que
 \begin{align*}
     \int_{\boldsymbol{\sigma}_1}\grad f\cdot d\mathbf{s}&=f(\boldsymbol{\sigma}_1(b_1))-f(\boldsymbol{\sigma}_1(a_1))\\
@@ -67,6 +70,7 @@ Por lo tanto, se demuestra que:
     Dada esta igualdad, se dice que la integral de línea de un campo conservativo tiene \textit{independencia del camino}.
 
     \textit{Demostración.} 
+
     Sean $C_1$ y $C_2$ parametrizadas por las trayectorias $\boldsymbol{\sigma}_1:[a_1,b_1]\to C_1$ y $\boldsymbol{\sigma}_2:[a_2,b_2]\to C_2$, con $\grad f(\mathbf{x})=\mathbf{F}(\mathbf{x})$:
     \begin{align*}
         \int_{C_1}\mathbf{F}\cdot d\mathbf{s}&=\int_{\boldsymbol{\sigma}_1}\grad f\cdot d\mathbf{s}\\
@@ -86,6 +90,7 @@ Por lo tanto, se demuestra que:
     para toda curva $C$ simple cerrada contenida en $A$.
 
     \textit{Demostración.} 
+    
     Sea $C$ parametrizada por la trayectoria continua $\boldsymbol{\sigma}:[a,b]\to C$, y $\mathbf{F}=\grad f$:
     \begin{equation*}
         \oint_C\mathbf{F}\cdot d\mathbf{s}=\int_{\sigma}\grad f\cdot d\mathbf{s}

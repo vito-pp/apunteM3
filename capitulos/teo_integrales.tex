@@ -13,20 +13,22 @@
     En $\Rn{2}$ la orientaci\'on ortogonal de los ejes $x$ e $y$ es \'unica; en cambio en $\Rn{3}$, el tercer eje ortogonal $z$, admite dos posibles 
     orientaci\'ones ``hacia arriba o hacia abajo''. Entonces es necesario definir una convenci\'on para la orientaci\'on de este tercer eje. Dicha convenci\'on es la siguiente: 
     \[
-        \vu{i}\times\vu{j}=\vu{k},
+        \vect{i}\times\vect{j}=\vect{k},
     \]  
-    donde $\vu{i}$, $\vu{j}$ y $\vu{k}$ son los versores c\'anonicos para los ejes cartesianos $x,\;y,\;z$, respectivamente. Luego \emph{la regla de la mano derecha} es una mnemot\'ecnica que sirve para recordar dicha orientaci\'on.
+    donde $\vect{i}$, $\vect{j}$ y $\vect{k}$ son los versores c\'anonicos para los ejes cartesianos $x,\;y,\;z$, respectivamente. Luego \emph{la regla de la mano derecha} es una mnemot\'ecnica que sirve para recordar dicha orientaci\'on.
     \input{figs/mano_derecha.tex}
 \end{obs}
 
 \begin{theorem}
-    \textbf{Teorema de Green}. Sea $D\subset \Rn{2}$ un conjunto simplemente conexo (\autoref{def:conjuntosimpconexo}) y sea la curva simple y cerrada  $\partial D$ su frontera. Si  $\mathbf{F}:D\to\Rn{2}$ es continuo y de clase $\mathcal{C}^1$, entonces
+    \textbf{Teorema de Green.}
+    
+    Sea $D\subset \Rn{2}$ un conjunto simplemente conexo (\autoref{def:conjuntoconexo_simp}) y sea la curva simple y cerrada  $\partial D$ su frontera. Si  $\mathbf{F}:D\to\Rn{2}$ es continuo y de clase $\mathcal{C}^1$, entonces
     \[
         \oint_{\partial D^{+}} \mathbf{F}\cdot d\mathbf{s} = \iint_D \grad\times\mathbf{F}\cdot d\mathbf{A}.
     \]
 \end{theorem}
 
-\begin{obs} Sea $\mathbf{F}:D\subset \Rn{2}\to\Rn{2}$, con $\mathbf{F}(x,y)=(P(x,y),Q(x,y))=P(x,y)\vu{i}+Q(x,y)\vu{j}$. Entonces, si se cumple el teorema de Green para $\mathbf{F}$ en $D$, se puede escribir el teorema de la siguiente manera alternativa:
+\begin{obs} Sea $\mathbf{F}:D\subset \Rn{2}\to\Rn{2}$, con $\mathbf{F}(x,y)=(P(x,y),Q(x,y))=P(x,y)\vect{i}+Q(x,y)\vect{j}$. Entonces, si se cumple el teorema de Green para $\mathbf{F}$ en $D$, se puede escribir el teorema de la siguiente manera alternativa:
 \[
     \oint_{\partial D^+}P\:dx+Q\:dy=\iint_D\left(\dif{Q}{x}-\dif{P}{y}\right)dA,
 \]
@@ -36,9 +38,9 @@ ya que
 \]
 y 
 \[
-    \left(\dif{Q}{x}-\dif{P}{y}\right)\vu{k}=\nabla\times\mathbf{F}.
+    \left(\dif{Q}{x}-\dif{P}{y}\right)\vect{k}=\nabla\times\mathbf{F}.
 \]
-\textcolor{red}{no se bien como escribir esto, pq $\vu{k}$ es una direcci\'on ``virtual'' en R2.}
+\textcolor{red}{no se bien como escribir esto, pq $\vect{k}$ es una direcci\'on ``virtual'' en R2.}
 \end{obs}
 
 \begin{obs}
@@ -103,7 +105,9 @@ y
 \end{obs}
 
 \begin{theorem}
-\textbf{Teorema de la divergencia en el plano}. Sea $D\subset\Rn{2}$ una regi\'on donde valga el teorema de Green y sea $\partial D$ su frontera. Denotaremos por $\mathbf{n}$ el versor unitario normal a $\partial D$.  Si $\boldsymbol{\sigma}:[a,b]\to\Rn{2},\;\boldsymbol{\sigma}(t)=(x(t),y(t))$ es una parametrizaci\'on que recorre a $\partial D$ de manera positiva,  entonces  $\mathbf{n}$ est\'a dado por 
+\textbf{Teorema de la divergencia en el plano.}
+
+Sea $D\subset\Rn{2}$ una regi\'on donde valga el teorema de Green y sea $\partial D$ su frontera. Denotaremos por $\mathbf{n}$ el versor unitario normal a $\partial D$.  Si $\boldsymbol{\sigma}:[a,b]\to\Rn{2},\;\boldsymbol{\sigma}(t)=(x(t),y(t))$ es una parametrizaci\'on que recorre a $\partial D$ de manera positiva,  entonces  $\mathbf{n}$ est\'a dado por 
 \[
     \mathbf{n}=\frac{(y'(t),-x'(t))}{\sqrt{[x'(t)]^2+[y'(t)]^2}}.
 \]
@@ -114,7 +118,9 @@ Si $\mathbf{F}:  D\to \Rn{2}$ es un campo vectorial continuo y de clase $\mathca
 \end{theorem}
 
 \begin{theorem}
-\textbf{Teorema de Stokes}. Sea $\boldsymbol{\Sigma}:D\subset\Rn{2} \to S\subset\Rn{3}$    una parametrizaci\'on de una superficie $S$.   Si $\mathbf{F}:  A\subset \Rn{3}\to \Rn{3}$ es un campo vectorial continuo, de clase  $\mathcal{C}^1(\interior{A})$ tal que  $S \subset A$, entonces
+\textbf{Teorema de Stokes.} 
+
+Sea $\boldsymbol{\Sigma}:D\subset\Rn{2} \to S\subset\Rn{3}$    una parametrizaci\'on de una superficie $S$.   Si $\mathbf{F}:  A\subset \Rn{3}\to \Rn{3}$ es un campo vectorial continuo, de clase  $\mathcal{C}^1(\interior{A})$ tal que  $S \subset A$, entonces
 \[
     \oint_{\partial S}\mathbf{F}\cdot d\mathbf{s}=\iint_S\grad\times\mathbf{F}\cdot d\mathbf{A}, 
 \]  donde las orientaciones tanto de  $S$ como de $\partial S$ son las inducidas por $\boldsymbol{\Sigma}$ sobre ellas (\ref{sigma_induce}).
@@ -122,7 +128,9 @@ Si $\mathbf{F}:  D\to \Rn{2}$ es un campo vectorial continuo y de clase $\mathca
 \end{theorem}
 
 \begin{theorem}
-\textbf{Teorema de la divergencia o de Gauss}. Sea $S\subset\Rn{3}$ una superficie que encierra un volumen $\Omega$, \textit{i.e.} $S=\partial \Omega$, orientada de manera exterior.  Si $\mathbf{F}:A \subset \Rn{3} \to\Rn{3}$ es  un campo vectorial continuo y de clase $\mathcal{C}^1(\interior{A})$ tal que $\Omega \subset \interior{A}$, entonces
+\textbf{Teorema de la divergencia o de Gauss.} 
+
+Sea $S\subset\Rn{3}$ una superficie que encierra un volumen $\Omega$, \textit{i.e.} $S=\partial \Omega$, orientada de manera exterior.  Si $\mathbf{F}:A \subset \Rn{3} \to\Rn{3}$ es  un campo vectorial continuo y de clase $\mathcal{C}^1(\interior{A})$ tal que $\Omega \subset \interior{A}$, entonces
 \[
     \oiint_{\partial \Omega}\mathbf{F}\cdot d\mathbf{S}=\iiint_{\Omega}\grad\cdot\mathbf{F}\:dV.
 \]

@@ -253,18 +253,18 @@ Una consecuencia directa del \autoref{teo:difDer} es el siguiente corolario.
 % La idea es incluir tres demostraciones, una usando la misma idea que para la demo de las derivadas parciales, otra usando que el delta f se puede escribir de una determinada manera y construyendo el cociente incremental, una tercera utilizando la regla de la cadena
 \mbox{}
 
-Sea $f: A \subset \Rn{n} \to \R$ diferenciable en $\mathbf{x}_0 \in \interior{A}$. Entonces, $\forall \hat{\mathbf{u}} \in \Rn{n}\;\text{tal que } \norm{\hat{\mathbf{u}}} = 1$ existe en $\mathbf{x}_0$ la derivada de $f$ en la direcci\'on de $\hat{\mathbf{u}}$ y, adem\'as,
+Sea $f: A \subset \Rn{n} \to \R$ diferenciable en $\mathbf{x}_0 \in \interior{A}$. Entonces, $\forall {\mathbf{u}} \in \Rn{n}\;\text{tal que } \norm{{\mathbf{u}}} = 1$ existe en $\mathbf{x}_0$ la derivada de $f$ en la direcci\'on de ${\mathbf{u}}$ y, adem\'as,
 \[
- \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}.
+ \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot {\mathbf{u}}.
 \]
 
  \begin{proof}
  \mbox{}
  
- Sea $\mathbf{x} = \mathbf{x}_0 + h \hat{\mathbf{u}}$, siendo $h \in \R$. Es decir, definimos una funci\'on 
+ Sea $\mathbf{x} = \mathbf{x}_0 + h {\mathbf{u}}$, siendo $h \in \R$. Es decir, definimos una funci\'on 
  \begin{gather*}
       \mathbf{g} :(-\delta,\delta) \to \Rn{n} \\
-      \mathbf{g}(h) = \mathbf{x}_0 + h \hat{\mathbf{u}}
+      \mathbf{g}(h) = \mathbf{x}_0 + h {\mathbf{u}}
  \end{gather*}
 
 con $\delta > 0$, lo suficientemente peque\~{n}o como para que $\text{Img}(\mathbf{g}) \subset A$, y llamamos $\mathbf{x} = \mathbf{g}(h)$. Notemos que $\mathbf{g}(h) \to \mathbf{x}_0$ cuando $h \to 0$. 
@@ -274,29 +274,29 @@ Por la diferenciabilidad, tenemos que
  \lim_{\mathbf{x} \to \mathbf{x}_0} \frac{f(\mathbf{x}) - f(\mathbf{x}_0) - \grad f (\mathbf{x}_0) \cdot (\mathbf{x} - \mathbf{x}_0)}
                                  {\norm{\mathbf{x} - \mathbf{x}_0}} = 0
 \]
-y entonces, si componemos con la funci\'on $\mathbf{g}$ (reemplazamos $\mathbf{x} = \mathbf{x}_0 + h \hat{\mathbf{u}}$), la propiedad del l\'imite de la composici\'on \eqref{prop:lim_comp} implica que
+y entonces, si componemos con la funci\'on $\mathbf{g}$ (reemplazamos $\mathbf{x} = \mathbf{x}_0 + h {\mathbf{u}}$), la propiedad del l\'imite de la composici\'on \eqref{prop:lim_comp} implica que
 \begin{align*}
-  0 & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0) - \grad f (\mathbf{x}_0) \cdot ((\mathbf{x}_0 + h _{\delta}(\mathbf{x}_0)\hat{\mathbf{u}}) - \mathbf{x}_0) }
-                    {\norm{(\mathbf{x}_0 + h \hat{\mathbf{u}}) - \mathbf{x}_0}} = \\
-    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0) - \grad f (\mathbf{x}_0) \cdot (h \hat{\mathbf{u}}) }
-                    {\norm{h \hat{\mathbf{u}}}} = \\
-    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0) - h \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}} }
-                    {\abs{h} \norm{\hat{\mathbf{u}}}} = \\
-    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0) - h \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}} }
+  0 & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h {\mathbf{u}}) - f(\mathbf{x}_0) - \grad f (\mathbf{x}_0) \cdot ((\mathbf{x}_0 + h _{\delta}(\mathbf{x}_0){\mathbf{u}}) - \mathbf{x}_0) }
+                    {\norm{(\mathbf{x}_0 + h {\mathbf{u}}) - \mathbf{x}_0}} = \\
+    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h {\mathbf{u}}) - f(\mathbf{x}_0) - \grad f (\mathbf{x}_0) \cdot (h {\mathbf{u}}) }
+                    {\norm{h {\mathbf{u}}}} = \\
+    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h {\mathbf{u}}) - f(\mathbf{x}_0) - h \grad f (\mathbf{x}_0) \cdot {\mathbf{u}} }
+                    {\abs{h} \norm{{\mathbf{u}}}} = \\
+    & = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h {\mathbf{u}}) - f(\mathbf{x}_0) - h \grad f (\mathbf{x}_0) \cdot {\mathbf{u}} }
                     {\abs{h}}.  
 \end{align*}                                
 Como en la demostraci\'on de la propiedad \eqref{teo:difDer}, este l\'imite es $0$ si y s\'olo si
 \[
- 0 = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0) - h \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}}{h} = 
-     \lim_{h \to 0} \left( \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0)}{h} - \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}} \right),
+ 0 = \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h {\mathbf{u}}) - f(\mathbf{x}_0) - h \grad f (\mathbf{x}_0) \cdot {\mathbf{u}}}{h} = 
+     \lim_{h \to 0} \left( \frac{f(\mathbf{x}_0 + h {\mathbf{u}}) - f(\mathbf{x}_0)}{h} - \grad f (\mathbf{x}_0) \cdot {\mathbf{u}} \right),
 \]
 que, como en la demostraci\'on de \eqref{teo:difDer}, implica que 
 \[
- \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h \hat{\mathbf{u}}) - f(\mathbf{x}_0)}{h} = \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}
+ \lim_{h \to 0} \frac{f(\mathbf{x}_0 + h {\mathbf{u}}) - f(\mathbf{x}_0)}{h} = \grad f (\mathbf{x}_0) \cdot {\mathbf{u}}
 \]
 y por lo tanto, por definici\'on,
 \[
- \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}.
+ \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot {\mathbf{u}}.
 \]
  \end{proof}
 \end{theorem}
@@ -306,68 +306,68 @@ y por lo tanto, por definici\'on,
 
  Sean $f: A \subset \Rn{n} \to \R$ diferenciable en un punto $\mathbf{x}_0 \in \interior{A}$. Entonces 
  \[
-  \max_{\norm{\hat{\mathbf{u}}} = 1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f (\mathbf{x}_0)}, \quad 
-  \min_{\norm{\hat{\mathbf{u}}} = 1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f (\mathbf{x}_0)}
+  \max_{\norm{{\mathbf{u}}} = 1} \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f (\mathbf{x}_0)}, \quad 
+  \min_{\norm{{\mathbf{u}}} = 1} \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f (\mathbf{x}_0)}
  \]
 y, si $\grad f(\mathbf{x}_0) \ne \mathbf{0}$,
 \[
- \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f (\mathbf{x}_0)} \iff \hat{\mathbf{u}} = \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}
+ \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f (\mathbf{x}_0)} \iff {\mathbf{u}} = \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}
 \]
 y
 \[
- \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f (\mathbf{x}_0)} \iff \hat{\mathbf{u}} = -\frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}.
+ \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f (\mathbf{x}_0)} \iff {\mathbf{u}} = -\frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}.
 \]
 \begin{proof}
 \mbox{}
 
- Como $f$ es diferenciable en $\mathbf{x}_0$, por el teorema \eqref{teo:difDir}, $\forall \hat{\mathbf{u}} \in \Rn{n}\;\text{tal que } \norm{\hat{\mathbf{u}}} = 1$ existe en $\mathbf{x}_0$ la derivada de $f$ en la direcci\'on de $\hat{\mathbf{u}}$ y, adem\'as,
+ Como $f$ es diferenciable en $\mathbf{x}_0$, por el teorema \eqref{teo:difDir}, $\forall {\mathbf{u}} \in \Rn{n}\;\text{tal que } \norm{{\mathbf{u}}} = 1$ existe en $\mathbf{x}_0$ la derivada de $f$ en la direcci\'on de ${\mathbf{u}}$ y, adem\'as,
 \[
- \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}.
+ \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot {\mathbf{u}}.
 \]
 Por la desigualdad de Cauchy-Schwarz, 
 \[
- \abs{\frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0)} = \abs{\grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}}} \le \norm{\grad f (\mathbf{x}_0)}\norm{\hat{\mathbf{u}}} = \norm{\grad f (\mathbf{x}_0)},
+ \abs{\frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0)} = \abs{\grad f (\mathbf{x}_0) \cdot {\mathbf{u}}} \le \norm{\grad f (\mathbf{x}_0)}\norm{{\mathbf{u}}} = \norm{\grad f (\mathbf{x}_0)},
 \]
 de modo que tenemos las cotas:
 \[
- -\norm{\grad f (\mathbf{x}_0)} \le \frac{\partial f}{\partial \hat{\mathbf{u}}}(\mathbf{x}_0) \le \norm{\grad f (\mathbf{x}_0)}.
+ -\norm{\grad f (\mathbf{x}_0)} \le \frac{\partial f}{\partial {\mathbf{u}}}(\mathbf{x}_0) \le \norm{\grad f (\mathbf{x}_0)}.
 \]
 Adem\'as, la desigualdad de Cauchy-Schwarz nos dice que vale
 \[
- \abs{\frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0)} = \norm{\grad f (\mathbf{x}_0)}
+ \abs{\frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0)} = \norm{\grad f (\mathbf{x}_0)}
 \]
-si y s\'olo si el conjunto $\{\grad f(\mathbf{x}_0), \hat{\mathbf{u}} \}$ es linealmente dependiente, condici\'on que, si $\grad f(\mathbf{x}_0) \ne \mathbf{0}$, es equivalente a decir que $\hat{\mathbf{u}}$ es un vector unitario en la direcci\'on de $\grad f(\mathbf{x}_0)$. Existen exactamente dos vectores $\hat{\mathbf{u}}$ con esta caracter\'istica:
+si y s\'olo si el conjunto $\{\grad f(\mathbf{x}_0), {\mathbf{u}} \}$ es linealmente dependiente, condici\'on que, si $\grad f(\mathbf{x}_0) \ne \mathbf{0}$, es equivalente a decir que ${\mathbf{u}}$ es un vector unitario en la direcci\'on de $\grad f(\mathbf{x}_0)$. Existen exactamente dos vectores ${\mathbf{u}}$ con esta caracter\'istica:
 \[
- \hat{\mathbf{u}}_1 = \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}} \quad \text{ y } \quad \hat{\mathbf{u}}_2 = -\frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}.
+ {\mathbf{u}}_1 = \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}} \quad \text{ y } \quad {\mathbf{u}}_2 = -\frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}.
 \]
 Por c\'alculo directo:
 \begin{align*}
- \frac{\partial f}{\partial \hat{\mathbf{u}}_1} (\mathbf{x}_0) &= \grad f (\mathbf{x}_0) \cdot \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}} = \frac{ \grad f (\mathbf{x}_0) \cdot \grad f(\mathbf{x}_0) }{\norm{\grad f(\mathbf{x}_0)}} = \frac{\norm{\grad f (\mathbf{x}_0)}^2 }{\norm{\grad f(\mathbf{x}_0)}} = \norm{\grad f (\mathbf{x}_0)} \\
+ \frac{\partial f}{\partial {\mathbf{u}}_1} (\mathbf{x}_0) &= \grad f (\mathbf{x}_0) \cdot \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}} = \frac{ \grad f (\mathbf{x}_0) \cdot \grad f(\mathbf{x}_0) }{\norm{\grad f(\mathbf{x}_0)}} = \frac{\norm{\grad f (\mathbf{x}_0)}^2 }{\norm{\grad f(\mathbf{x}_0)}} = \norm{\grad f (\mathbf{x}_0)} \\
 %  
- \frac{\partial f}{\partial \hat{\mathbf{u}}_2} (\mathbf{x}_0) &= \grad f (\mathbf{x}_0) \cdot \left( - \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}} \right) = -\frac{ \grad f (\mathbf{x}_0) \cdot \grad f(\mathbf{x}_0) }{\norm{\grad f(\mathbf{x}_0)}} = -\frac{\norm{\grad f (\mathbf{x}_0)}^2 }{\norm{\grad f(\mathbf{x}_0)}} = -\norm{\grad f (\mathbf{x}_0)},
+ \frac{\partial f}{\partial {\mathbf{u}}_2} (\mathbf{x}_0) &= \grad f (\mathbf{x}_0) \cdot \left( - \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}} \right) = -\frac{ \grad f (\mathbf{x}_0) \cdot \grad f(\mathbf{x}_0) }{\norm{\grad f(\mathbf{x}_0)}} = -\frac{\norm{\grad f (\mathbf{x}_0)}^2 }{\norm{\grad f(\mathbf{x}_0)}} = -\norm{\grad f (\mathbf{x}_0)},
 \end{align*}
 de modo que efectivamente
 \[
- \max_{\norm{\hat{\mathbf{u}}}=1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f (\mathbf{x}_0)}
+ \max_{\norm{{\mathbf{u}}}=1} \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f (\mathbf{x}_0)}
 \]
-y el m\'aximo se realiza en $\hat{\mathbf{u}}_1 = \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}$,
+y el m\'aximo se realiza en ${\mathbf{u}}_1 = \frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}$,
 y
 \[
- \min_{\norm{\hat{\mathbf{u}}}=1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f (\mathbf{x}_0)}
+ \min_{\norm{{\mathbf{u}}}=1} \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f (\mathbf{x}_0)}
 \]
-y el m\'inimo se realiza en $\hat{\mathbf{u}}_2 = -\frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}$. \\
+y el m\'inimo se realiza en ${\mathbf{u}}_2 = -\frac{\grad f(\mathbf{x}_0)}{\norm{\grad f(\mathbf{x}_0)}}$. \\
 
 Finalmente, observemos que, si $\grad f(\mathbf{x}_0) = \mathbf{0}$, 
 \[
- \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot \hat{\mathbf{u}} = 0 = \norm{\grad f(\mathbf{x}_0)} \quad \forall \hat{\mathbf{u}} \in \Rn{n},
+ \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = \grad f (\mathbf{x}_0) \cdot {\mathbf{u}} = 0 = \norm{\grad f(\mathbf{x}_0)} \quad \forall {\mathbf{u}} \in \Rn{n},
 \]
 y por lo tanto:
 \[
- \max_{\norm{\hat{\mathbf{u}}}=1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f(\mathbf{x}_0)} = 0
+ \max_{\norm{{\mathbf{u}}}=1} \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = \norm{\grad f(\mathbf{x}_0)} = 0
 \]
 y
 \[
- \min_{\norm{\hat{\mathbf{u}}}=1} \frac{\partial f}{\partial \hat{\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f(\mathbf{x}_0)} = 0.
+ \min_{\norm{{\mathbf{u}}}=1} \frac{\partial f}{\partial {\mathbf{u}}} (\mathbf{x}_0) = -\norm{\grad f(\mathbf{x}_0)} = 0.
 \]
 \end{proof}
 \end{theorem}

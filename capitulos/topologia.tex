@@ -55,6 +55,8 @@
 
     De aqu\'i podemos ver como esta definici\'on general de bola desaf\'ia nuestra intuici\'on al ser utilizada con distintos tipos de norma. Donde lo ``natural'' ser\'ia pensar en la ilustrada a partir de la norma 2 o euclidiana.
    \end{example}
+
+   \emph{Notaci\'on:} De ahora en m\'as, denotaremos a la norma 2 simplemente como $\|\cdot\|$, ya que va a ser \'unica norma utilizada a lo largo del documento.
    
    \begin{definition} \textbf{Punto interior, interior de un conjunto.} \label{def:interior}
     Sean $A \subset \Rn{n} \text{ y } \vect{x}_0 \in A$. Decimos que $\vect{x}_0$ es \emph{punto interior} de $A$ si
@@ -133,11 +135,10 @@
 
 
 %------------------------------------------------------conjunto conexo----------------------------
-\begin{definition} \textbf{Conjunto conexo.} \label{def:conjuntoconexo} Un conjunto \( A \subset \mathbb{R}^n \) es \textbf{conexo} si para cualesquiera dos puntos \( \vect{x}_0, y_0 \in A \), existe una curva continua \( \gamma : [0,1] \to A \) tal que:
-
-    \[
-    \gamma(0) = x_1 \quad \text{y} \quad \gamma(1) = y_1
-    \]
+\begin{definition} \textbf{Conjunto simplemente conexo.} \label{def:conjuntoconexo_simp} Un conjunto \( A \subset \mathbb{R}^n \) es \emph{conexo} si para cualesquiera dos puntos \( \vect{x}_0, y_0 \in A \), existe una curva continua \( \gamma : [0,1] \to A \) tal que
+    \(
+    \gamma(0) = x_1 \; \text{y} \; \gamma(1) = y_1.
+    \)
     
     
     \begin{center}
@@ -177,21 +178,17 @@
         \end{center}
         \begin{center}
         \begin{tikzpicture}
-            \node at (1.5,-2) {Conjuntos \textbf{conexos}};
+            \node at (1.5,-2) {Conjuntos \emph{conexos}};
         \end{tikzpicture}
         \end{center}
     \end{definition}
     
     %------------------------------------------------------conjunto conexo----------------------------
-    \begin{definition} \textbf{Conjunto convexo.} \label{def:conjuntoconvexo}Un subconjunto \( A \subseteq \mathbb{R}^n \) es \textbf{convexo} si para cualesquiera dos puntos \( x, y \in A \), el segmento que los une está completamente contenido en \( A \):
+    \begin{definition} \textbf{Conjunto convexo.} \label{def:conjuntoconvexo}Un subconjunto \( A \subseteq \mathbb{R}^n \) es \emph{convexo} si para cualesquiera dos puntos \( x, y \in A \), el segmento que los une está completamente contenido en \( A \):
         \[
         \forall x_1,y_1, \quad \lambda\vect{x}+ (1 - \lambda)y \in A \quad \text{para todo } \lambda \in [0,1].
         \]
         
-    
-    
-    
-    
         \begin{center}
             \begin{minipage}{0.45\textwidth}
                 \centering
@@ -217,7 +214,7 @@
             \end{center}
             \begin{center}
             \begin{tikzpicture}
-                \node at (1.5,-2) {Conjuntos \textbf{convexos}};
+                \node at (1.5,-2) {Conjuntos \emph{convexos}};
             \end{tikzpicture}
     
             \end{center}
@@ -265,17 +262,14 @@
                 \end{center}
                 \begin{center}
                 \begin{tikzpicture}
-                    \node at (1.5,-2) {Conjuntos \textbf{NO convexos}};
+                    \node at (1.5,-2) {Conjuntos \emph{no convexos}};
                 \end{tikzpicture}
                 \end{center}
     \end{definition}
     
     %------------------------------------------------------conjunto simplemente conexo----------------------------
-    \vspace{0.5cm}
-    \begin{definition} \textbf{Conjunto conexo.} \label{def:conjuntoconexo}
-    Un conjunto \( A \subset \mathbb{R}^2 \) es \textbf{simplemente conexo} si es conexo y todo lazo cerrado dentro de \( A \) puede ser continuamente deformado a un punto, sin salir de \( A \).
-    
-    \vspace{0.3cm} % Pequeño espacio entre el texto y las figuras
+    \begin{definition} \textbf{Conjunto conexo.} \label{def:conjuntoconexo1}
+    Un conjunto \( A \subset \mathbb{R}^2 \) es \emph{simplemente conexo} si es conexo y todo lazo cerrado dentro de \( A \) puede ser continuamente deformado a un punto, sin salir de \( A \).
     
     \begin{center}
         \begin{minipage}{0.45\textwidth}
@@ -323,7 +317,7 @@
     
     \begin{center}
         \begin{tikzpicture}
-            \node at (1.5,-2) {Conjuntos \textbf{simplemente conexos}};
+            \node at (1.5,-2) {Conjuntos \emph{simplemente conexos}};
         \end{tikzpicture}
     \end{center}
     
@@ -351,7 +345,7 @@
         \end{center}
         \begin{center}
             \begin{tikzpicture}
-                \node at (1.5,-2) {Conjunto \textbf{NO simplemente conexo}};
+                \node at (1.5,-2) {Conjunto \emph{no simplemente conexo}};
             \end{tikzpicture}
         \end{center}
     \end{definition}
