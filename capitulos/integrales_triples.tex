@@ -6,7 +6,6 @@ B = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; a \leq x \leq b,\; c \leq y 
 \end{definition}
 
 La \textit{partición} del paralelepípedo rectangular \( B \) consiste en dividir el conjunto \( B \) (una caja) en pequeñas cajas de igual volumen. Esto se hace dividiendo:
-
 \begin{itemize}
     \item el intervalo \( [a, b] \) en \( l \) subintervalos \( [x_i, x_{i+1}] \), cada uno de ancho \( \Delta x \),
     \item el intervalo \( [c, d] \) en \( n \) subintervalos \( [y_j, y_{j+1}] \), cada uno de ancho \( \Delta y \),
@@ -27,14 +26,14 @@ Se definen:
 \begin{itemize}
     \item \( c_{ijk} \): punto dentro del subconjunto \( B \), en particular, dentro de alguna partición.
     \item \( V_{ijk} \): conjunto de puntos dentro de la partición \( B_{ijk} \); es decir, la partición misma.
-    \item \( \Delta V_{ijk} \): volumen de la partición \( B_{ijk} \), dado por:
+    \item \( \Delta V_{ijk} \): volumen de la partición \( B_{ijk} \), dado por
     \[
     \Delta V_{ijk} = \Delta x_i\Delta y_j\Delta z_k.
     \]
 \end{itemize}
 
 \begin{definition}
-Dada una funci\'on continua $f:U\to\R$, donde $U$ es un paralelep\'ipedo rectangular (una caja) en $\Rn{3}$, se define la suma de Reimann de $f$ sobre $U$, partiendo los tres lados de $U$ en $n$ partes iguales, a
+Dada una funci\'on continua $f:U\to\R$, donde $U$ es un paralelep\'ipedo rectangular (una caja) en $\Rn{3}$, se define la \emph{suma de Reimann de $f$ sobre $U$}, partiendo los tres lados de $U$ en $n$ partes iguales, a
 \[
     S_n=\sum_{i=0}^{n-1}\sum_{j=0}^{n-1}\sum_{k=0}^{n-1}f(c_{ijk})\Delta V_{ijk},
 \]  
@@ -42,7 +41,7 @@ donde $c_{ijk}\in U_{ijk}$, el $ijk$-\'esimo paralelep\'ipedo rectangular en la 
 \end{definition}
 
 \begin{definition} 
-    Sean $U=[a,b]\times[c,d]\times[p,q]$ y $f:U\to\R$ una funci\'on.  Diremos que $f$ es integrable sobre $U$ si existe y es finito el  l\'imite $\lim_{n\to\infty}S_n$, en tal caso  el valor de dicho l\'imite  se llama \textbf{integral triple} de $f$ sobre $U$ y se nota 
+    Sean $U=[a,b]\times[c,d]\times[p,q]$ y $f:U\to\R$ una funci\'on.  Diremos que $f$ es integrable sobre $U$ si existe y es finito el  l\'imite $\lim_{n\to\infty}S_n$, en tal caso  el valor de dicho l\'imite  se llama \emph{integral triple} de $f$ sobre $U$ y se nota 
     \[
           \iiint_U f\:dV=\iiint_U f(x,y,z)\:dxdydz.
     \]
@@ -56,7 +55,7 @@ contínuas, es decir, superficies.
 
 Para extender esta noci\'on de integral a un conjunto acotado m\'as general, esto es, conjuntos que puedan ser encerrados por una caja, definimos lo siguiente. 
 
-\begin{definition}
+\begin{definition}\label{def:caja-que-contiene}
 Dada $f:W\to\R$, se define la funci\'on $f^*$ tal que
 \[
     f^*(x,y,z)=
@@ -72,7 +71,7 @@ Entonces si $U$ es una caja que contiene a $W$ y $\partial W$ est\'a formada por
 \end{definition}
 
 \begin{obs} 
-   Esta definici\'on es independiente de la selecci\'on de $U$.
+   La \autoref{def:caja-que-contiene} es independiente de la selecci\'on de $U$.
 \end{obs}
 
 \begin{propertie}
@@ -105,7 +104,9 @@ Entonces si $U$ es una caja que contiene a $W$ y $\partial W$ est\'a formada por
 \end{definition}
 
 \begin{theorem}
-    \textbf{Teorema del valor medio}. Sea $f:W\subseteq\Rn{3}\to\Rn{3}$ continua y $W$ es un conjunto elemental. Entonces existe $(x_0,y_0,z_0)$ en $W$ tal que 
+    \textbf{Teorema del valor medio.} 
+    
+    Sea $f:W\subseteq\Rn{3}\to\Rn{3}$ continua y $W$ es un conjunto elemental. Entonces existe $(x_0,y_0,z_0)$ en $W$ tal que 
     \[
         \iiint_W f\:dV=f(x_0,y_0,z_0)\text{Vol}(W).
     \]
@@ -113,48 +114,52 @@ Entonces si $U$ es una caja que contiene a $W$ y $\partial W$ est\'a formada por
 
 \begin{definition}
     \textbf{Conjunto elemental en }$\Rn{3}$.
-    Sea $W\subseteq\Rn{3}$ y sea donde \( D \subseteq \mathbb{R}^2 \), un dominio acotado. Sean $\phi_1,\;\phi_2:[a,b]\to\R$ funciones y sean $\gamma_1,\;\gamma_2:D\to\R$ funciones continuas.  Un conjunto $W\subseteq\Rn{3}$ se llama elemental, si puede ser escrito como el conjunto de puntos $(x,y,z)$ que satifacen
+    Sea $W\subseteq\Rn{3}$ y sea \( D \subseteq \mathbb{R}^2 \), un dominio acotado. Sean $\phi_1,\;\phi_2:[a,b]\to\R$ funciones y sean $\gamma_1,\;\gamma_2:D\to\R$ funciones continuas.  Un conjunto $W\subseteq\Rn{3}$ se llama elemental, si puede ser escrito como el conjunto de puntos $(x,y,z)$ que satifacen las siguientes formas:
     % \begin{equation*}
     %     x\in[a,b], \qquad \phi_1(x)\leq y\leq\phi_2(x), \qquad \gamma_1(x,y)\leq z\leq\gamma_2(x,y). 
     % \end{equation*}
-    \subsection*{Forma 1:}
+    \begin{enumerate}
+    \item 
 	\[
 	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; a \leq x \leq b,\ \phi_1(x) \leq y \leq \phi_2(x),\ \eta_1(x, y) \leq z \leq \eta_2(x, y) \right\}
 	\]
 	
-	\subsection*{Forma 2:}
+	\item
 	\[
 	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; a \leq x \leq b,\ \psi_1(x) \leq z \leq \psi_2(x),\ \eta_1(x, z) \leq y \leq \eta_2(x, z) \right\}
 	\]
 	
-	\subsection*{Forma 3:}
+	\item
 	\[
 	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; c \leq y \leq d,\ \phi_1(y) \leq x \leq \phi_2(y),\ \eta_1(x, y) \leq z \leq \eta_2(x, y) \right\}
 	\]
 	
-	\subsection*{Forma 4:}
+	\item
 	\[
 	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; c \leq y \leq d,\ \psi_1(y) \leq z \leq \psi_2(y),\ \eta_1(y, z) \leq x \leq \eta_2(y, z) \right\}
 	\]
 	
-	\subsection*{Forma 5:}
+	\item
 	\[
 	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; r \leq z \leq s,\ \phi_1(z) \leq x \leq \phi_2(z),\ \eta_1(x, z) \leq y \leq \eta_2(x, z) \right\}
 	\]
 	
-	\subsection*{Forma 6:}
+	\item
 	\[
 	W = \left\{ (x, y, z) \in \mathbb{R}^3 \;\middle|\; r \leq z \leq s,\ \psi_1(z) \leq y \leq \psi_2(z),\ \eta_1(y, z) \leq x \leq \eta_2(y, z) \right\}
 	\]
+    \end{enumerate}
     % O bien, intercambiando el orden de las variables.
 \end{definition}
 
-
- \textcolor{red}{Ilustracion}
-
+\begin{center}    
+    \includegraphics[width=0.8\linewidth]{figs/conj_elem_r3.jpg}
+\end{center}
 
 \begin{theorem}
-    \textbf{Teorema del cambio de variables para integrales triples}. Sea $f:W\subseteq\Rn{3}\to\R$  un campo escalar integrable. Sea $\mathbf{T}:W^*\subseteq\Rn{3}\to W\subseteq\Rn{3}$ continua, de clase $\mathcal{C}^1$ en $\interior{(W^*)}$,  inyectiva en $\interior{(W^*)}$ y tal que $\mathbf{T}(W^*)=W$. Entonces
+    \textbf{Teorema del cambio de variables para integrales triples.} 
+    
+    Sea $f:W\subseteq\Rn{3}\to\R$  un campo escalar integrable. Sea $\mathbf{T}:W^*\subseteq\Rn{3}\to W\subseteq\Rn{3}$ continua, de clase $\mathcal{C}^1$ en $\interior{(W^*)}$,  inyectiva en $\interior{(W^*)}$ y tal que $\mathbf{T}(W^*)=W$. Entonces
     \[
         \iiint_W f\:dV=\iiint_{W^*}(f\circ\mathbf{T})J_\mathbf{T}\:dV.
     \]
